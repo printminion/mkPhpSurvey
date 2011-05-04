@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: lang_admin.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>lang_admin.php</h1><a href="lang__admin_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 
+<a name="l00004"></a><a class="code" href="lang__admin_8php.html#f28d7de4256e6e157d802821b8cb3d7c">00004</a> define('<a class="code" href="lang__admin_8php.html#f28d7de4256e6e157d802821b8cb3d7c">TPL_ADMIN_CAPTION_MYSURVEYS</a><span class="charliteral">','</span>Meine Umfragen:');<span class="comment">//My Surveys:</span>
+<a name="l00005"></a><a class="code" href="lang__admin_8php.html#d05ece1833addcd9d4f17005fbcbbf1a">00005</a> define('<a class="code" href="lang__admin_8php.html#d05ece1833addcd9d4f17005fbcbbf1a">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING</a><span class="charliteral">','</span>Am Laufen');<span class="comment">//Running</span>
+<a name="l00006"></a><a class="code" href="lang__admin_8php.html#412b67d7356a75ad2e0ed5a92a3c9129">00006</a> define('<a class="code" href="lang__admin_8php.html#412b67d7356a75ad2e0ed5a92a3c9129">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED</a><span class="charliteral">','</span>Beendet');<span class="comment">//Finished</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a><a class="code" href="lang__admin_8php.html#f6e235ccceb91621899d9b8fc6a3a9d8">00008</a> define('<a class="code" href="lang__admin_8php.html#f6e235ccceb91621899d9b8fc6a3a9d8">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING_URL</a>',<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin/?running');<span class="comment">//Running</span>
+<a name="l00009"></a><a class="code" href="lang__admin_8php.html#750e55787e0eb1824d6eff18ca660e81">00009</a> define('<a class="code" href="lang__admin_8php.html#750e55787e0eb1824d6eff18ca660e81">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED_URL</a>',<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin/?finished');<span class="comment">//Finished</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="lang__admin_8php.html#f2fb1d5ed1e8b4ddbcc6137a067c9a66">00011</a> define('<a class="code" href="lang__admin_8php.html#f2fb1d5ed1e8b4ddbcc6137a067c9a66">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVEY</a><span class="charliteral">','</span>Neue Umfrage');<span class="comment">// New Survey</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="lang__admin_8php.html#9476a0f15d0b23aa3107c221c8066145">00013</a> define('<a class="code" href="lang__admin_8php.html#9476a0f15d0b23aa3107c221c8066145">TPL_ADMIN_CAPTION_SORT_SURVEYS</a><span class="charliteral">','</span>Umfragen');<span class="comment">//Surveys</span>
+<a name="l00014"></a><a class="code" href="lang__admin_8php.html#61a183c3696b82082b9f870a68b65284">00014</a> define('<a class="code" href="lang__admin_8php.html#61a183c3696b82082b9f870a68b65284">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY</a><span class="charliteral">','</span>Sortierung');<span class="comment">//Sort by:</span>
+<a name="l00015"></a><a class="code" href="lang__admin_8php.html#efd9e23258342def4000ce9c184c57bb">00015</a> define('<a class="code" href="lang__admin_8php.html#efd9e23258342def4000ce9c184c57bb">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_DATE</a><span class="charliteral">','</span>Anzahl');<span class="comment">//Survey date</span>
+<a name="l00016"></a><a class="code" href="lang__admin_8php.html#de3548e5cf790cdc771e5ae09b1e08bd">00016</a> define('<a class="code" href="lang__admin_8php.html#de3548e5cf790cdc771e5ae09b1e08bd">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_CREATION</a><span class="charliteral">','</span>Datum');<span class="comment">//Upload date</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="lang__admin_8php.html#38f50b161fbf0325019f72c4fbb79f4f">00019</a> define('<a class="code" href="lang__admin_8php.html#38f50b161fbf0325019f72c4fbb79f4f">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS</a><span class="charliteral">','</span>Umfragenden');<span class="comment">//Upload Photos</span>
+<a name="l00020"></a><a class="code" href="lang__admin_8php.html#b67fbae4c52ccc75cd0ca578f1e1e1c9">00020</a> define('<a class="code" href="lang__admin_8php.html#b67fbae4c52ccc75cd0ca578f1e1e1c9">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS_TITLE</a><span class="charliteral">','</span>Zu umfragende Personen Hinzufügen');<span class="comment">//Upload Photos</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">00022</a> define('<a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">TPL_ADMIN_SIDEBOX_TITLE</a><span class="charliteral">','</span>Neue Feature');
+<a name="l00023"></a><a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">00023</a> define('<a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">TPL_ADMIN_SIDEBOX_BODY</a><span class="charliteral">','</span>&lt;div <span class="keyword">class</span>=<span class="stringliteral">"lhcl_promo_header"</span>&gt;Umfragelisten&lt;/div&gt;
+<a name="l00024"></a>00024 &lt;div&gt;Jetzt kann man Umfragen via Umfragelisten führen&lt;/div&gt;');
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="comment">//define('TPL_ADMIN_SIDEBOX_TITLE','New Feature');</span>
+<a name="l00027"></a>00027 <span class="comment">//define('TPL_ADMIN_SIDEBOX_BODY','&lt;div class="lhcl_promo_header"&gt;More free storage&lt;/div&gt;</span>
+<a name="l00028"></a>00028 <span class="comment">//&lt;div&gt;You now have 1GB (and counting!) of free storage.&lt;/div&gt;</span>
+<a name="l00029"></a>00029 <span class="comment">//&lt;div class="lhcl_pseudo_hr"/&gt;</span>
+<a name="l00030"></a>00030 <span class="comment">//&lt;div class="lhcl_promo_header"&gt;Search&lt;/div&gt;</span>
+<a name="l00031"></a>00031 <span class="comment">//&lt;div&gt;Discover and explore photos from other Domain users with this new search feature.&lt;/div&gt;</span>
+<a name="l00032"></a>00032 <span class="comment">//&lt;a href="/lh/searchLearnMore"&gt;Learn more&lt;/a&gt;');</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="lang__admin_8php.html#d12d8950184c2691b5ef0b5d7975a2f0">00034</a> define('<a class="code" href="lang__admin_8php.html#d12d8950184c2691b5ef0b5d7975a2f0">TPL_EMAIL_NEW_SURVIVOR_SUBJECT</a>',<span class="stringliteral">"Survey-Einladung:%SURVEY_TITLE%."</span>);
+<a name="l00035"></a><a class="code" href="lang__admin_8php.html#320c264092a9c8bd79623ca8c93bc618">00035</a> define('<a class="code" href="lang__admin_8php.html#320c264092a9c8bd79623ca8c93bc618">TPL_EMAIL_NEW_SURVIVOR_BODY</a>',<span class="stringliteral">"Sie sind zu einer Umfrage eingeladen worden.</span>
+<a name="l00036"></a>00036 <span class="stringliteral">%SURVEY_INFO%</span>
+<a name="l00037"></a>00037 <span class="stringliteral">Um an der Umfrage teilzunehmen klicken Sie bitte auf den folgenden Link. </span>
+<a name="l00038"></a>00038 <span class="stringliteral">%SURVEY_URL%"</span>);
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="lang__admin_8php.html#c414fc48cf5591da71f3bb8a928998e1">00040</a> define('<a class="code" href="lang__admin_8php.html#c414fc48cf5591da71f3bb8a928998e1">TPL_EMAIL_NEW_SURVIVOR_SUBJECT_HTML</a>',<span class="stringliteral">"Survey-Einladung:%SURVEY_TITLE%."</span>);
+<a name="l00041"></a><a class="code" href="lang__admin_8php.html#3a7639d9769d018c1c6109eb094c4c0b">00041</a> define('<a class="code" href="lang__admin_8php.html#3a7639d9769d018c1c6109eb094c4c0b">TPL_EMAIL_NEW_SURVIVOR_BODY_HTML</a>',<span class="stringliteral">"Sie sind zu einer Umfrage eingeladen worden.&lt;br/&gt;&lt;br/&gt;</span>
+<a name="l00042"></a>00042 <span class="stringliteral">%SURVEY_INFO%&lt;br/&gt;</span>
+<a name="l00043"></a>00043 <span class="stringliteral">Um an der Umfrage teilzunehmen klicken Sie bitte auf den folgenden Link.&lt;br/&gt; </span>
+<a name="l00044"></a>00044 <span class="stringliteral">&lt;a href=\"%SURVEY_URL%\" target=\"_blank\"&gt;%SURVEY_URL%&lt;/a&gt;"</span>);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

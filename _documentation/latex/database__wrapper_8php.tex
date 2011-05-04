@@ -1,0 +1,75 @@
+\section{database\_\-wrapper.php-Dateireferenz}
+\label{database__wrapper_8php}\index{database\_\-wrapper.php@{database\_\-wrapper.php}}
+\subsection*{Funktionen}
+\begin{CompactItemize}
+\item 
+{\bf tep\_\-db\_\-writer\_\-query} (\$sqlQuery)
+\item 
+{\bf tep\_\-db\_\-insert\_\-id} ()
+\item 
+{\bf tep\_\-db\_\-reader\_\-query} (\$sqlQuery)
+\item 
+{\bf tep\_\-db\_\-fetch\_\-array} (\$db\_\-query)
+\end{CompactItemize}
+
+
+\subsection{Dokumentation der Funktionen}
+\index{database\_\-wrapper.php@{database\_\-wrapper.php}!tep\_\-db\_\-fetch\_\-array@{tep\_\-db\_\-fetch\_\-array}}
+\index{tep\_\-db\_\-fetch\_\-array@{tep\_\-db\_\-fetch\_\-array}!database_wrapper.php@{database\_\-wrapper.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}tep\_\-db\_\-fetch\_\-array (\$ {\em db\_\-query})}\label{database__wrapper_8php_801e3ae24b9c3f76a5566142c4fc67ca}
+
+
+
+
+Definiert in Zeile 56 der Datei database\_\-wrapper.php.
+
+Wird benutzt von User.\_\-loadDataById() und SurveyType.\_\-loadDataById().\index{database\_\-wrapper.php@{database\_\-wrapper.php}!tep\_\-db\_\-insert\_\-id@{tep\_\-db\_\-insert\_\-id}}
+\index{tep\_\-db\_\-insert\_\-id@{tep\_\-db\_\-insert\_\-id}!database_wrapper.php@{database\_\-wrapper.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}tep\_\-db\_\-insert\_\-id ()}\label{database__wrapper_8php_6d68b3353ab90af95e317cea4b008bb4}
+
+
+Get last inserted ID
+
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 32 der Datei database\_\-wrapper.php.
+
+Wird benutzt von User.\_\-insert() und SurveyType.\_\-insert().\index{database\_\-wrapper.php@{database\_\-wrapper.php}!tep\_\-db\_\-reader\_\-query@{tep\_\-db\_\-reader\_\-query}}
+\index{tep\_\-db\_\-reader\_\-query@{tep\_\-db\_\-reader\_\-query}!database_wrapper.php@{database\_\-wrapper.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}tep\_\-db\_\-reader\_\-query (\$ {\em sqlQuery})}\label{database__wrapper_8php_b8549d8a4736dd32c005b636a741f91b}
+
+
+make db read query
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$sqlQuery \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]Resource \end{Desc}
+
+
+Definiert in Zeile 42 der Datei database\_\-wrapper.php.
+
+Wird benutzt von User.\_\-delete(), SurveyType.\_\-delete(), User.\_\-loadDataById() und SurveyType.\_\-loadDataById().\index{database\_\-wrapper.php@{database\_\-wrapper.php}!tep\_\-db\_\-writer\_\-query@{tep\_\-db\_\-writer\_\-query}}
+\index{tep\_\-db\_\-writer\_\-query@{tep\_\-db\_\-writer\_\-query}!database_wrapper.php@{database\_\-wrapper.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}tep\_\-db\_\-writer\_\-query (\$ {\em sqlQuery})}\label{database__wrapper_8php_7e851a57c051f87c2f623e41b8658d54}
+
+
+make db write query
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$sqlQuery \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]Resource \end{Desc}
+
+
+Definiert in Zeile 14 der Datei database\_\-wrapper.php.
+
+Wird benutzt von User.\_\-insert(), SurveyType.\_\-insert(), User.\_\-update() und SurveyType.\_\-update().

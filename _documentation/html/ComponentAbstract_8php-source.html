@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: ComponentAbstract.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>ComponentAbstract.php</h1><a href="ComponentAbstract_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: ComponentAbstract.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey.UIComponents</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a><a class="code" href="classComponentAbstract.html">00007</a> <span class="keyword">class </span><a class="code" href="classComponentAbstract.html">ComponentAbstract</a>{
+<a name="l00013"></a><a class="code" href="classComponentAbstract.html#5fefdf56492529f0ead1db60f52f9be5">00013</a>    var <a class="code" href="classComponentAbstract.html#5fefdf56492529f0ead1db60f52f9be5">$_name</a>;
+<a name="l00019"></a><a class="code" href="classComponentAbstract.html#96f1c8ded538716ee1bb01cebd8096c2">00019</a>    var <a class="code" href="classComponentAbstract.html#96f1c8ded538716ee1bb01cebd8096c2">$_instanceName</a>;
+<a name="l00020"></a>00020 
+<a name="l00026"></a><a class="code" href="classComponentAbstract.html#330cf42ad02fe6ef9abda121098c5be7">00026</a>    var <a class="code" href="classComponentAbstract.html#330cf42ad02fe6ef9abda121098c5be7">$_instanceId</a>;
+<a name="l00027"></a>00027 
+<a name="l00033"></a><a class="code" href="classComponentAbstract.html#85cf4e9e9d662d707f937fe1c41294cb">00033</a>    var <a class="code" href="classComponentAbstract.html#85cf4e9e9d662d707f937fe1c41294cb">$_componentVarsArr</a>;
+<a name="l00034"></a>00034 
+<a name="l00040"></a><a class="code" href="classComponentAbstract.html#d2192ff8ab4b3524b92ab9fe4cce9525">00040</a>    var <a class="code" href="classComponentAbstract.html#d2192ff8ab4b3524b92ab9fe4cce9525">$_template</a>;
+<a name="l00041"></a>00041 
+<a name="l00047"></a><a class="code" href="classComponentAbstract.html#fe9d5e8084355b0b03540cffb33c2668">00047</a>    var <a class="code" href="classComponentAbstract.html#fe9d5e8084355b0b03540cffb33c2668">$_valuesArr</a>;
+<a name="l00048"></a>00048 
+<a name="l00055"></a><a class="code" href="classComponentAbstract.html#7594e382de0b5a9184fe8aa5de307fc0">00055</a>    var <a class="code" href="classComponentAbstract.html#7594e382de0b5a9184fe8aa5de307fc0">$_formValuesArr</a> = null;
+<a name="l00056"></a>00056 
+<a name="l00062"></a><a class="code" href="classComponentAbstract.html#dde2cc0b819bf64b336eb2f6f4e0b79c">00062</a>    var <a class="code" href="classComponentAbstract.html#dde2cc0b819bf64b336eb2f6f4e0b79c">$_errorValuesArr</a> = null;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 
+<a name="l00070"></a><a class="code" href="classComponentAbstract.html#98c8fb6309c207d60d3398df2b8470d9">00070</a>    var <a class="code" href="classComponentAbstract.html#98c8fb6309c207d60d3398df2b8470d9">$_smartyRef</a> = null;
+<a name="l00071"></a>00071 
+<a name="l00080"></a><a class="code" href="classComponentAbstract.html#ad4bd12fec470997357118135d8ea17d">00080</a>    function <a class="code" href="classComponentAbstract.html#ad4bd12fec470997357118135d8ea17d">ComponentAbstract</a>($instanceID,$instanceName, &amp;$smartyObj){<span class="comment">//$name, $instanceName){</span>
+<a name="l00081"></a>00081       $this-&gt;_instanceId = $instanceID;
+<a name="l00082"></a>00082       $this-&gt;_instanceName = $instanceName;
+<a name="l00083"></a>00083       $this-&gt;_name = get_class($this);
+<a name="l00084"></a>00084       $this-&gt;_smartyRef = $smartyObj;
+<a name="l00085"></a>00085    }
+<a name="l00086"></a>00086 
+<a name="l00092"></a><a class="code" href="classComponentAbstract.html#b22de345ea6ddc4473566830a4f3d11f">00092</a>    function <a class="code" href="classComponentAbstract.html#b22de345ea6ddc4473566830a4f3d11f">setClassName</a>($className){
+<a name="l00093"></a>00093       $this-&gt;_name = $className;
+<a name="l00094"></a>00094       $this-&gt;_template = str_replace('Component<span class="charliteral">','</span>Default.tpl',$className);<span class="comment">//set default template name</span>
+<a name="l00095"></a>00095    }
+<a name="l00096"></a>00096 
+<a name="l00102"></a><a class="code" href="classComponentAbstract.html#54022cd983b1da389d452dc5e5f958ba">00102</a>    function <a class="code" href="classComponentAbstract.html#54022cd983b1da389d452dc5e5f958ba">getComponentName</a>(){
+<a name="l00103"></a>00103       <span class="keywordflow">return</span> $this-&gt;_name;
+<a name="l00104"></a>00104    }
+<a name="l00105"></a>00105 
+<a name="l00111"></a><a class="code" href="classComponentAbstract.html#f398fba12f1cc63c039e5f656251da57">00111</a>    function <a class="code" href="classComponentAbstract.html#f398fba12f1cc63c039e5f656251da57">getComponentInstanceName</a>(){
+<a name="l00112"></a>00112       <span class="keywordflow">return</span> $this-&gt;_instanceName;
+<a name="l00113"></a>00113    }
+<a name="l00114"></a>00114 
+<a name="l00120"></a><a class="code" href="classComponentAbstract.html#e4e9d61703d858e0c5290d52fb57edd8">00120</a>    function <a class="code" href="classComponentAbstract.html#e4e9d61703d858e0c5290d52fb57edd8">getComponentID</a>(){
+<a name="l00121"></a>00121       <span class="keywordflow">return</span> $this-&gt;_instanceId;
+<a name="l00122"></a>00122    }
+<a name="l00123"></a>00123 
+<a name="l00129"></a>00129    function setVars(&amp;$params){
+<a name="l00130"></a>00130       $this-&gt;_componentVarsArr = $params;
+<a name="l00131"></a>00131    }
+<a name="l00132"></a>00132 
+<a name="l00138"></a>00138    function getVars(){
+<a name="l00139"></a>00139       <span class="keywordflow">return</span> $this-&gt;_componentVarsArr;
+<a name="l00140"></a>00140    }
+<a name="l00141"></a>00141 
+<a name="l00147"></a>00147    function getVar($key){
+<a name="l00148"></a>00148       <span class="keywordflow">return</span> $this-&gt;_componentVarsArr[$key];
+<a name="l00149"></a>00149    }
+<a name="l00150"></a>00150 
+<a name="l00157"></a>00157    function setValue($key,$value){
+<a name="l00158"></a>00158       $this-&gt;_valuesArr[$key] = $value;
+<a name="l00159"></a>00159    }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161 
+<a name="l00168"></a>00168    function setFormValue($key,$value){
+<a name="l00169"></a>00169       $this-&gt;_formValuesArr[$key] = $value;
+<a name="l00170"></a>00170    }
+<a name="l00171"></a>00171 
+<a name="l00178"></a>00178    function setErrorValue($key,$value){
+<a name="l00179"></a>00179       $this-&gt;_errorValuesArr[$key] = $value;
+<a name="l00180"></a>00180    }
+<a name="l00181"></a>00181 
+<a name="l00188"></a>00188    function getValue($key){
+<a name="l00189"></a>00189       <span class="keywordflow">return</span> $this-&gt;_valuesArr[$key];
+<a name="l00190"></a>00190    }
+<a name="l00191"></a>00191 
+<a name="l00198"></a>00198    function getFormValue($key){
+<a name="l00199"></a>00199       <span class="keywordflow">return</span> $this-&gt;_formValuesArr[$key];
+<a name="l00200"></a>00200    }
+<a name="l00201"></a>00201 
+<a name="l00207"></a>00207    function getFormValues(){
+<a name="l00208"></a>00208       <span class="keywordflow">return</span> $this-&gt;_formValuesArr;
+<a name="l00209"></a>00209    }
+<a name="l00216"></a>00216    function getErrorValue($key){
+<a name="l00217"></a>00217       <span class="keywordflow">return</span> $this-&gt;_errorValuesArr[$key];
+<a name="l00218"></a>00218    }
+<a name="l00219"></a>00219 
+<a name="l00225"></a>00225    function getErrorValues(){
+<a name="l00226"></a>00226       <span class="keywordflow">return</span> $this-&gt;_errorValuesArr;
+<a name="l00227"></a>00227    }
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229 
+<a name="l00234"></a>00234    function redender(){
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236    }
+<a name="l00237"></a>00237 
+<a name="l00243"></a>00243    function setSmartyRef(&amp;$smartyObj){
+<a name="l00244"></a>00244       $this-&gt;_smartyRef = &amp;$smartyObj;
+<a name="l00245"></a>00245    }
+<a name="l00251"></a>00251    function getOutput(){
+<a name="l00252"></a>00252       
+<a name="l00253"></a>00253       <span class="comment">//debug_obj($this);</span>
+<a name="l00254"></a>00254       
+<a name="l00255"></a>00255       <span class="keywordflow">if</span> (is_a($this-&gt;_smartyRef,'Smarty')){
+<a name="l00256"></a>00256          $templatePath = <a class="code" href="configuration_8php.html#a354c4c2689d1d4fa7fd1f4e940a6b2a">COMPONENTS_PATH</a>.<span class="charliteral">'/'</span>.$this-&gt;_name.'/templates/'.$this-&gt;_template;
+<a name="l00257"></a>00257          <span class="comment">//debug_obj($this,$templatePath);</span>
+<a name="l00258"></a>00258          <span class="keywordflow">if</span>(!$this-&gt;_smartyRef-&gt;template_exists($templatePath)){
+<a name="l00259"></a>00259             $this-&gt;_smartyRef-&gt;trigger_error(get_class($this).<span class="stringliteral">": failed to locate template file '"</span>.$templatePath.<span class="stringliteral">"'"</span>);
+<a name="l00260"></a>00260          }<span class="keywordflow">else</span>{
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262             $smartyObj = &amp;$this-&gt;_smartyRef;
+<a name="l00263"></a>00263             unset($this-&gt;_smartyRef);
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266             <span class="keywordflow">if</span> (is_a(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['componentManagerObj'],'<a class="code" href="classComponentManager.html">ComponentManager</a>')){
+<a name="l00267"></a>00267                <span class="comment">//$componentManagerObj = &amp;$_SESSION['componentManagerObj'];</span>
+<a name="l00268"></a>00268                <span class="comment">//$componentManagerObj = (object)$componentManagerObj;</span>
+<a name="l00269"></a>00269                <span class="comment">//$smartyObj-&gt;assign_by_ref('componentManager',$componentManagerObj);</span>
+<a name="l00270"></a>00270             }
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272             <span class="comment">//$smartyObj-&gt;assign_by_ref($this-&gt;_name,&amp;$this);</span>
+<a name="l00273"></a>00273             <span class="comment">//$smartyObj-&gt;assign_by_ref($this-&gt;_name.'["'.$this-&gt;_instanceId.'"]',&amp;$this);</span>
+<a name="l00274"></a>00274             $smartyObj-&gt;assign_by_ref($this-&gt;_instanceName,$this);
+<a name="l00275"></a>00275             $smartyObj-&gt;assign_by_ref('componentName',$this-&gt;_instanceName);
+<a name="l00276"></a>00276             $smartyObj-&gt;assign_by_ref('componentObj',$this);
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279 <span class="preprocessor">            #prevent override ot "this" smarty control reference</span>
+<a name="l00280"></a>00280 <span class="preprocessor"></span>            <span class="keywordflow">if</span> (isset($smartyObj-&gt;_tpl_vars['<span class="keyword">this</span>'])){
+<a name="l00281"></a>00281                <span class="comment">//trigger_error(get_class($this).': Smarty-&gt;_tpl_vars["this"] is already set by '.get_class($smartyObj-&gt;_tpl_vars['this']));</span>
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283                $parentThisObj = $smartyObj-&gt;_tpl_vars['<span class="keyword">this</span>'];<span class="comment">//save old $this value</span>
+<a name="l00284"></a>00284                $smartyObj-&gt;assign_by_ref('<span class="keyword">this</span>',$this);<span class="comment">//assign current $this value</span>
+<a name="l00285"></a>00285                $output = $smartyObj-&gt;fetch($templatePath);<span class="comment">//fetsch smarty template</span>
+<a name="l00286"></a>00286                $smartyObj-&gt;assign_by_ref('<span class="keyword">this</span>',$parentThisObj);<span class="comment">//return old $this reference</span>
+<a name="l00287"></a>00287             }<span class="keywordflow">else</span>{
+<a name="l00288"></a>00288                $smartyObj-&gt;assign_by_ref('<span class="keyword">this</span>',$this);
+<a name="l00289"></a>00289                $output = $smartyObj-&gt;fetch($templatePath);
+<a name="l00290"></a>00290             }
+<a name="l00291"></a>00291 
+<a name="l00292"></a>00292             <span class="keywordflow">return</span> $output;
+<a name="l00293"></a>00293          }
+<a name="l00294"></a>00294       }<span class="keywordflow">else</span>{
+<a name="l00295"></a>00295          trigger_error(get_class($this).': lost Smarty reference');
+<a name="l00296"></a>00296       }
+<a name="l00297"></a>00297    }
+<a name="l00298"></a>00298 }
+<a name="l00299"></a>00299 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

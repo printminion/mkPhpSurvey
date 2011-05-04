@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: configuration.db.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>configuration.db.php</h1><a href="configuration_8db_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id:$</span>
+<a name="l00004"></a>00004 <span class="comment"> */</span>
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="keywordflow">if</span>(<a class="code" href="configuration_8local_8php.html#413df8c87e7cdc18782b5af277b8e6d7">IS_ONLINE</a>){
+<a name="l00007"></a>00007    define('DB_PREFIX<span class="charliteral">','</span>mks_'); <span class="comment">// Do not change unless you need to!</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="configuration_8db_8php.html#c91a4a68860d6443b4af3115b80fe5c4">00009</a>    define('<a class="code" href="configuration_8db_8php.html#c91a4a68860d6443b4af3115b80fe5c4">DB_HOST</a><span class="charliteral">','</span>localhost'); <span class="comment">// This is normally set to localhost</span>
+<a name="l00010"></a><a class="code" href="configuration_8db_8php.html#559678de5d107264d3c60fd66099eec4">00010</a>    define('<a class="code" href="configuration_8db_8php.html#559678de5d107264d3c60fd66099eec4">DB_USER</a><span class="charliteral">','</span>dbo101283846'); <span class="comment">// MySQL username</span>
+<a name="l00011"></a><a class="code" href="configuration_8db_8php.html#7e717bf6e7045cd892772c56c69d9cb1">00011</a>    define('<a class="code" href="configuration_8db_8php.html#7e717bf6e7045cd892772c56c69d9cb1">DB_PASSWORD</a><span class="charliteral">','</span>6shKU6JH345rr'); <span class="comment">// MySQL password</span>
+<a name="l00012"></a><a class="code" href="configuration_8db_8php.html#6dbd8ae5a56f665135b8c16a9d7bdc29">00012</a>    define('<a class="code" href="configuration_8db_8php.html#6dbd8ae5a56f665135b8c16a9d7bdc29">DB_DBNAME</a><span class="charliteral">','</span>hse_iso'); <span class="comment">// MySQL database name</span>
+<a name="l00013"></a>00013    
+<a name="l00014"></a>00014    
+<a name="l00015"></a>00015    
+<a name="l00016"></a>00016 }<span class="keywordflow">else</span>{
+<a name="l00017"></a>00017    define('DB_PREFIX<span class="charliteral">','</span>mks_'); <span class="comment">// Do not change unless you need to!</span>
+<a name="l00018"></a>00018    
+<a name="l00019"></a>00019    define('<a class="code" href="configuration_8db_8php.html#c91a4a68860d6443b4af3115b80fe5c4">DB_HOST</a><span class="charliteral">','</span>localhost'); <span class="comment">// This is normally set to localhost</span>
+<a name="l00020"></a>00020    define('<a class="code" href="configuration_8db_8php.html#559678de5d107264d3c60fd66099eec4">DB_USER</a><span class="charliteral">','</span>root'); <span class="comment">// MySQL username</span>
+<a name="l00021"></a>00021    define('<a class="code" href="configuration_8db_8php.html#7e717bf6e7045cd892772c56c69d9cb1">DB_PASSWORD</a><span class="charliteral">','</span>'); <span class="comment">// MySQL password</span>
+<a name="l00022"></a>00022    define('<a class="code" href="configuration_8db_8php.html#6dbd8ae5a56f665135b8c16a9d7bdc29">DB_DBNAME</a><span class="charliteral">','</span>hse_iso'); <span class="comment">// MySQL database name</span>
+<a name="l00023"></a>00023 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025    $dbprefix = DB_PREFIX;       
+<a name="l00026"></a>00026    
+<a name="l00027"></a><a class="code" href="configuration_8db_8php.html#711797613cb863ca0756df789c396bf2">00027</a>    <a class="code" href="configuration_8db_8php.html#711797613cb863ca0756df789c396bf2">$host</a>     = <a class="code" href="configuration_8db_8php.html#c91a4a68860d6443b4af3115b80fe5c4">DB_HOST</a>; <span class="comment">// This is normally set to localhost</span>
+<a name="l00028"></a><a class="code" href="configuration_8db_8php.html#598ca4e71b15a1313ec95f0df1027ca5">00028</a>    <a class="code" href="configuration_8db_8php.html#598ca4e71b15a1313ec95f0df1027ca5">$user</a>     = <a class="code" href="configuration_8db_8php.html#559678de5d107264d3c60fd66099eec4">DB_USER</a>; <span class="comment">// MySQL username</span>
+<a name="l00029"></a><a class="code" href="configuration_8db_8php.html#607686ef9f99ea7c42f4f3dd3dbb2b0d">00029</a>    <a class="code" href="configuration_8db_8php.html#607686ef9f99ea7c42f4f3dd3dbb2b0d">$password</a> = <a class="code" href="configuration_8db_8php.html#7e717bf6e7045cd892772c56c69d9cb1">DB_PASSWORD</a>; <span class="comment">// MySQL password</span>
+<a name="l00030"></a><a class="code" href="configuration_8db_8php.html#1fa3127fc82f96b1436d871ef02be319">00030</a>    <a class="code" href="configuration_8db_8php.html#1fa3127fc82f96b1436d871ef02be319">$db</a>       = <a class="code" href="configuration_8db_8php.html#6dbd8ae5a56f665135b8c16a9d7bdc29">DB_DBNAME</a>; <span class="comment">// MySQL database name</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

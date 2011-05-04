@@ -1,0 +1,260 @@
+\section{ComposeMail Klassenreferenz}
+\label{classComposeMail}\index{ComposeMail@{ComposeMail}}
+\subsection*{Öffentliche Methoden}
+\begin{CompactItemize}
+\item 
+{\bf ComposeMail} (\$to, \$subject)
+\item 
+{\bf SH\_\-ReturnPath} (\$rp)
+\item 
+{\bf SH\_\-EnvelopeTo} (\$et)
+\item 
+{\bf SH\_\-ContentType} (\$ct)
+\item 
+{\bf SH\_\-FromName} (\$fromName)
+\item 
+{\bf SH\_\-FromAddr} (\$fromAddr)
+\item 
+{\bf addAttachFromFile} (\$fullname, \$ftype, \$fdispos=\char`\"{}\char`\"{}, \$fdescrip=\char`\"{}\char`\"{}, \$fid=\char`\"{}\char`\"{}, \$alt\_\-fname=\char`\"{}\char`\"{})
+\item 
+{\bf addAttachFromData} (\$data, \$dname, \$dtype, \$ddispos)
+\item 
+{\bf addHtmlBodyPart} (\$html)
+\item 
+{\bf addTextPlainBodyPart} (\$text)
+\item 
+{\bf BuildAndSendMessage} ()
+\item 
+{\bf prepareSubject} (\$subjectToPrepare)
+\end{CompactItemize}
+\subsection*{Öffentliche Attribute}
+\begin{CompactItemize}
+\item 
+{\bf \$to}
+\item 
+{\bf \$from\_\-name}
+\item 
+{\bf \$from\_\-addr}
+\item 
+{\bf \$subject}
+\item 
+{\bf \$bodyParts} = array(\char`\"{}text/plain\char`\"{}=$>$\char`\"{}\char`\"{},\char`\"{}text/html\char`\"{}=$>$\char`\"{}\char`\"{})
+\item 
+{\bf \$parts} = array()
+\item 
+{\bf \$headers}
+\item 
+{\bf \$emailEncoding}
+\item 
+{\bf \$\_\-emailDefaultEncoding} = \char`\"{}Windows-1251\char`\"{}
+\item 
+{\bf \$emailMimeType}
+\item 
+{\bf \$\_\-defaultEmailMimeType} = \char`\"{}text/plain\char`\"{}
+\end{CompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 36 der Datei class.ComposeMail.php.
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{ComposeMail@{ComposeMail}!ComposeMail@{ComposeMail}}
+\index{ComposeMail@{ComposeMail}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.ComposeMail (\$ {\em to}, \$ {\em subject})}\label{classComposeMail_51e733dd915dbae78707383602d15752}
+
+
+
+
+Definiert in Zeile 66 der Datei class.ComposeMail.php.
+
+Benutzt \$from\_\-addr, \$from\_\-name, \$subject und \$to.\index{ComposeMail@{ComposeMail}!SH\_\-ReturnPath@{SH\_\-ReturnPath}}
+\index{SH\_\-ReturnPath@{SH\_\-ReturnPath}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.SH\_\-ReturnPath (\$ {\em rp})}\label{classComposeMail_410825e8d6bde557b44798c63651e708}
+
+
+
+
+Definiert in Zeile 81 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!SH\_\-EnvelopeTo@{SH\_\-EnvelopeTo}}
+\index{SH\_\-EnvelopeTo@{SH\_\-EnvelopeTo}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.SH\_\-EnvelopeTo (\$ {\em et})}\label{classComposeMail_510678b8b799e34196326c09b72c95ad}
+
+
+
+
+Definiert in Zeile 88 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!SH\_\-ContentType@{SH\_\-ContentType}}
+\index{SH\_\-ContentType@{SH\_\-ContentType}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.SH\_\-ContentType (\$ {\em ct})}\label{classComposeMail_3d114a6e06a063b270014f1819c32a1e}
+
+
+
+
+Definiert in Zeile 95 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!SH\_\-FromName@{SH\_\-FromName}}
+\index{SH\_\-FromName@{SH\_\-FromName}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.SH\_\-FromName (\$ {\em fromName})}\label{classComposeMail_69832f1eed752913ff3613be56af1bd8}
+
+
+
+
+Definiert in Zeile 102 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!SH\_\-FromAddr@{SH\_\-FromAddr}}
+\index{SH\_\-FromAddr@{SH\_\-FromAddr}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.SH\_\-FromAddr (\$ {\em fromAddr})}\label{classComposeMail_2a1a8c97d0d149e7735d3acc13829bdd}
+
+
+
+
+Definiert in Zeile 109 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!addAttachFromFile@{addAttachFromFile}}
+\index{addAttachFromFile@{addAttachFromFile}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.addAttachFromFile (\$ {\em fullname}, \$ {\em ftype}, \$ {\em fdispos} = {\tt \char`\"{}\char`\"{}}, \$ {\em fdescrip} = {\tt \char`\"{}\char`\"{}}, \$ {\em fid} = {\tt \char`\"{}\char`\"{}}, \$ {\em alt\_\-fname} = {\tt \char`\"{}\char`\"{}})}\label{classComposeMail_9ad3d648129e039b220295baab64a5bc}
+
+
+
+
+Definiert in Zeile 119 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!addAttachFromData@{addAttachFromData}}
+\index{addAttachFromData@{addAttachFromData}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.addAttachFromData (\$ {\em data}, \$ {\em dname}, \$ {\em dtype}, \$ {\em ddispos})}\label{classComposeMail_6080d36d8a5146f9568cfcb650de05fb}
+
+
+
+
+Definiert in Zeile 145 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!addHtmlBodyPart@{addHtmlBodyPart}}
+\index{addHtmlBodyPart@{addHtmlBodyPart}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.addHtmlBodyPart (\$ {\em html})}\label{classComposeMail_2edba24fcfda40a085c85d8a4f2fa3e9}
+
+
+
+
+Definiert in Zeile 161 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!addTextPlainBodyPart@{addTextPlainBodyPart}}
+\index{addTextPlainBodyPart@{addTextPlainBodyPart}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.addTextPlainBodyPart (\$ {\em text})}\label{classComposeMail_b3cf8d50e9d226367d46b537964583ea}
+
+
+
+
+Definiert in Zeile 169 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!BuildAndSendMessage@{BuildAndSendMessage}}
+\index{BuildAndSendMessage@{BuildAndSendMessage}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.BuildAndSendMessage ()}\label{classComposeMail_2b975db2e14a75fb8edd8d5bcfa1b39d}
+
+
+
+
+Definiert in Zeile 176 der Datei class.ComposeMail.php.
+
+Benutzt prepareSubject().\index{ComposeMail@{ComposeMail}!prepareSubject@{prepareSubject}}
+\index{prepareSubject@{prepareSubject}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.prepareSubject (\$ {\em subjectToPrepare})}\label{classComposeMail_354f895e00f1a95fb7083023acd64190}
+
+
+
+
+Definiert in Zeile 224 der Datei class.ComposeMail.php.
+
+Wird benutzt von BuildAndSendMessage().
+
+\subsection{Dokumentation der Datenelemente}
+\index{ComposeMail@{ComposeMail}!\$to@{\$to}}
+\index{\$to@{\$to}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$to}\label{classComposeMail_7551b7eab0dd3f5820e4f24aa6123edc}
+
+
+
+
+Definiert in Zeile 38 der Datei class.ComposeMail.php.
+
+Wird benutzt von ComposeMail().\index{ComposeMail@{ComposeMail}!\$from\_\-name@{\$from\_\-name}}
+\index{\$from\_\-name@{\$from\_\-name}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$from\_\-name}\label{classComposeMail_9e66b0a0290df16c9b1cbf6645583f14}
+
+
+
+
+Definiert in Zeile 39 der Datei class.ComposeMail.php.
+
+Wird benutzt von ComposeMail().\index{ComposeMail@{ComposeMail}!\$from\_\-addr@{\$from\_\-addr}}
+\index{\$from\_\-addr@{\$from\_\-addr}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$from\_\-addr}\label{classComposeMail_86a1f76a427c21aac77a1b574203ed5d}
+
+
+
+
+Definiert in Zeile 40 der Datei class.ComposeMail.php.
+
+Wird benutzt von ComposeMail().\index{ComposeMail@{ComposeMail}!\$subject@{\$subject}}
+\index{\$subject@{\$subject}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$subject}\label{classComposeMail_dbb16e592ca26487e091b62869c36b9d}
+
+
+
+
+Definiert in Zeile 41 der Datei class.ComposeMail.php.
+
+Wird benutzt von ComposeMail().\index{ComposeMail@{ComposeMail}!\$bodyParts@{\$bodyParts}}
+\index{\$bodyParts@{\$bodyParts}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$bodyParts = array(\char`\"{}text/plain\char`\"{}=$>$\char`\"{}\char`\"{},\char`\"{}text/html\char`\"{}=$>$\char`\"{}\char`\"{})}\label{classComposeMail_189b7309556a8ecad05cef268ae277f5}
+
+
+
+
+Definiert in Zeile 42 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$parts@{\$parts}}
+\index{\$parts@{\$parts}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$parts = array()}\label{classComposeMail_74a7866a544d748e7466267778c62aec}
+
+
+
+
+Definiert in Zeile 43 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$headers@{\$headers}}
+\index{\$headers@{\$headers}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$headers}\label{classComposeMail_bc0db02027e3cd1577e863b8a2aaf4f1}
+
+
+\textbf{Initialisierung:}
+
+\begin{Code}\begin{verbatim}array(
+                "Return-path:"=>"",
+                "Envelope-to:"=>"",
+                "From:"=>"",
+                "MIME-Version:"=>"1.0",
+                "Content-Type:"=>"multipart/mixed;\n\tboundary=\"----=_NextPart_000_0001_00000001.00000001\"",
+                "X-priority:"=>"3",
+                "X-MSMail-Priority:"=>"Normal",
+                "X-Mailer:"=>"clsImap Mail Handler 2.0" /*,
+   "Content-Type:" => 'text/plain; charset="Windows-1251"'*/
+   )
+\end{verbatim}
+\end{Code}
+
+
+Definiert in Zeile 44 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$emailEncoding@{\$emailEncoding}}
+\index{\$emailEncoding@{\$emailEncoding}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$emailEncoding}\label{classComposeMail_662fada1d461238687c56cd64baa7087}
+
+
+
+
+Definiert in Zeile 56 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$\_\-emailDefaultEncoding@{\$\_\-emailDefaultEncoding}}
+\index{\$\_\-emailDefaultEncoding@{\$\_\-emailDefaultEncoding}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$\_\-emailDefaultEncoding = \char`\"{}Windows-1251\char`\"{}}\label{classComposeMail_c6ba4b1d5749585e8b8d9dad92eb75a0}
+
+
+
+
+Definiert in Zeile 57 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$emailMimeType@{\$emailMimeType}}
+\index{\$emailMimeType@{\$emailMimeType}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$emailMimeType}\label{classComposeMail_154077bcd48eb6499cbdd2e35b027488}
+
+
+
+
+Definiert in Zeile 59 der Datei class.ComposeMail.php.\index{ComposeMail@{ComposeMail}!\$\_\-defaultEmailMimeType@{\$\_\-defaultEmailMimeType}}
+\index{\$\_\-defaultEmailMimeType@{\$\_\-defaultEmailMimeType}!ComposeMail@{ComposeMail}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ComposeMail.\$\_\-defaultEmailMimeType = \char`\"{}text/plain\char`\"{}}\label{classComposeMail_cf760abbc8ab73e04df9d3f7ae0abcb7}
+
+
+
+
+Definiert in Zeile 60 der Datei class.ComposeMail.php.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:\begin{CompactItemize}
+\item 
+{\bf class.ComposeMail.php}\end{CompactItemize}

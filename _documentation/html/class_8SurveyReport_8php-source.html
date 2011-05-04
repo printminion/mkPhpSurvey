@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.SurveyReport.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.SurveyReport.php</h1><a href="class_8SurveyReport_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?
+<a name="l00007"></a>00007 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyReportAbstract.php');
+<a name="l00008"></a>00008 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.Survey.php');
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="classSurveyReport.html">00010</a> <span class="keyword">class </span><a class="code" href="classSurveyReport.html">SurveyReport</a> <span class="keyword">extends</span> <a class="code" href="classSurveyReportAbstract.html">SurveyReportAbstract</a>{
+<a name="l00011"></a><a class="code" href="classSurveyReport.html#8afa69a6b9d08fe6b916dd68269900c9">00011</a>    var <a class="code" href="classSurveyReport.html#8afa69a6b9d08fe6b916dd68269900c9">$surveyTypeId</a>;
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="classSurveyReport.html#2fac5bc3ac1d78ee6e4d9f7be7bc5562">00013</a>    function <a class="code" href="classSurveyReport.html#2fac5bc3ac1d78ee6e4d9f7be7bc5562">SurveyReport</a>($surveyID = null){
+<a name="l00014"></a>00014       global $database;
+<a name="l00015"></a>00015       <span class="comment">//      debug_sql("SurveyReport($surveyID = null)");</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017       <span class="keywordflow">if</span> ($surveyID == ''){
+<a name="l00018"></a>00018          $this-&gt;_lastError = ERROR_REQUIRED_PARAMETER_SURVEYID_IS_NULL;
+<a name="l00019"></a>00019          <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00020"></a>00020       }
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022       <span class="comment">//      //TODO load data</span>
+<a name="l00023"></a>00023       <span class="comment">//                $sqlQuery = "SELECT *</span>
+<a name="l00024"></a>00024       <span class="comment">//                                           FROM `".DB_PREFIX."survey_survivors`</span>
+<a name="l00025"></a>00025       <span class="comment">//                                          WHERE `tid` LIKE '$surveyID'";</span>
+<a name="l00026"></a>00026       <span class="comment">//</span>
+<a name="l00027"></a>00027       <span class="comment">//         #$sqlQueryResult = tep_db_reader_query($sqlQuery);</span>
+<a name="l00028"></a>00028       <span class="comment">//      $sqlQueryResult = $database-&gt;openConnectionWithReturn($sqlQuery);</span>
+<a name="l00029"></a>00029       <span class="comment">//</span>
+<a name="l00030"></a>00030       <span class="comment">//      #if($result = tep_db_fetch_array($sqlQueryResult)){</span>
+<a name="l00031"></a>00031       <span class="comment">//      if($result = mysql_fetch_array($sqlQueryResult)){</span>
+<a name="l00032"></a>00032       <span class="comment">//         $this-&gt;survivorId    = $result['survivor_id'];</span>
+<a name="l00033"></a>00033       <span class="comment">//         $this-&gt;surveyId      = $result['survey_id'];</span>
+<a name="l00034"></a>00034       <span class="comment">//         $this-&gt;survivorEmail = $result['survivor_email'];</span>
+<a name="l00035"></a>00035       <span class="comment">//         $this-&gt;emailSent     = $result['email_sent'];</span>
+<a name="l00036"></a>00036       <span class="comment">//         $this-&gt;tid           = $result['tid'];</span>
+<a name="l00037"></a>00037       <span class="comment">//</span>
+<a name="l00039"></a>00039 <span class="comment"></span>      <span class="comment">//      }</span>
+<a name="l00040"></a>00040        
+<a name="l00041"></a>00041       $this-&gt;surveyId = $surveyID;
+<a name="l00042"></a>00042       <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a> = <span class="keyword">new</span> <a class="code" href="classSurvey.html">Survey</a>($this-&gt;surveyId);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046       $this-&gt;_TABLE_SDATA = DB_PREFIX.'sdata_'.$surveyObj-&gt;getSurveyTypeId();
+<a name="l00047"></a>00047       $this-&gt;surveyTypeId = <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a>-&gt;getSurveyTypeId();
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049       <span class="comment">//      $this-&gt;_loadDataByTid($this-&gt;tid);</span>
+<a name="l00050"></a>00050 <span class="preprocessor">      #$this-&gt;_loadDataById($this-&gt;survivorId);</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>      $this-&gt;<a class="code" href="classSurveyReportAbstract.html#6e6640697be1afef855169573f3f8f58">_loadDataBySurveyId</a>($this-&gt;surveyId);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053       <span class="comment">//      debug_obj($surveyObj,'$surveyObj');</span>
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055       define('TABLE_SDATA',$this-&gt;_TABLE_SDATA);
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057    }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="classSurveyReport.html#e607b33b228b1b449c7cf42e8415e313">00059</a>    function <a class="code" href="classSurveyReport.html#e607b33b228b1b449c7cf42e8415e313">getSurveyTypeId</a>(){
+<a name="l00060"></a>00060       <span class="keywordflow">return</span> $this-&gt;surveyTypeId;
+<a name="l00061"></a>00061    }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

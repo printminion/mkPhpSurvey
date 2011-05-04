@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: SessionCookie.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>SessionCookie.php</h1><a href="SessionCookie_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00010"></a><a class="code" href="SessionCookie_8php.html#a0ad92c842535d85be5cad3fe1d7f840">00010</a> <a class="code" href="SessionCookie_8php.html#a0ad92c842535d85be5cad3fe1d7f840">$past</a> = time()-1800;
+<a name="l00011"></a>00011 <span class="comment">//debug_sql($dbprefix);</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">00013</a> <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>=<span class="stringliteral">"DELETE FROM "</span>.$dbprefix.<span class="stringliteral">"session</span>
+<a name="l00014"></a>00014 <span class="stringliteral">                          WHERE (time &lt; $past)"</span>;
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 $database-&gt;openConnectionNoReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00017"></a><a class="code" href="SessionCookie_8php.html#63faaf6695dbb6b199cd3fc5a5de124f">00017</a> <a class="code" href="SessionCookie_8php.html#63faaf6695dbb6b199cd3fc5a5de124f">$current_time</a> = time();
+<a name="l00018"></a>00018 <span class="comment">//if ($HTTP_COOKIE_VARS["sessioncookie"]==""){</span>
+<a name="l00019"></a>00019 <span class="keywordflow">if</span> (<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>[<span class="stringliteral">"sessioncookie"</span>]==<span class="stringliteral">""</span>){
+<a name="l00020"></a>00020    <span class="keywordflow">while</span> (<span class="keyword">true</span>){
+<a name="l00021"></a>00021       $randnum=getSessionID1();
+<a name="l00022"></a>00022       <span class="keywordflow">if</span> ($randnum!=<span class="stringliteral">""</span>){
+<a name="l00023"></a>00023          $cryptrandnum=md5($randnum);
+<a name="l00024"></a>00024          <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"SELECT session_id</span>
+<a name="l00025"></a>00025 <span class="stringliteral">                                                FROM "</span>.$dbprefix.<span class="stringliteral">"session </span>
+<a name="l00026"></a>00026 <span class="stringliteral">                                           WHERE session_id='$cryptrandnum'"</span>;
+<a name="l00027"></a><a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">00027</a>          <a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>=$database-&gt;openConnectionWithReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00028"></a>00028          <span class="keywordflow">if</span> (mysql_num_rows(<a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>)==0){
+<a name="l00029"></a>00029             <span class="keywordflow">break</span>;
+<a name="l00030"></a>00030          }
+<a name="l00031"></a>00031       }
+<a name="l00032"></a>00032    }
+<a name="l00033"></a>00033    $lifetime = (time() + 43200);
+<a name="l00034"></a>00034    <span class="comment">//   setcookie("sessioncookie", "$randnum");</span>
+<a name="l00035"></a>00035    <span class="comment">//setcookie("sessioncookie", "$randnum",0,LIVE_SITE_COOKIE_PATH,LIVE_SITE_COOKIE);</span>
+<a name="l00036"></a><a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">00036</a>    <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['sessioncookie'] = $randnum;
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="SessionCookie_8php.html#d66623e413b7ca6fec85bd439ed77268">00038</a>    <a class="code" href="SessionCookie_8php.html#d66623e413b7ca6fec85bd439ed77268">$guest</a>=1;
+<a name="l00039"></a>00039    <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"INSERT into "</span>.$dbprefix.<span class="stringliteral">"session</span>
+<a name="l00040"></a>00040 <span class="stringliteral">                                 SET username = '', </span>
+<a name="l00041"></a>00041 <span class="stringliteral">                                     time = $current_time, </span>
+<a name="l00042"></a>00042 <span class="stringliteral">                                         session_id = '$cryptrandnum', </span>
+<a name="l00043"></a>00043 <span class="stringliteral">                                         guest = $guest"</span>;
+<a name="l00044"></a>00044    $database-&gt;openConnectionNoReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00045"></a>00045 } <span class="keywordflow">else</span> {
+<a name="l00046"></a>00046    <span class="comment">//$cryptSessionCookie=md5($HTTP_COOKIE_VARS["sessioncookie"]);</span>
+<a name="l00047"></a>00047    $cryptSessionCookie=md5(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>[<span class="stringliteral">"sessioncookie"</span>]);
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049    <span class="keywordflow">if</span> ($option==<span class="stringliteral">"logout"</span>){
+<a name="l00050"></a>00050       <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"UPDATE "</span>.$dbprefix.<span class="stringliteral">"session</span>
+<a name="l00051"></a>00051 <span class="stringliteral">                                     SET guest=1, </span>
+<a name="l00052"></a>00052 <span class="stringliteral">                                                 username='', </span>
+<a name="l00053"></a>00053 <span class="stringliteral">                                                 userid='', </span>
+<a name="l00054"></a>00054 <span class="stringliteral">                                                 usertype='', </span>
+<a name="l00055"></a>00055 <span class="stringliteral">                                                 gid='' </span>
+<a name="l00056"></a>00056 <span class="stringliteral">                                   where session_id = '$cryptSessionCookie'"</span>;
+<a name="l00057"></a>00057       $database-&gt;openConnectionNoReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00058"></a>00058    } <span class="keywordflow">else</span> {
+<a name="l00059"></a>00059       <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"SELECT username</span>
+<a name="l00060"></a>00060 <span class="stringliteral">                                    FROM "</span>.$dbprefix.<span class="stringliteral">"session </span>
+<a name="l00061"></a>00061 <span class="stringliteral">                                   WHERE session_id='$cryptSessionCookie'"</span>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063       <a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>=$database-&gt;openConnectionWithReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00064"></a>00064       <span class="keywordflow">if</span> (mysql_num_rows(<a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>)&gt; 0){
+<a name="l00065"></a>00065          list ($username)=mysql_fetch_array(<a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>);
+<a name="l00066"></a>00066          <span class="keywordflow">if</span> ($username != ''){
+<a name="l00067"></a>00067             <span class="comment">//$sessionID=$HTTP_COOKIE_VARS["sessioncookie"];</span>
+<a name="l00068"></a>00068             $sessionID = <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>[<span class="stringliteral">"sessioncookie"</span>];
+<a name="l00069"></a>00069             <span class="comment">//                          setcookie("usercookie", "$sessionID");</span>
+<a name="l00070"></a>00070             <span class="comment">//                          setcookie("usercookie", "$sessionID",0,LIVE_SITE_COOKIE_PATH,LIVE_SITE_COOKIE);</span>
+<a name="l00071"></a>00071             <span class="comment">//                          $HTTP_COOKIE_VARS["usercookie"]=$sessionID;</span>
+<a name="l00072"></a>00072             <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>[<span class="stringliteral">"usercookie"</span>] = $sessionID;
+<a name="l00073"></a>00073          }
+<a name="l00074"></a>00074          <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"UPDATE "</span>.$dbprefix.<span class="stringliteral">"session</span>
+<a name="l00075"></a>00075 <span class="stringliteral">                                             SET username='$username', </span>
+<a name="l00076"></a>00076 <span class="stringliteral">                                                         time=$current_time </span>
+<a name="l00077"></a>00077 <span class="stringliteral">                                           WHERE session_id='$cryptSessionCookie'"</span>;
+<a name="l00078"></a>00078          $database-&gt;openConnectionNoReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00079"></a>00079       } <span class="keywordflow">else</span> {
+<a name="l00080"></a>00080          $option==<span class="stringliteral">""</span>;
+<a name="l00081"></a>00081          <span class="keywordflow">while</span> (<span class="keyword">true</span>){
+<a name="l00082"></a>00082             $randnum=getSessionID1();
+<a name="l00083"></a>00083             <span class="keywordflow">if</span> ($randnum!=<span class="stringliteral">""</span>){
+<a name="l00084"></a>00084                $cryptrandnum=md5($randnum);
+<a name="l00085"></a>00085                <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a> = <span class="stringliteral">"SELECT session_id</span>
+<a name="l00086"></a>00086 <span class="stringliteral">                                                                FROM "</span>.$dbprefix.<span class="stringliteral">"session </span>
+<a name="l00087"></a>00087 <span class="stringliteral">                                                           WHERE session_id='$cryptrandnum'"</span>;
+<a name="l00088"></a>00088                <a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>=$database-&gt;openConnectionWithReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00089"></a>00089                <span class="keywordflow">if</span> (mysql_num_rows(<a class="code" href="SessionCookie_8php.html#112ef069ddc0454086e3d1e6d8d55d07">$result</a>)==0){
+<a name="l00090"></a>00090                   <span class="keywordflow">break</span>;
+<a name="l00091"></a>00091                }
+<a name="l00092"></a>00092             }
+<a name="l00093"></a>00093          }
+<a name="l00094"></a>00094          $lifetime = (time() + 43200);
+<a name="l00095"></a>00095          <span class="comment">//                     setcookie("sessioncookie", "$randnum");</span>
+<a name="l00096"></a>00096          <span class="comment">//                     setcookie("sessioncookie", "$randnum",0,LIVE_SITE_COOKIE_PATH,LIVE_SITE_COOKIE);</span>
+<a name="l00097"></a>00097          <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['sessioncookie'] = $randnum;
+<a name="l00098"></a>00098          <a class="code" href="SessionCookie_8php.html#d66623e413b7ca6fec85bd439ed77268">$guest</a>=1;
+<a name="l00099"></a>00099          <a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>=<span class="stringliteral">"INSERT into "</span>.$dbprefix.<span class="stringliteral">"session</span>
+<a name="l00100"></a>00100 <span class="stringliteral">                                           SET username = '', </span>
+<a name="l00101"></a>00101 <span class="stringliteral">                                                   time = $current_time, </span>
+<a name="l00102"></a>00102 <span class="stringliteral">                                                   session_id = '$cryptrandnum', </span>
+<a name="l00103"></a>00103 <span class="stringliteral">                                                   guest = $guest"</span>;
+<a name="l00104"></a>00104          $database-&gt;openConnectionNoReturn(<a class="code" href="SessionCookie_8php.html#f59a5f7cd609e592c41dc3643efd3c98">$query</a>);
+<a name="l00105"></a>00105       }
+<a name="l00106"></a>00106    }
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 function getSessionID1(){
+<a name="l00110"></a>00110    mt_srand ((<span class="keywordtype">double</span>) microtime() * 1000000);
+<a name="l00111"></a>00111    $pass_len = mt_rand (20,40);
+<a name="l00112"></a>00112    $allchar = <span class="stringliteral">"abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ0123456789"</span>;
+<a name="l00113"></a>00113    $str = <span class="stringliteral">""</span> ;
+<a name="l00114"></a>00114    <span class="keywordflow">for</span> ( $i = 0; $i&lt;$pass_len ; $i++ ){
+<a name="l00115"></a>00115       $str .= substr( $allchar, mt_rand (0,62), 1 ) ;
+<a name="l00116"></a>00116    }
+<a name="l00117"></a>00117    $timestamp= time();
+<a name="l00118"></a>00118    $str=$str.$timestamp;
+<a name="l00119"></a>00119    <span class="keywordflow">return</span>($str);
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

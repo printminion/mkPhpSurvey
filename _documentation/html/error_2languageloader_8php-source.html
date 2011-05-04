@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: languageloader.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>languageloader.php</h1><a href="error_2languageloader_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * </span>
+<a name="l00004"></a>00004 <span class="comment"> * @version $Id:$</span>
+<a name="l00005"></a>00005 <span class="comment"> * </span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a><a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">00007</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#f1cc74f473d564c94c3922a30cf87874">CAPTION_SURVEY_NAME</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#f1cc74f473d564c94c3922a30cf87874">CAPTION_SURVEY_NAME</a>;
+<a name="l00008"></a><a class="code" href="error_2languageloader_8php.html#b000e9b366a7b8f555201e3b8ec2fbf8">00008</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#03d097770cb6cbf0f99b8a555227abc8">CAPTION_SURVEY_SECTION_NAME</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#03d097770cb6cbf0f99b8a555227abc8">CAPTION_SURVEY_SECTION_NAME</a>;
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#######################################</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="comment">//$SURVEY_STRINGS['QUESTION_txt_1_'] = QUESTION_txt_1_;</span>
+<a name="l00012"></a>00012 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_1_'] = CAPTION_txt_1_;</span>
+<a name="l00013"></a>00013 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_1__END'] = CAPTION_txt_1__END;</span>
+<a name="l00014"></a>00014 <span class="comment">//$SURVEY_STRINGS['QUESTION_txt_2_'] = QUESTION_txt_2_;</span>
+<a name="l00015"></a>00015 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_2_'] = CAPTION_txt_2_;</span>
+<a name="l00016"></a>00016 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_2__END'] = CAPTION_txt_2__END;</span>
+<a name="l00017"></a>00017 <span class="comment">//$SURVEY_STRINGS['QUESTION_txt_3_'] = QUESTION_txt_3_;</span>
+<a name="l00018"></a>00018 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_3_'] = CAPTION_txt_3_;</span>
+<a name="l00019"></a>00019 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_3__END'] = CAPTION_txt_3__END;</span>
+<a name="l00020"></a>00020 <span class="comment">//$SURVEY_STRINGS['QUESTION_txt_4_'] = QUESTION_txt_4_;</span>
+<a name="l00021"></a>00021 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_4_'] = CAPTION_txt_4_;</span>
+<a name="l00022"></a>00022 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_4__END'] = CAPTION_txt_4__END;</span>
+<a name="l00023"></a>00023 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_5_'] = QUESTION_txd_5_;</span>
+<a name="l00024"></a>00024 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_5_'] = CAPTION_txd_5_;</span>
+<a name="l00025"></a>00025 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_5__END'] = CAPTION_txd_5__END;</span>
+<a name="l00026"></a>00026 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_6_'] = QUESTION_txd_6_;</span>
+<a name="l00027"></a>00027 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_6_'] = CAPTION_txd_6_;</span>
+<a name="l00028"></a>00028 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_6__END'] = CAPTION_txd_6__END;</span>
+<a name="l00029"></a>00029 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_7_'] = QUESTION_rd7_7_;</span>
+<a name="l00030"></a>00030 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_7_BEGIN'] = CAPTION_rd7_7_BEGIN;</span>
+<a name="l00031"></a>00031 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_7_END'] = CAPTION_rd7_7_END;</span>
+<a name="l00032"></a>00032 <span class="comment">//#######################################</span>
+<a name="l00033"></a>00033 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_8_'] = QUESTION_rd7_8_;</span>
+<a name="l00034"></a>00034 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_8_BEGIN'] = CAPTION_rd7_8_BEGIN;</span>
+<a name="l00035"></a>00035 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_8_END'] = CAPTION_rd7_8_END;</span>
+<a name="l00036"></a>00036 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_9_'] = QUESTION_rd7_9_;</span>
+<a name="l00037"></a>00037 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_9_BEGIN'] = CAPTION_rd7_9_BEGIN;</span>
+<a name="l00038"></a>00038 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_9_END'] = CAPTION_rd7_9_END;</span>
+<a name="l00039"></a>00039 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_10_'] = QUESTION_rd7_10_;</span>
+<a name="l00040"></a>00040 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_10_BEGIN'] = CAPTION_rd7_10_BEGIN;</span>
+<a name="l00041"></a>00041 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_10_END'] = CAPTION_rd7_10_END;</span>
+<a name="l00042"></a>00042 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_11_'] = QUESTION_rd7_11_;</span>
+<a name="l00043"></a>00043 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_11_BEGIN'] = CAPTION_rd7_11_BEGIN;</span>
+<a name="l00044"></a>00044 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_11_END'] = CAPTION_rd7_11_END;</span>
+<a name="l00045"></a>00045 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_12_'] = QUESTION_rd7_12_;</span>
+<a name="l00046"></a>00046 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_12_BEGIN'] = CAPTION_rd7_12_BEGIN;</span>
+<a name="l00047"></a>00047 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_12_END'] = CAPTION_rd7_12_END;</span>
+<a name="l00048"></a>00048 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_13_'] = QUESTION_rd7_13_;</span>
+<a name="l00049"></a>00049 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_13_BEGIN'] = CAPTION_rd7_13_BEGIN;</span>
+<a name="l00050"></a>00050 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_13_END'] = CAPTION_rd7_13_END;</span>
+<a name="l00051"></a>00051 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_14_'] = QUESTION_txa_14_;</span>
+<a name="l00052"></a>00052 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_14_'] = CAPTION_txa_14_;</span>
+<a name="l00053"></a>00053 <span class="comment">//#######################################</span>
+<a name="l00054"></a>00054 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_15_'] = QUESTION_rd7_15_;</span>
+<a name="l00055"></a>00055 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_15_BEGIN'] = CAPTION_rd7_15_BEGIN;</span>
+<a name="l00056"></a>00056 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_15_END'] = CAPTION_rd7_15_END;</span>
+<a name="l00057"></a>00057 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_16_'] = QUESTION_rd7_16_;</span>
+<a name="l00058"></a>00058 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_16_BEGIN'] = CAPTION_rd7_16_BEGIN;</span>
+<a name="l00059"></a>00059 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_16_END'] = CAPTION_rd7_16_END;</span>
+<a name="l00060"></a>00060 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_17_'] = QUESTION_rd7_17_;</span>
+<a name="l00061"></a>00061 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_17_BEGIN'] = CAPTION_rd7_17_BEGIN;</span>
+<a name="l00062"></a>00062 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_17_END'] = CAPTION_rd7_17_END;</span>
+<a name="l00063"></a>00063 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_18_'] = QUESTION_rd7_18_;</span>
+<a name="l00064"></a>00064 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_18_BEGIN'] = CAPTION_rd7_18_BEGIN;</span>
+<a name="l00065"></a>00065 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_18_END'] = CAPTION_rd7_18_END;</span>
+<a name="l00066"></a>00066 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_19_'] = QUESTION_rd7_19_;</span>
+<a name="l00067"></a>00067 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_19_BEGIN'] = CAPTION_rd7_19_BEGIN;</span>
+<a name="l00068"></a>00068 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_19_END'] = CAPTION_rd7_19_END;</span>
+<a name="l00069"></a>00069 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_20_'] = QUESTION_rd7_20_;</span>
+<a name="l00070"></a>00070 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_20_BEGIN'] = CAPTION_rd7_20_BEGIN;</span>
+<a name="l00071"></a>00071 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_20_END'] = CAPTION_rd7_20_END;</span>
+<a name="l00072"></a>00072 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_21_'] = QUESTION_txa_21_;</span>
+<a name="l00073"></a>00073 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_21_'] = CAPTION_txa_21_;</span>
+<a name="l00074"></a>00074 <span class="comment">//#######################################</span>
+<a name="l00075"></a>00075 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_22_'] = QUESTION_rd7_22_;</span>
+<a name="l00076"></a>00076 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_22_BEGIN'] = CAPTION_rd7_22_BEGIN;</span>
+<a name="l00077"></a>00077 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_22_END'] = CAPTION_rd7_22_END;</span>
+<a name="l00078"></a>00078 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_32_'] = QUESTION_rd7_32_;</span>
+<a name="l00079"></a>00079 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_32_BEGIN'] = CAPTION_rd7_32_BEGIN;</span>
+<a name="l00080"></a>00080 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_32_END'] = CAPTION_rd7_32_END;</span>
+<a name="l00081"></a>00081 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_24_'] = QUESTION_rd7_24_;</span>
+<a name="l00082"></a>00082 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_24_BEGIN'] = CAPTION_rd7_24_BEGIN;</span>
+<a name="l00083"></a>00083 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_24_END'] = CAPTION_rd7_24_END;</span>
+<a name="l00084"></a>00084 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_25_'] = QUESTION_rd7_25_;</span>
+<a name="l00085"></a>00085 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_25_BEGIN'] = CAPTION_rd7_25_BEGIN;</span>
+<a name="l00086"></a>00086 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_25_END'] = CAPTION_rd7_25_END;</span>
+<a name="l00087"></a>00087 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_26_'] = QUESTION_rd7_26_;</span>
+<a name="l00088"></a>00088 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_26_BEGIN'] = CAPTION_rd7_26_BEGIN;</span>
+<a name="l00089"></a>00089 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_26_END'] = CAPTION_rd7_26_END;</span>
+<a name="l00090"></a>00090 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_27_'] = QUESTION_rd7_27_;</span>
+<a name="l00091"></a>00091 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_27_BEGIN'] = CAPTION_rd7_27_BEGIN;</span>
+<a name="l00092"></a>00092 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_27_END'] = CAPTION_rd7_27_END;</span>
+<a name="l00093"></a>00093 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_28_'] = QUESTION_txa_28_;</span>
+<a name="l00094"></a>00094 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_28_'] = CAPTION_txa_28_;</span>
+<a name="l00095"></a>00095 <span class="comment">//#######################################</span>
+<a name="l00096"></a>00096 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_29_'] = QUESTION_rd7_29_;</span>
+<a name="l00097"></a>00097 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_29_BEGIN'] = CAPTION_rd7_29_BEGIN;</span>
+<a name="l00098"></a>00098 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_29_END'] = CAPTION_rd7_29_END;</span>
+<a name="l00099"></a>00099 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_30_'] = QUESTION_rd7_30_;</span>
+<a name="l00100"></a>00100 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_30_BEGIN'] = CAPTION_rd7_30_BEGIN;</span>
+<a name="l00101"></a>00101 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_30_END'] = CAPTION_rd7_30_END;</span>
+<a name="l00102"></a>00102 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_31_'] = QUESTION_rd7_31_;</span>
+<a name="l00103"></a>00103 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_31_BEGIN'] = CAPTION_rd7_31_BEGIN;</span>
+<a name="l00104"></a>00104 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_31_END'] = CAPTION_rd7_31_END;</span>
+<a name="l00105"></a>00105 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_32_'] = QUESTION_rd7_32_;</span>
+<a name="l00106"></a>00106 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_32_BEGIN'] = CAPTION_rd7_32_BEGIN;</span>
+<a name="l00107"></a>00107 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_32_END'] = CAPTION_rd7_32_END;</span>
+<a name="l00108"></a>00108 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_33_'] = QUESTION_rd7_33_;</span>
+<a name="l00109"></a>00109 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_33_BEGIN'] = CAPTION_rd7_33_BEGIN;</span>
+<a name="l00110"></a>00110 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_33_END'] = CAPTION_rd7_33_END;</span>
+<a name="l00111"></a>00111 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_34_'] = QUESTION_rd7_34_;</span>
+<a name="l00112"></a>00112 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_34_BEGIN'] = CAPTION_rd7_34_BEGIN;</span>
+<a name="l00113"></a>00113 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_34_END'] = CAPTION_rd7_34_END;</span>
+<a name="l00114"></a>00114 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_35_'] = QUESTION_txa_35_;</span>
+<a name="l00115"></a>00115 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_35_'] = CAPTION_txa_35_;</span>
+<a name="l00116"></a>00116 <span class="comment">//#######################################</span>
+<a name="l00117"></a>00117 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_36_'] = QUESTION_rd7_36_;</span>
+<a name="l00118"></a>00118 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_36_BEGIN'] = CAPTION_rd7_36_BEGIN;</span>
+<a name="l00119"></a>00119 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_36_END'] = CAPTION_rd7_36_END;</span>
+<a name="l00120"></a>00120 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_37_'] = QUESTION_rd7_37_;</span>
+<a name="l00121"></a>00121 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_37_BEGIN'] = CAPTION_rd7_37_BEGIN;</span>
+<a name="l00122"></a>00122 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_37_END'] = CAPTION_rd7_37_END;</span>
+<a name="l00123"></a>00123 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_38_'] = QUESTION_rd7_38_;</span>
+<a name="l00124"></a>00124 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_38_BEGIN'] = CAPTION_rd7_38_BEGIN;</span>
+<a name="l00125"></a>00125 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_38_END'] = CAPTION_rd7_38_END;</span>
+<a name="l00126"></a>00126 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_39_'] = QUESTION_rd7_39_;</span>
+<a name="l00127"></a>00127 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_39_BEGIN'] = CAPTION_rd7_39_BEGIN;</span>
+<a name="l00128"></a>00128 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_39_END'] = CAPTION_rd7_39_END;</span>
+<a name="l00129"></a>00129 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_40_'] = QUESTION_rd7_40_;</span>
+<a name="l00130"></a>00130 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_40_BEGIN'] = CAPTION_rd7_40_BEGIN;</span>
+<a name="l00131"></a>00131 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_40_END'] = CAPTION_rd7_40_END;</span>
+<a name="l00132"></a>00132 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_41_'] = QUESTION_rd7_41_;</span>
+<a name="l00133"></a>00133 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_41_BEGIN'] = CAPTION_rd7_41_BEGIN;</span>
+<a name="l00134"></a>00134 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_41_END'] = CAPTION_rd7_41_END;</span>
+<a name="l00135"></a>00135 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_42_'] = QUESTION_txa_42_;</span>
+<a name="l00136"></a>00136 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_42_'] = CAPTION_txa_42_;</span>
+<a name="l00137"></a>00137 <span class="comment">//#######################################</span>
+<a name="l00138"></a>00138 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_43_'] = QUESTION_rd7_43_;</span>
+<a name="l00139"></a>00139 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_43_BEGIN'] = CAPTION_rd7_43_BEGIN;</span>
+<a name="l00140"></a>00140 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_43_END'] = CAPTION_rd7_43_END;</span>
+<a name="l00141"></a>00141 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_44_'] = QUESTION_rd7_44_;</span>
+<a name="l00142"></a>00142 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_44_BEGIN'] = CAPTION_rd7_44_BEGIN;</span>
+<a name="l00143"></a>00143 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_44_END'] = CAPTION_rd7_44_END;</span>
+<a name="l00144"></a>00144 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_45_'] = QUESTION_rd7_45_;</span>
+<a name="l00145"></a>00145 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_45_BEGIN'] = CAPTION_rd7_45_BEGIN;</span>
+<a name="l00146"></a>00146 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_45_END'] = CAPTION_rd7_45_END;</span>
+<a name="l00147"></a>00147 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_46_'] = QUESTION_rd7_46_;</span>
+<a name="l00148"></a>00148 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_46_BEGIN'] = CAPTION_rd7_46_BEGIN;</span>
+<a name="l00149"></a>00149 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_46_END'] = CAPTION_rd7_46_END;</span>
+<a name="l00150"></a>00150 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_47_'] = QUESTION_rd7_47_;</span>
+<a name="l00151"></a>00151 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_47_BEGIN'] = CAPTION_rd7_47_BEGIN;</span>
+<a name="l00152"></a>00152 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_47_END'] = CAPTION_rd7_47_END;</span>
+<a name="l00153"></a>00153 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_48_'] = QUESTION_rd7_48_;</span>
+<a name="l00154"></a>00154 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_48_BEGIN'] = CAPTION_rd7_48_BEGIN;</span>
+<a name="l00155"></a>00155 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_48_END'] = CAPTION_rd7_48_END;</span>
+<a name="l00156"></a>00156 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_49_'] = QUESTION_txa_49_;</span>
+<a name="l00157"></a>00157 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_49_'] = CAPTION_txa_49_;</span>
+<a name="l00158"></a>00158 <span class="comment">//#######################################</span>
+<a name="l00159"></a>00159 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_50_'] = QUESTION_rd7_50_;</span>
+<a name="l00160"></a>00160 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_50_BEGIN'] = CAPTION_rd7_50_BEGIN;</span>
+<a name="l00161"></a>00161 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_50_END'] = CAPTION_rd7_50_END;</span>
+<a name="l00162"></a>00162 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_51_'] = QUESTION_rd7_51_;</span>
+<a name="l00163"></a>00163 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_51_BEGIN'] = CAPTION_rd7_51_BEGIN;</span>
+<a name="l00164"></a>00164 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_51_END'] = CAPTION_rd7_51_END;</span>
+<a name="l00165"></a>00165 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_52_'] = QUESTION_rd7_52_;</span>
+<a name="l00166"></a>00166 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_52_BEGIN'] = CAPTION_rd7_52_BEGIN;</span>
+<a name="l00167"></a>00167 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_52_END'] = CAPTION_rd7_52_END;</span>
+<a name="l00168"></a>00168 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_53_'] = QUESTION_rd7_53_;</span>
+<a name="l00169"></a>00169 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_53_BEGIN'] = CAPTION_rd7_53_BEGIN;</span>
+<a name="l00170"></a>00170 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_53_END'] = CAPTION_rd7_53_END;</span>
+<a name="l00171"></a>00171 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_54_'] = QUESTION_rd7_54_;</span>
+<a name="l00172"></a>00172 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_54_BEGIN'] = CAPTION_rd7_54_BEGIN;</span>
+<a name="l00173"></a>00173 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_54_END'] = CAPTION_rd7_54_END;</span>
+<a name="l00174"></a>00174 <span class="comment">//$SURVEY_STRINGS['QUESTION_rd7_55_'] = QUESTION_rd7_55_;</span>
+<a name="l00175"></a>00175 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_55_BEGIN'] = CAPTION_rd7_55_BEGIN;</span>
+<a name="l00176"></a>00176 <span class="comment">//$SURVEY_STRINGS['CAPTION_rd7_55_END'] = CAPTION_rd7_55_END;</span>
+<a name="l00177"></a>00177 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_56_'] = QUESTION_txa_56_;</span>
+<a name="l00178"></a>00178 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_56_'] = CAPTION_txa_56_;</span>
+<a name="l00179"></a>00179 <span class="comment">//#######################################</span>
+<a name="l00180"></a>00180 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_57_'] = QUESTION_txd_57_;</span>
+<a name="l00181"></a>00181 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_57_'] = CAPTION_txd_57_;</span>
+<a name="l00182"></a>00182 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_57__END'] = CAPTION_txd_57__END;</span>
+<a name="l00183"></a>00183 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_58_'] = QUESTION_txd_58_;</span>
+<a name="l00184"></a>00184 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_58_'] = CAPTION_txd_58_;</span>
+<a name="l00185"></a>00185 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_58__END'] = CAPTION_txd_58__END;</span>
+<a name="l00186"></a>00186 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_59_'] = QUESTION_txd_59_;</span>
+<a name="l00187"></a>00187 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_59_'] = CAPTION_txd_59_;</span>
+<a name="l00188"></a>00188 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_59__END'] = CAPTION_txd_59__END;</span>
+<a name="l00189"></a>00189 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_60_'] = QUESTION_txd_60_;</span>
+<a name="l00190"></a>00190 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_60_'] = CAPTION_txd_60_;</span>
+<a name="l00191"></a>00191 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_60__END'] = CAPTION_txd_60__END;</span>
+<a name="l00192"></a>00192 <span class="comment">//$SURVEY_STRINGS['QUESTION_txd_61_'] = QUESTION_txd_61_;</span>
+<a name="l00193"></a>00193 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_61_'] = CAPTION_txd_61_;</span>
+<a name="l00194"></a>00194 <span class="comment">//$SURVEY_STRINGS['CAPTION_txd_61__END'] = CAPTION_txd_61__END;</span>
+<a name="l00195"></a>00195 <span class="comment">//$SURVEY_STRINGS['QUESTION_ra6_62_'] = QUESTION_ra6_62_;</span>
+<a name="l00196"></a>00196 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62_'] = CAPTION_ra6_62_;</span>
+<a name="l00197"></a>00197 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__1'] = CAPTION_ra6_62__1;</span>
+<a name="l00198"></a>00198 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__2'] = CAPTION_ra6_62__2;</span>
+<a name="l00199"></a>00199 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__3'] = CAPTION_ra6_62__3;</span>
+<a name="l00200"></a>00200 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__4'] = CAPTION_ra6_62__4;</span>
+<a name="l00201"></a>00201 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__5'] = CAPTION_ra6_62__5;</span>
+<a name="l00202"></a>00202 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__6'] = CAPTION_ra6_62__6;</span>
+<a name="l00203"></a>00203 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra6_62__7'] = CAPTION_ra6_62__7;</span>
+<a name="l00204"></a>00204 <span class="comment">//$SURVEY_STRINGS['QUESTION_ra2_63_'] = QUESTION_ra2_63_;</span>
+<a name="l00205"></a>00205 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra2_63_'] = CAPTION_ra2_63_;</span>
+<a name="l00206"></a>00206 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra2_63__1'] = CAPTION_ra2_63__1;</span>
+<a name="l00207"></a>00207 <span class="comment">//$SURVEY_STRINGS['CAPTION_ra2_63__2'] = CAPTION_ra2_63__2;</span>
+<a name="l00208"></a>00208 <span class="comment">//$SURVEY_STRINGS['QUESTION_txt_64_'] = QUESTION_txt_64_;</span>
+<a name="l00209"></a>00209 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_64_'] = CAPTION_txt_64_;</span>
+<a name="l00210"></a>00210 <span class="comment">//$SURVEY_STRINGS['CAPTION_txt_64__END'] = CAPTION_txt_64__END;</span>
+<a name="l00211"></a>00211 <span class="comment">//$SURVEY_STRINGS['QUESTION_txa_65_'] = QUESTION_txa_65_;</span>
+<a name="l00212"></a>00212 <span class="comment">//$SURVEY_STRINGS['CAPTION_txa_65_'] = CAPTION_txa_65_;</span>
+<a name="l00213"></a>00213 <span class="comment">//</span>
+<a name="l00214"></a>00214 <span class="comment">//$SURVEY_STRINGS['TEXTAREA_HINT_EDIT']   = TEXTAREA_HINT_EDIT;</span>
+<a name="l00215"></a>00215 <span class="comment">//$SURVEY_STRINGS['CAPTION_VALUE_BEGIN']  = CAPTION_VALUE_BEGIN;</span>
+<a name="l00216"></a>00216 <span class="comment">//$SURVEY_STRINGS['CAPTION_VALUE_END']    = CAPTION_VALUE_END;</span>
+<a name="l00217"></a>00217 <span class="comment">//$SURVEY_STRINGS['CAPTION_VALUE_VALUES'] = CAPTION_VALUE_VALUES;</span>
+<a name="l00218"></a>00218 <span class="comment">//</span>
+<a name="l00219"></a>00219 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_1_'] = PAGE_TITLE_1_;</span>
+<a name="l00220"></a>00220 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_2_'] = PAGE_TITLE_2_;</span>
+<a name="l00221"></a>00221 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_3_'] = PAGE_TITLE_3_;</span>
+<a name="l00222"></a>00222 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_4_'] = PAGE_TITLE_4_;</span>
+<a name="l00223"></a>00223 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_5_'] = PAGE_TITLE_5_;</span>
+<a name="l00224"></a>00224 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_6_'] = PAGE_TITLE_6_;</span>
+<a name="l00225"></a>00225 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_7_'] = PAGE_TITLE_7_;</span>
+<a name="l00226"></a>00226 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_8_'] = PAGE_TITLE_8_;</span>
+<a name="l00227"></a>00227 <span class="comment">//$SURVEY_STRINGS['PAGE_TITLE_9_'] = PAGE_TITLE_9_;</span>
+<a name="l00228"></a>00228 
+<a name="l00229"></a><a class="code" href="error_2languageloader_8php.html#0a1c04907ff4cd578db761f5abbd9bc8">00229</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#2927306a9c4ac7bacb1eaa2ae07640f7">PAGE_BUTTON_CAPTION_BACK</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#2927306a9c4ac7bacb1eaa2ae07640f7">PAGE_BUTTON_CAPTION_BACK</a>;
+<a name="l00230"></a><a class="code" href="error_2languageloader_8php.html#de8c3149e008f02f971071eb64a80f0f">00230</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#965c6d427df0256d2962ae2be5be99ac">PAGE_BUTTON_CAPTION_NEXT</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#965c6d427df0256d2962ae2be5be99ac">PAGE_BUTTON_CAPTION_NEXT</a>;
+<a name="l00231"></a><a class="code" href="error_2languageloader_8php.html#ef8a30d248d4fa91d15b1d44ccfc3701">00231</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#5a70d828efb5807e6a5353d21c4e2fa5">PAGE_BUTTON_CAPTION_FINISH</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#5a70d828efb5807e6a5353d21c4e2fa5">PAGE_BUTTON_CAPTION_FINISH</a>;
+<a name="l00232"></a><a class="code" href="error_2languageloader_8php.html#f4ecb6b9605321fc8c97c658a2011e16">00232</a> <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['<a class="code" href="error_2language_2dei_2survey__language_8php.html#444e06cfef50e744e19a0d93a8e89c08">CAPTION_SURVEY</a>'] = <a class="code" href="error_2language_2dei_2survey__language_8php.html#444e06cfef50e744e19a0d93a8e89c08">CAPTION_SURVEY</a>;
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

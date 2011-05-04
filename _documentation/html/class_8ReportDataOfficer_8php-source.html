@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.ReportDataOfficer.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.ReportDataOfficer.php</h1><a href="class_8ReportDataOfficer_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: class.ReportDataOfficer.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/graph/data/<span class="keyword">class</span>.GraphDataAbstract.php');
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="classReportDataOfficer.html">00009</a> <span class="keyword">class </span><a class="code" href="classReportDataOfficer.html">ReportDataOfficer</a>{
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="classReportDataOfficer.html#0cffec838a4f3c6c198349efa6b1477f">00011</a>    function <a class="code" href="classReportDataOfficer.html#0cffec838a4f3c6c198349efa6b1477f">ReportDataOfficer</a>(){
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014    }
+<a name="l00015"></a>00015 
+<a name="l00022"></a><a class="code" href="classReportDataOfficer.html#3b60c363d8a6a385fc902e5651bbfdf3">00022</a>    function <a class="code" href="classReportDataOfficer.html#3b60c363d8a6a385fc902e5651bbfdf3">loadGraphData</a>(<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>,$sid){
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024       <a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a> = explode(<span class="charliteral">'_'</span>,<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026       <span class="keywordflow">if</span> (count(<a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a>)&gt;0){
+<a name="l00027"></a>00027          $graphId = <a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a>[0];
+<a name="l00028"></a>00028       }
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030       $graphId = strtoupper($graphId);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032       $ClassName = 'GraphData'.$graphId;
+<a name="l00033"></a>00033       $graphClassPath = <a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/graph/data/<span class="keyword">class</span>.'.$ClassName.'.php';
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035       <span class="comment">//debug_sql($graphClassPath);</span>
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037       <span class="keywordflow">if</span> (!file_exists($graphClassPath)){
+<a name="l00038"></a>00038          <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classGraphDataAbstract.html">GraphDataAbstract</a>($graphId);
+<a name="l00039"></a>00039       }
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041       include_once($graphClassPath);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043       <span class="comment">//echo "$ClassName($controlId,$sid)";</span>
+<a name="l00044"></a>00044       
+<a name="l00045"></a>00045       <span class="keywordflow">return</span> <span class="keyword">new</span> $ClassName(<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>,$sid);
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047    }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 }
+<a name="l00050"></a>00050 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

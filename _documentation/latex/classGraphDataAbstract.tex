@@ -1,0 +1,203 @@
+\section{GraphDataAbstract Klassenreferenz}
+\label{classGraphDataAbstract}\index{GraphDataAbstract@{GraphDataAbstract}}
+Klassendiagramm für GraphDataAbstract::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.1875cm]{classGraphDataAbstract}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{CompactItemize}
+\item 
+{\bf GraphDataAbstract} ()
+\item 
+{\bf \_\-loadGraphData} (\$controlId, \&\$graphDataObj)
+\item 
+{\bf getValuesCount} ()
+\item 
+{\bf getDataArray} ()
+\item 
+{\bf getKeysArray} ()
+\item 
+{\bf getMaxDataValue} ()
+\item 
+{\bf getMaxKeyValue} ()
+\end{CompactItemize}
+\subsection*{Öffentliche Attribute}
+\begin{CompactItemize}
+\item 
+{\bf \$\_\-sid}
+\item 
+{\bf \$controlTypeId}
+\item 
+{\bf \$controlId}
+\item 
+{\bf \$surveyId}
+\item 
+{\bf \$valuesCount}
+\item 
+{\bf \$graphDataArr}
+\item 
+{\bf \$graphTitlesArr}
+\end{CompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 9 der Datei class.GraphDataAbstract.php.
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{GraphDataAbstract@{GraphDataAbstract}!GraphDataAbstract@{GraphDataAbstract}}
+\index{GraphDataAbstract@{GraphDataAbstract}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.GraphDataAbstract ()}\label{classGraphDataAbstract_dbbee9965b4d165f612eb84ef156e281}
+
+
+
+
+Definiert in Zeile 29 der Datei class.GraphDataAbstract.php.\index{GraphDataAbstract@{GraphDataAbstract}!\_\-loadGraphData@{\_\-loadGraphData}}
+\index{\_\-loadGraphData@{\_\-loadGraphData}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\_\-loadGraphData (\$ {\em controlId}, \&\$ {\em graphDataObj})}\label{classGraphDataAbstract_818441ba5b48151b6abbfea4605999a4}
+
+
+Load GraphData
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em long}]\$controlId \item[{\em \doxyref{GraphDataAbstract}{S.}{classGraphDataAbstract}}]\$graphDataObj \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Erneute Implementation in {\bf GraphDataRA2} \doxyref{}{S.}{classGraphDataRA2_7531901c1b1cc4e367e77d6b27772fb5}, {\bf GraphDataRA6} \doxyref{}{S.}{classGraphDataRA6_ed14b4b0a99b7a9a4f0bf968ba046114}, {\bf GraphDataRD7} \doxyref{}{S.}{classGraphDataRD7_b39b4f1945c8b579dee5af720dc2c8f4}, {\bf GraphDataTXA} \doxyref{}{S.}{classGraphDataTXA_ceed3da1f330793609779205a529d91c}, {\bf GraphDataTXD} \doxyref{}{S.}{classGraphDataTXD_b2f81379418927997db179a7abdde978} und {\bf GraphDataTXT} \doxyref{}{S.}{classGraphDataTXT_94187fd7c6b0a9e1e22ded3f645c1fa1}.
+
+Definiert in Zeile 40 der Datei class.GraphDataAbstract.php.
+
+Benutzt ObjectLogger.\_\-addError().\index{GraphDataAbstract@{GraphDataAbstract}!getValuesCount@{getValuesCount}}
+\index{getValuesCount@{getValuesCount}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.getValuesCount ()}\label{classGraphDataAbstract_2fce31ff9c592f35034da0ece0ce5ad8}
+
+
+Get ammount of Values
+
+\begin{Desc}
+\item[Rückgabe:]integer \end{Desc}
+
+
+Definiert in Zeile 50 der Datei class.GraphDataAbstract.php.\index{GraphDataAbstract@{GraphDataAbstract}!getDataArray@{getDataArray}}
+\index{getDataArray@{getDataArray}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.getDataArray ()}\label{classGraphDataAbstract_8face50a395170a2f8e16927195d857a}
+
+
+get array values
+
+\begin{Desc}
+\item[Rückgabe:]array \end{Desc}
+
+
+Definiert in Zeile 59 der Datei class.GraphDataAbstract.php.
+
+Wird benutzt von getMaxDataValue().\index{GraphDataAbstract@{GraphDataAbstract}!getKeysArray@{getKeysArray}}
+\index{getKeysArray@{getKeysArray}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.getKeysArray ()}\label{classGraphDataAbstract_57b9742a8973781231d6853200e51eb8}
+
+
+Enter description here...
+
+\begin{Desc}
+\item[Rückgabe:]array \end{Desc}
+
+
+Definiert in Zeile 70 der Datei class.GraphDataAbstract.php.
+
+Wird benutzt von getMaxKeyValue().\index{GraphDataAbstract@{GraphDataAbstract}!getMaxDataValue@{getMaxDataValue}}
+\index{getMaxDataValue@{getMaxDataValue}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.getMaxDataValue ()}\label{classGraphDataAbstract_48220089253badbcfcbf349a98580588}
+
+
+Get max value from array
+
+\begin{Desc}
+\item[Rückgabe:]float \end{Desc}
+
+
+Definiert in Zeile 79 der Datei class.GraphDataAbstract.php.
+
+Benutzt getDataArray().\index{GraphDataAbstract@{GraphDataAbstract}!getMaxKeyValue@{getMaxKeyValue}}
+\index{getMaxKeyValue@{getMaxKeyValue}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.getMaxKeyValue ()}\label{classGraphDataAbstract_fb3afa69f72d8a800fd446ddfded7263}
+
+
+Enter description here...
+
+\begin{Desc}
+\item[Rückgabe:]float \end{Desc}
+
+
+Definiert in Zeile 89 der Datei class.GraphDataAbstract.php.
+
+Benutzt getKeysArray().
+
+\subsection{Dokumentation der Datenelemente}
+\index{GraphDataAbstract@{GraphDataAbstract}!\$\_\-sid@{\$\_\-sid}}
+\index{\$\_\-sid@{\$\_\-sid}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$\_\-sid}\label{classGraphDataAbstract_a792c38f52f3e8016322c0534fa7d760}
+
+
+
+
+Definiert in Zeile 15 der Datei class.GraphDataAbstract.php.\index{GraphDataAbstract@{GraphDataAbstract}!\$controlTypeId@{\$controlTypeId}}
+\index{\$controlTypeId@{\$controlTypeId}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$controlTypeId}\label{classGraphDataAbstract_0d6e3942b2985d629f79b01c44ad5a33}
+
+
+
+
+Definiert in Zeile 16 der Datei class.GraphDataAbstract.php.
+
+Wird benutzt von GraphDataTXT.\_\-loadGraphData(), GraphDataTXD.\_\-loadGraphData(), GraphDataTXA.\_\-loadGraphData(), GraphDataRD7.\_\-loadGraphData(), GraphDataRA6.\_\-loadGraphData() und GraphDataRA2.\_\-loadGraphData().\index{GraphDataAbstract@{GraphDataAbstract}!\$controlId@{\$controlId}}
+\index{\$controlId@{\$controlId}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$controlId}\label{classGraphDataAbstract_c8cd788440cebc7668d18d16822380b1}
+
+
+
+
+Definiert in Zeile 17 der Datei class.GraphDataAbstract.php.
+
+Wird benutzt von GraphDataTXT.\_\-loadGraphData(), GraphDataTXD.\_\-loadGraphData(), GraphDataTXA.\_\-loadGraphData(), GraphDataRD7.\_\-loadGraphData(), GraphDataRA6.\_\-loadGraphData(), GraphDataRA2.\_\-loadGraphData(), GraphDataRA2.GraphDataRA2(), GraphDataRA6.GraphDataRA6(), GraphDataRD7.GraphDataRD7(), GraphDataTXA.GraphDataTXA(), GraphDataTXD.GraphDataTXD() und GraphDataTXT.GraphDataTXT().\index{GraphDataAbstract@{GraphDataAbstract}!\$surveyId@{\$surveyId}}
+\index{\$surveyId@{\$surveyId}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$surveyId}\label{classGraphDataAbstract_1377d36cfb2139c22c7f6ff00baa2cbf}
+
+
+
+
+Definiert in Zeile 18 der Datei class.GraphDataAbstract.php.\index{GraphDataAbstract@{GraphDataAbstract}!\$valuesCount@{\$valuesCount}}
+\index{\$valuesCount@{\$valuesCount}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$valuesCount}\label{classGraphDataAbstract_232a40f0d249ce5bc0f29bdd5039329d}
+
+
+
+
+Definiert in Zeile 22 der Datei class.GraphDataAbstract.php.
+
+Wird benutzt von GraphDataTXT.\_\-loadGraphData(), GraphDataTXD.\_\-loadGraphData(), GraphDataTXA.\_\-loadGraphData(), GraphDataRD7.\_\-loadGraphData(), GraphDataRA6.\_\-loadGraphData() und GraphDataRA2.\_\-loadGraphData().\index{GraphDataAbstract@{GraphDataAbstract}!\$graphDataArr@{\$graphDataArr}}
+\index{\$graphDataArr@{\$graphDataArr}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$graphDataArr}\label{classGraphDataAbstract_dd99a0a832127b2e1c0dbfa8f953cf20}
+
+
+
+
+Definiert in Zeile 24 der Datei class.GraphDataAbstract.php.\index{GraphDataAbstract@{GraphDataAbstract}!\$graphTitlesArr@{\$graphTitlesArr}}
+\index{\$graphTitlesArr@{\$graphTitlesArr}!GraphDataAbstract@{GraphDataAbstract}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}GraphDataAbstract.\$graphTitlesArr}\label{classGraphDataAbstract_15e51218fcd0da6e64be6169910f7334}
+
+
+
+
+Definiert in Zeile 27 der Datei class.GraphDataAbstract.php.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:\begin{CompactItemize}
+\item 
+{\bf class.GraphDataAbstract.php}\end{CompactItemize}

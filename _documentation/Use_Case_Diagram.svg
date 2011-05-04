@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" sodipodi:version="0.32" sodipodi:docbase="E:\_Programms\xampp2\htdocs_semar\www\_documentation" sodipodi:docname="Use_Case_Diagram.svg" inkscape:version="0.45.1" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="671px" height="396px"
+	 viewBox="0 0 671 396" enable-background="new 0 0 671 396" xml:space="preserve">
+<sodipodi:namedview  inkscape:pageopacity="0.0" id="base" inkscape:zoom="0.95454545" gridtolerance="10.0" guidetolerance="10.0" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" objecttolerance="10.0" inkscape:window-width="1280" inkscape:window-height="750" inkscape:pageshadow="2" inkscape:current-layer="svg2" inkscape:window-y="-4" inkscape:window-x="-4" inkscape:cy="198" inkscape:cx="335.5">
+	</sodipodi:namedview>
+<g id="g60" transform="translate(13.1111,132)">
+	
+		<circle id="circle62" sodipodi:cx="14.5" sodipodi:rx="7.5" sodipodi:ry="7.5" sodipodi:cy="7.5" fill="#7ACFF5" cx="14.5" cy="7.5" r="7.5">
+	</circle>
+</g>
+<g id="g64" transform="translate(13.1111,132)">
+	
+		<circle id="circle66" sodipodi:cx="14.5" sodipodi:rx="7.5" sodipodi:ry="7.5" sodipodi:cy="7.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="14.5" cy="7.5" r="7.5">
+	</circle>
+	<line id="line68" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="15" y1="15" x2="15" y2="40"/>
+	<line id="line70" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="0" y1="24" x2="30" y2="24"/>
+	<line id="line72" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="15" y1="40" x2="0" y2="60"/>
+	<line id="line74" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="15" y1="40" x2="30" y2="60"/>
+</g>
+<g id="g76" transform="translate(613.1111,142)">
+	
+		<circle id="circle78" sodipodi:cx="14.5" sodipodi:rx="7.5" sodipodi:ry="7.5" sodipodi:cy="7.5" fill="#7ACFF5" cx="13.389" cy="29" r="7.5">
+	</circle>
+</g>
+<g id="g80" transform="translate(613.1111,142)">
+	
+		<circle id="circle82" sodipodi:cx="14.5" sodipodi:rx="7.5" sodipodi:ry="7.5" sodipodi:cy="7.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="13.389" cy="29" r="7.5">
+	</circle>
+	
+		<line id="line84" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="13.889" y1="36.5" x2="13.889" y2="61.5"/>
+	
+		<line id="line86" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="-1.111" y1="45.5" x2="28.889" y2="45.5"/>
+	
+		<line id="line88" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="13.889" y1="61.5" x2="-1.111" y2="81.5"/>
+	
+		<line id="line90" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" x1="13.889" y1="61.5" x2="28.889" y2="81.5"/>
+</g>
+<g id="g92" transform="translate(243.1111,2)">
+	<rect id="rect94" x="0" fill="#7ACFF5" width="229" height="389"/>
+</g>
+<g id="g96" transform="translate(243.1111,2)">
+	<rect id="rect98" x="0" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" width="229" height="389"/>
+</g>
+<g id="g100" transform="translate(263.1111,32)">
+	
+		<ellipse id="ellipse102" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g104" transform="translate(263.1111,32)">
+	
+		<ellipse id="ellipse106" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g108" transform="translate(263.1111,82)">
+	
+		<ellipse id="ellipse110" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g112" transform="translate(263.1111,82)">
+	
+		<ellipse id="ellipse114" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g116" transform="translate(263.1111,132)">
+	
+		<ellipse id="ellipse118" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g120" transform="translate(263.1111,132)">
+	
+		<ellipse id="ellipse122" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g124" transform="translate(263.1111,182)">
+	
+		<ellipse id="ellipse126" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g128" transform="translate(263.1111,182)">
+	
+		<ellipse id="ellipse130" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g132" transform="translate(263.1111,232)">
+	
+		<ellipse id="ellipse134" sodipodi:cx="80" sodipodi:rx="80" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="80" cy="20" rx="80" ry="20">
+	</ellipse>
+</g>
+<g id="g136" transform="translate(263.1111,232)">
+	
+		<ellipse id="ellipse138" sodipodi:cx="80" sodipodi:rx="80" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="80" cy="20" rx="80" ry="20">
+	</ellipse>
+</g>
+<g id="g140" transform="translate(263.1111,332)">
+	
+		<ellipse id="ellipse142" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g144" transform="translate(263.1111,332)">
+	
+		<ellipse id="ellipse146" sodipodi:cx="85" sodipodi:rx="85" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="85" cy="20" rx="85" ry="20">
+	</ellipse>
+</g>
+<g id="g148" transform="translate(263.1111,282)">
+	
+		<ellipse id="ellipse150" sodipodi:cx="80" sodipodi:rx="80" sodipodi:ry="20" sodipodi:cy="20" fill="#7ACFF5" cx="80" cy="20" rx="80" ry="20">
+	</ellipse>
+</g>
+<g id="g152" transform="translate(263.1111,282)">
+	
+		<ellipse id="ellipse154" sodipodi:cx="80" sodipodi:rx="80" sodipodi:ry="20" sodipodi:cy="20" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="1" cx="80" cy="20" rx="80" ry="20">
+	</ellipse>
+</g>
+<g id="g156" transform="translate(2.1111,192)">
+	<text id="text158" transform="matrix(1 0 0 1 11 12)" font-family="'ArialMT'" font-size="11">Admin</text>
+</g>
+<g id="g160" transform="translate(587.1111,202)">
+	<text id="text162" transform="matrix(1 0 0 1 8.8892 33.5)" font-family="'ArialMT'" font-size="11">Umfragende</text>
+</g>
+<g id="g164" transform="translate(243.1111,2)">
+	<text id="text166" transform="matrix(1 0 0 1 89.9995 12)" font-family="'ArialMT'" font-size="11">mkSurvey</text>
+</g>
+<g id="g168" transform="translate(263.1111,32)">
+	<text id="text170" transform="matrix(1 0 0 1 39 24)" font-family="'ArialMT'" font-size="11">Admin Registrieren</text>
+</g>
+<g id="g172" transform="translate(263.1111,82)">
+	<text id="text174" transform="matrix(1 0 0 1 20 24)" font-family="'ArialMT'" font-size="11">Umfragekampagne Anlegen</text>
+</g>
+<g id="g176" transform="translate(263.1111,132)">
+	<text id="text178" transform="matrix(1 0 0 1 23 24)" font-family="'ArialMT'" font-size="11">Umfragende Hinzufügen</text>
+</g>
+<g id="g180" transform="translate(263.1111,182)">
+	<text id="text182" transform="matrix(1 0 0 1 32 24)" font-family="'ArialMT'" font-size="11">Umfrage Durchführen</text>
+</g>
+<g id="g184" transform="translate(263.1111,232)">
+	<text id="text186" transform="matrix(1 0 0 1 8 24)" font-family="'ArialMT'" font-size="11">Umfragekampagne Auswerten</text>
+</g>
+<g id="g188" transform="translate(263.1111,332)">
+	<text id="text190" transform="matrix(1 0 0 1 17 24)" font-family="'ArialMT'" font-size="11">Umfragekampagne Löschen</text>
+</g>
+<g id="g192" transform="translate(263.1111,282)">
+	<text id="text194" transform="matrix(1 0 0 1 14 23)" font-family="'ArialMT'" font-size="11">Umfragekampagne Ändern</text>
+</g>
+<g id="g196" transform="translate(-12.8889,10)">
+	
+		<line id="line198" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="276" y1="42" x2="56.001" y2="123"/>
+</g>
+<g id="g200" transform="translate(-12.8889,64)">
+	
+		<line id="line202" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="276.139" y1="39" x2="56.889" y2="72"/>
+</g>
+<g id="g204" transform="translate(-12.8889,96)">
+	
+		<line id="line206" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="276" y1="56" x2="58.889" y2="56"/>
+</g>
+<g id="g208" transform="translate(377.1111,146)">
+	
+		<line id="line210" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="56" y1="56" x2="219" y2="56"/>
+</g>
+<g id="g212" transform="translate(-9.8889,152)">
+	
+		<line id="line214" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="273" y1="100" x2="58.639" y2="48.5"/>
+</g>
+<g id="g216" transform="translate(-3.8889,152)">
+	
+		<line id="line218" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="267" y1="150" x2="52.639" y2="51.75"/>
+</g>
+<g id="g220" transform="translate(-2.8889,152)">
+	
+		<line id="line222" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="266" y1="200" x2="50.639" y2="54.75"/>
+</g>
+</svg>

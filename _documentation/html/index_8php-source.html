@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: index.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>index.php</h1><a href="index_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?
+<a name="l00011"></a>00011 error_reporting(E_ERROR | E_WARNING | E_PARSE);
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 include_once('configuration.php');
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 include_once(ABSOLUTE_PATH.'/require_all.php');
+<a name="l00016"></a>00016 include_once(ABSOLUTE_PATH.'/includes/SessionCookie.php');
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#include XAJAX functions</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span>require_once(ABSOLUTE_PATH.'/xa/sur.common.php');
+<a name="l00020"></a>00020 require_once(ABSOLUTE_PATH.'/includes/smarty/libs/Smarty.class.php');
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="comment">//echo 'action:'.$_GET['action'];</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 $database-&gt;setDebugOn(<a class="code" href="configuration_8local_8php.html#886b95b1f12aacfdbc45a98920cde809">SMARTY_DEBUG</a>);
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="index_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">00026</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a> = <span class="keyword">new</span> Smarty();
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keywordflow">if</span> (defined('<a class="code" href="configuration_8php.html#9ad6fcd96b03a7fc2ee1dbb66c49782c">SMARTY_PLUGINS_DIR</a>')){
+<a name="l00029"></a>00029    <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;plugins_dir = array('plugins',<a class="code" href="configuration_8php.html#9ad6fcd96b03a7fc2ee1dbb66c49782c">SMARTY_PLUGINS_DIR</a>);
+<a name="l00030"></a>00030 }
+<a name="l00031"></a><a class="code" href="index_8php.html#caaff3c02ea8ad8cb3d1e34a9c0a29e9">00031</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;caching = <a class="code" href="configuration_8php.html#21808f61475959c094da07530c9705ae">SMARTY_CACHING</a>;<span class="comment">//turn on caching</span>
+<a name="l00032"></a><a class="code" href="index_8php.html#185e462e92160da1d68eed4d91eb32bb">00032</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;cache_dir = <a class="code" href="configuration_8php.html#35418e61460bc8a118e99e60a9a07527">SMARTY_CACHE_DIR</a>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="preprocessor">##########################</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor"># add scripts to html header</span>
+<a name="l00037"></a><a class="code" href="index_8php.html#1b89c42014a98b5cbfd77783a1de2ecc">00037</a> <span class="preprocessor"></span><a class="code" href="index_8php.html#1b89c42014a98b5cbfd77783a1de2ecc">$HTML_SCRIPTURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/includes/jquery/'.FILE_JQUERY);
+<a name="l00038"></a>00038 <span class="preprocessor">#</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">##########################</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span>
+<a name="l00041"></a>00041 <span class="preprocessor">##########################</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor"># map language variables</span>
+<a name="l00043"></a><a class="code" href="index_8php.html#9aa87e644839088672b4617618bfb57f">00043</a> <span class="preprocessor"></span><a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['TPL_LOGO_URL_ALT']  = 'mkSurvey';
+<a name="l00044"></a><a class="code" href="index_8php.html#f614134308603012243af6492ef17d16">00044</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['TPL_LOGO_URL_HREF'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>;
+<a name="l00045"></a>00045 <span class="preprocessor">#</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">##########################</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="comment">//debug_obj($oLogger,'oLogger');</span>
+<a name="l00050"></a>00050 <span class="comment">//debug_obj($_SESSION,'_SESSION');</span>
+<a name="l00051"></a>00051 include_once(<a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">LANGUAGE_PATH</a>.'/lang_box_login.php');
+<a name="l00052"></a>00052 include_once(<a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">LANGUAGE_PATH</a>.'/lang_login.php');
+<a name="l00053"></a>00053 include_once(ABSOLUTE_PATH.'/includes/functions/dologin.php');
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 $database-&gt;setDebugOn(<span class="keyword">true</span>);
+<a name="l00056"></a><a class="code" href="index_8php.html#160ced53880d9983f99956b729e6f78a">00056</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;compile_check = <span class="keyword">true</span>;
+<a name="l00057"></a><a class="code" href="index_8php.html#ea9d5e8f56bbeab9291d94598d0eddb3">00057</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;debugging = <a class="code" href="configuration_8local_8php.html#886b95b1f12aacfdbc45a98920cde809">SMARTY_DEBUG</a>;
+<a name="l00058"></a><a class="code" href="index_8php.html#9d273470cd8c82a3478336fb706cda8c">00058</a> <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;template_dir = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>;
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="index_8php.html#0d0ccbfae545490b87c076e183ef6c5c">00060</a> <a class="code" href="admin_8php.html#0d0ccbfae545490b87c076e183ef6c5c">$HTML_TPL_INNER</a>    = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/login.tpl';
+<a name="l00061"></a>00061 <span class="comment">//$HTML_TPL_TOPNAV   = PATH_TEMPLATES.'/admin/topnav.tpl';</span>
+<a name="l00062"></a>00062 <span class="preprocessor">#$HTML_TPL_NAVBAR   = PATH_TEMPLATES.'/admin/navbar.tpl';</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span><span class="preprocessor">#$HTML_TPL_LEFTBOX  = PATH_TEMPLATES.'/admin/leftbox.tpl';</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#$HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/admin/rightbox.tpl';</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span><span class="preprocessor">#$HTML_TPL_BODY     = PATH_TEMPLATES.'/admin/body.tpl';</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span><span class="preprocessor">#$HTML_TPL_FOOTER   = PATH_TEMPLATES.'/admin/footer.tpl';</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span>
+<a name="l00068"></a>00068 <span class="comment">//echo '$currentStage:'.$currentStage;</span>
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 <span class="comment">//get current server protocol</span>
+<a name="l00071"></a>00071 <span class="keywordflow">if</span> (stristr($_SERVER['SERVER_PROTOCOL'],'HTTP/')){
+<a name="l00072"></a>00072    $SERVER_PROTOCOL_PREFIX = 'http:<span class="comment">//';</span>
+<a name="l00073"></a>00073 }<span class="keywordflow">else</span>{
+<a name="l00074"></a>00074    $SERVER_PROTOCOL_PREFIX = 'https:<span class="comment">//';</span>
+<a name="l00075"></a>00075 }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('<a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>',<a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>);
+<a name="l00078"></a><a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">00078</a> <a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">$TPL_PATHS</a>['<a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>']      = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>;
+<a name="l00079"></a><a class="code" href="index_8php.html#75097ca8a7b2079eb8f4291cc053b615">00079</a> <a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">$TPL_PATHS</a>['<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>']       = <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>;
+<a name="l00080"></a><a class="code" href="index_8php.html#cfea45497a1e0f293b44cb4b4b7dcb37">00080</a> <a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">$TPL_PATHS</a>['CURRENT_URL']         = $SERVER_PROTOCOL_PREFIX.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+<a name="l00081"></a><a class="code" href="index_8php.html#c739e919945532e02167b94c6f3f9c28">00081</a> <a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">$TPL_PATHS</a>['CURRENT_REQUEST_URL'] = $SERVER_PROTOCOL_PREFIX.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="comment">//print_r($GLOBALS);</span>
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('PATHS',<a class="code" href="index_8php.html#4fb56e5f96edb8b2c243e95d32f8ba93">$TPL_PATHS</a>);
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="keywordflow">if</span>(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['action'] != ''){
+<a name="l00089"></a>00089    <a class="code" href="admin_2index_8php.html#9d1c6ab193850ee07d0443d7751d3adf">$currentStage</a> = <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['action'];
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="comment">//debug_sql($currentStage,'currentStage');</span>
+<a name="l00093"></a>00093 <span class="comment">//debug_sql($_GET['action'],'action');</span>
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="comment">//debug_obj($oLogger,'oLogger');</span>
+<a name="l00096"></a>00096 <span class="comment">//die('action:'.$currentStage);</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="comment">//   if($currentStage == '' &amp;&amp; $oLogger-&gt;IsAdmin()){</span>
+<a name="l00099"></a>00099 <span class="comment">//      $oLogger-&gt;relocate(LIVE_SITE_URL.'/admin');</span>
+<a name="l00100"></a>00100 <span class="comment">//   }</span>
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="keywordflow">switch</span>(<a class="code" href="admin_2index_8php.html#9d1c6ab193850ee07d0443d7751d3adf">$currentStage</a>){
+<a name="l00104"></a>00104    <span class="keywordflow">case</span> 'dosignup':
+<a name="l00105"></a>00105       require_once(ABSOLUTE_PATH.'/includes/functions/survey_dosignup.php');
+<a name="l00106"></a><a class="code" href="index_8php.html#91cf6fbebedd86150a36e5ac3d5d3bfc">00106</a>       <span class="keywordflow">break</span>;
+<a name="l00107"></a>00107    <span class="keywordflow">case</span> 'doadmin':
+<a name="l00108"></a><a class="code" href="index_8php.html#354ad38ccd8048bf395a26b91a439718">00108</a>       require_once(ABSOLUTE_PATH.'/includes/functions/survey_doadmin.php');
+<a name="l00109"></a>00109       <span class="keywordflow">break</span>;
+<a name="l00110"></a>00110    <span class="keywordflow">case</span> 'dosurvey':
+<a name="l00111"></a><a class="code" href="index_8php.html#f8c05c8358b194d7a566f99954d766b1">00111</a>       require_once(ABSOLUTE_PATH.'/includes/functions/survey_dosurvey.php');
+<a name="l00112"></a>00112       <span class="keywordflow">break</span>;
+<a name="l00113"></a>00113    <span class="keywordflow">default</span>:{
+<a name="l00114"></a>00114       
+<a name="l00115"></a>00115       <span class="comment">//if logged relocate to admin </span>
+<a name="l00116"></a>00116       <span class="keywordflow">if</span> ($oLogger-&gt;IsLogged()){
+<a name="l00117"></a><a class="code" href="index_8php.html#8c426a51ce608997866538440959e0b8">00117</a>          header('Location:'.<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin');
+<a name="l00118"></a>00118          <span class="comment">//debug_sql('Location:'.LIVE_SITE.'/admin');</span>
+<a name="l00119"></a>00119          die();
+<a name="l00120"></a>00120       }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="index_8php.html#9ebc3f13ab7c244131c88b01336ce47e">00122</a>       <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.<span class="charliteral">'/'</span>.<a class="code" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a>);
+<a name="l00123"></a>00123       <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.'/lh.css');
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125       <span class="comment">//      $smarty-&gt;assign('HTMLOUT_BOX_LOGIN',$HTMLOUT_BOX_LOGIN);</span>
+<a name="l00126"></a>00126       <span class="comment">//$HTML_TPL_NAVBAR   = PATH_TEMPLATES.'/login/box_login.tpl';</span>
+<a name="l00127"></a>00127       <span class="comment">//$HTML_TPL_NAVBAR   = PATH_TEMPLATES.'/login/box_login.tpl';</span>
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129       <span class="comment">//      $HTML_TPL_NAVBAR   = PATH_TEMPLATES.'/login/topnav.tpl';</span>
+<a name="l00130"></a>00130       <span class="comment">//</span>
+<a name="l00131"></a>00131       <span class="comment">//      $HTML_TPL_BODY     = PATH_TEMPLATES.'/login/body.tpl';</span>
+<a name="l00132"></a>00132       <span class="comment">//      $HTML_TPL_LEFTBOX  = PATH_TEMPLATES.'/login/leftbox.tpl';</span>
+<a name="l00133"></a>00133       <span class="comment">//      $HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/login/rightbox.tpl';</span>
+<a name="l00134"></a>00134 
+<a name="l00135"></a><a class="code" href="index_8php.html#8e2461f144a2c5abb2918ed49090845d">00135</a>       <a class="code" href="admin_8php.html#8e2461f144a2c5abb2918ed49090845d">$HTML_TPL_TOPNAV</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/login/topnav.tpl';
+<a name="l00136"></a><a class="code" href="index_8php.html#18a0167b7206d323d1c8d556fcd07d8a">00136</a>       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/login/navbar.tpl';
+<a name="l00137"></a><a class="code" href="index_8php.html#132a7bf90078fd9ad70b6057c8c2682a">00137</a>       <a class="code" href="admin_8php.html#132a7bf90078fd9ad70b6057c8c2682a">$HTML_TPL_BODY</a>     = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/login/body.tpl';
+<a name="l00138"></a><a class="code" href="index_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">00138</a>       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/login/leftbox.tpl';
+<a name="l00139"></a><a class="code" href="index_8php.html#24423772b2771eb9f4ef63f68843f0ae">00139</a>       <a class="code" href="admin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a> = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/login/rightbox.tpl';
+<a name="l00140"></a>00140    }
+<a name="l00141"></a>00141    <span class="keywordflow">break</span>;
+<a name="l00142"></a>00142 }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146 <span class="preprocessor">##########################################################</span>
+<a name="l00147"></a>00147 <span class="preprocessor"></span><span class="preprocessor"># Load template data</span>
+<a name="l00148"></a>00148 <span class="preprocessor"></span><span class="comment">/*</span>
+<a name="l00149"></a>00149 <span class="comment"> * load html template meta</span>
+<a name="l00150"></a>00150 <span class="comment"> */</span>
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152 <span class="keywordflow">if</span> (count(<a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>)&gt;0){
+<a name="l00153"></a>00153    <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['SURVEY_STRINGS'] = <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>;
+<a name="l00154"></a>00154 }
+<a name="l00155"></a>00155 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('STRINGS',<a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>);
+<a name="l00156"></a>00156 
+<a name="l00157"></a><a class="code" href="index_8php.html#fd08af1760011918ee8aeab27309ed7e">00157</a> <a class="code" href="admin_8php.html#fd08af1760011918ee8aeab27309ed7e">$HTML_TITLE</a>     = <a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>.' v.'.APP_VERSION.' BETA';
+<a name="l00158"></a>00158 <span class="comment">//$HTML_ENCODING  = 'windows-1251';</span>
+<a name="l00159"></a><a class="code" href="index_8php.html#d7fdb84ca914d8fc89cc328e4c09c70c">00159</a> <a class="code" href="admin_8php.html#d7fdb84ca914d8fc89cc328e4c09c70c">$HTML_ENCODING</a>  = 'UTF-8';
+<a name="l00160"></a><a class="code" href="index_8php.html#bdd3b27cd848a5c3c8bc46b030a87eb3">00160</a> <a class="code" href="admin_8php.html#bdd3b27cd848a5c3c8bc46b030a87eb3">$HTML_BASE_HREF</a> = <a class="code" href="configuration_8php.html#5cb766ec820e7415400f0989712cfbbd">BASE_URL_DESIGN</a>;
+<a name="l00161"></a>00161 
+<a name="l00162"></a><a class="code" href="index_8php.html#3b303c22384e5d686c1f3a8ab1ec5f24">00162</a> <a class="code" href="admin_8php.html#3b303c22384e5d686c1f3a8ab1ec5f24">$HTML_SHORTCUT_ICON_URL</a> = <a class="code" href="configuration_8php.html#e577ce1ae24f37ea3bbd837851824f04">PATH_DESIGN_IMG</a>.'/favicon.ico';
+<a name="l00163"></a>00163 
+<a name="l00164"></a><a class="code" href="index_8php.html#5431d1deb1660c35c5a33d6787163104">00164</a> <a class="code" href="admin_8php.html#5431d1deb1660c35c5a33d6787163104">$HTML_METAS</a>[] = array('name'    =&gt; 'description',
+<a name="l00165"></a>00165                       'content' =&gt; <span class="stringliteral">"mkSurvey"</span>
+<a name="l00166"></a>00166 );
+<a name="l00167"></a>00167 <a class="code" href="admin_8php.html#5431d1deb1660c35c5a33d6787163104">$HTML_METAS</a>[] = array('name'    =&gt; 'keywords',
+<a name="l00168"></a>00168                       'content' =&gt; <span class="stringliteral">"mkSurvey, survey, iso"</span>
+<a name="l00169"></a>00169 );
+<a name="l00170"></a>00170 <a class="code" href="admin_8php.html#5431d1deb1660c35c5a33d6787163104">$HTML_METAS</a>[] = array('name'    =&gt; 'Generator',
+<a name="l00171"></a>00171                       'content' =&gt; <span class="stringliteral">"mkSurvey - Copyright (C) 2007 - 2006 Open Source Matters. All rights reserved."</span>
+<a name="l00172"></a>00172 );
+<a name="l00173"></a>00173 <a class="code" href="admin_8php.html#5431d1deb1660c35c5a33d6787163104">$HTML_METAS</a>[] = array('name'    =&gt; 'robots',
+<a name="l00174"></a>00174                       'content' =&gt; <span class="stringliteral">"index, follow"</span>
+<a name="l00175"></a>00175 );
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177 <span class="comment">/*</span>
+<a name="l00178"></a>00178 <span class="comment"> * load template css's</span>
+<a name="l00179"></a>00179 <span class="comment"> */</span>
+<a name="l00180"></a>00180 <span class="comment">//$HTML_STYLEURLS[] = array('href' =&gt; PATH_DESIGN_STYLES.'/'.SITE_CSS);</span>
+<a name="l00181"></a>00181 <span class="comment">//$HTML_STYLEURLS[] = array('href' =&gt; PATH_DESIGN_STYLES.'/lh.css');</span>
+<a name="l00182"></a>00182 
+<a name="l00183"></a><a class="code" href="index_8php.html#82fec0cae9d257032edd8d9f6408f8a7">00183</a> <a class="code" href="admin_8php.html#82fec0cae9d257032edd8d9f6408f8a7">$HTMLOUT</a> = array('TITLE'                 =&gt; <a class="code" href="admin_8php.html#fd08af1760011918ee8aeab27309ed7e">$HTML_TITLE</a>,
+<a name="l00184"></a>00184 'BASE_HREF'         =&gt; <a class="code" href="admin_8php.html#bdd3b27cd848a5c3c8bc46b030a87eb3">$HTML_BASE_HREF</a>,
+<a name="l00185"></a>00185 'ENCODING'               =&gt; <a class="code" href="admin_8php.html#d7fdb84ca914d8fc89cc328e4c09c70c">$HTML_ENCODING</a>,
+<a name="l00186"></a>00186 'METAS'                  =&gt; <a class="code" href="admin_8php.html#5431d1deb1660c35c5a33d6787163104">$HTML_METAS</a>,
+<a name="l00187"></a>00187 'SHORTCUT_ICON_URL' =&gt; <a class="code" href="admin_8php.html#3b303c22384e5d686c1f3a8ab1ec5f24">$HTML_SHORTCUT_ICON_URL</a>,
+<a name="l00188"></a>00188 'STYLEURLS'              =&gt; <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>,
+<a name="l00189"></a>00189 'SCRIPTURLS'             =&gt; <a class="code" href="index_8php.html#1b89c42014a98b5cbfd77783a1de2ecc">$HTML_SCRIPTURLS</a>,
+<a name="l00190"></a>00190 'XAJAX'                     =&gt; <a class="code" href="survey__doadmin_8php.html#8f3e2c748c74b11a6283d87882ae2594">$HTML_XAJAX</a>,
+<a name="l00191"></a>00191 'TPLS' =&gt; array('INNER'              =&gt; <a class="code" href="admin_8php.html#0d0ccbfae545490b87c076e183ef6c5c">$HTML_TPL_INNER</a>,
+<a name="l00192"></a>00192 'TOPNAV'             =&gt; <a class="code" href="admin_8php.html#8e2461f144a2c5abb2918ed49090845d">$HTML_TPL_TOPNAV</a>,
+<a name="l00193"></a>00193 'NAVBAR'             =&gt; <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>,
+<a name="l00194"></a>00194 'LEFTBOX'            =&gt; <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>,
+<a name="l00195"></a>00195 'RIGHTBOX'       =&gt; <a class="code" href="admin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a>,
+<a name="l00196"></a>00196 'BODY'       =&gt; <a class="code" href="admin_8php.html#132a7bf90078fd9ad70b6057c8c2682a">$HTML_TPL_BODY</a>,
+<a name="l00197"></a>00197 'FOOTER'             =&gt; <a class="code" href="admin_8php.html#443c9b15cbcd3f66af9d26fdb7b502ba">$HTML_TPL_FOOTER</a>)
+<a name="l00198"></a>00198 );
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200 <span class="comment">//      debug_obj($HTMLOUT,'TPL_HTMLOUT');</span>
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('HTMLOUT',<a class="code" href="admin_8php.html#82fec0cae9d257032edd8d9f6408f8a7">$HTMLOUT</a>);
+<a name="l00203"></a>00203 <span class="preprocessor">#</span>
+<a name="l00204"></a>00204 <span class="preprocessor"></span><span class="preprocessor">##########################################################</span>
+<a name="l00205"></a>00205 <span class="preprocessor"></span>
+<a name="l00206"></a>00206 <span class="keywordflow">if</span> (<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['msg']!=''){
+<a name="l00207"></a>00207    $errorKey = strip_tags(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['msg'],'&lt;p&gt;&lt;i&gt;&lt;b&gt;');
+<a name="l00208"></a>00208    <span class="keywordflow">if</span> (defined($errorKey)){
+<a name="l00209"></a>00209       <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('MESSAGE',constant($errorKey));
+<a name="l00210"></a>00210    }<span class="keywordflow">else</span>{
+<a name="l00211"></a>00211       <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('MESSAGE',$errorKey);
+<a name="l00212"></a>00212    }
+<a name="l00213"></a>00213 }
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;display(<a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/index.tpl');
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217 <span class="comment">//debug_obj($_SESSION,'_SESSION');</span>
+<a name="l00218"></a>00218 <span class="comment">//debug_obj($oLogger,'$oLogger');</span>
+<a name="l00219"></a>00219 <span class="comment">//debug_obj($_COOKIE,'_COOKIE');</span>
+<a name="l00220"></a>00220 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

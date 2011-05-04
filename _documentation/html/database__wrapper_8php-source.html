@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: database_wrapper.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>database_wrapper.php</h1><a href="database__wrapper_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: database_wrapper.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> */</span>
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 
+<a name="l00014"></a><a class="code" href="database__wrapper_8php.html#7e851a57c051f87c2f623e41b8658d54">00014</a> function <a class="code" href="database__wrapper_8php.html#7e851a57c051f87c2f623e41b8658d54">tep_db_writer_query</a>($sqlQuery){
+<a name="l00015"></a>00015    global $database;
+<a name="l00016"></a>00016    <span class="keywordflow">if</span>($database==null){
+<a name="l00017"></a>00017       $database = <span class="keyword">new</span> <a class="code" href="classdatabase.html">database</a>();
+<a name="l00018"></a>00018    }
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020    <span class="keywordflow">if</span> ($sqlQuery == ''){
+<a name="l00021"></a>00021       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00022"></a>00022    }
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024    $database-&gt;openConnectionNoReturn($sqlQuery);
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00032"></a><a class="code" href="database__wrapper_8php.html#6d68b3353ab90af95e317cea4b008bb4">00032</a> function <a class="code" href="database__wrapper_8php.html#6d68b3353ab90af95e317cea4b008bb4">tep_db_insert_id</a>(){
+<a name="l00033"></a>00033    <span class="keywordflow">return</span> mysql_insert_id();
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00042"></a><a class="code" href="database__wrapper_8php.html#b8549d8a4736dd32c005b636a741f91b">00042</a> function <a class="code" href="database__wrapper_8php.html#b8549d8a4736dd32c005b636a741f91b">tep_db_reader_query</a>($sqlQuery){
+<a name="l00043"></a>00043    global $database;
+<a name="l00044"></a>00044    <span class="keywordflow">if</span>($database==null){
+<a name="l00045"></a>00045       $database = <span class="keyword">new</span> <a class="code" href="classdatabase.html">database</a>();
+<a name="l00046"></a>00046    }
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048    <span class="keywordflow">if</span> ($sqlQuery == ''){
+<a name="l00049"></a>00049       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00050"></a>00050    }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052    <span class="keywordflow">return</span> $database-&gt;openConnectionWithReturn($sqlQuery);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="database__wrapper_8php.html#801e3ae24b9c3f76a5566142c4fc67ca">00056</a> function <a class="code" href="database__wrapper_8php.html#801e3ae24b9c3f76a5566142c4fc67ca">tep_db_fetch_array</a>($db_query) {
+<a name="l00057"></a>00057    <span class="keywordflow">return</span> mysql_fetch_array($db_query, MYSQL_ASSOC);
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

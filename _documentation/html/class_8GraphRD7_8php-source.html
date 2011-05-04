@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.GraphRD7.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.GraphRD7.php</h1><a href="class_8GraphRD7_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00007"></a><a class="code" href="classGraphRD7.html">00007</a> <span class="keyword">class </span><a class="code" href="classGraphRD7.html">GraphRD7</a> <span class="keyword">extends</span> <a class="code" href="classGraphAbstract.html">GraphAbstract</a> {
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="classGraphRD7.html#42fd9702d8b35c73f7d9f75baf07452c">00009</a>    function <a class="code" href="classGraphRD7.html#42fd9702d8b35c73f7d9f75baf07452c">GraphRD7</a>($graphId){
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011       <span class="comment">//parent::GraphAbstract($graphId);</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013    }
+<a name="l00014"></a>00014 
+<a name="l00020"></a>00020    function redenderData(&amp;$graphDataObj){
+<a name="l00021"></a>00021       <span class="comment">//return _redenderDataPieGraph(&amp;$graphDataObj);</span>
+<a name="l00022"></a>00022       <span class="keywordflow">return</span> $this-&gt;_redenderDataRadarGraph(&amp;$graphDataObj);
+<a name="l00023"></a>00023    }
+<a name="l00024"></a>00024 
+<a name="l00030"></a>00030    function _redenderDataPieGraph(&amp;$graphDataObj){
+<a name="l00031"></a>00031       <span class="comment">// Some data</span>
+<a name="l00032"></a>00032       <span class="comment">//$data = array(20,27,45,75,90);</span>
+<a name="l00033"></a>00033       $data = $graphDataObj-&gt;graphDataArr;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035       <span class="comment">// Create the Pie Graph.</span>
+<a name="l00036"></a>00036       $graph = <span class="keyword">new</span> PieGraph(350,200,<span class="stringliteral">"auto"</span>);
+<a name="l00037"></a>00037       <span class="comment">//$graph-&gt;SetShadow();</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039       <span class="comment">// Set A title for the plot</span>
+<a name="l00040"></a>00040       <span class="comment">//$graph-&gt;title-&gt;Set("Example 3 3D Pie plot");</span>
+<a name="l00041"></a>00041       <span class="comment">//$graph-&gt;title-&gt;SetFont(FF_VERDANA,FS_BOLD,18);</span>
+<a name="l00042"></a>00042       <span class="comment">//$graph-&gt;title-&gt;SetColor("darkblue");</span>
+<a name="l00043"></a>00043       <span class="comment">//$graph-&gt;legend-&gt;Pos(0.1,0.2);</span>
+<a name="l00044"></a>00044       <span class="comment">//$graph-&gt;legend-&gt;SetFont(FF_ARIAL,FS_NORMAL,8);</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046       <span class="comment">// Create 3D pie plot</span>
+<a name="l00047"></a>00047       $p1 = <span class="keyword">new</span> PiePlot3d($data);
+<a name="l00048"></a>00048       $p1-&gt;SetTheme(<span class="stringliteral">"sand"</span>);
+<a name="l00049"></a>00049       $p1-&gt;SetCenter(0.4);
+<a name="l00050"></a>00050       $p1-&gt;SetSize(80);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052       <span class="comment">// Adjust projection angle</span>
+<a name="l00053"></a>00053       $p1-&gt;SetAngle(45);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055       <span class="comment">// As a shortcut you can easily explode one numbered slice with</span>
+<a name="l00056"></a>00056       $p1-&gt;ExplodeSlice(3);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058       <span class="comment">// Setup the slice values</span>
+<a name="l00059"></a>00059       $p1-&gt;value-&gt;SetFont(FF_ARIAL,FS_NORMAL,8);
+<a name="l00060"></a>00060       $p1-&gt;value-&gt;SetColor(<span class="stringliteral">"navy"</span>);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062       <span class="comment">//$legendCaptionsArr = array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct");</span>
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064       $p1-&gt;SetLegends($graphDataObj-&gt;graphTitlesArr);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066       $graph-&gt;Add($p1);
+<a name="l00067"></a>00067       $graph-&gt;Stroke();
+<a name="l00068"></a>00068    }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 
+<a name="l00076"></a>00076    function _redenderDataRadarGraph(&amp;$graphDataObj){
+<a name="l00077"></a>00077       <span class="comment">//   include ("../jpgraph_radar.php");</span>
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079       <span class="comment">//debug_obj($graphDataObj);</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081       <span class="comment">// Create the basic radar graph</span>
+<a name="l00082"></a>00082       $graph = <span class="keyword">new</span> RadarGraph(350,200,<span class="stringliteral">"auto"</span>);
+<a name="l00083"></a>00083       <span class="comment">//$graph-&gt;img-&gt;SetAntiAliasing();</span>
+<a name="l00084"></a>00084       $graph-&gt;SetFrame(<span class="keyword">false</span>);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087       <span class="comment">// Set background color and shadow</span>
+<a name="l00088"></a>00088       <span class="comment">//$graph-&gt;SetColor("white");</span>
+<a name="l00089"></a>00089       <span class="comment">//$graph-&gt;SetShadow();</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091       <span class="comment">// Position the graph</span>
+<a name="l00092"></a>00092       $graph-&gt;SetCenter(0.45,0.50);
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094       <span class="comment">// Setup the axis formatting</span>
+<a name="l00095"></a>00095       $graph-&gt;axis-&gt;SetFont(FF_FONT1,FS_NORMAL,8);
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097       <span class="comment">// Setup the grid lines</span>
+<a name="l00098"></a>00098       $graph-&gt;grid-&gt;SetLineStyle(<span class="stringliteral">"dotted"</span>);
+<a name="l00099"></a>00099       $graph-&gt;grid-&gt;SetColor(<span class="stringliteral">"navy"</span>);
+<a name="l00100"></a>00100       $graph-&gt;grid-&gt;Show();
+<a name="l00101"></a>00101       $graph-&gt;HideTickMarks();
+<a name="l00102"></a>00102       $graph-&gt;SetScale(<span class="stringliteral">"lin"</span>,0,$graphDataObj-&gt;getValuesCount());
+<a name="l00103"></a>00103       <span class="comment">//$graph-&gt;ShowMinorTickmarks();</span>
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105       <span class="comment">// Setup graph titles</span>
+<a name="l00106"></a>00106       <span class="comment">//$graph-&gt;title-&gt;Set("Quality result");</span>
+<a name="l00107"></a>00107       <span class="comment">//$graph-&gt;title-&gt;Set("Answers:".$graphDataObj-&gt;valuesCount);</span>
+<a name="l00108"></a>00108       <span class="comment">//$graph-&gt;title-&gt;SetFont(FF_FONT1,FS_BOLD);</span>
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111       $graph-&gt;SetTitles($graphDataObj-&gt;graphTitlesArr);
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114       <span class="comment">// Create the first radar plot</span>
+<a name="l00115"></a>00115       <span class="comment">//$plot = new RadarPlot(array(70,80,60,90,71,81,47));</span>
+<a name="l00116"></a>00116       <span class="comment">//$plot-&gt;SetLegend("Goal");</span>
+<a name="l00117"></a>00117       <span class="comment">//$plot-&gt;SetColor("red","lightred");</span>
+<a name="l00118"></a>00118       <span class="comment">//$plot-&gt;SetFill(false);</span>
+<a name="l00119"></a>00119       <span class="comment">//$plot-&gt;SetLineWeight(2);</span>
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121       <span class="comment">// Create the second radar plot</span>
+<a name="l00122"></a>00122       $grephDataArr = $graphDataObj-&gt;graphDataArr;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124       $plot2 = <span class="keyword">new</span> RadarPlot($grephDataArr);
+<a name="l00125"></a>00125       <span class="comment">//   $plot2-&gt;SetLegend("Answers:".$graphDataObj-&gt;valuesCount);</span>
+<a name="l00126"></a>00126       $plot2-&gt;SetLineWeight(2);
+<a name="l00127"></a>00127       $plot2-&gt;SetColor(<span class="stringliteral">"red"</span>);
+<a name="l00128"></a>00128       <span class="comment">//$plot2-&gt;SetColor("#BBCCFF");</span>
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130       $plot2-&gt;SetFill(<span class="keyword">true</span>);
+<a name="l00131"></a>00131       <span class="comment">//$plot2-&gt;SupressTickMarks();</span>
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133       <span class="comment">// Add the plots to the graph</span>
+<a name="l00134"></a>00134       $graph-&gt;Add($plot2);
+<a name="l00135"></a>00135       <span class="comment">//$graph-&gt;Add($plot);</span>
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137       <span class="comment">//debug_obj($graph,'$graph');</span>
+<a name="l00138"></a>00138       <span class="comment">// And output the graph</span>
+<a name="l00139"></a>00139       $graph-&gt;Stroke();
+<a name="l00140"></a>00140    }
+<a name="l00141"></a>00141 }
+<a name="l00142"></a>00142 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

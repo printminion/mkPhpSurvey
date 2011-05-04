@@ -1,0 +1,77 @@
+\section{SessionCookie.php-Dateireferenz}
+\label{SessionCookie_8php}\index{SessionCookie.php@{SessionCookie.php}}
+\subsection*{Variablen}
+\begin{CompactItemize}
+\item 
+{\bf \$past} = time()-1800
+\item 
+{\bf \$query}
+\item 
+{\bf \$current\_\-time} = time()
+\item 
+{\bf \$result} = \${\bf database} $\rightarrow$ openConnectionWithReturn(\$query)
+\item 
+{\bf \$\_\-SESSION} ['sessioncookie'] = \$randnum
+\item 
+{\bf \$guest} = 1
+\end{CompactItemize}
+
+
+\subsection{Variablen-Dokumentation}
+\index{SessionCookie.php@{SessionCookie.php}!\$\_\-SESSION@{\$\_\-SESSION}}
+\index{\$\_\-SESSION@{\$\_\-SESSION}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$\_\-SESSION['sessioncookie'] = \$randnum}\label{SessionCookie_8php_93d36a95c848bb1af38554eb7ecd6174}
+
+
+
+
+Definiert in Zeile 36 der Datei SessionCookie.php.
+
+Wird benutzt von debug\_\-help(), Logger.doLogin(), Logger.doLogout(), doSetValue(), Logger.Logger() und smarty\_\-function\_\-component().\index{SessionCookie.php@{SessionCookie.php}!\$current\_\-time@{\$current\_\-time}}
+\index{\$current\_\-time@{\$current\_\-time}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$current\_\-time = time()}\label{SessionCookie_8php_63faaf6695dbb6b199cd3fc5a5de124f}
+
+
+
+
+Definiert in Zeile 17 der Datei SessionCookie.php.\index{SessionCookie.php@{SessionCookie.php}!\$guest@{\$guest}}
+\index{\$guest@{\$guest}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$guest = 1}\label{SessionCookie_8php_d66623e413b7ca6fec85bd439ed77268}
+
+
+
+
+Definiert in Zeile 38 der Datei SessionCookie.php.\index{SessionCookie.php@{SessionCookie.php}!\$past@{\$past}}
+\index{\$past@{\$past}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$past = time()-1800}\label{SessionCookie_8php_a0ad92c842535d85be5cad3fe1d7f840}
+
+
+\begin{Desc}
+\item[Version:]\$Id:\$ \end{Desc}
+
+
+Definiert in Zeile 10 der Datei SessionCookie.php.\index{SessionCookie.php@{SessionCookie.php}!\$query@{\$query}}
+\index{\$query@{\$query}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$query}\label{SessionCookie_8php_f59a5f7cd609e592c41dc3643efd3c98}
+
+
+\textbf{Initialisierung:}
+
+\begin{Code}\begin{verbatim}"DELETE FROM ".$dbprefix."session
+                          WHERE (time < $past)"
+\end{verbatim}
+\end{Code}
+
+
+Definiert in Zeile 13 der Datei SessionCookie.php.
+
+Wird benutzt von Logger.doLogin(), Logger.doLogout(), Logger.Logger(), database.openConnectionNoReturn(), database.openConnectionWithReturn() und Logger.recordLogin().\index{SessionCookie.php@{SessionCookie.php}!\$result@{\$result}}
+\index{\$result@{\$result}!SessionCookie.php@{SessionCookie.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$result = \${\bf database} $\rightarrow$ openConnectionWithReturn(\$query)}\label{SessionCookie_8php_112ef069ddc0454086e3d1e6d8d55d07}
+
+
+
+
+Definiert in Zeile 27 der Datei SessionCookie.php.
+
+Wird benutzt von Survivor.\_\-insert(), SurveyStructure.\_\-insert(), Survey.\_\-insert(), Survey.\_\-insertStaticData(), SurveySessionAbstract.\_\-insertSurveyData(), SurveyReportAbstract.\_\-insertSurveyData(), Survey.\_\-loadConstantDataValues(), User.\_\-loadDataById(), Survivor.\_\-loadDataById(), SurveyType.\_\-loadDataById(), SurveyStructure.\_\-loadDataById(), SurveySessionAbstract.\_\-loadDataById(), SurveyReportAbstract.\_\-loadDataById(), Survey.\_\-loadDataById(), SurveySessionAbstract.\_\-loadDataByTid(), Survivor.\_\-update(), SurveyType.\_\-update(), SurveyStructure.\_\-update(), Survey.\_\-update(), Survey.\_\-updateStaticData(), SurveySessionAbstract.\_\-updateSurveyData(), SurveyReportAbstract.\_\-updateSurveyData(), Logger.checkIfUserLoggedByNick(), Logger.doLogin(), SurveyStructure.getCreateQueryBySurveyType(), SurveyOfficer.getSurveyConstants(), Survey.getSurveyConstants(), SurveyOfficer.getSurveyIdByToken(), SurveyOfficer.getSurveysByUserId(), SurveyOfficer.getSurveyTypes(), SurveyOfficer.getSurvivorsBySurveyId(), SurveyOfficer.getSurvivorsDoneBySurveyId(), Survivor.ifSurvivorExist(), Logger.Logger(), database.openConnectionWithReturn(), Logger.recordLogin() und SurveySession.SurveySession().

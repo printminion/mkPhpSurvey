@@ -1,0 +1,392 @@
+\section{mk\_\-debug.php-Dateireferenz}
+\label{mk__debug_8php}\index{mk\_\-debug.php@{mk\_\-debug.php}}
+\subsection*{Aufzählungen}
+\begin{CompactItemize}
+\item 
+enum {\bf FTK\_\-DEVELOPER\_\-ID} 
+\item 
+enum {\bf MK\_\-DEBUG\_\-FORCE\_\-OUTPUT} 
+\item 
+enum {\bf MKDEBUG\_\-VERSION} 
+\end{CompactItemize}
+\subsection*{Funktionen}
+\begin{CompactItemize}
+\item 
+{\bf debug\_\-help} ()
+\item 
+{\bf debug\_\-obj} (\$object, \$strComment=null, \$expanded=false)
+\item 
+{\bf debug\_\-on} (\$strName, \$expanded=false, \$enabled=true)
+\item 
+{\bf \_\-flushHTML\_\-Style} ()
+\item 
+{\bf debug\_\-xml} (\$sqlString, \$strTitle= '', \$expanded=false)
+\item 
+{\bf debug\_\-sql} (\$sqlString, \$strTitle= '', \$pre=false)
+\item 
+{\bf print\_\-rr} (\$arrToPrint)
+\item 
+{\bf debug\_\-off} ()
+\item 
+{\bf getUID2} (\$length=5)
+\item 
+{\bf \_\-assign\_\-rand\_\-value2} (\$num)
+\item 
+{\bf dumpPrintRToString2} (\$variable)
+\item 
+{\bf dumpVarDumpToString2} (\$variable)
+\item 
+{\bf dumpHighlightStringToString} (\$value)
+\item 
+{\bf mk\_\-deleteCustomer} ()
+\item 
+{\bf mk\_\-getCustomerInfoById} ()
+\item 
+{\bf mk\_\-resetOrderLabelsById} ()
+\item 
+{\bf debug\_\-sqldump} (\$output, \$comment=\char`\"{}\char`\"{})
+\end{CompactItemize}
+\subsection*{Variablen}
+\begin{CompactItemize}
+\item 
+{\bf \$mk\_\-debug\_\-on} = true
+\item 
+{\bf \$mkDebug\_\-FirstRun} = true
+\item 
+{\bf \$mkDebug\_\-idDiv} = \char`\"{}\char`\"{}
+\end{CompactItemize}
+
+
+\subsection{Dokumentation der Aufzählungstypen}
+\index{mk\_\-debug.php@{mk\_\-debug.php}!FTK\_\-DEVELOPER\_\-ID@{FTK\_\-DEVELOPER\_\-ID}}
+\index{FTK\_\-DEVELOPER\_\-ID@{FTK\_\-DEVELOPER\_\-ID}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf FTK\_\-DEVELOPER\_\-ID}}\label{mk__debug_8php_e6e464a670b5a4c833aa53a82c44740e}
+
+
+
+
+Definiert in Zeile 55 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!MK\_\-DEBUG\_\-FORCE\_\-OUTPUT@{MK\_\-DEBUG\_\-FORCE\_\-OUTPUT}}
+\index{MK\_\-DEBUG\_\-FORCE\_\-OUTPUT@{MK\_\-DEBUG\_\-FORCE\_\-OUTPUT}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf MK\_\-DEBUG\_\-FORCE\_\-OUTPUT}}\label{mk__debug_8php_629540c298bea718ba69f8a52e4c81cd}
+
+
+
+
+Definiert in Zeile 56 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!MKDEBUG\_\-VERSION@{MKDEBUG\_\-VERSION}}
+\index{MKDEBUG\_\-VERSION@{MKDEBUG\_\-VERSION}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf MKDEBUG\_\-VERSION}}\label{mk__debug_8php_05f0f3181946c6861853332d5436d862}
+
+
+
+
+Definiert in Zeile 71 der Datei mk\_\-debug.php.
+
+\subsection{Dokumentation der Funktionen}
+\index{mk\_\-debug.php@{mk\_\-debug.php}!\_\-assign\_\-rand\_\-value2@{\_\-assign\_\-rand\_\-value2}}
+\index{\_\-assign\_\-rand\_\-value2@{\_\-assign\_\-rand\_\-value2}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\_\-assign\_\-rand\_\-value2 (\$ {\em num})}\label{mk__debug_8php_7c5fb765502cd1c5367ccc7a9511afa2}
+
+
+Get mapping number char
+
+private
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em int}]\$num \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 525 der Datei mk\_\-debug.php.
+
+Wird benutzt von getUID2().\index{mk\_\-debug.php@{mk\_\-debug.php}!\_\-flushHTML\_\-Style@{\_\-flushHTML\_\-Style}}
+\index{\_\-flushHTML\_\-Style@{\_\-flushHTML\_\-Style}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\_\-flushHTML\_\-Style ()}\label{mk__debug_8php_bba77d9fbd7754a17d05a0a521aaf4ee}
+
+
+Output css style for debug  private
+
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 235 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on und \$mkDebug\_\-FirstRun.
+
+Wird benutzt von debug\_\-on() und debug\_\-sql().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-help@{debug\_\-help}}
+\index{debug\_\-help@{debug\_\-help}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-help ()}\label{mk__debug_8php_3d78e965765273c61772d1b18d68c572}
+
+
+print out help about debug commands  public
+
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 79 der Datei mk\_\-debug.php.
+
+Benutzt \$\_\-SESSION, debug\_\-obj(), debug\_\-off(), debug\_\-on(), debug\_\-sql() und debug\_\-xml().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-obj@{debug\_\-obj}}
+\index{debug\_\-obj@{debug\_\-obj}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-obj (\$ {\em object}, \$ {\em strComment} = {\tt null}, \$ {\em expanded} = {\tt false})}\label{mk__debug_8php_2cf8fe22e05ee6e526cdaeaf679f5f3f}
+
+
+Output object information
+
+public
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em object}]\$object Object to output \item[{\em string}]\$strComment Short comment for block \item[{\em boolean}]\$expanded Collapse/Expand debug block \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 137 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on, debug\_\-off(), debug\_\-on() und dumpPrintRToString2().
+
+Wird benutzt von debug\_\-help(), debug\_\-sql(), debug\_\-xml() und mk\_\-getCustomerInfoById().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-off@{debug\_\-off}}
+\index{debug\_\-off@{debug\_\-off}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-off ()}\label{mk__debug_8php_3f986182cf897d7f9aa468f509561b65}
+
+
+Close Block opened with debug\_\-on
+
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 485 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on und \$mkDebug\_\-idDiv.
+
+Wird benutzt von debug\_\-help() und debug\_\-obj().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-on@{debug\_\-on}}
+\index{debug\_\-on@{debug\_\-on}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-on (\$ {\em strName}, \$ {\em expanded} = {\tt false}, \$ {\em enabled} = {\tt true})}\label{mk__debug_8php_9091b381f27c977c5b6ef7ae6bcfa9fa}
+
+
+Begin output block.Dont forget to close it with \doxyref{debug\_\-off()}{S.}{mk__debug_8php_3f986182cf897d7f9aa468f509561b65};  public  if (debug\_\-on(\char`\"{}String\char`\"{}))\{ echo \char`\"{}output1\char`\"{}; echo \char`\"{}output2\char`\"{}; \doxyref{debug\_\-off()}{S.}{mk__debug_8php_3f986182cf897d7f9aa468f509561b65};
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$strName Caption of output block \item[{\em boolean}]\$expanded Expand/Collapse Output block \item[{\em boolean}]\$enabled Enable/Disable block \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 182 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on, \$mkDebug\_\-FirstRun, \$mkDebug\_\-idDiv, \_\-flushHTML\_\-Style() und getUID2().
+
+Wird benutzt von debug\_\-help() und debug\_\-obj().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-sql@{debug\_\-sql}}
+\index{debug\_\-sql@{debug\_\-sql}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-sql (\$ {\em sqlString}, \$ {\em strTitle} = {\tt ''}, \$ {\em pre} = {\tt false})}\label{mk__debug_8php_9143914017823aa06a68451b81ed9b83}
+
+
+Output String in pretty block
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$sqlString String to output \item[{\em string}]\$strTitle caption of Debug Block \item[{\em bool}]\$pre Use preformatted HTML tag \small\begin{alltt}
+ \end{alltt}
+\normalsize 
+\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]\small\begin{alltt} null
+\end{alltt}
+\normalsize 
+\end{Desc}
+
+
+Definiert in Zeile 444 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on, \_\-flushHTML\_\-Style() und debug\_\-obj().
+
+Wird benutzt von debug\_\-help().\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-sqldump@{debug\_\-sqldump}}
+\index{debug\_\-sqldump@{debug\_\-sqldump}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-sqldump (\$ {\em output}, \$ {\em comment} = {\tt \char`\"{}\char`\"{}})}\label{mk__debug_8php_645d9ad99c5c7ffc64c5b090d183eba1}
+
+
+Dump sql queries to output file
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$output SQL Query to output \item[{\em strinf}]\$comment Comment string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]boolean \end{Desc}
+
+
+Definiert in Zeile 801 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!debug\_\-xml@{debug\_\-xml}}
+\index{debug\_\-xml@{debug\_\-xml}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}debug\_\-xml (\$ {\em sqlString}, \$ {\em strTitle} = {\tt ''}, \$ {\em expanded} = {\tt false})}\label{mk__debug_8php_0e1c5e9d4666052ad832740252ce4584}
+
+
+Output formatted xml string
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$sqlString XML string \item[{\em string}]\$strTitle Debug Block caption \item[{\em boolean}]\$expanded Expand/collapse Debug block \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]null \end{Desc}
+
+
+Definiert in Zeile 428 der Datei mk\_\-debug.php.
+
+Benutzt debug\_\-obj() und dumpHighlightStringToString().
+
+Wird benutzt von debug\_\-help().\index{mk\_\-debug.php@{mk\_\-debug.php}!dumpHighlightStringToString@{dumpHighlightStringToString}}
+\index{dumpHighlightStringToString@{dumpHighlightStringToString}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dumpHighlightStringToString (\$ {\em value})}\label{mk__debug_8php_283c34cb6773c34958be28ff985eb4d6}
+
+
+Converts highlight\_\-string output to string
+
+public \begin{Desc}
+\item[Autor:]Mischa Kupriyanov, $<${\tt mischa.kupriyanov@fotokasten.de}$>$ \end{Desc}
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$value \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 695 der Datei mk\_\-debug.php.
+
+Wird benutzt von debug\_\-xml().\index{mk\_\-debug.php@{mk\_\-debug.php}!dumpPrintRToString2@{dumpPrintRToString2}}
+\index{dumpPrintRToString2@{dumpPrintRToString2}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dumpPrintRToString2 (\$ {\em variable})}\label{mk__debug_8php_46589fb4b73646db1a75ac0b5f4dfd94}
+
+
+Converts print\_\-r output to string
+
+private \begin{Desc}
+\item[Autor:]Mischa Kupriyanov, $<${\tt mischa.kupriyanov@fotokasten.de}$>$ \end{Desc}
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em mixed}]\$variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 651 der Datei mk\_\-debug.php.
+
+Wird benutzt von debug\_\-obj() und SurveySessionAbstract.setValue().\index{mk\_\-debug.php@{mk\_\-debug.php}!dumpVarDumpToString2@{dumpVarDumpToString2}}
+\index{dumpVarDumpToString2@{dumpVarDumpToString2}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}dumpVarDumpToString2 (\$ {\em variable})}\label{mk__debug_8php_d7c835c4c79a50b6c76aed32a6b5c4a7}
+
+
+Converts var\_\-dump output to string
+
+public \begin{Desc}
+\item[Autor:]Mischa Kupriyanov, $<${\tt mischa.kupriyanov@fotokasten.de}$>$ \end{Desc}
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em mixed}]\$variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 673 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!getUID2@{getUID2}}
+\index{getUID2@{getUID2}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}getUID2 (\$ {\em length} = {\tt 5})}\label{mk__debug_8php_f494211afb197ac2b111925d3b9b4611}
+
+
+Generate UID with defined Length
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em int}]\$length \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 503 der Datei mk\_\-debug.php.
+
+Benutzt \_\-assign\_\-rand\_\-value2().
+
+Wird benutzt von debug\_\-on().\index{mk\_\-debug.php@{mk\_\-debug.php}!mk\_\-deleteCustomer@{mk\_\-deleteCustomer}}
+\index{mk\_\-deleteCustomer@{mk\_\-deleteCustomer}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mk\_\-deleteCustomer ()}\label{mk__debug_8php_0d66e39d9fc2509e91a9ad8c7abaabe1}
+
+
+Function to delete customer from DB 
+
+Definiert in Zeile 718 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!mk\_\-getCustomerInfoById@{mk\_\-getCustomerInfoById}}
+\index{mk\_\-getCustomerInfoById@{mk\_\-getCustomerInfoById}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mk\_\-getCustomerInfoById ()}\label{mk__debug_8php_1b5a643d6cea8b098ecdda7119c21c89}
+
+
+Function to get customer Info from DB 
+
+Definiert in Zeile 739 der Datei mk\_\-debug.php.
+
+Benutzt debug\_\-obj().\index{mk\_\-debug.php@{mk\_\-debug.php}!mk\_\-resetOrderLabelsById@{mk\_\-resetOrderLabelsById}}
+\index{mk\_\-resetOrderLabelsById@{mk\_\-resetOrderLabelsById}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mk\_\-resetOrderLabelsById ()}\label{mk__debug_8php_15713f0e2e88815d48a9039e3d31cf34}
+
+
+Function to remove labels by orderId 
+
+Definiert in Zeile 773 der Datei mk\_\-debug.php.\index{mk\_\-debug.php@{mk\_\-debug.php}!print\_\-rr@{print\_\-rr}}
+\index{print\_\-rr@{print\_\-rr}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}print\_\-rr (\$ {\em arrToPrint})}\label{mk__debug_8php_82d31f8d13613056a8aaf409e91cc62f}
+
+
+
+
+Definiert in Zeile 469 der Datei mk\_\-debug.php.
+
+Benutzt \$mk\_\-debug\_\-on.
+
+\subsection{Variablen-Dokumentation}
+\index{mk\_\-debug.php@{mk\_\-debug.php}!\$mk\_\-debug\_\-on@{\$mk\_\-debug\_\-on}}
+\index{\$mk\_\-debug\_\-on@{\$mk\_\-debug\_\-on}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$mk\_\-debug\_\-on = true}\label{mk__debug_8php_33427d7a74ca022f8e6613d22936fb2d}
+
+
+
+
+Definiert in Zeile 57 der Datei mk\_\-debug.php.
+
+Wird benutzt von \_\-flushHTML\_\-Style(), debug\_\-obj(), debug\_\-off(), debug\_\-on(), debug\_\-sql() und print\_\-rr().\index{mk\_\-debug.php@{mk\_\-debug.php}!\$mkDebug\_\-FirstRun@{\$mkDebug\_\-FirstRun}}
+\index{\$mkDebug\_\-FirstRun@{\$mkDebug\_\-FirstRun}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$mkDebug\_\-FirstRun = true}\label{mk__debug_8php_1496c13663df85ed5cb5c3c1befab13b}
+
+
+
+
+Definiert in Zeile 69 der Datei mk\_\-debug.php.
+
+Wird benutzt von \_\-flushHTML\_\-Style() und debug\_\-on().\index{mk\_\-debug.php@{mk\_\-debug.php}!\$mkDebug\_\-idDiv@{\$mkDebug\_\-idDiv}}
+\index{\$mkDebug\_\-idDiv@{\$mkDebug\_\-idDiv}!mk_debug.php@{mk\_\-debug.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$mkDebug\_\-idDiv = \char`\"{}\char`\"{}}\label{mk__debug_8php_9f6218d57ebeae3a7197fe0265175cf2}
+
+
+
+
+Definiert in Zeile 70 der Datei mk\_\-debug.php.
+
+Wird benutzt von debug\_\-off() und debug\_\-on().

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.ObjectLogger.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.ObjectLogger.php</h1><a href="class_8ObjectLogger_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: class.ObjectLogger.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey.objects</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a><a class="code" href="classObjectLogger.html">00007</a> <span class="keyword">class </span><a class="code" href="classObjectLogger.html">ObjectLogger</a>{
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="comment">//   /**</span>
+<a name="l00010"></a>00010 <span class="comment">//    * Last error</span>
+<a name="l00011"></a>00011 <span class="comment">//    *</span>
+<a name="l00012"></a>00012 <span class="comment">//    * @var string</span>
+<a name="l00013"></a>00013 <span class="comment">//    */</span>
+<a name="l00014"></a>00014 <span class="comment">//   var $_lastError;</span>
+<a name="l00015"></a>00015 
+<a name="l00021"></a><a class="code" href="classObjectLogger.html#d5bd26e05691edf51c66e586884ec434">00021</a>    var <a class="code" href="classObjectLogger.html#d5bd26e05691edf51c66e586884ec434">$_errorArray</a>;
+<a name="l00022"></a>00022    
+<a name="l00028"></a><a class="code" href="classObjectLogger.html#df651a233ca51d5632226904f6fd83b0">00028</a>    var <a class="code" href="classObjectLogger.html#df651a233ca51d5632226904f6fd83b0">$_requiredDefinitionsArr</a>;
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="classObjectLogger.html#51e1001bd0063f27980e825ff7fea920">00030</a>    function <a class="code" href="classObjectLogger.html#51e1001bd0063f27980e825ff7fea920">ObjectLogger</a>(){
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032    }
+<a name="l00033"></a>00033 
+<a name="l00039"></a><a class="code" href="classObjectLogger.html#32e3e4869d931bf1da2e2ce9e6a0ec4b">00039</a>    function <a class="code" href="classObjectLogger.html#32e3e4869d931bf1da2e2ce9e6a0ec4b">setRequiredDefinitions</a>($array){
+<a name="l00040"></a>00040       $this-&gt;_requiredDefinitionsArr = $array;
+<a name="l00041"></a>00041    }
+<a name="l00042"></a>00042    
+<a name="l00048"></a><a class="code" href="classObjectLogger.html#8db680194e6024d5a7e2db03d8d840e3">00048</a>    function <a class="code" href="classObjectLogger.html#8db680194e6024d5a7e2db03d8d840e3">_validateRequiredDefinitions</a>(){
+<a name="l00049"></a>00049       $error = <span class="keyword">false</span>;
+<a name="l00050"></a>00050       <span class="keywordflow">foreach</span>((array)$this-&gt;_requiredDefinitionsArr as $definition){
+<a name="l00051"></a>00051          <span class="keywordflow">if</span> (!defined($definition)){
+<a name="l00052"></a>00052             $error = <span class="keyword">true</span>;
+<a name="l00053"></a>00053             trigger_error( get_class($this).<span class="stringliteral">": definition $definition is not defined"</span>);
+<a name="l00054"></a>00054          }
+<a name="l00055"></a>00055       }
+<a name="l00056"></a>00056       <span class="keywordflow">return</span> $error;
+<a name="l00057"></a>00057    }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 
+<a name="l00064"></a><a class="code" href="classObjectLogger.html#3b306238378bb21cf09333e0ce691c0b">00064</a>    function <a class="code" href="classObjectLogger.html#3b306238378bb21cf09333e0ce691c0b">_resetErrors</a>(){
+<a name="l00065"></a>00065       <span class="comment">//$this-&gt;_lastError = null;</span>
+<a name="l00066"></a>00066       unset($this-&gt;_errorArray);
+<a name="l00067"></a>00067    }
+<a name="l00068"></a>00068 
+<a name="l00074"></a><a class="code" href="classObjectLogger.html#c8a2fbf95ac1aa972132dec5e4d5ee79">00074</a>    function <a class="code" href="classObjectLogger.html#c8a2fbf95ac1aa972132dec5e4d5ee79">hasErrors</a>(){
+<a name="l00075"></a>00075       <span class="keywordflow">if</span> (count($this-&gt;_errorArray)){
+<a name="l00076"></a>00076          <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00077"></a>00077       }<span class="keywordflow">else</span>{
+<a name="l00078"></a>00078          <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00079"></a>00079       }
+<a name="l00080"></a>00080    }
+<a name="l00081"></a>00081 
+<a name="l00089"></a><a class="code" href="classObjectLogger.html#80da39713b2275b8a78d4d9a3f43b34f">00089</a>    function <a class="code" href="classObjectLogger.html#80da39713b2275b8a78d4d9a3f43b34f">_addError</a>($error,$valueName = null){
+<a name="l00090"></a>00090       <span class="comment">//$this-&gt;_lastError = $error;</span>
+<a name="l00091"></a>00091       <span class="keywordflow">if</span> ($error!=''){
+<a name="l00092"></a>00092          $this-&gt;_errorArray[] = array('error'     =&gt; $error,
+<a name="l00093"></a>00093                                                                   'valueName' =&gt; $valueName);
+<a name="l00094"></a>00094       }
+<a name="l00095"></a>00095    }
+<a name="l00096"></a>00096 
+<a name="l00103"></a><a class="code" href="classObjectLogger.html#972ed527bf7f3ff3a7cf0a00b2eb8f59">00103</a>    function <a class="code" href="classObjectLogger.html#972ed527bf7f3ff3a7cf0a00b2eb8f59">getErrors</a>(){
+<a name="l00104"></a>00104       $errorsArr = $this-&gt;_errorArray;
+<a name="l00105"></a>00105       $this-&gt;<a class="code" href="classObjectLogger.html#3b306238378bb21cf09333e0ce691c0b">_resetErrors</a>();
+<a name="l00106"></a>00106       <span class="keywordflow">return</span> $errorsArr;
+<a name="l00107"></a>00107    }
+<a name="l00108"></a>00108 
+<a name="l00116"></a><a class="code" href="classObjectLogger.html#4dff6e98f5955e509a4db5ed9f01e075">00116</a>    function <a class="code" href="classObjectLogger.html#4dff6e98f5955e509a4db5ed9f01e075">getLastError</a>() {
+<a name="l00117"></a>00117       $returnValue = (string) '';
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119       
+<a name="l00120"></a>00120       <span class="keywordflow">if</span> (count($this-&gt;_errorArray)&gt;0){
+<a name="l00121"></a>00121          <span class="comment">//TODO get last element</span>
+<a name="l00122"></a>00122          $returnValue = $this-&gt;_errorArray[count($this-&gt;_errorArray)-1];
+<a name="l00123"></a>00123          $returnValue = $returnValue['error'];
+<a name="l00124"></a>00124       }
+<a name="l00125"></a>00125       
+<a name="l00126"></a>00126       $this-&gt;<a class="code" href="classObjectLogger.html#3b306238378bb21cf09333e0ce691c0b">_resetErrors</a>();
+<a name="l00127"></a>00127       
+<a name="l00128"></a>00128       <span class="keywordflow">return</span> (<span class="keywordtype">string</span>) $returnValue;
+<a name="l00129"></a>00129    }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131 }
+<a name="l00132"></a>00132 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

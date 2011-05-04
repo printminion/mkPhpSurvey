@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: survey_dosurvey.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>survey_dosurvey.php</h1><a href="survey__dosurvey_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00006"></a><a class="code" href="survey__dosurvey_8php.html#9ebc3f13ab7c244131c88b01336ce47e">00006</a> <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.<span class="charliteral">'/'</span>.<a class="code" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a>);
+<a name="l00007"></a>00007 <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.'/lh.css');
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['dosurvey'])) {
+<a name="l00010"></a>00010    $adminAction = 'dosurvey';
+<a name="l00011"></a>00011 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['<span class="keyword">set</span>'])) {
+<a name="l00012"></a>00012    $adminAction = '<span class="keyword">set</span>';
+<a name="l00013"></a>00013 }
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="comment">//debug_sql($adminAction,'$adminAction');</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keywordflow">switch</span>($adminAction){
+<a name="l00019"></a>00019    <span class="keywordflow">case</span> 'dosurvey':{
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021       <span class="comment">//debug_sql($_GET['dosurvey'],'dosurvey');</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveySession.html">SurveySession</a>')){
+<a name="l00024"></a>00024          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveySession.php');
+<a name="l00025"></a>00025       }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurvey.html">Survey</a>')){
+<a name="l00028"></a>00028          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.Survey.php');
+<a name="l00029"></a>00029       }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00032"></a>00032          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00033"></a>00033       }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="survey__dosurvey_8php.html#f02bcca2b2722955b3638c8e9d6f1914">00035</a>       <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>();
+<a name="l00036"></a><a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">00036</a>       <a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a> = null;<span class="comment">//instance holder</span>
+<a name="l00037"></a>00037       session_register('surveyOfficerObj');
+<a name="l00038"></a>00038       
+<a name="l00039"></a>00039       <span class="keywordflow">if</span>(<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveySession(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['dosurvey'],&amp;<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>)){
+<a name="l00040"></a>00040          
+<a name="l00041"></a>00041          <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['tokenID'] = <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['dosurvey'];
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043          <span class="comment">//            define('SURVEY_ID','iso_9241_10');</span>
+<a name="l00044"></a>00044          <span class="comment">//            define('SURVEY_LANGUAGE','dei');</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046          <span class="keywordflow">if</span>(!<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>-&gt;getFinished()){
+<a name="l00047"></a>00047             define('<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a>',<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>-&gt;getSurveyTypeId());
+<a name="l00048"></a><a class="code" href="survey__dosurvey_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">00048</a>             define('<a class="code" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a>',<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>-&gt;getSurveyLanguage());
+<a name="l00049"></a><a class="code" href="survey__dosurvey_8php.html#8f3e2c748c74b11a6283d87882ae2594">00049</a>             <a class="code" href="survey__doadmin_8php.html#8f3e2c748c74b11a6283d87882ae2594">$HTML_XAJAX</a> = <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;getJavascript(<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/includes/xajax/');
+<a name="l00050"></a>00050          }<span class="keywordflow">else</span>{
+<a name="l00051"></a>00051             define('<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a><span class="charliteral">','</span>error');
+<a name="l00052"></a>00052             define('<a class="code" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a><span class="charliteral">','</span>dei');
+<a name="l00053"></a>00053             <a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>  = <a class="code" href="error_2language_2dei_2survey__language_8php.html#912af8764f265415c6e93a660499b742">ERROR_SURVEY_ALREADY_COMPLETE</a>;
+<a name="l00054"></a>00054          }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056          <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['surveySessionObj'] = <a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>;
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058       }<span class="keywordflow">else</span>{
+<a name="l00059"></a>00059          <span class="comment">//            $_SESSION['tokenID'] = '';</span>
+<a name="l00060"></a>00060          unset(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['tokenID']);
+<a name="l00061"></a>00061          unset(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['surveySessionObj']);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063          define('<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a><span class="charliteral">','</span>error');
+<a name="l00064"></a>00064          define('<a class="code" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a><span class="charliteral">','</span>dei');
+<a name="l00065"></a>00065          <a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>  = 'Error:'.$surveyOfficerObj-&gt;getLastError();
+<a name="l00066"></a>00066          <span class="comment">//            debug_sql('Error:'.$surveyOfficerObj-&gt;getLastError());</span>
+<a name="l00067"></a>00067          <span class="comment">//            die();</span>
+<a name="l00068"></a>00068       }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070       <span class="comment">//debug_obj($surveySessionObj);</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072       <span class="keywordflow">if</span> (<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>!=null){
+<a name="l00073"></a>00073          <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('SURVEY_DATA',<a class="code" href="survey__dosurvey_8php.html#b9de603928b5d75da3320e4b8498afc8">$surveySessionObj</a>-&gt;getSurveyData());
+<a name="l00074"></a>00074       }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076    }
+<a name="l00077"></a>00077    <span class="keywordflow">case</span> '<span class="keyword">set</span>':{
+<a name="l00081"></a>00081       <span class="comment">//         debug_obj($_GET['set'],'$_GET[set]');</span>
+<a name="l00082"></a>00082       <span class="comment">//         $setKeys = array_keys($_GET['set']);</span>
+<a name="l00083"></a>00083       <span class="comment">//         $surveySessionObj-&gt;setValue($setKeys[0],$_GET['set'][$setKeys[0]]);</span>
+<a name="l00084"></a>00084    }
+<a name="l00085"></a>00085    <span class="keywordflow">default</span>:
+<a name="l00086"></a>00086       <span class="keywordflow">break</span>;
+<a name="l00087"></a>00087 }
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 <span class="comment">//debug_obj($surveySessionObj,'$surveySessionObj');</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="keywordflow">if</span>(!defined('<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a>')){
+<a name="l00092"></a>00092    die('Error:<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a> - is not defined');
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 include_once(<a class="code" href="configuration_8php.html#6f87310e15d2f8ef03a33ae9f29f5cde">PATH_SURVEYS</a>.SURVEY_ID.'/survey.php');
+<a name="l00096"></a>00096 <span class="comment">//debug_obj($SURVEY_ERROR,'$SURVEY_ERROR');</span>
+<a name="l00097"></a>00097 <span class="comment">//debug_obj($SURVEY_STRINGS,'$SURVEY_STRINGS');</span>
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="keywordflow">if</span> (defined(<a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>)){
+<a name="l00100"></a>00100    <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['SURVEY_ERROR'] = constant(<a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>);
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('STRINGS',<a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>);
+<a name="l00104"></a>00104 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:13 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

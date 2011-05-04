@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: sura.common.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>sura.common.php</h1><a href="sura_8common_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00005"></a>00005 require_once(<a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">LANGUAGE_PATH</a>.'/lang_sura.php');
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#report stuff</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="comment">//if (array_key_exists('surveyReport',$_GET) || array_key_exists($_POST['xjxfun'],array('doGetReportValue','doGetReportValues'))){</span>
+<a name="l00010"></a>00010    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#cbc9a73285dcea25b316c44480976455">doGetReportValue</a>');
+<a name="l00011"></a>00011    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#08024b8f66dd148dd4e9d517618c101d">doGetReportValues</a>');
+<a name="l00012"></a>00012 <span class="comment">//}else{</span>
+<a name="l00013"></a>00013    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#24cd647f8161f4bc7e7e326dd922a9b8">loadSurveyData</a>');
+<a name="l00014"></a>00014    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#cb952fb0d3c566dc0969f905dda2c95c">loadSurveyConfigData</a>');
+<a name="l00015"></a>00015    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#aba9888ec58e7a3c49601df5eda36160">createSurvey</a>');
+<a name="l00016"></a>00016    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#cb6de295652bab0ada73cd5ccfc2f037">updateSurvey</a>');
+<a name="l00017"></a>00017    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#9543b2ef6697744ff34b21b5f8362376">deleteSurvey</a>');
+<a name="l00018"></a>00018    
+<a name="l00019"></a>00019 <span class="comment">//}</span>
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="comment">//if (array_key_exists('dosurvey',$_GET)){</span>
+<a name="l00022"></a>00022    <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;registerFunction('<a class="code" href="sura_8server_8php.html#f682f476781766bfef1f9a8df325c25b">doSetValue</a>');
+<a name="l00023"></a>00023 <span class="comment">//}</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

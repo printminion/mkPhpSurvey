@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: report_image_output.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>report_image_output.php</h1><a href="report__image__output_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00007"></a>00007 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.GraphOfficer.php');
+<a name="l00008"></a>00008 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.ReportDataOfficer.php');
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="comment">//debug_obj($_GET,'$_GET');</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="keywordflow">if</span> (<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid']==''){
+<a name="l00013"></a>00013    die('ERROR_REQUIRED_PARAMETER_SID_IS_NULL');
+<a name="l00014"></a>00014 }
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keywordflow">if</span> (!is_numeric(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid'])){
+<a name="l00017"></a>00017    die('ERROR_REQUIRED_PARAMETER_SID_IS_NOT_NUMERIC');
+<a name="l00018"></a>00018 }
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keywordflow">if</span> (<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['controlID']==''){
+<a name="l00021"></a>00021    die('ERROR_REQUIRED_PARAMETER_CONTROLID_IS_NULL');
+<a name="l00022"></a>00022 }
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">00024</a> <a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a> = <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['controlID'];
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">00027</a> <a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a> = explode(<span class="charliteral">'_'</span>,<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>);
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keywordflow">if</span> (count(<a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a>)&gt;0){
+<a name="l00030"></a>00030    $controlTypeId = <a class="code" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a>[0];
+<a name="l00031"></a>00031 }
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="preprocessor">#get Graph object</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>$graphOfficerObj = <span class="keyword">new</span> <a class="code" href="classGraphOfficer.html">GraphOfficer</a>();
+<a name="l00035"></a><a class="code" href="report__image__output_8php.html#0e35e12258bfc8445213ad172a725d69">00035</a> <a class="code" href="report__image__output_8php.html#0e35e12258bfc8445213ad172a725d69">$graphObj</a> = $graphOfficerObj-&gt;getGraphById($controlTypeId);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="preprocessor"># populate data object</span>
+<a name="l00038"></a><a class="code" href="report__image__output_8php.html#cbe15726ad3dd68a92d4694ef3829b01">00038</a> <span class="preprocessor"></span><a class="code" href="report__image__output_8php.html#cbe15726ad3dd68a92d4694ef3829b01">$reportDataOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classReportDataOfficer.html">ReportDataOfficer</a>();
+<a name="l00039"></a><a class="code" href="report__image__output_8php.html#cb074c9f3af5467b0e09f80ef65853c2">00039</a> <a class="code" href="report__image__output_8php.html#cb074c9f3af5467b0e09f80ef65853c2">$reportDataObj</a> = <a class="code" href="report__image__output_8php.html#cbe15726ad3dd68a92d4694ef3829b01">$reportDataOfficerObj</a>-&gt;loadGraphData(<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>,<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid']);
+<a name="l00040"></a>00040 <span class="comment">//debug_sql($controlId,'$controlId');</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="comment">//debug_sql($_GET['sid'],'sid');</span>
+<a name="l00043"></a>00043 <span class="comment">//debug_obj($graphObj,'$graphObj');</span>
+<a name="l00044"></a>00044 <span class="comment">//debug_obj($graphDataObj,'$graphDataObj');</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="keywordflow">if</span>($graphDataObj == null){
+<a name="l00048"></a>00048 <span class="preprocessor">   #data object is null</span>
+<a name="l00049"></a>00049 <span class="preprocessor"></span>}
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor"># redender graph with data</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span><span class="keywordflow">if</span> (<a class="code" href="report__image__output_8php.html#0e35e12258bfc8445213ad172a725d69">$graphObj</a> != null){
+<a name="l00053"></a>00053    <a class="code" href="report__image__output_8php.html#0e35e12258bfc8445213ad172a725d69">$graphObj</a>-&gt;redenderData(&amp;<a class="code" href="report__image__output_8php.html#cb074c9f3af5467b0e09f80ef65853c2">$reportDataObj</a>);
+<a name="l00054"></a>00054 }<span class="keywordflow">else</span>{
+<a name="l00055"></a>00055    echo <span class="stringliteral">"Control $controlTypeId is not defined"</span>;
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 die();
+<a name="l00058"></a>00058 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

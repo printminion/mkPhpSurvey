@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.GraphDataAbstract.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.GraphDataAbstract.php</h1><a href="class_8GraphDataAbstract_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00009"></a><a class="code" href="classGraphDataAbstract.html">00009</a> <span class="keyword">class </span><a class="code" href="classGraphDataAbstract.html">GraphDataAbstract</a> <span class="keyword">extends</span> <a class="code" href="classObjectLogger.html">ObjectLogger</a>{
+<a name="l00015"></a><a class="code" href="classGraphDataAbstract.html#a792c38f52f3e8016322c0534fa7d760">00015</a>    var <a class="code" href="classGraphDataAbstract.html#a792c38f52f3e8016322c0534fa7d760">$_sid</a>;
+<a name="l00016"></a><a class="code" href="classGraphDataAbstract.html#0d6e3942b2985d629f79b01c44ad5a33">00016</a>    var <a class="code" href="classGraphDataAbstract.html#0d6e3942b2985d629f79b01c44ad5a33">$controlTypeId</a>;
+<a name="l00017"></a><a class="code" href="classGraphDataAbstract.html#c8cd788440cebc7668d18d16822380b1">00017</a>    var <a class="code" href="classGraphDataAbstract.html#c8cd788440cebc7668d18d16822380b1">$controlId</a>;
+<a name="l00018"></a><a class="code" href="classGraphDataAbstract.html#1377d36cfb2139c22c7f6ff00baa2cbf">00018</a>    var <a class="code" href="classGraphDataAbstract.html#1377d36cfb2139c22c7f6ff00baa2cbf">$surveyId</a>;
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classGraphDataAbstract.html#232a40f0d249ce5bc0f29bdd5039329d">00022</a>    var <a class="code" href="classGraphDataAbstract.html#232a40f0d249ce5bc0f29bdd5039329d">$valuesCount</a>;
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="classGraphDataAbstract.html#dd99a0a832127b2e1c0dbfa8f953cf20">00024</a>    var <a class="code" href="classGraphDataAbstract.html#dd99a0a832127b2e1c0dbfa8f953cf20">$graphDataArr</a>; <span class="comment">//key-value data array</span>
+<a name="l00025"></a>00025    <span class="comment">//var $graphDataSimplyArr; //simply data array</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="classGraphDataAbstract.html#15e51218fcd0da6e64be6169910f7334">00027</a>    var <a class="code" href="classGraphDataAbstract.html#15e51218fcd0da6e64be6169910f7334">$graphTitlesArr</a>;
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classGraphDataAbstract.html#dbbee9965b4d165f612eb84ef156e281">00029</a>    function <a class="code" href="classGraphDataAbstract.html#dbbee9965b4d165f612eb84ef156e281">GraphDataAbstract</a>() {
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031    }
+<a name="l00032"></a>00032 
+<a name="l00040"></a><a class="code" href="classGraphDataAbstract.html#818441ba5b48151b6abbfea4605999a4">00040</a>    function <a class="code" href="classGraphDataAbstract.html#818441ba5b48151b6abbfea4605999a4">_loadGraphData</a>(<a class="code" href="classGraphDataAbstract.html#c8cd788440cebc7668d18d16822380b1">$controlId</a>,&amp;$graphDataObj){
+<a name="l00041"></a>00041        $this-&gt;<a class="code" href="classObjectLogger.html#80da39713b2275b8a78d4d9a3f43b34f">_addError</a>(ERROR_CLASS_GRAPHDATA_NOT_YET_IMPLEMENTED);
+<a name="l00042"></a>00042        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00043"></a>00043    }
+<a name="l00044"></a>00044    
+<a name="l00050"></a><a class="code" href="classGraphDataAbstract.html#2fce31ff9c592f35034da0ece0ce5ad8">00050</a>    function <a class="code" href="classGraphDataAbstract.html#2fce31ff9c592f35034da0ece0ce5ad8">getValuesCount</a>(){
+<a name="l00051"></a>00051       <span class="keywordflow">return</span> count($this-&gt;graphDataArr);<span class="comment">//$this-&gt;valuesCount;</span>
+<a name="l00052"></a>00052    }
+<a name="l00053"></a>00053 
+<a name="l00059"></a><a class="code" href="classGraphDataAbstract.html#8face50a395170a2f8e16927195d857a">00059</a>    function <a class="code" href="classGraphDataAbstract.html#8face50a395170a2f8e16927195d857a">getDataArray</a>(){
+<a name="l00060"></a>00060       <span class="keywordflow">return</span> array_values($this-&gt;graphDataArr);
+<a name="l00061"></a>00061    }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 
+<a name="l00070"></a><a class="code" href="classGraphDataAbstract.html#57b9742a8973781231d6853200e51eb8">00070</a>    function <a class="code" href="classGraphDataAbstract.html#57b9742a8973781231d6853200e51eb8">getKeysArray</a>(){
+<a name="l00071"></a>00071       <span class="keywordflow">return</span> array_keys($this-&gt;graphDataArr);
+<a name="l00072"></a>00072    }
+<a name="l00073"></a>00073 
+<a name="l00079"></a><a class="code" href="classGraphDataAbstract.html#48220089253badbcfcbf349a98580588">00079</a>    function <a class="code" href="classGraphDataAbstract.html#48220089253badbcfcbf349a98580588">getMaxDataValue</a>(){
+<a name="l00080"></a>00080       <span class="comment">//debug_obj($this-&gt;getDataArray(),'getDataArray');</span>
+<a name="l00081"></a>00081       <span class="keywordflow">return</span> $this-&gt;_getMaxArrayValue($this-&gt;<a class="code" href="classGraphDataAbstract.html#8face50a395170a2f8e16927195d857a">getDataArray</a>());
+<a name="l00082"></a>00082    }
+<a name="l00083"></a>00083 
+<a name="l00089"></a><a class="code" href="classGraphDataAbstract.html#fb3afa69f72d8a800fd446ddfded7263">00089</a>    function <a class="code" href="classGraphDataAbstract.html#fb3afa69f72d8a800fd446ddfded7263">getMaxKeyValue</a>(){
+<a name="l00090"></a>00090       <span class="comment">//debug_obj($this-&gt;getKeysArray(),'getKeysArray');</span>
+<a name="l00091"></a>00091       $dataMaxKeyValue = $this-&gt;_getMaxArrayValue($this-&gt;<a class="code" href="classGraphDataAbstract.html#57b9742a8973781231d6853200e51eb8">getKeysArray</a>());
+<a name="l00092"></a>00092       <span class="comment">//TODO: fix of Allowed memory size of 33554432 bytes exhausted (tried to allocate 35 bytes)</span>
+<a name="l00093"></a>00093       <span class="keywordflow">if</span> ($dataMaxKeyValue &gt; 1024) {
+<a name="l00094"></a>00094           $dataMaxKeyValue = 1024; <span class="comment">//25 Bytes</span>
+<a name="l00095"></a>00095       }
+<a name="l00096"></a>00096       <span class="keywordflow">return</span> $dataMaxKeyValue;
+<a name="l00097"></a>00097    }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099    function _getMaxArrayValue(&amp;$array){
+<a name="l00100"></a>00100       $bGotFirstValue = <span class="keyword">false</span>;
+<a name="l00101"></a>00101        
+<a name="l00102"></a>00102       <span class="keywordflow">foreach</span>((array)$array as $key =&gt; $value){
+<a name="l00103"></a>00103          <span class="keywordflow">if</span>(!$bGotFirstValue){
+<a name="l00104"></a>00104             $maxValue = $value;
+<a name="l00105"></a>00105             $bGotFirstValue = <span class="keyword">true</span>;
+<a name="l00106"></a>00106             <span class="keywordflow">continue</span>;
+<a name="l00107"></a>00107          }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109          <span class="keywordflow">if</span> ($maxValue &lt; $value){
+<a name="l00110"></a>00110             $maxValue = $value;
+<a name="l00111"></a>00111          }
+<a name="l00112"></a>00112       }
+<a name="l00113"></a>00113       <span class="keywordflow">return</span> $maxValue;
+<a name="l00114"></a>00114    }
+<a name="l00120"></a>00120    function _arrayRotateLeft(&amp;$array){
+<a name="l00121"></a>00121       $arrayElement = array_shift($array);
+<a name="l00122"></a>00122       array_push($array, $arrayElement);
+<a name="l00123"></a>00123    }
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 
+<a name="l00131"></a>00131    function _arrayRotateRight(&amp;$array){
+<a name="l00132"></a>00132       $arrayElement = array_pop($array);
+<a name="l00133"></a>00133       array_unshift($array, $arrayElement);
+<a name="l00134"></a>00134    }
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136 }
+<a name="l00137"></a>00137 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

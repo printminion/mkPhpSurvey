@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: survey_doadmin.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>survey_doadmin.php</h1><a href="survey__doadmin_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00006"></a>00006 include_once(<a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">LANGUAGE_PATH</a>.'/lang_admin.php');
+<a name="l00007"></a>00007 include_once(ABSOLUTE_PATH.'/includes/functions/doadmin.php');
+<a name="l00008"></a><a class="code" href="survey__doadmin_8php.html#8f3e2c748c74b11a6283d87882ae2594">00008</a> <a class="code" href="survey__doadmin_8php.html#8f3e2c748c74b11a6283d87882ae2594">$HTML_XAJAX</a> = <a class="code" href="sur_8common_8php.html#8c81ee15e56ba51f169291a2b1936cb1">$xajax</a>-&gt;getJavascript(<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/includes/xajax/');
+<a name="l00009"></a>00009 <span class="comment">//      debug_obj($TPL_STRINGS,'$TPL_STRINGS');</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="comment">//      debug_sql('DOING:doadmin');</span>
+<a name="l00012"></a>00012 <span class="comment">//      debug_obj($oLogger,'$oLogger');</span>
+<a name="l00013"></a>00013 <span class="comment">//      debug_obj($_GET,'$_GET');</span>
+<a name="l00014"></a>00014 <span class="preprocessor">##########################</span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor"># map language variables</span>
+<a name="l00016"></a><a class="code" href="survey__doadmin_8php.html#6ad910bfa0b359ce128f44a98e5a7bc1">00016</a> <span class="preprocessor"></span><a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['TPL_LOGO_URL_ALT']  = 'mkSurvey Admin';
+<a name="l00017"></a><a class="code" href="survey__doadmin_8php.html#f614134308603012243af6492ef17d16">00017</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['TPL_LOGO_URL_HREF'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin';<span class="comment">//no trailing slash?</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">##########################</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keywordflow">if</span>(!$oLogger-&gt;IsAdmin()){
+<a name="l00023"></a>00023    $oLogger-&gt;relocate(<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.<span class="stringliteral">"/?msg=_MSG_403"</span>);
+<a name="l00024"></a>00024    die('DIE: You are not admin');
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keywordflow">if</span> (!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00028"></a>00028    require_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00029"></a>00029 }
+<a name="l00030"></a><a class="code" href="survey__doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">00030</a> <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>();
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="survey__doadmin_8php.html#cc3153e24c740b1b1252a6aec37e93bd">00032</a> <a class="code" href="survey__doadmin_8php.html#cc3153e24c740b1b1252a6aec37e93bd">$SELECTBOX_SURVEY_TYPES</a> = <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveyTypes();
+<a name="l00033"></a>00033 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('SELECTBOX_SURVEY_TYPES',<a class="code" href="survey__doadmin_8php.html#cc3153e24c740b1b1252a6aec37e93bd">$SELECTBOX_SURVEY_TYPES</a>);
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="survey__doadmin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">00035</a> <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.<span class="charliteral">'/'</span>.<a class="code" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a>);
+<a name="l00036"></a>00036 <a class="code" href="admin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a>[] = array('href' =&gt; <a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>.'/lh.css');
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="comment">//$HTML_SCRIPTURLS[] = array('href' =&gt; PATH_DESIGN_STYLES.'/lh_en_US.js');</span>
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="comment">//      debug_sql(isset($_GET['settings']),'isset($_GET[settings])');</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['settings'])) {
+<a name="l00044"></a>00044    $adminAction = 'settings';
+<a name="l00045"></a>00045 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['addsurvivors'])) {
+<a name="l00046"></a>00046    $adminAction = 'addsurvivors';
+<a name="l00047"></a>00047 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['running'])) {
+<a name="l00048"></a>00048    $adminAction = 'running';
+<a name="l00049"></a>00049 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['finished'])) {
+<a name="l00050"></a>00050    $adminAction = 'finished';
+<a name="l00051"></a>00051 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['surveyReport'])) {
+<a name="l00052"></a>00052    $adminAction = 'surveyReport';
+<a name="l00053"></a>00053 }elseif(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['surveyReportControl'])) {
+<a name="l00054"></a>00054    $adminAction = 'surveyReportControl';
+<a name="l00055"></a>00055 }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="keywordflow">switch</span>($adminAction){
+<a name="l00058"></a>00058    <span class="keywordflow">case</span> 'settings':{
+<a name="l00059"></a>00059       <span class="comment">//debug_sql('admin_settings');</span>
+<a name="l00060"></a>00060       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_settings.tpl';
+<a name="l00061"></a>00061       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/leftbox_settings.tpl';
+<a name="l00062"></a>00062 <span class="preprocessor">      #$HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/admin/rightbox.tpl';</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>   }
+<a name="l00064"></a>00064    <span class="keywordflow">break</span>;
+<a name="l00065"></a>00065    <span class="keywordflow">case</span> 'addsurvivors':{
+<a name="l00066"></a>00066       
+<a name="l00067"></a>00067       
+<a name="l00068"></a>00068       <span class="comment">//INFO: Hotfix to pass &amp;amp; value </span>
+<a name="l00069"></a>00069       <span class="keywordflow">if</span> (isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['amp;sid'])){
+<a name="l00070"></a>00070          <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid'] = <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['amp;sid'];
+<a name="l00071"></a>00071       }
+<a name="l00072"></a>00072       
+<a name="l00073"></a>00073       <span class="keywordflow">if</span> (<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid']==''){
+<a name="l00074"></a>00074          die('Error: Unknown SurveyId');
+<a name="l00075"></a>00075       }
+<a name="l00076"></a><a class="code" href="survey__doadmin_8php.html#40c85ba447202b303514c8d27f90e101">00076</a>       <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a> = <span class="keyword">new</span> <a class="code" href="classSurvey.html">Survey</a>(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid']);
+<a name="l00077"></a>00077       
+<a name="l00078"></a>00078       <span class="comment">//debug_obj($surveyObj);</span>
+<a name="l00079"></a>00079       
+<a name="l00080"></a>00080       
+<a name="l00081"></a><a class="code" href="survey__doadmin_8php.html#bce94c769111abb221b9ccbef743addb">00081</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['ADDSURVIVORS_SURVEY_NAME'] = <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a>-&gt;getTitle();
+<a name="l00082"></a><a class="code" href="survey__doadmin_8php.html#79a63fa1f160a77608927c784c96ddec">00082</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['FORM_SID'] = <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a>-&gt;getSurveyId();
+<a name="l00083"></a>00083        
+<a name="l00084"></a>00084        
+<a name="l00085"></a><a class="code" href="survey__doadmin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">00085</a>       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_addsurvivors.tpl';
+<a name="l00086"></a><a class="code" href="survey__doadmin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">00086</a>       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/leftbox_addsurvivors.tpl';
+<a name="l00087"></a>00087 <span class="preprocessor">      #$HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/admin/rightbox.tpl';</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>   }
+<a name="l00089"></a><a class="code" href="survey__doadmin_8php.html#91cf6fbebedd86150a36e5ac3d5d3bfc">00089</a>    <span class="keywordflow">break</span>;
+<a name="l00090"></a>00090    <span class="keywordflow">case</span> 'finished':{
+<a name="l00091"></a><a class="code" href="survey__doadmin_8php.html#32d4e07d06bb73a334918feffe29f946">00091</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_NEWSURVEY'] = <span class="keyword">true</span>;
+<a name="l00092"></a><a class="code" href="survey__doadmin_8php.html#db18d665a6b5c8f216e0e5a5c437422a">00092</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['ADD_SURVIVORS']    = <span class="keyword">true</span>;
+<a name="l00093"></a><a class="code" href="survey__doadmin_8php.html#2b58e256e8a2d9034ef0c6248d48bd24">00093</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_SURVEY']    = <span class="keyword">true</span>;
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">00095</a>       <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a> = <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveysByUserId($oLogger-&gt;getUserId(),'finished');
+<a name="l00096"></a>00096       <span class="comment">//         debug_obj($SURVEYS,'$SURVEYS');</span>
+<a name="l00097"></a><a class="code" href="survey__doadmin_8php.html#0bec4863380b7c635096ef0907b9f063">00097</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['SURVEYS'] = <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a>;
+<a name="l00098"></a><a class="code" href="survey__doadmin_8php.html#8a584c62935c7d9770244598b07c2147">00098</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_FINISHED_URL'] = '';
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_surveys.tpl';
+<a name="l00101"></a>00101       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/leftbox_surveys.tpl';
+<a name="l00102"></a><a class="code" href="survey__doadmin_8php.html#24423772b2771eb9f4ef63f68843f0ae">00102</a>       <a class="code" href="admin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a> = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/rightbox.tpl';
+<a name="l00103"></a>00103    }
+<a name="l00104"></a>00104    <span class="keywordflow">break</span>;
+<a name="l00105"></a>00105    <span class="keywordflow">case</span> 'running':{
+<a name="l00106"></a><a class="code" href="survey__doadmin_8php.html#0580bd55f19d2b72a1a95d51264aa4b6">00106</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_NEWSURVEY'] = <span class="keyword">true</span>;
+<a name="l00107"></a>00107       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['ADD_SURVIVORS']    = <span class="keyword">true</span>;
+<a name="l00108"></a>00108       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_SURVEY']    = <span class="keyword">true</span>;
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110       <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a> = <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveysByUserId($oLogger-&gt;getUserId(),'running');
+<a name="l00111"></a>00111       <span class="comment">//         debug_obj($SURVEYS,'$SURVEYS');</span>
+<a name="l00112"></a>00112       <span class="comment">//$STRINGS.CAPTION_SORT_SURVEYS_BY_DATE_HREF</span>
+<a name="l00113"></a>00113       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['SURVEYS'] = <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a>;
+<a name="l00114"></a><a class="code" href="survey__doadmin_8php.html#41b657c6e3910d90783d12e2fc1568eb">00114</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_RUNNING_URL'] = '';
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_surveys.tpl';
+<a name="l00118"></a>00118       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/leftbox_surveys.tpl';
+<a name="l00119"></a>00119       <a class="code" href="admin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a> = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/rightbox.tpl';
+<a name="l00120"></a>00120    }
+<a name="l00121"></a>00121    <span class="keywordflow">break</span>;
+<a name="l00122"></a>00122    <span class="keywordflow">case</span> 'finished':{
+<a name="l00123"></a>00123    }
+<a name="l00124"></a><a class="code" href="survey__doadmin_8php.html#be92b4cb0620171d6cf7ac6adf17d384">00124</a>    <span class="keywordflow">break</span>;
+<a name="l00125"></a>00125    <span class="keywordflow">case</span> 'surveyReport':{
+<a name="l00126"></a><a class="code" href="survey__doadmin_8php.html#6d55da87dfa6c881f210d34c596e5b1a">00126</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_NEWSURVEY'] = <span class="keyword">true</span>;
+<a name="l00127"></a>00127       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['ADD_SURVIVORS']    = <span class="keyword">true</span>;
+<a name="l00128"></a>00128       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_SURVEY']    = <span class="keyword">true</span>;
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130       <span class="comment">//         debug_sql($_GET['dosurvey'],'dosurvey');</span>
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyReport.html">SurveyReport</a>')){
+<a name="l00133"></a>00133          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyReport.php');
+<a name="l00134"></a>00134       }
+<a name="l00135"></a>00135        
+<a name="l00136"></a>00136       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurvey.html">Survey</a>')){
+<a name="l00137"></a>00137          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.Survey.php');
+<a name="l00138"></a>00138       }
+<a name="l00139"></a>00139        
+<a name="l00140"></a>00140       <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00141"></a>00141          include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00142"></a>00142       }
+<a name="l00143"></a>00143        
+<a name="l00144"></a>00144       <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>();
+<a name="l00145"></a><a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">00145</a>       <a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a>  = null;
+<a name="l00146"></a>00146        
+<a name="l00147"></a>00147       <span class="comment">//         debug_obj($_GET,'$_GET');</span>
+<a name="l00148"></a>00148        
+<a name="l00149"></a>00149       <span class="keywordflow">if</span>(<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveyReport(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['sid'],&amp;<a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a>)){
+<a name="l00150"></a>00150          <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['tokenID'] = <a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['dosurvey'];
+<a name="l00151"></a>00151          <a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['surveyReportObj'] = <a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a>;
+<a name="l00152"></a>00152       }<span class="keywordflow">else</span>{
+<a name="l00153"></a>00153          <span class="comment">//debug_sql('getSurveyReport - ko');</span>
+<a name="l00154"></a>00154          <span class="comment">//            $_SESSION['tokenID'] = '';</span>
+<a name="l00155"></a>00155          unset(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['tokenID']);
+<a name="l00156"></a>00156          unset(<a class="code" href="SessionCookie_8php.html#93d36a95c848bb1af38554eb7ecd6174">$_SESSION</a>['surveyReportObj']);
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158          <span class="comment">//define('SURVEY_ID','error');</span>
+<a name="l00159"></a>00159          <span class="comment">//define('SURVEY_LANGUAGE','dei');</span>
+<a name="l00160"></a><a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">00160</a>          <a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>  = 'Error:'.$surveyOfficerObj-&gt;getLastError();
+<a name="l00161"></a>00161          <span class="comment">//            debug_sql('Error:'.$surveyOfficerObj-&gt;getLastError());</span>
+<a name="l00162"></a>00162          <span class="comment">//            die();</span>
+<a name="l00163"></a>00163       }
+<a name="l00164"></a>00164        
+<a name="l00165"></a>00165        
+<a name="l00166"></a>00166        
+<a name="l00167"></a>00167       <span class="keywordflow">if</span> (<a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a>!=null){
+<a name="l00168"></a>00168          $SURVEY_DATA = <a class="code" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a>-&gt;getSurveyData();
+<a name="l00169"></a>00169          <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('SURVEY_DATA',$SURVEY_DATA);
+<a name="l00170"></a>00170       }
+<a name="l00171"></a>00171        
+<a name="l00172"></a>00172       <span class="comment">//         debug_obj($surveyReportObj,'$surveyReportObj');</span>
+<a name="l00173"></a>00173       <span class="comment">//         debug_obj($SURVEY_DATA,'$SURVEY_DATA');</span>
+<a name="l00174"></a>00174        
+<a name="l00175"></a>00175       <span class="comment">//            $SURVEYS = $surveyOfficerObj-&gt;getSurveysByUserId($oLogger-&gt;getUserId());</span>
+<a name="l00176"></a>00176       <span class="comment">//            debug_obj($SURVEYS,'$SURVEYS');</span>
+<a name="l00177"></a>00177       <span class="comment">//            $TPL_STRINGS['SURVEYS'] = $SURVEYS;</span>
+<a name="l00178"></a>00178       <span class="comment">//            #$smarty-&gt;assign('SURVEYS',$SURVEYS);</span>
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_settings.tpl';
+<a name="l00182"></a>00182 <span class="preprocessor">      #$HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/admin/rightbox.tpl';</span>
+<a name="l00183"></a>00183 <span class="preprocessor"></span>      <span class="comment">//TODO: Remove next two lines</span>
+<a name="l00184"></a><a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">00184</a>       define('<a class="code" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a><span class="charliteral">','</span>iso_9241_10');
+<a name="l00185"></a><a class="code" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">00185</a>       define('<a class="code" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a><span class="charliteral">','</span>dei');
+<a name="l00186"></a>00186       include_once(<a class="code" href="configuration_8php.html#6f87310e15d2f8ef03a33ae9f29f5cde">PATH_SURVEYS</a>.SURVEY_ID.'/survey_report.php');
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189       <span class="keywordflow">if</span> (defined(<a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>)){
+<a name="l00190"></a>00190          <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>['SURVEY_ERROR'] = constant(<a class="code" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a>);
+<a name="l00191"></a>00191       }
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193       <span class="comment">//            debug_obj($SURVEY_STRINGS,'SURVEY_STRINGS');</span>
+<a name="l00194"></a>00194       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a> = <a class="code" href="error_2languageloader_8php.html#200a4672901410f4d467737a2070d4d8">$SURVEY_STRINGS</a>;
+<a name="l00195"></a>00195       <span class="comment">//            $smarty-&gt;assign('STRINGS',$SURVEY_STRINGS);</span>
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197    }
+<a name="l00198"></a>00198    <span class="keywordflow">break</span>;
+<a name="l00199"></a>00199    <span class="keywordflow">case</span> 'surveyReportControl':
+<a name="l00200"></a>00200 
+<a name="l00201"></a><a class="code" href="survey__doadmin_8php.html#8d1f130a6ce6aa70c6c7f41e9f4d5ffe">00201</a>       include_once(ABSOLUTE_PATH.'/includes/report_image_output.php');
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203       die();
+<a name="l00204"></a><a class="code" href="survey__doadmin_8php.html#ffb1327b18bf08a379d19eef89cf1ed1">00204</a>    <span class="keywordflow">default</span>;
+<a name="l00205"></a>00205    <span class="keywordflow">default</span>:{
+<a name="l00206"></a><a class="code" href="survey__doadmin_8php.html#b77db2c971f2ae60404f5dbf7abd8647">00206</a>       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_NEWSURVEY'] = <span class="keyword">true</span>;
+<a name="l00207"></a>00207       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['ADD_SURVIVORS']    = <span class="keyword">true</span>;
+<a name="l00208"></a>00208       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['DIALOG_SURVEY']    = <span class="keyword">true</span>;
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210        
+<a name="l00211"></a>00211       <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a> = <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getSurveysByUserId($oLogger-&gt;getUserId());
+<a name="l00212"></a>00212       <span class="comment">//            debug_obj($SURVEYS,'$SURVEYS');</span>
+<a name="l00213"></a>00213       <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['SURVEYS'] = <a class="code" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a>;
+<a name="l00214"></a>00214 <span class="preprocessor">      #$smarty-&gt;assign('SURVEYS',$SURVEYS);</span>
+<a name="l00215"></a>00215 <span class="preprocessor"></span>       
+<a name="l00216"></a>00216       <a class="code" href="admin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/navbar_surveys.tpl';
+<a name="l00217"></a>00217       <a class="code" href="admin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a>  = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/leftbox_surveys.tpl';
+<a name="l00218"></a>00218       <a class="code" href="admin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a> = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/rightbox.tpl';
+<a name="l00219"></a>00219    }
+<a name="l00220"></a>00220    <span class="keywordflow">break</span>;
+<a name="l00221"></a>00221 }
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223 
+<a name="l00224"></a><a class="code" href="survey__doadmin_8php.html#8e2461f144a2c5abb2918ed49090845d">00224</a> <a class="code" href="admin_8php.html#8e2461f144a2c5abb2918ed49090845d">$HTML_TPL_TOPNAV</a>   = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/topnav.tpl';
+<a name="l00225"></a><a class="code" href="survey__doadmin_8php.html#132a7bf90078fd9ad70b6057c8c2682a">00225</a> <a class="code" href="admin_8php.html#132a7bf90078fd9ad70b6057c8c2682a">$HTML_TPL_BODY</a>     = <a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>.'/admin/body.tpl';
+<a name="l00226"></a>00226 
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228 <span class="comment">//$HTML_TPL_FOOTER   = PATH_TEMPLATES.'/admin/footer.tpl';</span>
+<a name="l00229"></a>00229 <span class="comment">//      debug_obj($TPL_STRINGS,'$TPL_STRINGS');</span>
+<a name="l00230"></a>00230 <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('STRINGS',<a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>);
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:13 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

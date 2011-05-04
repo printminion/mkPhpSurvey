@@ -1,0 +1,508 @@
+\section{hn\_\-captcha Klassenreferenz}
+\label{classhn__captcha}\index{hn\_\-captcha@{hn\_\-captcha}}
+Klassendiagramm für hn\_\-captcha::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhn__captcha}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{CompactItemize}
+\item 
+{\bf display\_\-form} ()
+\item 
+{\bf validate\_\-submit} ()
+\item 
+{\bf flush\_\-captcha\_\-image} ()
+\end{CompactItemize}
+\subsection*{Öffentliche Attribute}
+\begin{CompactItemize}
+\item 
+{\bf \$tempfolder}
+\item 
+{\bf \$TTF\_\-folder}
+\item 
+{\bf \$TTF\_\-RANGE} = array('COMIC.TTF','JACOBITE.TTF','LYDIAN.TTF','MREARL.TTF','RUBBERSTAMP.TTF','ZINJARON.TTF')
+\item 
+{\bf \$chars} = 6
+\item 
+{\bf \$minsize} = 20
+\item 
+{\bf \$maxsize} = 40
+\item 
+{\bf \$maxrotation} = 30
+\item 
+{\bf \$noise} = TRUE
+\item 
+{\bf \$websafecolors} = FALSE
+\item 
+{\bf \$lang} = \char`\"{}de\char`\"{}
+\item 
+{\bf \$maxtry} = 3
+\item 
+{\bf \$refreshlink} = TRUE
+\item 
+{\bf \$badguys\_\-url} = \char`\"{}/\char`\"{}
+\item 
+{\bf \$secretposition} = 21
+\item 
+{\bf \$secretstring} = \char`\"{}This is a very secret string. Nobody should know it, =:)\char`\"{}
+\item 
+{\bf \$debug} = FALSE
+\end{CompactItemize}
+\subsection*{Private Methoden}
+\begin{CompactItemize}
+\item 
+{\bf hn\_\-captcha} (\$config, \$secure=TRUE)
+\item 
+{\bf display\_\-captcha} (\$onlyTheImage=FALSE)
+\item 
+{\bf public\_\-key\_\-input} ()
+\item 
+{\bf make\_\-captcha} ()
+\end{CompactItemize}
+\subsection*{Private Attribute}
+\begin{CompactItemize}
+\item 
+{\bf \$lx}
+\item 
+{\bf \$ly}
+\item 
+{\bf \$jpegquality} = 80
+\item 
+{\bf \$noisefactor} = 9
+\item 
+{\bf \$nb\_\-noise}
+\item 
+{\bf \$TTF\_\-file}
+\item 
+{\bf \$msg1}
+\item 
+{\bf \$msg2}
+\item 
+{\bf \$buttontext}
+\item 
+{\bf \$refreshbuttontext}
+\item 
+{\bf \$public\_\-K}
+\item 
+{\bf \$private\_\-K}
+\item 
+{\bf \$key}
+\item 
+{\bf \$public\_\-key}
+\item 
+{\bf \$filename}
+\item 
+{\bf \$gd\_\-version}
+\item 
+{\bf \$QUERY\_\-STRING}
+\item 
+{\bf \$current\_\-try} = 0
+\item 
+{\bf \$r}
+\item 
+{\bf \$g}
+\item 
+{\bf \$b}
+\end{CompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+PHP-Class \doxyref{hn\_\-captcha}{S.}{classhn__captcha} Version 1.3, released 11-Apr-2006 Author: Horst Nogajski, {\tt horst@nogajski.de}
+
+License: GNU GPL ({\tt http://www.opensource.org/licenses/gpl-license.html}) Download: {\tt http://hn273.users.phpclasses.org/browse/package/1569.html}
+
+If you find it useful, you might rate it on {\tt http://www.phpclasses.org/rate.html?package=1569} If you use this class in a productional environment, you may drop me a note, so I can add a link to the page. changes in version 1.1:\begin{itemize}
+\item added a new configuration-variable: maxrotation\item added a new configuration-variable: secretstring\item modified function get\_\-try(): now ever returns a string of 16 chars\end{itemize}
+
+
+changes in version 1.2:\begin{itemize}
+\item added a new configuration-variable: secretposition\item once more modified the function get\_\-try(): generate a string of 32 chars length, where at secretposition is the number of current-try. Hopefully this is enough for hackprevention.\end{itemize}
+
+
+changes in version 1.3:\begin{itemize}
+\item fixed a security-hole, what was discovered by Daniel Jagszent. Many thank's for testing, fixing and sharing it, Daniel! He has tested the class in a modified way, like it is described here: {\tt http://www.puremango.co.uk/cm\_\-breaking\_\-captcha\_\-115.php} It was possible to manually do the captcha-test, notice the public and private keys. In automated way this keys could send as long as the image-file exists! (with different other datas and independent from the new captcha-string!) License: GNU GPL ({\tt http://www.opensource.org/licenses/gpl-license.html})\end{itemize}
+
+
+This program is free software;
+
+you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA Tabsize: 4 This class generates a picture to use in forms that perform CAPTCHA test (Completely Automated Public Turing to tell Computers from Humans Apart). After the test form is submitted a key entered by the user in a text field is compared by the class to determine whether it matches the text in the picture.
+
+The class is a fork of the original released at www.phpclasses.org by Julien Pachet with the name ocr\_\-captcha.
+
+The following enhancements were added:
+
+\begin{itemize}
+\item Support to make it work with GD library before version 2\item Hacking prevention\item Optional use of Web safe colors\item Limit the number of users attempts\item Display an optional refresh link to generate a new picture with a different key without counting to the user attempts limit verification\item Support the use of multiple random TrueType fonts\item Control the output image by only three parameters: number of text characters and minimum and maximum size preserving the size proportion\item Preserve all request parameters passed to the page via the GET method, so the CAPTCHA test can be added to existing scripts with minimal changes\item Added a debug option for testing the current configuration\end{itemize}
+
+
+All the configuration settings are passed to the class in an array when the object instance is initialized.
+
+The class only needs two function calls to be used: \doxyref{display\_\-form()}{S.}{classhn__captcha_4fe7655f9890c7271b4d85a0ef7849b6} and \doxyref{validate\_\-submit()}{S.}{classhn__captcha_58cf521777ae952c7e3c1f21850f44cf}.
+
+The class comes with an examplefile. If you don't have it: {\tt http://hn273.users.phpclasses.org/browse/package/1569.html}
+
+Class that generate a captcha-image with text and a form to fill in this text
+
+\begin{Desc}
+\item[Autor:]Horst Nogajski, (mail: {\tt horst@nogajski.de}) \end{Desc}
+\begin{Desc}
+\item[Version:]1.3 \end{Desc}
+\begin{Desc}
+\item[Datum:]2006-April-11 \end{Desc}
+
+
+Definiert in Zeile 99 der Datei hn\_\-captcha.class.php.
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{hn\_\-captcha@{hn\_\-captcha}!hn\_\-captcha@{hn\_\-captcha}}
+\index{hn\_\-captcha@{hn\_\-captcha}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.hn\_\-captcha (\$ {\em config}, \$ {\em secure} = {\tt TRUE})\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_47496a3e7f2d9b2f245191af0aaf6da4}
+
+
+Extracts the config array and generate needed params.
+
+void \begin{Desc}
+\item[Rückgabe:]nothing \end{Desc}
+
+
+Definiert in Zeile 300 der Datei hn\_\-captcha.class.php.
+
+Benutzt \$\_\-GET.
+
+Wird benutzt von hn\_\-captcha\_\-X1.hn\_\-captcha\_\-X1().\index{hn\_\-captcha@{hn\_\-captcha}!display\_\-form@{display\_\-form}}
+\index{display\_\-form@{display\_\-form}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.display\_\-form ()}\label{classhn__captcha_4fe7655f9890c7271b4d85a0ef7849b6}
+
+
+displays a complete form with captcha-picture
+
+void \begin{Desc}
+\item[Rückgabe:]HTML-Output \end{Desc}
+
+
+Definiert in Zeile 453 der Datei hn\_\-captcha.class.php.
+
+Benutzt public\_\-key\_\-input().\index{hn\_\-captcha@{hn\_\-captcha}!validate\_\-submit@{validate\_\-submit}}
+\index{validate\_\-submit@{validate\_\-submit}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.validate\_\-submit ()}\label{classhn__captcha_58cf521777ae952c7e3c1f21850f44cf}
+
+
+validates POST-vars and return result
+
+integer \begin{Desc}
+\item[Rückgabe:]0 = first call $|$ 1 = valid submit $|$ 2 = not valid $|$ 3 = not valid and has reached maximum try's \end{Desc}
+
+
+Definiert in Zeile 488 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!display\_\-captcha@{display\_\-captcha}}
+\index{display\_\-captcha@{display\_\-captcha}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.display\_\-captcha (\$ {\em onlyTheImage} = {\tt FALSE})\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_af028dae3e80e1ab7e42a96092c9c26a}
+
+
+
+
+Definiert in Zeile 523 der Datei hn\_\-captcha.class.php.
+
+Benutzt make\_\-captcha() und public\_\-key\_\-input().\index{hn\_\-captcha@{hn\_\-captcha}!flush\_\-captcha\_\-image@{flush\_\-captcha\_\-image}}
+\index{flush\_\-captcha\_\-image@{flush\_\-captcha\_\-image}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.flush\_\-captcha\_\-image ()}\label{classhn__captcha_0207a5b7002ef6b5aa73ec7659802179}
+
+
+Flush captcha image to browser 
+
+Definiert in Zeile 534 der Datei hn\_\-captcha.class.php.
+
+Benutzt make\_\-captcha().\index{hn\_\-captcha@{hn\_\-captcha}!public\_\-key\_\-input@{public\_\-key\_\-input}}
+\index{public\_\-key\_\-input@{public\_\-key\_\-input}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.public\_\-key\_\-input ()\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_169442c5d37041dde147a1e77c0ae490}
+
+
+
+
+Definiert in Zeile 550 der Datei hn\_\-captcha.class.php.
+
+Wird benutzt von display\_\-captcha() und display\_\-form().\index{hn\_\-captcha@{hn\_\-captcha}!make\_\-captcha@{make\_\-captcha}}
+\index{make\_\-captcha@{make\_\-captcha}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.make\_\-captcha ()\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_ff57a917a92eac5833273c5034ad37c6}
+
+
+
+
+Definiert in Zeile 556 der Datei hn\_\-captcha.class.php.
+
+Wird benutzt von display\_\-captcha() und flush\_\-captcha\_\-image().
+
+\subsection{Dokumentation der Datenelemente}
+\index{hn\_\-captcha@{hn\_\-captcha}!\$tempfolder@{\$tempfolder}}
+\index{\$tempfolder@{\$tempfolder}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$tempfolder}\label{classhn__captcha_20707c72489923ac994201ed3b6040a2}
+
+
+Absolute path to a Tempfolder (with trailing slash!). This must be writeable for PHP and also accessible via HTTP, because the image will be stored there.  string 
+
+Definiert in Zeile 113 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$TTF\_\-folder@{\$TTF\_\-folder}}
+\index{\$TTF\_\-folder@{\$TTF\_\-folder}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$TTF\_\-folder}\label{classhn__captcha_05e45f077bbdd3eeeff3268d1094b252}
+
+
+Absolute path to folder with TrueTypeFonts (with trailing slash!). This must be readable by PHP.  string 
+
+Definiert in Zeile 121 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$TTF\_\-RANGE@{\$TTF\_\-RANGE}}
+\index{\$TTF\_\-RANGE@{\$TTF\_\-RANGE}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$TTF\_\-RANGE = array('COMIC.TTF','JACOBITE.TTF','LYDIAN.TTF','MREARL.TTF','RUBBERSTAMP.TTF','ZINJARON.TTF')}\label{classhn__captcha_0d5726c70d35cde60709054faf23c6e3}
+
+
+A List with available TrueTypeFonts for random char-creation.  mixed[array$|$string] 
+
+Definiert in Zeile 129 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$chars@{\$chars}}
+\index{\$chars@{\$chars}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$chars = 6}\label{classhn__captcha_6ff5076007ab194575ecc7569a21ea47}
+
+
+How many chars the generated text should have  integer 
+
+Definiert in Zeile 137 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$minsize@{\$minsize}}
+\index{\$minsize@{\$minsize}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$minsize = 20}\label{classhn__captcha_ff43c3b01a2dc6e238f1fbdfe29e5207}
+
+
+The minimum size a Char should have  integer 
+
+Definiert in Zeile 145 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$maxsize@{\$maxsize}}
+\index{\$maxsize@{\$maxsize}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$maxsize = 40}\label{classhn__captcha_e86c5725f0ecb02014a46297012b4fe7}
+
+
+The maximum size a Char can have  integer 
+
+Definiert in Zeile 153 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$maxrotation@{\$maxrotation}}
+\index{\$maxrotation@{\$maxrotation}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$maxrotation = 30}\label{classhn__captcha_1e62c2f5c87816054f68ccfbfa946419}
+
+
+The maximum degrees a Char should be rotated. Set it to 30 means a random rotation between -30 and 30.  integer 
+
+Definiert in Zeile 161 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$noise@{\$noise}}
+\index{\$noise@{\$noise}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$noise = TRUE}\label{classhn__captcha_24c82e2be511458b971f43085a87cc6f}
+
+
+Background noise On/Off (if is Off, a grid will be created)  boolean 
+
+Definiert in Zeile 169 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$websafecolors@{\$websafecolors}}
+\index{\$websafecolors@{\$websafecolors}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$websafecolors = FALSE}\label{classhn__captcha_65b382ceb2365310ff70e835eb02fa7a}
+
+
+This will only use the 216 websafe color pallette for the image.  boolean 
+
+Definiert in Zeile 177 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$lang@{\$lang}}
+\index{\$lang@{\$lang}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$lang = \char`\"{}de\char`\"{}}\label{classhn__captcha_6ee872ba00cc1a1a88fd0b7b8ce4e822}
+
+
+Switches language, available are 'en' and 'de'. You can easily add more. Look in CONSTRUCTOR.  string 
+
+Definiert in Zeile 185 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$maxtry@{\$maxtry}}
+\index{\$maxtry@{\$maxtry}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$maxtry = 3}\label{classhn__captcha_cf1fd31f07d8d8c2a11f7f023d962fe2}
+
+
+If a user has reached this number of try's without success, he will moved to the \$badguys\_\-url  integer 
+
+Definiert in Zeile 193 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$refreshlink@{\$refreshlink}}
+\index{\$refreshlink@{\$refreshlink}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$refreshlink = TRUE}\label{classhn__captcha_ee0ff19b5cfe2e952c21a9f658663188}
+
+
+Gives the user the possibility to generate a new captcha-image.  boolean 
+
+Definiert in Zeile 201 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$badguys\_\-url@{\$badguys\_\-url}}
+\index{\$badguys\_\-url@{\$badguys\_\-url}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$badguys\_\-url = \char`\"{}/\char`\"{}}\label{classhn__captcha_66d60513c390fbbc4cbba4dabaf2cdcc}
+
+
+If a user has reached his maximum try's, he will located to this url.  boolean 
+
+Definiert in Zeile 209 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$secretposition@{\$secretposition}}
+\index{\$secretposition@{\$secretposition}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$secretposition = 21}\label{classhn__captcha_318f9dd2d53c7503f44cc72fb08ee188}
+
+
+Number between 1 and 32
+
+Defines the position of 'current try number' in (32-char-length)-string generated by function get\_\-try()  integer 
+
+Definiert in Zeile 219 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$secretstring@{\$secretstring}}
+\index{\$secretstring@{\$secretstring}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$secretstring = \char`\"{}This is a very secret string. Nobody should know it, =:)\char`\"{}}\label{classhn__captcha_d54f5ff45e92315101e371b67dbdd844}
+
+
+The string is used to generate the md5-key.  string 
+
+Definiert in Zeile 227 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$debug@{\$debug}}
+\index{\$debug@{\$debug}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$debug = FALSE}\label{classhn__captcha_da6f7dc3cd5fa777dcd1a2fe481b310b}
+
+
+Outputs configuration values for testing  boolean 
+
+Definiert in Zeile 235 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$lx@{\$lx}}
+\index{\$lx@{\$lx}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$lx\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_3b55eec920145f3bd0f2523177a1d722}
+
+
+
+
+Definiert in Zeile 245 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$ly@{\$ly}}
+\index{\$ly@{\$ly}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$ly\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_8db9990332cb0d9ee4448a3370eb3100}
+
+
+
+
+Definiert in Zeile 247 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$jpegquality@{\$jpegquality}}
+\index{\$jpegquality@{\$jpegquality}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$jpegquality = 80\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_63b3389be7b2c0de626b19f55f0cbe81}
+
+
+
+
+Definiert in Zeile 249 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$noisefactor@{\$noisefactor}}
+\index{\$noisefactor@{\$noisefactor}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$noisefactor = 9\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_54c238ea1772fabfe64fa41c9c889a18}
+
+
+
+
+Definiert in Zeile 251 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$nb\_\-noise@{\$nb\_\-noise}}
+\index{\$nb\_\-noise@{\$nb\_\-noise}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$nb\_\-noise\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_88697f55d769092356e7e44af5f8cd61}
+
+
+
+
+Definiert in Zeile 253 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$TTF\_\-file@{\$TTF\_\-file}}
+\index{\$TTF\_\-file@{\$TTF\_\-file}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$TTF\_\-file\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_fc8660f66ec9f18dffebf2d65bd89d51}
+
+
+
+
+Definiert in Zeile 255 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$msg1@{\$msg1}}
+\index{\$msg1@{\$msg1}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$msg1\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_79be175a9daf0d941641f570adf282b7}
+
+
+
+
+Definiert in Zeile 257 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$msg2@{\$msg2}}
+\index{\$msg2@{\$msg2}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$msg2\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_52ad4e7fb39e62f18094b1b9ea8d247b}
+
+
+
+
+Definiert in Zeile 259 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$buttontext@{\$buttontext}}
+\index{\$buttontext@{\$buttontext}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$buttontext\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_55c161c9fc3b45860c41874824bafc09}
+
+
+
+
+Definiert in Zeile 261 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$refreshbuttontext@{\$refreshbuttontext}}
+\index{\$refreshbuttontext@{\$refreshbuttontext}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$refreshbuttontext\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_8eceea588697279839101cadaa983392}
+
+
+
+
+Definiert in Zeile 263 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$public\_\-K@{\$public\_\-K}}
+\index{\$public\_\-K@{\$public\_\-K}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$public\_\-K\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_95f7a0a7d451fdf779e570ede6272662}
+
+
+
+
+Definiert in Zeile 265 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$private\_\-K@{\$private\_\-K}}
+\index{\$private\_\-K@{\$private\_\-K}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$private\_\-K\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_1027e171948f8e5619193b5fcc824815}
+
+
+
+
+Definiert in Zeile 267 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$key@{\$key}}
+\index{\$key@{\$key}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$key\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_2c28d2cba19fc513f7116c3e20c45c59}
+
+
+
+
+Definiert in Zeile 269 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$public\_\-key@{\$public\_\-key}}
+\index{\$public\_\-key@{\$public\_\-key}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$public\_\-key\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_9c2cafa43b3806ef88fe0d799942fa36}
+
+
+
+
+Definiert in Zeile 271 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$filename@{\$filename}}
+\index{\$filename@{\$filename}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$filename\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_1ef754cd5a960c4c719becd1104a7b30}
+
+
+
+
+Definiert in Zeile 273 der Datei hn\_\-captcha.class.php.
+
+Wird benutzt von hn\_\-captcha\_\-X1.txt\_\-counter().\index{hn\_\-captcha@{hn\_\-captcha}!\$gd\_\-version@{\$gd\_\-version}}
+\index{\$gd\_\-version@{\$gd\_\-version}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$gd\_\-version\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_830262e4d8d78c99498c3fa03ef71b2d}
+
+
+
+
+Definiert in Zeile 275 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$QUERY\_\-STRING@{\$QUERY\_\-STRING}}
+\index{\$QUERY\_\-STRING@{\$QUERY\_\-STRING}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$QUERY\_\-STRING\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_3445a958eb02a573c58f4dc67c64681b}
+
+
+
+
+Definiert in Zeile 277 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$current\_\-try@{\$current\_\-try}}
+\index{\$current\_\-try@{\$current\_\-try}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$current\_\-try = 0\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_31011448f055ef21e72e39071bbff167}
+
+
+
+
+Definiert in Zeile 279 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$r@{\$r}}
+\index{\$r@{\$r}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$r\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_d1088d654d6c80122caf4ce9f842d3ab}
+
+
+
+
+Definiert in Zeile 281 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$g@{\$g}}
+\index{\$g@{\$g}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$g\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_c81f08fddc782c0b96e33edbc9b46672}
+
+
+
+
+Definiert in Zeile 283 der Datei hn\_\-captcha.class.php.\index{hn\_\-captcha@{hn\_\-captcha}!\$b@{\$b}}
+\index{\$b@{\$b}!hn_captcha@{hn\_\-captcha}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}hn\_\-captcha.\$b\hspace{0.3cm}{\tt  [private]}}\label{classhn__captcha_58d82471d71af2af8e135d4a0a8011eb}
+
+
+
+
+Definiert in Zeile 285 der Datei hn\_\-captcha.class.php.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:\begin{CompactItemize}
+\item 
+{\bf hn\_\-captcha.class.php}\end{CompactItemize}

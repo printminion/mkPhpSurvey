@@ -1,0 +1,75 @@
+<?
+/**
+ * 
+ * Login logic 
+ * 
+ * @version $Id: dologin.php 116 2007-11-20 02:32:04Z mimait04 $
+ * @copyright 
+ * @author 
+ *  
+ */
+
+
+
+//$oLogger = new Logger();
+
+//$userLogged = true;
+
+if ($oLogger->IsLogged()){
+   
+   $TPL_LOGIN['LOGGED_USER'] = $oLogger->getUserNick();
+   
+   $TPL_LOGIN['URL_LOGIN'] = LIVE_SITE.'?action=logout&continue='.LIVE_SITE;
+   $TPL_LOGIN['URL_LOGIN_CAPTION'] = TPL_LOGIN_URL_LOGIN_CAPTION_LOGGED;
+
+   $TPL_LOGIN['URL_SETTINGS'] = LIVE_SITE.'/admin?settings';
+   $TPL_LOGIN['URL_SETTINGS_CAPTION'] = TPL_LOGIN_URL_SETTINGS_CAPTION;
+
+   $TPL_LOGIN['URL_HELP'] = LIVE_SITE.'/support';
+   $TPL_LOGIN['URL_HELP_CAPTION'] = TPL_LOGIN_URL_HELP_CAPTION;
+
+   $smarty->assign('TPL_LOGIN',$TPL_LOGIN);
+}else{
+   
+   $TPL_LOGIN['URL_LOGIN'] = ''; 
+   $TPL_LOGIN['URL_LOGIN_CAPTION'] = TPL_LOGIN_URL_LOGIN_CAPTION_LOGING;
+
+   #######################################
+   #
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_LOGIN']           = TPL_BOX_LOGIN_CAPTION_LOGIN;
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_USERNAME']        = TPL_BOX_LOGIN_CAPTION_USERNAME;
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_PASSWORD']        = TPL_BOX_LOGIN_CAPTION_PASSWORD;
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_SAVEONTHISPC']    = TPL_BOX_LOGIN_CAPTION_SAVEONTHISPC;
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_LOGIN_BUTTON']    = TPL_BOX_LOGIN_CAPTION_LOGIN_BUTTON;
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_CAPTION_LOGIN_SUPPORT']   = TPL_BOX_LOGIN_CAPTION_LOGIN_SUPPORT;
+   
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_FORM_ACTION']       = LIVE_SITE.'/index.php';
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_URL_SUCCESS']       = LIVE_SITE.'/admin/';
+   $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_URL_LOGIN_SUPPORT'] = LIVE_SITE.'/support/';
+   #
+   #######################################
+   
+   #######################################
+   #
+   $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_CAPTION_SIGNUP']     = TPL_BOX_REGISTER_CAPTION_SIGNUP;
+   $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_CAPTION_HELP_ABOUT'] = TPL_BOX_REGISTER_CAPTION_HELP_ABOUT;
+   
+   $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_URL_SIGNUP']     = LIVE_SITE.'/signup/';
+   $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_URL_HELP_ABOUT'] = LIVE_SITE.'/help/de/about.html';
+   
+   #
+   #######################################
+   
+   
+   $TPL_LOGIN_STRINGS['TPL_MSG_ERROR'] = _LOGIN_INCOMPLETE;
+   
+   $TPL_STRINGS['TPL_LOGIN_TITLE']  = TPL_LOGIN_TITLE;
+   $TPL_STRINGS['TPL_LOGIN_BODY']   = TPL_LOGIN_BODY;
+   
+//   debug_obj($TPL_LOGIN_STRINGS);
+   $smarty->assign('TPL_LOGIN_BOX',$TPL_LOGIN_STRINGS);
+   
+}
+
+
+?>

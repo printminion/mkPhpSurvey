@@ -1,0 +1,337 @@
+\section{Logger Klassenreferenz}
+\label{classLogger}\index{Logger@{Logger}}
+\subsection*{Öffentliche Methoden}
+\begin{CompactItemize}
+\item 
+{\bf Logger} ()
+\item 
+{\bf doLogin} (\$userNick, \$userPasswort, \$urlLoginSuccess=null, \$urlLoginFailed=null)
+\item 
+{\bf recordLogin} (\$uid, \$username, \$logintype, \${\bf database}, \$dbprefix)
+\item 
+{\bf getSessionID} ()
+\item 
+{\bf relocate} (\$url)
+\item 
+{\bf doLogout} (\$urlSuccess=null)
+\item 
+{\bf IsJustLogged} ()
+\item 
+{\bf checkaccess} (\$cook, \$db, \$dbprefix)
+\item 
+{\bf checkaccess\_\-uid} (\$cook, \$db, \$dbprefix)
+\item 
+{\bf checkIfUserLoggedByNick} (\$userNick=null, \&\$userId)
+\item 
+{\bf IsLogged} ()
+\item 
+{\bf IsAdmin} ()
+\item 
+{\bf getUserId} ()
+\item 
+{\bf getUserNick} ()
+\item 
+{\bf getUserType} ()
+\end{CompactItemize}
+\subsection*{Öffentliche Attribute}
+\begin{CompactItemize}
+\item 
+{\bf \$bLogged}
+\item 
+{\bf \$lUserId} = 0
+\item 
+{\bf \$bAdmin}
+\item 
+{\bf \$lUserType} = 0
+\item 
+{\bf \$strUserNick}
+\item 
+{\bf \$database}
+\item 
+{\bf \$\_\-bJustLogged} = false
+\end{CompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 15 der Datei class.Logger.php.
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.Logger ()}\label{classLogger_14770561f478cc9228b1ee70d539e014}
+
+
+\doxyref{Logger}{S.}{classLogger} constructor
+
+\begin{Desc}
+\item[Rückgabe:]\doxyref{Logger}{S.}{classLogger} \end{Desc}
+
+
+Definiert in Zeile 55 der Datei class.Logger.php.
+
+Benutzt \$\_\-SESSION, \$database, \$db, \$host, \$password, \$query, \$result, \$user, checkaccess() und checkaccess\_\-uid().\index{Logger@{Logger}!doLogin@{doLogin}}
+\index{doLogin@{doLogin}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.doLogin (\$ {\em userNick}, \$ {\em userPasswort}, \$ {\em urlLoginSuccess} = {\tt null}, \$ {\em urlLoginFailed} = {\tt null})}\label{classLogger_e42f0ef5814aa36c4bb1b902d342aef8}
+
+
+Do login of user
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$userNick \item[{\em string}]\$userPasswort \item[{\em string}]\$urlLoginSuccess \item[{\em string}]\$urlLoginFailed \end{description}
+\end{Desc}
+
+
+Definiert in Zeile 140 der Datei class.Logger.php.
+
+Benutzt \$\_\-SESSION, \$database, \$query, \$result, getSessionID() und relocate().\index{Logger@{Logger}!recordLogin@{recordLogin}}
+\index{recordLogin@{recordLogin}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.recordLogin (\$ {\em uid}, \$ {\em username}, \$ {\em logintype}, \$ {\em database}, \$ {\em dbprefix})}\label{classLogger_ba0a8c015b79271c9b3b0e5e52b5699c}
+
+
+record of user login
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em long}]\$uid \item[{\em string}]\$username \item[{\em string}]\$logintype login, blocked, failed \item[{\em \doxyref{database}{S.}{classdatabase}}]\$\doxyref{database}{S.}{classdatabase} \item[{\em string}]\$dbprefix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 338 der Datei class.Logger.php.
+
+Benutzt \$database, \$query und \$result.\index{Logger@{Logger}!getSessionID@{getSessionID}}
+\index{getSessionID@{getSessionID}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.getSessionID ()}\label{classLogger_e8497dfa975e2c955f7eb17fc07bff27}
+
+
+Get random session id
+
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 396 der Datei class.Logger.php.
+
+Wird benutzt von doLogin().\index{Logger@{Logger}!relocate@{relocate}}
+\index{relocate@{relocate}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.relocate (\$ {\em url})}\label{classLogger_6b92de453637ba381f6b38af128677d8}
+
+
+Return Relocation header
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$url \end{description}
+\end{Desc}
+
+
+Definiert in Zeile 414 der Datei class.Logger.php.
+
+Wird benutzt von doLogin() und doLogout().\index{Logger@{Logger}!doLogout@{doLogout}}
+\index{doLogout@{doLogout}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.doLogout (\$ {\em urlSuccess} = {\tt null})}\label{classLogger_1aec7b983a33742c7d467bedbe73c94d}
+
+
+procees with logout
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$urlSuccess \end{description}
+\end{Desc}
+
+
+Definiert in Zeile 442 der Datei class.Logger.php.
+
+Benutzt \$\_\-SESSION, \$database, \$query und relocate().
+
+Wird benutzt von checkaccess() und checkaccess\_\-uid().\index{Logger@{Logger}!IsJustLogged@{IsJustLogged}}
+\index{IsJustLogged@{IsJustLogged}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.IsJustLogged ()}\label{classLogger_5be6c3da0a1dbb66eed287f9e29cc6e5}
+
+
+Flag to check tf its first page after user logged
+
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 500 der Datei class.Logger.php.\index{Logger@{Logger}!checkaccess@{checkaccess}}
+\index{checkaccess@{checkaccess}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.checkaccess (\$ {\em cook}, \$ {\em db}, \$ {\em dbprefix})}\label{classLogger_531acb23b4cd12bb71f33e2327def989}
+
+
+Check if user logged
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$cook \item[{\em stringe}]\$db \doxyref{database}{S.}{classdatabase} object \item[{\em string}]\$dbprefix prefix of \doxyref{database}{S.}{classdatabase} tables \char`\"{}mos\_\-\char`\"{} \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 517 der Datei class.Logger.php.
+
+Benutzt \$database, doLogout() und IsLogged().
+
+Wird benutzt von Logger().\index{Logger@{Logger}!checkaccess\_\-uid@{checkaccess\_\-uid}}
+\index{checkaccess\_\-uid@{checkaccess\_\-uid}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.checkaccess\_\-uid (\$ {\em cook}, \$ {\em db}, \$ {\em dbprefix})}\label{classLogger_3d4c0e693f4e76414e723a5eebd802f8}
+
+
+check if user logged
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$cook \item[{\em string}]\$db \item[{\em string}]\$dbprefix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]int \end{Desc}
+
+
+Definiert in Zeile 554 der Datei class.Logger.php.
+
+Benutzt \$database, doLogout() und IsLogged().
+
+Wird benutzt von Logger().\index{Logger@{Logger}!checkIfUserLoggedByNick@{checkIfUserLoggedByNick}}
+\index{checkIfUserLoggedByNick@{checkIfUserLoggedByNick}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.checkIfUserLoggedByNick (\$ {\em userNick} = {\tt null}, \&\$ {\em userId})}\label{classLogger_f71a9303af62b50d37df2be57596daee}
+
+
+Check if user logged
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$userNick \item[{\em long}]\$userId \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]boolean \end{Desc}
+
+
+Definiert in Zeile 588 der Datei class.Logger.php.
+
+Benutzt \$database und \$result.\index{Logger@{Logger}!IsLogged@{IsLogged}}
+\index{IsLogged@{IsLogged}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.IsLogged ()}\label{classLogger_ccd790e245f1f00eebba7c18e1ec16fa}
+
+
+Check if user logged
+
+\begin{Desc}
+\item[Rückgabe:]boolean \end{Desc}
+
+
+Definiert in Zeile 634 der Datei class.Logger.php.
+
+Wird benutzt von checkaccess() und checkaccess\_\-uid().\index{Logger@{Logger}!IsAdmin@{IsAdmin}}
+\index{IsAdmin@{IsAdmin}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.IsAdmin ()}\label{classLogger_e514a275833d21265fbb7e71dae4691d}
+
+
+Check if logged user is Admin
+
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 643 der Datei class.Logger.php.\index{Logger@{Logger}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.getUserId ()}\label{classLogger_d9e8f8aca72ea33246995c16eb0c3360}
+
+
+\begin{Desc}
+\item[Rückgabe:]long \end{Desc}
+
+
+Definiert in Zeile 650 der Datei class.Logger.php.\index{Logger@{Logger}!getUserNick@{getUserNick}}
+\index{getUserNick@{getUserNick}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.getUserNick ()}\label{classLogger_92daff3aaf468c94e27dbede71120bfd}
+
+
+Gets nich of logged user
+
+\begin{Desc}
+\item[Rückgabe:]string \end{Desc}
+
+
+Definiert in Zeile 659 der Datei class.Logger.php.\index{Logger@{Logger}!getUserType@{getUserType}}
+\index{getUserType@{getUserType}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.getUserType ()}\label{classLogger_fdf7141666436b3136e1b1f844fe6321}
+
+
+Get type of logged user
+
+\begin{Desc}
+\item[Rückgabe:]long \end{Desc}
+
+
+Definiert in Zeile 668 der Datei class.Logger.php.
+
+\subsection{Dokumentation der Datenelemente}
+\index{Logger@{Logger}!\$bLogged@{\$bLogged}}
+\index{\$bLogged@{\$bLogged}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$bLogged}\label{classLogger_4c5e34f5dd82480f8131444a8e925b6d}
+
+
+
+
+Definiert in Zeile 21 der Datei class.Logger.php.\index{Logger@{Logger}!\$lUserId@{\$lUserId}}
+\index{\$lUserId@{\$lUserId}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$lUserId = 0}\label{classLogger_5d6758111378e2c0ed87169dd2ff538d}
+
+
+
+
+Definiert in Zeile 22 der Datei class.Logger.php.\index{Logger@{Logger}!\$bAdmin@{\$bAdmin}}
+\index{\$bAdmin@{\$bAdmin}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$bAdmin}\label{classLogger_fa46383f383164d19c08d48b8b089803}
+
+
+
+
+Definiert in Zeile 30 der Datei class.Logger.php.\index{Logger@{Logger}!\$lUserType@{\$lUserType}}
+\index{\$lUserType@{\$lUserType}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$lUserType = 0}\label{classLogger_985c21e871bc5e952635b19efd0406ac}
+
+
+
+
+Definiert in Zeile 31 der Datei class.Logger.php.\index{Logger@{Logger}!\$strUserNick@{\$strUserNick}}
+\index{\$strUserNick@{\$strUserNick}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$strUserNick}\label{classLogger_5218f0f63b5ef80983bda1ff1ac59fb7}
+
+
+
+
+Definiert in Zeile 32 der Datei class.Logger.php.\index{Logger@{Logger}!\$database@{\$database}}
+\index{\$database@{\$database}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\${\bf database}}\label{classLogger_99e7dc3dcb61e07f44a96556c4f29823}
+
+
+
+
+Definiert in Zeile 39 der Datei class.Logger.php.
+
+Wird benutzt von checkaccess(), checkaccess\_\-uid(), checkIfUserLoggedByNick(), doLogin(), doLogout(), Logger() und recordLogin().\index{Logger@{Logger}!\$\_\-bJustLogged@{\$\_\-bJustLogged}}
+\index{\$\_\-bJustLogged@{\$\_\-bJustLogged}!Logger@{Logger}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Logger.\$\_\-bJustLogged = false}\label{classLogger_647b3dea9efb906a0a6f72f3cf43d696}
+
+
+
+
+Definiert in Zeile 45 der Datei class.Logger.php.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:\begin{CompactItemize}
+\item 
+{\bf class.Logger.php}\end{CompactItemize}

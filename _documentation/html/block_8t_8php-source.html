@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: block.t.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>block.t.php</h1><a href="block_8t_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: block.t.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> */</span>
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 <span class="comment">/*</span>
+<a name="l00007"></a>00007 <span class="comment"> * Smarty plugin</span>
+<a name="l00008"></a>00008 <span class="comment"> * -------------------------------------------------------------</span>
+<a name="l00009"></a>00009 <span class="comment"> * File:     block.t.php</span>
+<a name="l00010"></a>00010 <span class="comment"> * Type:     block</span>
+<a name="l00011"></a>00011 <span class="comment"> * Name:     t</span>
+<a name="l00012"></a>00012 <span class="comment"> * Purpose:  translate a block of text</span>
+<a name="l00013"></a>00013 <span class="comment"> * -------------------------------------------------------------</span>
+<a name="l00014"></a>00014 <span class="comment"> */</span>
+<a name="l00015"></a>00015 
+<a name="l00025"></a><a class="code" href="block_8t_8php.html#8d3b2765a25f4a9dcee98d2a85bcf623">00025</a> function <a class="code" href="block_8t_8php.html#8d3b2765a25f4a9dcee98d2a85bcf623">smarty_block_t</a>($params, $content, &amp;<a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>, &amp;$repeat){
+<a name="l00026"></a>00026     <span class="comment">// only output on the closing tag</span>
+<a name="l00027"></a>00027     <span class="keywordflow">if</span>(!$repeat){
+<a name="l00028"></a>00028         <span class="keywordflow">if</span> (isset($content)) {
+<a name="l00029"></a>00029             $lang = $params['lang'];
+<a name="l00030"></a>00030             <span class="comment">// do some intelligent translation thing here with $content</span>
+<a name="l00031"></a>00031             
+<a name="l00032"></a>00032             <span class="comment">//debug_obj($params);</span>
+<a name="l00033"></a>00033             
+<a name="l00034"></a>00034 <span class="preprocessor">            #do replace </span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span>            <span class="keywordflow">foreach</span>((array)$params as $key =&gt; $value){
+<a name="l00036"></a>00036                
+<a name="l00037"></a>00037 <span class="preprocessor">               #replace value with constant variable</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>               <span class="keywordflow">if</span>($key == $value){
+<a name="l00039"></a>00039                   $value = constant($key); 
+<a name="l00040"></a>00040                }
+<a name="l00041"></a>00041                $content = str_replace(<span class="charliteral">'%'</span>.$key.<span class="charliteral">'%'</span>,$value,$content);
+<a name="l00042"></a>00042             }
+<a name="l00043"></a>00043             
+<a name="l00044"></a>00044             
+<a name="l00045"></a>00045             $translation = $content;
+<a name="l00046"></a>00046             <span class="keywordflow">return</span> $translation;
+<a name="l00047"></a>00047         }
+<a name="l00048"></a>00048     }
+<a name="l00049"></a>00049 }
+<a name="l00050"></a>00050 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

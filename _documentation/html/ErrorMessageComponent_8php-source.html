@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: ErrorMessageComponent.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>ErrorMessageComponent.php</h1><a href="ErrorMessageComponent_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: ErrorMessageComponent.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey.UIComponents</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a><a class="code" href="classErrorMessageComponent.html">00007</a> <span class="keyword">class </span><a class="code" href="classErrorMessageComponent.html">ErrorMessageComponent</a> <span class="keyword">extends</span> <a class="code" href="classComponentAbstract.html">ComponentAbstract</a> {
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="classErrorMessageComponent.html#6a7ed825ae570b558d327b6755fd9def">00009</a>    function <a class="code" href="classErrorMessageComponent.html#6a7ed825ae570b558d327b6755fd9def">ErrorMessageComponent</a>($instanceID,$instanceName, &amp;$smartyObj){
+<a name="l00010"></a>00010       parent::ComponentAbstract($instanceID,$instanceName, &amp;$smartyObj);
+<a name="l00011"></a>00011    }
+<a name="l00012"></a>00012 
+<a name="l00017"></a><a class="code" href="classErrorMessageComponent.html#52fef8c30b1f7359629e35d179e0663b">00017</a>    function <a class="code" href="classErrorMessageComponent.html#52fef8c30b1f7359629e35d179e0663b">redender</a>(){
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019       unset($this-&gt;_formValuesArr);
+<a name="l00020"></a>00020       unset($this-&gt;_errorValuesArr);
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022       <span class="comment">//debug_obj($this-&gt;getVars(),'$this-&gt;getVars()');</span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024       $this-&gt;_template = 'ErrorMessageDefault.tpl';
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026    }
+<a name="l00027"></a>00027 
+<a name="l00033"></a><a class="code" href="classErrorMessageComponent.html#09fb53a235cb49ba3da7ff55c8f4b777">00033</a>    function <a class="code" href="classErrorMessageComponent.html#09fb53a235cb49ba3da7ff55c8f4b777">getOutput</a>(){
+<a name="l00034"></a>00034       <span class="comment">//      debug_obj($this-&gt;getErrorValues(),'getErrorValues');</span>
+<a name="l00035"></a>00035       <span class="comment">//      debug_obj($this-&gt;getVars(),'$this-&gt;getVars()');</span>
+<a name="l00036"></a>00036       <span class="comment">//      debug_obj($this-&gt;getVar('errors'));</span>
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038       $this-&gt;_smartyRef-&gt;assign('ERRORS_ARRAY',$this-&gt;getVar('errors'));
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041       <span class="keywordflow">return</span> parent::getOutput();
+<a name="l00042"></a>00042    }
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

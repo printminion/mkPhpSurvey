@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.GraphOfficer.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.GraphOfficer.php</h1><a href="class_8GraphOfficer_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: class.GraphOfficer.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 <span class="comment">/*</span>
+<a name="l00007"></a>00007 <span class="comment"> include_once(CLASSES_PATH.'/jpgraph/jpgraph.php');</span>
+<a name="l00008"></a>00008 <span class="comment"> include_once(CLASSES_PATH.'/jpgraph/jpgraph_pie.php');</span>
+<a name="l00009"></a>00009 <span class="comment"> include_once(CLASSES_PATH.'/jpgraph/jpgraph_pie3d.php');</span>
+<a name="l00010"></a>00010 <span class="comment"> include_once(CLASSES_PATH.'/jpgraph/jpgraph_radar.php');</span>
+<a name="l00011"></a>00011 <span class="comment"> */</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph.php');
+<a name="l00014"></a>00014 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph_pie.php');
+<a name="l00015"></a>00015 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph_pie3d.php');
+<a name="l00016"></a>00016 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph_radar.php');
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/graph/<span class="keyword">class</span>.GraphAbstract.php');
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="classGraphOfficer.html">00020</a> <span class="keyword">class </span><a class="code" href="classGraphOfficer.html">GraphOfficer</a>{
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classGraphOfficer.html#bae90f1f491acdaf56aa08096028db7e">00022</a>    function <a class="code" href="classGraphOfficer.html#bae90f1f491acdaf56aa08096028db7e">GraphOfficer</a>(){
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025    }
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="classGraphOfficer.html#14bfc24f0d95656741ecff542a71a815">00027</a>    function <a class="code" href="classGraphOfficer.html#14bfc24f0d95656741ecff542a71a815">getGraphById</a>($graphId){
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029       $graphId = strtoupper($graphId);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031       <span class="comment">//      if ($graphId=='RD7'){</span>
+<a name="l00032"></a>00032       <span class="comment">//         $graphId = 'RD7_RadarGraph';</span>
+<a name="l00033"></a>00033       <span class="comment">//      }</span>
+<a name="l00034"></a>00034       <span class="comment">//      if ($graphId=='RA2'){</span>
+<a name="l00035"></a>00035       <span class="comment">//         $graphId = 'RA2_PieGraph';</span>
+<a name="l00036"></a>00036       <span class="comment">//      }</span>
+<a name="l00037"></a>00037       <span class="comment">//      if ($graphId=='RA6'){</span>
+<a name="l00038"></a>00038       <span class="comment">//         $graphId = 'RA6_PieGraph';</span>
+<a name="l00039"></a>00039       <span class="comment">//      }</span>
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042       $ClassName = 'Graph'.$graphId;
+<a name="l00043"></a>00043       $graphClassPath = <a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/graph/<span class="keyword">class</span>.'.$ClassName.'.php';
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045       <span class="comment">//debug_sql($graphClassPath,'$graphClassPath');</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047       <span class="keywordflow">if</span> (!file_exists($graphClassPath)){
+<a name="l00048"></a>00048          <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classGraphAbstract.html">GraphAbstract</a>($graphId);
+<a name="l00049"></a>00049       }
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051       include_once($graphClassPath);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053       <span class="keywordflow">return</span> <span class="keyword">new</span> $ClassName($graphId);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055    }
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

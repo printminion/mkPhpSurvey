@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: dologin.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>dologin.php</h1><a href="dologin_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?
+<a name="l00014"></a>00014 <span class="comment">//$oLogger = new Logger();</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="comment">//$userLogged = true;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keywordflow">if</span> ($oLogger-&gt;IsLogged()){
+<a name="l00019"></a>00019    
+<a name="l00020"></a>00020    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['LOGGED_USER'] = $oLogger-&gt;getUserNick();
+<a name="l00021"></a>00021    
+<a name="l00022"></a><a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">00022</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_LOGIN'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'?action=logout&amp;<span class="keywordflow">continue</span>='.LIVE_SITE;
+<a name="l00023"></a><a class="code" href="dologin_8php.html#9ce7a38cdc82022a635cfb465faecb72">00023</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_LOGIN_CAPTION'] = <a class="code" href="lang__sura_8php.html#6f310e47362642fb864e41679dfa8647">TPL_LOGIN_URL_LOGIN_CAPTION_LOGGED</a>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="dologin_8php.html#b7c970d1133f8ca986a18bf2bc90328b">00025</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_SETTINGS'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin?settings';
+<a name="l00026"></a><a class="code" href="dologin_8php.html#aa25676ffa58b6db277ce1d3e5e9dacd">00026</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_SETTINGS_CAPTION'] = <a class="code" href="lang__sura_8php.html#c761bbbdff5d4e7a57f8ff42af3716e5">TPL_LOGIN_URL_SETTINGS_CAPTION</a>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="dologin_8php.html#ca4384ca0ee3ed8fa6abbc724147beae">00028</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_HELP'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/support';
+<a name="l00029"></a><a class="code" href="dologin_8php.html#0877bc2ef5737a17fbf99c05aecbe2c5">00029</a>    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_HELP_CAPTION'] = <a class="code" href="lang__sura_8php.html#6bc0dcd721fe805d282008665bcc8c60">TPL_LOGIN_URL_HELP_CAPTION</a>;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031    <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('TPL_LOGIN',<a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>);
+<a name="l00032"></a>00032 }<span class="keywordflow">else</span>{
+<a name="l00033"></a>00033    
+<a name="l00034"></a>00034    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_LOGIN'] = ''; 
+<a name="l00035"></a>00035    <a class="code" href="dologin_8php.html#7327a9341ced66c10812d410a9cc13f6">$TPL_LOGIN</a>['URL_LOGIN_CAPTION'] = <a class="code" href="lang__sura_8php.html#d632c6e4cc39532160f98a5a7a6913de">TPL_LOGIN_URL_LOGIN_CAPTION_LOGING</a>;
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="preprocessor">   #######################################</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">   #</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>   $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#0281ca21a06f23c8898872b57052ad85">TPL_BOX_LOGIN_CAPTION_LOGIN</a>']           = <a class="code" href="lang__box__login_8php.html#0281ca21a06f23c8898872b57052ad85">TPL_BOX_LOGIN_CAPTION_LOGIN</a>;
+<a name="l00040"></a>00040    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#02dc85f36be43154ef89aa3f6af24a03">TPL_BOX_LOGIN_CAPTION_USERNAME</a>']        = <a class="code" href="lang__box__login_8php.html#02dc85f36be43154ef89aa3f6af24a03">TPL_BOX_LOGIN_CAPTION_USERNAME</a>;
+<a name="l00041"></a>00041    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#028eda51339af775172b57adced4f430">TPL_BOX_LOGIN_CAPTION_PASSWORD</a>']        = <a class="code" href="lang__box__login_8php.html#028eda51339af775172b57adced4f430">TPL_BOX_LOGIN_CAPTION_PASSWORD</a>;
+<a name="l00042"></a>00042    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#4bc0f1ecfaea0f230916aea828460a53">TPL_BOX_LOGIN_CAPTION_SAVEONTHISPC</a>']    = <a class="code" href="lang__box__login_8php.html#4bc0f1ecfaea0f230916aea828460a53">TPL_BOX_LOGIN_CAPTION_SAVEONTHISPC</a>;
+<a name="l00043"></a>00043    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#9b412794dd4f19b30142476ac4bf9764">TPL_BOX_LOGIN_CAPTION_LOGIN_BUTTON</a>']    = <a class="code" href="lang__box__login_8php.html#9b412794dd4f19b30142476ac4bf9764">TPL_BOX_LOGIN_CAPTION_LOGIN_BUTTON</a>;
+<a name="l00044"></a>00044    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#10a1ad7a3cf2e2945dc8665d74a3c916">TPL_BOX_LOGIN_CAPTION_LOGIN_SUPPORT</a>']   = <a class="code" href="lang__box__login_8php.html#10a1ad7a3cf2e2945dc8665d74a3c916">TPL_BOX_LOGIN_CAPTION_LOGIN_SUPPORT</a>;
+<a name="l00045"></a>00045    
+<a name="l00046"></a>00046    $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_FORM_ACTION']       = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/index.php';
+<a name="l00047"></a>00047    $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_URL_SUCCESS']       = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin/';
+<a name="l00048"></a>00048    $TPL_LOGIN_STRINGS['TPL_BOX_LOGIN_URL_LOGIN_SUPPORT'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/support/';
+<a name="l00049"></a>00049 <span class="preprocessor">   #</span>
+<a name="l00050"></a>00050 <span class="preprocessor"></span><span class="preprocessor">   #######################################</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>   
+<a name="l00052"></a>00052 <span class="preprocessor">   #######################################</span>
+<a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">   #</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>   $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#87ab08c38fcbaca33354504eb6db1d30">TPL_BOX_REGISTER_CAPTION_SIGNUP</a>']     = <a class="code" href="lang__box__login_8php.html#87ab08c38fcbaca33354504eb6db1d30">TPL_BOX_REGISTER_CAPTION_SIGNUP</a>;
+<a name="l00055"></a>00055    $TPL_LOGIN_STRINGS['<a class="code" href="lang__box__login_8php.html#c715efba9b885f10aa658c8425987ba1">TPL_BOX_REGISTER_CAPTION_HELP_ABOUT</a>'] = <a class="code" href="lang__box__login_8php.html#c715efba9b885f10aa658c8425987ba1">TPL_BOX_REGISTER_CAPTION_HELP_ABOUT</a>;
+<a name="l00056"></a>00056    
+<a name="l00057"></a>00057    $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_URL_SIGNUP']     = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/signup/';
+<a name="l00058"></a>00058    $TPL_LOGIN_STRINGS['TPL_BOX_REGISTER_URL_HELP_ABOUT'] = <a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/help/de/about.html';
+<a name="l00059"></a>00059    
+<a name="l00060"></a>00060 <span class="preprocessor">   #</span>
+<a name="l00061"></a>00061 <span class="preprocessor"></span><span class="preprocessor">   #######################################</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span>   
+<a name="l00063"></a>00063    
+<a name="l00064"></a>00064    $TPL_LOGIN_STRINGS['TPL_MSG_ERROR'] = _LOGIN_INCOMPLETE;
+<a name="l00065"></a>00065    
+<a name="l00066"></a>00066    <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['<a class="code" href="lang__login_8php.html#7c3f15c19405c454943798c1e3cdbf65">TPL_LOGIN_TITLE</a>']  = <a class="code" href="lang__login_8php.html#7c3f15c19405c454943798c1e3cdbf65">TPL_LOGIN_TITLE</a>;
+<a name="l00067"></a>00067    <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['<a class="code" href="lang__login_8php.html#e69258fe5b10c672c458920862066419">TPL_LOGIN_BODY</a>']   = <a class="code" href="lang__login_8php.html#e69258fe5b10c672c458920862066419">TPL_LOGIN_BODY</a>;
+<a name="l00068"></a>00068    
+<a name="l00069"></a>00069 <span class="comment">//   debug_obj($TPL_LOGIN_STRINGS);</span>
+<a name="l00070"></a>00070    <a class="code" href="admin_8php.html#c3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;assign('TPL_LOGIN_BOX',$TPL_LOGIN_STRINGS);
+<a name="l00071"></a>00071    
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

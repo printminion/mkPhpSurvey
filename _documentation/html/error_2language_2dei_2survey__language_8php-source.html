@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: survey_language.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>survey_language.php</h1><a href="error_2language_2dei_2survey__language_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * </span>
+<a name="l00004"></a>00004 <span class="comment"> * @version $Id:$</span>
+<a name="l00005"></a>00005 <span class="comment"> * </span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#444e06cfef50e744e19a0d93a8e89c08">00007</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#444e06cfef50e744e19a0d93a8e89c08">CAPTION_SURVEY</a><span class="charliteral">','</span>Fehler');
+<a name="l00008"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#f1cc74f473d564c94c3922a30cf87874">00008</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#f1cc74f473d564c94c3922a30cf87874">CAPTION_SURVEY_NAME</a><span class="charliteral">','</span>');
+<a name="l00009"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#03d097770cb6cbf0f99b8a555227abc8">00009</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#03d097770cb6cbf0f99b8a555227abc8">CAPTION_SURVEY_SECTION_NAME</a><span class="charliteral">','</span>');
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#2927306a9c4ac7bacb1eaa2ae07640f7">00011</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#2927306a9c4ac7bacb1eaa2ae07640f7">PAGE_BUTTON_CAPTION_BACK</a><span class="charliteral">','</span>Zurück');
+<a name="l00012"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#965c6d427df0256d2962ae2be5be99ac">00012</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#965c6d427df0256d2962ae2be5be99ac">PAGE_BUTTON_CAPTION_NEXT</a><span class="charliteral">','</span>Weiter');
+<a name="l00013"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#5a70d828efb5807e6a5353d21c4e2fa5">00013</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#5a70d828efb5807e6a5353d21c4e2fa5">PAGE_BUTTON_CAPTION_FINISH</a><span class="charliteral">','</span>Finisch');
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#912af8764f265415c6e93a660499b742">00015</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#912af8764f265415c6e93a660499b742">ERROR_SURVEY_ALREADY_COMPLETE</a><span class="charliteral">','</span>Sie haben diese Umfrage bereits durchgeführt. Danke für Ihre Hilfe');
+<a name="l00016"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#af824ce5a1d195c5cbe67f1f1f861e0c">00016</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#af824ce5a1d195c5cbe67f1f1f861e0c">ERROR_SURVEY_FINISHED</a><span class="charliteral">','</span>Diese Umfrage ist bereits beendet');
+<a name="l00017"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#5a1fedba7fd6f981b412fd36432a3e0e">00017</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#5a1fedba7fd6f981b412fd36432a3e0e">ERROR_SURVEY_NOT_STARTED_YET</a><span class="charliteral">','</span>Diese Umfrage wurde noch nicht gestartet.');
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="preprocessor">#######################################</span>
+<a name="l00020"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#02a0a03c1b848851faba6caefeba50a6">00020</a> <span class="preprocessor"></span>define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#02a0a03c1b848851faba6caefeba50a6">PAGE_TITLE_1_</a><span class="charliteral">','</span>');
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="comment">//define('QUESTION_txt_1_','Auf welches Software-Programm bezieht sich Ihre Beurteilung?&lt;br/&gt;(Beurteilen Sie bitte lediglich ein Software-Programm!)');</span>
+<a name="l00023"></a>00023 <span class="comment">//define('CAPTION_txt_1_','Name der Software');</span>
+<a name="l00024"></a>00024 <span class="comment">//define('CAPTION_txt_1__END','');</span>
+<a name="l00025"></a>00025 <span class="comment">//define('QUESTION_txt_2_','');</span>
+<a name="l00026"></a>00026 <span class="comment">//define('CAPTION_txt_2_','Versionsnummer');</span>
+<a name="l00027"></a>00027 <span class="comment">//define('CAPTION_txt_2__END','');</span>
+<a name="l00028"></a>00028 <span class="comment">//define('QUESTION_txt_3_','');</span>
+<a name="l00029"></a>00029 <span class="comment">//define('CAPTION_txt_3_','Hersteller');</span>
+<a name="l00030"></a>00030 <span class="comment">//define('CAPTION_txt_3__END','');</span>
+<a name="l00031"></a>00031 <span class="comment">//define('QUESTION_txt_4_','');</span>
+<a name="l00032"></a>00032 <span class="comment">//define('CAPTION_txt_4_','Teilanwendung / Modul');</span>
+<a name="l00033"></a>00033 <span class="comment">//define('CAPTION_txt_4__END','');</span>
+<a name="l00034"></a>00034 <span class="comment">//define('QUESTION_txd_5_','');</span>
+<a name="l00035"></a>00035 <span class="comment">//define('CAPTION_txd_5_','Seit wie vielen Monaten arbeiten Sie schon mit der von Ihnen beurteilten Software?');</span>
+<a name="l00036"></a>00036 <span class="comment">//define('CAPTION_txd_5__END','Monate');</span>
+<a name="l00037"></a>00037 <span class="comment">//define('QUESTION_txd_6_','');</span>
+<a name="l00038"></a>00038 <span class="comment">//define('CAPTION_txd_6_','Wie viele Stunden arbeiten Sie pro Woche durchschnittlich mit der von Ihnen beurteilten Software? ');</span>
+<a name="l00039"></a>00039 <span class="comment">//define('CAPTION_txd_6__END','Stunden');</span>
+<a name="l00040"></a>00040 <span class="comment">//define('QUESTION_rd7_7_','');</span>
+<a name="l00041"></a>00041 <span class="comment">//define('CAPTION_rd7_7_BEGIN','Wie gut beherrschen Sie die von Ihnen beurteilte Software?&lt;br/&gt;(- - -  = sehr schlecht; +++ = sehr gut)');</span>
+<a name="l00042"></a>00042 <span class="comment">//define('CAPTION_rd7_7_END','');</span>
+<a name="l00043"></a>00043 <span class="comment">//#######################################</span>
+<a name="l00044"></a>00044 <span class="comment">//</span>
+<a name="l00045"></a>00045 <span class="comment">//define('PAGE_TITLE_2_','Aufgabenangemessenheit');</span>
+<a name="l00046"></a>00046 <span class="comment">//</span>
+<a name="l00047"></a>00047 <span class="comment">//define('CAPTION_VALUE_BEGIN','Die Software...');</span>
+<a name="l00048"></a>00048 <span class="comment">//define('CAPTION_VALUE_VALUES','--- -- - -/+ + ++ +++');</span>
+<a name="l00049"></a>00049 <span class="comment">//define('CAPTION_VALUE_END','Die Software...');</span>
+<a name="l00050"></a>00050 <span class="comment">//</span>
+<a name="l00051"></a>00051 <span class="comment">//</span>
+<a name="l00052"></a>00052 <span class="comment">//</span>
+<a name="l00053"></a>00053 <span class="comment">//define('QUESTION_rd7_8_','Unterstutzt die Software die Erledigung Ihrer Arbeitsaufgaben, ohne Sie unnotig zu </span>
+<a name="l00054"></a>00054 <span class="comment">//belasten?');</span>
+<a name="l00055"></a>00055 <span class="comment">//define('CAPTION_rd7_8_BEGIN','ist kompliziert zu bedienen.');</span>
+<a name="l00056"></a>00056 <span class="comment">//define('CAPTION_rd7_8_END','ist unkompliziert zu bedienen.');</span>
+<a name="l00057"></a>00057 <span class="comment">//define('QUESTION_rd7_9_','');</span>
+<a name="l00058"></a>00058 <span class="comment">//define('CAPTION_rd7_9_BEGIN','bietet nicht alle Funktionen, </span>
+<a name="l00059"></a>00059 <span class="comment">//um die anfallenden Aufgaben </span>
+<a name="l00060"></a>00060 <span class="comment">//effizient zu bewaltigen.');</span>
+<a name="l00061"></a>00061 <span class="comment">//define('CAPTION_rd7_9_END','bietet alle Funktionen, um die anfallenden Aufgaben effizient zu bewaltigen.');</span>
+<a name="l00062"></a>00062 <span class="comment">//define('QUESTION_rd7_10_','');</span>
+<a name="l00063"></a>00063 <span class="comment">//define('CAPTION_rd7_10_BEGIN','bietet schlechte Moglichkeiten, sich haufig wiederholende Bearbeitungsvorgange zu automatisieren.');</span>
+<a name="l00064"></a>00064 <span class="comment">//define('CAPTION_rd7_10_END','bietet gute Moglichkeiten, sich haufig wiederholende Bearbeitungsvorgange zu automatisieren.');</span>
+<a name="l00065"></a>00065 <span class="comment">//define('QUESTION_rd7_11_','');</span>
+<a name="l00066"></a>00066 <span class="comment">//define('CAPTION_rd7_11_BEGIN','erfordert überflussige Eingaben.');</span>
+<a name="l00067"></a>00067 <span class="comment">//define('CAPTION_rd7_11_END','erfordert keine überflussigen Eingaben.');</span>
+<a name="l00068"></a>00068 <span class="comment">//define('QUESTION_rd7_12_','');</span>
+<a name="l00069"></a>00069 <span class="comment">//define('CAPTION_rd7_12_BEGIN','ist schlecht auf die Anforderungen der Arbeit zugeschnitten.');</span>
+<a name="l00070"></a>00070 <span class="comment">//define('CAPTION_rd7_12_END','ist gut auf die Anforderungen der Arbeit zugeschnitten.');</span>
+<a name="l00071"></a>00071 <span class="comment">//define('QUESTION_rd7_13_','Die &lt;i&gt;Aufgabenangemessenheit&lt;/i&gt; der Software ist fur meine Tatigkeit ...');</span>
+<a name="l00072"></a>00072 <span class="comment">//define('CAPTION_rd7_13_BEGIN','sehr unwichtig');</span>
+<a name="l00073"></a>00073 <span class="comment">//define('CAPTION_rd7_13_END','sehr wichtig');</span>
+<a name="l00074"></a>00074 <span class="comment">//define('QUESTION_txa_14_','');</span>
+<a name="l00075"></a>00075 <span class="comment">//define('CAPTION_txa_14_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00076"></a>00076 <span class="comment">//#######################################</span>
+<a name="l00077"></a>00077 <span class="comment">//define('PAGE_TITLE_3_','Selbstbeschreibungsfahigkeit');</span>
+<a name="l00078"></a>00078 <span class="comment">//</span>
+<a name="l00079"></a>00079 <span class="comment">//define('QUESTION_rd7_15_','Gibt Ihnen die Software genugend Erlauterungen und ist sie in ausreichendem Maße verstandlich?');</span>
+<a name="l00080"></a>00080 <span class="comment">//define('CAPTION_rd7_15_BEGIN','bietet einen schlechten überblick über ihr Funktionsangebot.');</span>
+<a name="l00081"></a>00081 <span class="comment">//define('CAPTION_rd7_15_END','bietet einen guten Überblick über ihr Funktionsangebot.');</span>
+<a name="l00082"></a>00082 <span class="comment">//define('QUESTION_rd7_16_','');</span>
+<a name="l00083"></a>00083 <span class="comment">//define('CAPTION_rd7_16_BEGIN','verwendet schlecht verständliche Begriffe, Bezeichnungen, Abkürzungen oder Symbole in Masken und Menüs.');</span>
+<a name="l00084"></a>00084 <span class="comment">//define('CAPTION_rd7_16_END','verwendet gut verständliche Begriffe, Bezeichnungen, Abkürzungen oder Symbole in Masken und Menüs.');</span>
+<a name="l00085"></a>00085 <span class="comment">//define('QUESTION_rd7_17_','');</span>
+<a name="l00086"></a>00086 <span class="comment">//define('CAPTION_rd7_17_BEGIN','liefert in unzureichendem Maße Informationen darüber, welche Eingaben zulässig oder nötig sind.');</span>
+<a name="l00087"></a>00087 <span class="comment">//define('CAPTION_rd7_17_END','liefert in zureichendem Maße Informationen darüber, welche Eingaben zulässig oder nötig sind.');</span>
+<a name="l00088"></a>00088 <span class="comment">//define('QUESTION_rd7_18_','');</span>
+<a name="l00089"></a>00089 <span class="comment">//define('CAPTION_rd7_18_BEGIN','bietet auf Verlangen keine situationsspezifischen Erklärungen, die konkret weiterhelfen.');</span>
+<a name="l00090"></a>00090 <span class="comment">//define('CAPTION_rd7_18_END','bietet auf Verlangen situationsspezifische Erklärungen, die konkret weiterhelfen.');</span>
+<a name="l00091"></a>00091 <span class="comment">//define('QUESTION_rd7_19_','');</span>
+<a name="l00092"></a>00092 <span class="comment">//define('CAPTION_rd7_19_BEGIN','bietet von sich aus keine situationsspezifischen Erklärungen, die konkret weiterhelfen.');</span>
+<a name="l00093"></a>00093 <span class="comment">//define('CAPTION_rd7_19_END','bietet von sich aus situationsspezifische Erklärungen, die konkret weiterhelfen.');</span>
+<a name="l00094"></a>00094 <span class="comment">//define('QUESTION_rd7_20_','Die &lt;i&gt;Selbstbeschreibungsfahigkeit&lt;/i&gt; der Software ist für meine Tatigkeit.');</span>
+<a name="l00095"></a>00095 <span class="comment">//define('CAPTION_rd7_20_BEGIN','sehr unwichtig');</span>
+<a name="l00096"></a>00096 <span class="comment">//define('CAPTION_rd7_20_END','sehr wichtig');</span>
+<a name="l00097"></a>00097 <span class="comment">//define('QUESTION_txa_21_','');</span>
+<a name="l00098"></a>00098 <span class="comment">//define('CAPTION_txa_21_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00099"></a>00099 <span class="comment">//#######################################</span>
+<a name="l00100"></a>00100 <span class="comment">//define('PAGE_TITLE_4_','Steuerbarkeit');</span>
+<a name="l00101"></a>00101 <span class="comment">//</span>
+<a name="l00102"></a>00102 <span class="comment">//define('QUESTION_rd7_22_','Konnen Sie die Art und Weise, wie Sie mit der Software arbeiten, beeinflussen?');</span>
+<a name="l00103"></a>00103 <span class="comment">//define('CAPTION_rd7_22_BEGIN','bietet keine Möglichkeit, die Arbeit an jedem Punkt zu unterbrechen und dort später ohne Verluste wieder weiterzumachen.');</span>
+<a name="l00104"></a>00104 <span class="comment">//define('CAPTION_rd7_22_END','bietet die Möglichkeit, die Arbeit an jedem Punkt zu unterbrechen und dort später ohne Verluste wieder weiterzumachen.');</span>
+<a name="l00105"></a>00105 <span class="comment">//define('QUESTION_rd7_23_','');</span>
+<a name="l00106"></a>00106 <span class="comment">//define('CAPTION_rd7_23_BEGIN','erzwingt eine unnötig starre Einhaltung von Bearbeitungsschritten.');</span>
+<a name="l00107"></a>00107 <span class="comment">//define('CAPTION_rd7_23_END','erzwingt keine unnötig starre Einhaltung von Bearbeitungsschritten.');</span>
+<a name="l00108"></a>00108 <span class="comment">//define('QUESTION_rd7_24_','');</span>
+<a name="l00109"></a>00109 <span class="comment">//define('CAPTION_rd7_24_BEGIN','ermöglicht keinen leichten Wechsel zwischen einzelnen Menüs oder Masken.');</span>
+<a name="l00110"></a>00110 <span class="comment">//define('CAPTION_rd7_24_END','ermöglicht einen leichten Wechsel zwischen einzelnen Menüs oder Masken.');</span>
+<a name="l00111"></a>00111 <span class="comment">//define('QUESTION_rd7_25_','');</span>
+<a name="l00112"></a>00112 <span class="comment">//define('CAPTION_rd7_25_BEGIN','ist so gestaltet, dass der/die Benutzer/in nicht beeinflussen kann, wie und welche Informationen am Bildschirm dargeboten werden.');</span>
+<a name="l00113"></a>00113 <span class="comment">//define('CAPTION_rd7_25_END','ist so gestaltet, dass der/die Benutzer/in beeinflussen kann, wie und welche Informationen am Bildschirm dargeboten werden.');</span>
+<a name="l00114"></a>00114 <span class="comment">//define('QUESTION_rd7_26_','');</span>
+<a name="l00115"></a>00115 <span class="comment">//define('CAPTION_rd7_26_BEGIN','erzwingt unnötige Unterbrechungen der Arbeit.');</span>
+<a name="l00116"></a>00116 <span class="comment">//define('CAPTION_rd7_26_END','erzwingt keine unnötigen Unterbrechungen der Arbeit.');</span>
+<a name="l00117"></a>00117 <span class="comment">//define('QUESTION_rd7_27_','Die &lt;i&gt;Steuerbarkeit&lt;/i&gt; der Software ist fur meine Tatigkeit...');</span>
+<a name="l00118"></a>00118 <span class="comment">//define('CAPTION_rd7_27_BEGIN','sehr unwichtig');</span>
+<a name="l00119"></a>00119 <span class="comment">//define('CAPTION_rd7_27_END','sehr wichtig');</span>
+<a name="l00120"></a>00120 <span class="comment">//define('QUESTION_txa_28_','');</span>
+<a name="l00121"></a>00121 <span class="comment">//define('CAPTION_txa_28_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00122"></a>00122 <span class="comment">//#######################################</span>
+<a name="l00123"></a>00123 <span class="comment">//define('PAGE_TITLE_5_','Erwartungskonformitat');</span>
+<a name="l00124"></a>00124 <span class="comment">//</span>
+<a name="l00125"></a>00125 <span class="comment">//define('QUESTION_rd7_29_','Kommt die Software durch eine einheitliche und verständliche Gestaltung Ihren Erwartungen und Gewohnheiten entgegen? ');</span>
+<a name="l00126"></a>00126 <span class="comment">//define('CAPTION_rd7_29_BEGIN','erschwert die Orientierung durch eine uneinheitliche Gestaltung.');</span>
+<a name="l00127"></a>00127 <span class="comment">//define('CAPTION_rd7_29_END','erleichtert die Orientierung durch eine einheitliche Gestaltung.');</span>
+<a name="l00128"></a>00128 <span class="comment">//define('QUESTION_rd7_30_','');</span>
+<a name="l00129"></a>00129 <span class="comment">//define('CAPTION_rd7_30_BEGIN','lässt einen im Unklaren darüber, ob eine Eingabe erfolgreich war oder nicht.');</span>
+<a name="l00130"></a>00130 <span class="comment">//define('CAPTION_rd7_30_END','lässt einen nicht im Unklaren darüber, ob eine Eingabe erfolgreich war oder nicht.');</span>
+<a name="l00131"></a>00131 <span class="comment">//define('QUESTION_rd7_31_','');</span>
+<a name="l00132"></a>00132 <span class="comment">//define('CAPTION_rd7_31_BEGIN','informiert in unzureichendem Maße über das, was es gerade macht.');</span>
+<a name="l00133"></a>00133 <span class="comment">//define('CAPTION_rd7_31_END','informiert in ausreichendem Maße über das, was es gerade macht.');</span>
+<a name="l00134"></a>00134 <span class="comment">//define('QUESTION_rd7_32_','');</span>
+<a name="l00135"></a>00135 <span class="comment">//define('CAPTION_rd7_32_BEGIN','reagiert mit schwer vorhersehbaren Bearbeitungszeiten.');</span>
+<a name="l00136"></a>00136 <span class="comment">//define('CAPTION_rd7_32_END','reagiert mit gut vorhersehbaren Bearbeitungszeiten.');</span>
+<a name="l00137"></a>00137 <span class="comment">//define('QUESTION_rd7_33_','');</span>
+<a name="l00138"></a>00138 <span class="comment">//define('CAPTION_rd7_33_BEGIN','lässt sich nicht durchgehend nach einem einheitlichen Prinzip bedienen.');</span>
+<a name="l00139"></a>00139 <span class="comment">//define('CAPTION_rd7_33_END','lässt sich durchgehend nach einem einheitlichen Prinzip bedienen.');</span>
+<a name="l00140"></a>00140 <span class="comment">//define('QUESTION_rd7_34_','Die &lt;i&gt;Erwartungskonformitat&lt;/i&gt; der Software ist für meine Tätigkeit...');</span>
+<a name="l00141"></a>00141 <span class="comment">//define('CAPTION_rd7_34_BEGIN','sehr unwichtig');</span>
+<a name="l00142"></a>00142 <span class="comment">//define('CAPTION_rd7_34_END','sehr wichtig');</span>
+<a name="l00143"></a>00143 <span class="comment">//define('QUESTION_txa_35_','');</span>
+<a name="l00144"></a>00144 <span class="comment">//define('CAPTION_txa_35_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte </span>
+<a name="l00145"></a>00145 <span class="comment">//gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00146"></a>00146 <span class="comment">//#######################################</span>
+<a name="l00147"></a>00147 <span class="comment">//define('PAGE_TITLE_6_','Fehlertoleranz');</span>
+<a name="l00148"></a>00148 <span class="comment">//</span>
+<a name="l00149"></a>00149 <span class="comment">//define('QUESTION_rd7_36_','Bietet Ihnen die Software die Möglichkeit, trotz fehlerhafter Eingaben das beabsichtigte </span>
+<a name="l00150"></a>00150 <span class="comment">//Arbeitsergebnis ohne oder mit geringem Korrekturaufwand zu erreichen?');</span>
+<a name="l00151"></a>00151 <span class="comment">//define('CAPTION_rd7_36_BEGIN','ist so gestaltet, dass kleine Fehler schwerwiegende Folgen haben können.');</span>
+<a name="l00152"></a>00152 <span class="comment">//define('CAPTION_rd7_36_END','ist so gestaltet, dass kleine Fehler keine schwerwiegenden Folgen haben können.');</span>
+<a name="l00153"></a>00153 <span class="comment">//define('QUESTION_rd7_37_','');</span>
+<a name="l00154"></a>00154 <span class="comment">//define('CAPTION_rd7_37_BEGIN','informiert zu spät über fehlerhafte Eingaben.');</span>
+<a name="l00155"></a>00155 <span class="comment">//define('CAPTION_rd7_37_END','informiert sofort über fehlerhafte Eingaben.');</span>
+<a name="l00156"></a>00156 <span class="comment">//define('QUESTION_rd7_38_','');</span>
+<a name="l00157"></a>00157 <span class="comment">//define('CAPTION_rd7_38_BEGIN','liefert schlecht verständliche Fehlermeldungen.');</span>
+<a name="l00158"></a>00158 <span class="comment">//define('CAPTION_rd7_38_END','liefert gut verständliche Fehlermeldungen.');</span>
+<a name="l00159"></a>00159 <span class="comment">//define('QUESTION_rd7_39_','');</span>
+<a name="l00160"></a>00160 <span class="comment">//define('CAPTION_rd7_39_BEGIN','erfordert bei Fehlern im großen und ganzen einen hohen Korrekturaufwand.');</span>
+<a name="l00161"></a>00161 <span class="comment">//define('CAPTION_rd7_39_END','erfordert bei Fehlern im großen und ganzen einen geringen Korrekturaufwand.');</span>
+<a name="l00162"></a>00162 <span class="comment">//define('QUESTION_rd7_40_','');</span>
+<a name="l00163"></a>00163 <span class="comment">//define('CAPTION_rd7_40_BEGIN','gibt keine konkreten Hinweise zur Fehlerbehebung.');</span>
+<a name="l00164"></a>00164 <span class="comment">//define('CAPTION_rd7_40_END','gibt konkrete Hinweise zur Fehlerbehebung.');</span>
+<a name="l00165"></a>00165 <span class="comment">//define('QUESTION_rd7_41_','Die &lt;i&gt;Fehlertoleranz&lt;/i&gt; der Software ist für meine Tätigkeit... ');</span>
+<a name="l00166"></a>00166 <span class="comment">//define('CAPTION_rd7_41_BEGIN','sehr unwichtig');</span>
+<a name="l00167"></a>00167 <span class="comment">//define('CAPTION_rd7_41_END','sehr wichtig ');</span>
+<a name="l00168"></a>00168 <span class="comment">//define('QUESTION_txa_42_','');</span>
+<a name="l00169"></a>00169 <span class="comment">//define('CAPTION_txa_42_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte </span>
+<a name="l00170"></a>00170 <span class="comment">//gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00171"></a>00171 <span class="comment">//#######################################</span>
+<a name="l00172"></a>00172 <span class="comment">//define('PAGE_TITLE_7_','Individualisierbarkeit');</span>
+<a name="l00173"></a>00173 <span class="comment">//</span>
+<a name="l00174"></a>00174 <span class="comment">//define('QUESTION_rd7_43_','Können Sie als Benutzer oder Benutzerin die Software ohne großen Aufwand auf Ihre </span>
+<a name="l00175"></a>00175 <span class="comment">//individuellen Bedürfnisse und Anforderungen anpassen?');</span>
+<a name="l00176"></a>00176 <span class="comment">//define('CAPTION_rd7_43_BEGIN','lässt sich von mir schwer erweitern, wenn fur mich neue Aufgaben entstehen.');</span>
+<a name="l00177"></a>00177 <span class="comment">//define('CAPTION_rd7_43_END','lässt sich von mir leicht erweitern, wenn fur mich neue Aufgaben entstehen.');</span>
+<a name="l00178"></a>00178 <span class="comment">//define('QUESTION_rd7_44_','');</span>
+<a name="l00179"></a>00179 <span class="comment">//define('CAPTION_rd7_44_BEGIN','lasst sich von mir schlecht an meine persönliche, individuelle Art der Arbeitserledigung anpassen.');</span>
+<a name="l00180"></a>00180 <span class="comment">//define('CAPTION_rd7_44_END','lasst sich von mir gut an eine persönliche, individuelle Art der Arbeitserledigung anpassen.');</span>
+<a name="l00181"></a>00181 <span class="comment">//define('QUESTION_rd7_45_','');</span>
+<a name="l00182"></a>00182 <span class="comment">//define('CAPTION_rd7_45_BEGIN','eignet sich fur Anfänger und Experten nicht gleichermaßen, weil ich es nur schwer an meinen Kenntnisstand anpassen kann.');</span>
+<a name="l00183"></a>00183 <span class="comment">//define('CAPTION_rd7_45_END','eignet sich fur Anfänger und Experten gleichermaßen, weil ich es leicht an meinen Kenntnisstand anpassen kann.');</span>
+<a name="l00184"></a>00184 <span class="comment">//define('QUESTION_rd7_46_','');</span>
+<a name="l00185"></a>00185 <span class="comment">//define('CAPTION_rd7_46_BEGIN','lässt sich - im Rahmen ihres Leistungsumfangs - von mir schlecht fur unterschiedliche Aufgaben passend einrichten.');</span>
+<a name="l00186"></a>00186 <span class="comment">//define('CAPTION_rd7_46_END','lässt sich – im Rahmen ihres Leistungsumfangs - von mir gut fur unterschiedliche Aufgaben passend einrichten.');</span>
+<a name="l00187"></a>00187 <span class="comment">//define('QUESTION_rd7_47_','');</span>
+<a name="l00188"></a>00188 <span class="comment">//define('CAPTION_rd7_47_BEGIN','ist so gestaltet, dass ich die Bildschirmdarstellung schlecht an meine individuellen Bedurfnisse anpassen kann.');</span>
+<a name="l00189"></a>00189 <span class="comment">//define('CAPTION_rd7_47_END','ist so gestaltet, dass ich die Bildschirmdarstellung gut an meine individuellen Bedurfnisse anpassen kann.');</span>
+<a name="l00190"></a>00190 <span class="comment">//define('QUESTION_rd7_48_','Die &lt;i&gt;Individualisierbarkeit&lt;/i&gt; der Software ist fur meine Tätigkeit...');</span>
+<a name="l00191"></a>00191 <span class="comment">//define('CAPTION_rd7_48_BEGIN','sehr unwichtig');</span>
+<a name="l00192"></a>00192 <span class="comment">//define('CAPTION_rd7_48_END','sehr wichtig ');</span>
+<a name="l00193"></a>00193 <span class="comment">//define('QUESTION_txa_49_','');</span>
+<a name="l00194"></a>00194 <span class="comment">//define('CAPTION_txa_49_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte </span>
+<a name="l00195"></a>00195 <span class="comment">//gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00196"></a>00196 <span class="comment">//#######################################</span>
+<a name="l00197"></a>00197 <span class="comment">//define('PAGE_TITLE_8_','Lernforderlichkeit');</span>
+<a name="l00198"></a>00198 <span class="comment">//</span>
+<a name="l00199"></a>00199 <span class="comment">//define('QUESTION_rd7_50_','Ist die Software so gestaltet, dass Sie sich gut darin einarbeiten konnten und bietet sie </span>
+<a name="l00200"></a>00200 <span class="comment">//auch dann Unterstutzung, wenn Sie neue Funktionen lernen möchten?');</span>
+<a name="l00201"></a>00201 <span class="comment">//define('CAPTION_rd7_50_BEGIN','erfordert viel Zeit zum Erlernen.');</span>
+<a name="l00202"></a>00202 <span class="comment">//define('CAPTION_rd7_50_END','erfordert wenig Zeit zum Erlernen.');</span>
+<a name="l00203"></a>00203 <span class="comment">//define('QUESTION_rd7_51_','');</span>
+<a name="l00204"></a>00204 <span class="comment">//define('CAPTION_rd7_51_BEGIN','ermutigt nicht dazu, auch neue Funktionen auszuprobieren.');</span>
+<a name="l00205"></a>00205 <span class="comment">//define('CAPTION_rd7_51_END','ermutigt dazu, auch neue Funktionen auszuprobieren.');</span>
+<a name="l00206"></a>00206 <span class="comment">//define('QUESTION_rd7_52_','');</span>
+<a name="l00207"></a>00207 <span class="comment">//define('CAPTION_rd7_52_BEGIN','erfordert, dass man sich viele Details merken muss.');</span>
+<a name="l00208"></a>00208 <span class="comment">//define('CAPTION_rd7_52_END','erfordert nicht, dass man sich viele Details merken muss.');</span>
+<a name="l00209"></a>00209 <span class="comment">//define('QUESTION_rd7_53_','');</span>
+<a name="l00210"></a>00210 <span class="comment">//define('CAPTION_rd7_53_BEGIN','ist so gestaltet, dass sich einmal Gelerntes schlecht einprägt.');</span>
+<a name="l00211"></a>00211 <span class="comment">//define('CAPTION_rd7_53_END','ist so gestaltet, dass sich einmal Gelerntes gut einpragt.');</span>
+<a name="l00212"></a>00212 <span class="comment">//define('QUESTION_rd7_54_','');</span>
+<a name="l00213"></a>00213 <span class="comment">//define('CAPTION_rd7_54_BEGIN','ist schlecht ohne fremde Hilfe oder Handbuch erlernbar.');</span>
+<a name="l00214"></a>00214 <span class="comment">//define('CAPTION_rd7_54_END','ist gut ohne fremde Hilfe oder Handbuch erlernbar.');</span>
+<a name="l00215"></a>00215 <span class="comment">//define('QUESTION_rd7_55_','Die &lt;i&gt;Lernförderlichkeit&lt;/i&gt; der Software ist fur meine Tätigkeit...');</span>
+<a name="l00216"></a>00216 <span class="comment">//define('CAPTION_rd7_55_BEGIN','sehr unwichtig');</span>
+<a name="l00217"></a>00217 <span class="comment">//define('CAPTION_rd7_55_END','sehr wichtig');</span>
+<a name="l00218"></a>00218 <span class="comment">//define('QUESTION_txa_56_','');</span>
+<a name="l00219"></a>00219 <span class="comment">//define('CAPTION_txa_56_','Bitte beschreiben Sie ein Beispiel, welches die Verletzung der oben genannten Aspekte gegebenenfalls besonders deutlich veranschaulicht:');</span>
+<a name="l00220"></a>00220 <span class="comment">//#######################################</span>
+<a name="l00221"></a>00221 <span class="comment">//define('PAGE_TITLE_9_','Allgemeine Angaben');</span>
+<a name="l00222"></a>00222 <span class="comment">//</span>
+<a name="l00223"></a>00223 <span class="comment">//define('QUESTION_txd_57_','Zum Schluss bitten wir Sie, noch folgende Fragen zu beantworten:');</span>
+<a name="l00224"></a>00224 <span class="comment">//define('CAPTION_txd_57_','Wie ist Ihre vertragliche wöchentliche Arbeitszeit?');</span>
+<a name="l00225"></a>00225 <span class="comment">//define('CAPTION_txd_57__END','Stunden');</span>
+<a name="l00226"></a>00226 <span class="comment">//define('QUESTION_txd_58_','');</span>
+<a name="l00227"></a>00227 <span class="comment">//define('CAPTION_txd_58_','Wie viele Überstunden leisten Sie durchschnittlich pro Woche?');</span>
+<a name="l00228"></a>00228 <span class="comment">//define('CAPTION_txd_58__END','Stunden');</span>
+<a name="l00229"></a>00229 <span class="comment">//define('QUESTION_txd_59_','');</span>
+<a name="l00230"></a>00230 <span class="comment">//define('CAPTION_txd_59_','Wie lange arbeiten Sie schon in diesem Unternehmen?');</span>
+<a name="l00231"></a>00231 <span class="comment">//define('CAPTION_txd_59__END','Jahre');</span>
+<a name="l00232"></a>00232 <span class="comment">//define('QUESTION_txd_60_','');</span>
+<a name="l00233"></a>00233 <span class="comment">//define('CAPTION_txd_60_','Wie lange arbeiten Sie bereits am Bildschirm?');</span>
+<a name="l00234"></a>00234 <span class="comment">//define('CAPTION_txd_60__END','Jahre');</span>
+<a name="l00235"></a>00235 <span class="comment">//define('QUESTION_txd_61_','');</span>
+<a name="l00236"></a>00236 <span class="comment">//define('CAPTION_txd_61_','Wie viele Stunden pro Tag arbeiten Sie durchschnittlich am Bildschirm?');</span>
+<a name="l00237"></a>00237 <span class="comment">//define('CAPTION_txd_61__END','Stunden pro Tag');</span>
+<a name="l00238"></a>00238 <span class="comment">//define('QUESTION_ra6_62_','');#QUESTION_ra6_62_</span>
+<a name="l00239"></a>00239 <span class="comment">//define('CAPTION_ra6_62_','Ihr Alter?');</span>
+<a name="l00240"></a>00240 <span class="comment">//define('CAPTION_ra6_62__1','bis 20 Jahre');</span>
+<a name="l00241"></a>00241 <span class="comment">//define('CAPTION_ra6_62__2','21 – 30 Jahre');</span>
+<a name="l00242"></a>00242 <span class="comment">//define('CAPTION_ra6_62__3','31 – 40 Jahre');</span>
+<a name="l00243"></a>00243 <span class="comment">//define('CAPTION_ra6_62__4','41 – 50 Jahre');</span>
+<a name="l00244"></a>00244 <span class="comment">//define('CAPTION_ra6_62__5','51 – 60 Jahre');</span>
+<a name="l00245"></a>00245 <span class="comment">//define('CAPTION_ra6_62__6','über 60 Jahre');</span>
+<a name="l00246"></a>00246 <span class="comment">//define('QUESTION_ra2_63_','');</span>
+<a name="l00247"></a>00247 <span class="comment">//define('CAPTION_ra2_63_','Ihr Geschlecht?');</span>
+<a name="l00248"></a>00248 <span class="comment">//define('CAPTION_ra2_63__1','weiblich');</span>
+<a name="l00249"></a>00249 <span class="comment">//define('CAPTION_ra2_63__2','mannlich');</span>
+<a name="l00250"></a>00250 <span class="comment">//define('QUESTION_txt_64_','');</span>
+<a name="l00251"></a>00251 <span class="comment">//define('CAPTION_txt_64_','In welcher Abteilung arbeiten Sie?');</span>
+<a name="l00252"></a>00252 <span class="comment">//define('CAPTION_txt_64__END','');</span>
+<a name="l00253"></a>00253 <span class="comment">//define('QUESTION_txa_65_','');</span>
+<a name="l00254"></a>00254 <span class="comment">//define('CAPTION_txa_65_','Raum fur Anmerkungen');</span>
+<a name="l00255"></a>00255 
+<a name="l00256"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#3ae7535cffe5418e9f2da7bf97adc868">00256</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#3ae7535cffe5418e9f2da7bf97adc868">TEXTAREA_HINT_EDIT</a><span class="charliteral">','</span>Klick hier um den Text hinzufügen');
+<a name="l00257"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#4b284c756a07f504bb6114548fc5ca68">00257</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#4b284c756a07f504bb6114548fc5ca68">TEXTAREA_HINT_WILLBESAVED</a><span class="charliteral">','</span>Änderungen werden automatisch gespeichert');#Changes to captions are automatically saved.
+<a name="l00258"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#edad43a6b85cde698c523f2edf8f726f">00258</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#edad43a6b85cde698c523f2edf8f726f">TEXTAREA_HINT_SAVING</a><span class="charliteral">','</span>Speichere Text');#Saving text
+<a name="l00259"></a><a class="code" href="error_2language_2dei_2survey__language_8php.html#e56d73a1f275cd39adeede3bb75a8b8d">00259</a> define('<a class="code" href="error_2language_2dei_2survey__language_8php.html#e56d73a1f275cd39adeede3bb75a8b8d">TEXTAREA_HINT_SAVED</a><span class="charliteral">','</span>&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td <span class="keyword">class</span>=<span class="stringliteral">"lhcl_status"</span>&gt;&lt;img <span class="keyword">class</span>=<span class="stringliteral">"lhcl_statusimg"</span> src=<span class="stringliteral">"img/check.gif"</span>/&gt;&lt;/td&gt;&lt;td <span class="keyword">class</span>=<span class="stringliteral">"lhcl_status"</span>&gt;Ihr Text wurde gespeichert.&lt;/td&gt;&lt;td <span class="keyword">class</span>=<span class="stringliteral">"lhcl_undo"</span>&gt;&lt;a href=<span class="stringliteral">"javascript:_d(\'func_3\', \'0\')"</span>&gt;Undo&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;');#This caption has been saved. Undo
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:13 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

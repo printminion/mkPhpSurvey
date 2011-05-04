@@ -1,0 +1,651 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: survey_doadmin.php-Dateireferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>survey_doadmin.php-Dateireferenz</h1>
+<p>
+<a href="survey__doadmin_8php-source.html">gehe zum Quellcode dieser Datei</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Aufzählungen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a> </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a> </td></tr>
+
+<tr><td colspan="2"><br><h2>Variablen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#8f3e2c748c74b11a6283d87882ae2594">$HTML_XAJAX</a> = $xajax-&gt;getJavascript(LIVE_SITE_URL.'/includes/xajax/')</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#6ad910bfa0b359ce128f44a98e5a7bc1">$TPL_STRINGS</a> ['TPL_LOGO_URL_ALT'] = 'mkSurvey Admin'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#f614134308603012243af6492ef17d16">$TPL_STRINGS</a> ['TPL_LOGO_URL_HREF'] = LIVE_SITE.'/admin'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = new <a class="el" href="classSurveyOfficer.html">SurveyOfficer</a>()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#cc3153e24c740b1b1252a6aec37e93bd">$SELECTBOX_SURVEY_TYPES</a> = $surveyOfficerObj-&gt;getSurveyTypes()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#9ebc3f13ab7c244131c88b01336ce47e">$HTML_STYLEURLS</a> [] = array('href' =&gt; PATH_DESIGN_STYLES.'/'.<a class="el" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a>)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a> = new <a class="el" href="classSurvey.html">Survey</a>($_GET['sid'])</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#bce94c769111abb221b9ccbef743addb">$TPL_STRINGS</a> ['ADDSURVIVORS_SURVEY_NAME'] = $surveyObj-&gt;getTitle()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#79a63fa1f160a77608927c784c96ddec">$TPL_STRINGS</a> ['FORM_SID'] = $surveyObj-&gt;getSurveyId()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#18a0167b7206d323d1c8d556fcd07d8a">$HTML_TPL_NAVBAR</a> = PATH_TEMPLATES.'/admin/navbar_addsurvivors.tpl'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#19d93cdfaed5a4e939eae3d2d5c455af">$HTML_TPL_LEFTBOX</a> = PATH_TEMPLATES.'/admin/leftbox_addsurvivors.tpl'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#91cf6fbebedd86150a36e5ac3d5d3bfc">break</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">case&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#32d4e07d06bb73a334918feffe29f946">__pad0__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#db18d665a6b5c8f216e0e5a5c437422a">$TPL_STRINGS</a> ['ADD_SURVIVORS'] = true</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#2b58e256e8a2d9034ef0c6248d48bd24">$TPL_STRINGS</a> ['DIALOG_SURVEY'] = true</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#3446f4c5af19f6256b089d8f88754ae8">$SURVEYS</a> = $surveyOfficerObj-&gt;getSurveysByUserId($oLogger-&gt;getUserId(),'finished')</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#0bec4863380b7c635096ef0907b9f063">$TPL_STRINGS</a> ['SURVEYS'] = $SURVEYS</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#8a584c62935c7d9770244598b07c2147">$TPL_STRINGS</a> ['CAPTION_MYSURVEYS_FINISHED_URL'] = ''</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#24423772b2771eb9f4ef63f68843f0ae">$HTML_TPL_RIGHTBOX</a> = PATH_TEMPLATES.'/admin/rightbox.tpl'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">case&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#0580bd55f19d2b72a1a95d51264aa4b6">__pad1__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#41b657c6e3910d90783d12e2fc1568eb">$TPL_STRINGS</a> ['CAPTION_MYSURVEYS_RUNNING_URL'] = ''</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">case&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#be92b4cb0620171d6cf7ac6adf17d384">__pad2__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">case&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#6d55da87dfa6c881f210d34c596e5b1a">__pad3__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#ee132895d561d63d0967056abd028e1f">$surveyReportObj</a> = null</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#21bf244ebfe511aa701abc9efdcbf264">$SURVEY_ERROR</a> = 'Error:'.$surveyOfficerObj-&gt;getLastError()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">case&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#8d1f130a6ce6aa70c6c7f41e9f4d5ffe">__pad4__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#ffb1327b18bf08a379d19eef89cf1ed1">default</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="survey__doadmin_8php.html#ffb1327b18bf08a379d19eef89cf1ed1">default</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#b77db2c971f2ae60404f5dbf7abd8647">__pad5__</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#8e2461f144a2c5abb2918ed49090845d">$HTML_TPL_TOPNAV</a> = PATH_TEMPLATES.'/admin/topnav.tpl'</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="survey__doadmin_8php.html#132a7bf90078fd9ad70b6057c8c2682a">$HTML_TPL_BODY</a> = PATH_TEMPLATES.'/admin/body.tpl'</td></tr>
+
+</table>
+<hr><h2>Dokumentation der Aufzählungstypen</h2>
+<a class="anchor" name="fdca380c453d4f5a35302b9d8aa8a1ab"></a><!-- doxytag: member="survey_doadmin.php::SURVEY_ID" ref="fdca380c453d4f5a35302b9d8aa8a1ab" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="survey__doadmin_8php.html#fdca380c453d4f5a35302b9d8aa8a1ab">SURVEY_ID</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00184">184</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c5e6ca622d8aedec6a9421214e83cf2e"></a><!-- doxytag: member="survey_doadmin.php::SURVEY_LANGUAGE" ref="c5e6ca622d8aedec6a9421214e83cf2e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="survey__doadmin_8php.html#c5e6ca622d8aedec6a9421214e83cf2e">SURVEY_LANGUAGE</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00185">185</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Variablen-Dokumentation</h2>
+<a class="anchor" name="9ebc3f13ab7c244131c88b01336ce47e"></a><!-- doxytag: member="survey_doadmin.php::$HTML_STYLEURLS" ref="9ebc3f13ab7c244131c88b01336ce47e" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_STYLEURLS[] = array('href' =&gt; PATH_DESIGN_STYLES.'/'.<a class="el" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a>)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00035">35</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="132a7bf90078fd9ad70b6057c8c2682a"></a><!-- doxytag: member="survey_doadmin.php::$HTML_TPL_BODY" ref="132a7bf90078fd9ad70b6057c8c2682a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_TPL_BODY = PATH_TEMPLATES.'/admin/body.tpl'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00225">225</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="19d93cdfaed5a4e939eae3d2d5c455af"></a><!-- doxytag: member="survey_doadmin.php::$HTML_TPL_LEFTBOX" ref="19d93cdfaed5a4e939eae3d2d5c455af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_TPL_LEFTBOX = PATH_TEMPLATES.'/admin/leftbox_addsurvivors.tpl'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00086">86</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="18a0167b7206d323d1c8d556fcd07d8a"></a><!-- doxytag: member="survey_doadmin.php::$HTML_TPL_NAVBAR" ref="18a0167b7206d323d1c8d556fcd07d8a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_TPL_NAVBAR = PATH_TEMPLATES.'/admin/navbar_addsurvivors.tpl'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00085">85</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="24423772b2771eb9f4ef63f68843f0ae"></a><!-- doxytag: member="survey_doadmin.php::$HTML_TPL_RIGHTBOX" ref="24423772b2771eb9f4ef63f68843f0ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_TPL_RIGHTBOX = PATH_TEMPLATES.'/admin/rightbox.tpl'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00102">102</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8e2461f144a2c5abb2918ed49090845d"></a><!-- doxytag: member="survey_doadmin.php::$HTML_TPL_TOPNAV" ref="8e2461f144a2c5abb2918ed49090845d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_TPL_TOPNAV = PATH_TEMPLATES.'/admin/topnav.tpl'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00224">224</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8f3e2c748c74b11a6283d87882ae2594"></a><!-- doxytag: member="survey_doadmin.php::$HTML_XAJAX" ref="8f3e2c748c74b11a6283d87882ae2594" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$HTML_XAJAX = $xajax-&gt;getJavascript(LIVE_SITE_URL.'/includes/xajax/')          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+<dl class="version" compact><dt><b>Version:</b></dt><dd></dd></dl>
+<dl class="rcs" compact><dt><b>Id</b></dt><dd><a class="el" href="survey__doadmin_8php.html">survey_doadmin.php</a> 135 2007-11-25 04:56:26Z mimait04 </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00008">8</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cc3153e24c740b1b1252a6aec37e93bd"></a><!-- doxytag: member="survey_doadmin.php::$SELECTBOX_SURVEY_TYPES" ref="cc3153e24c740b1b1252a6aec37e93bd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$SELECTBOX_SURVEY_TYPES = $surveyOfficerObj-&gt;getSurveyTypes()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00032">32</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="21bf244ebfe511aa701abc9efdcbf264"></a><!-- doxytag: member="survey_doadmin.php::$SURVEY_ERROR" ref="21bf244ebfe511aa701abc9efdcbf264" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$SURVEY_ERROR = 'Error:'.$surveyOfficerObj-&gt;getLastError()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00160">160</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="40c85ba447202b303514c8d27f90e101"></a><!-- doxytag: member="survey_doadmin.php::$surveyObj" ref="40c85ba447202b303514c8d27f90e101" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$surveyObj = new <a class="el" href="classSurvey.html">Survey</a>($_GET['sid'])          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00076">76</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f02bcca2b2722955b3638c8e9d6f1914"></a><!-- doxytag: member="survey_doadmin.php::$surveyOfficerObj" ref="f02bcca2b2722955b3638c8e9d6f1914" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$surveyOfficerObj = new <a class="el" href="classSurveyOfficer.html">SurveyOfficer</a>()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00030">30</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ee132895d561d63d0967056abd028e1f"></a><!-- doxytag: member="survey_doadmin.php::$surveyReportObj" ref="ee132895d561d63d0967056abd028e1f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$surveyReportObj = null          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00145">145</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="class_8SurveyOfficer_8php-source.html#l00636">SurveyOfficer.getSurveyReport()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3446f4c5af19f6256b089d8f88754ae8"></a><!-- doxytag: member="survey_doadmin.php::$SURVEYS" ref="3446f4c5af19f6256b089d8f88754ae8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$SURVEYS = $surveyOfficerObj-&gt;getSurveysByUserId($oLogger-&gt;getUserId(),'finished')          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00095">95</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="41b657c6e3910d90783d12e2fc1568eb"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="41b657c6e3910d90783d12e2fc1568eb" args="['CAPTION_MYSURVEYS_RUNNING_URL']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['CAPTION_MYSURVEYS_RUNNING_URL'] = ''          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00114">114</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8a584c62935c7d9770244598b07c2147"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="8a584c62935c7d9770244598b07c2147" args="['CAPTION_MYSURVEYS_FINISHED_URL']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['CAPTION_MYSURVEYS_FINISHED_URL'] = ''          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00098">98</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0bec4863380b7c635096ef0907b9f063"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="0bec4863380b7c635096ef0907b9f063" args="['SURVEYS']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['SURVEYS'] = $SURVEYS          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00097">97</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2b58e256e8a2d9034ef0c6248d48bd24"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="2b58e256e8a2d9034ef0c6248d48bd24" args="['DIALOG_SURVEY']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['DIALOG_SURVEY'] = true          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00093">93</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="db18d665a6b5c8f216e0e5a5c437422a"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="db18d665a6b5c8f216e0e5a5c437422a" args="['ADD_SURVIVORS']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['ADD_SURVIVORS'] = true          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00092">92</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="79a63fa1f160a77608927c784c96ddec"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="79a63fa1f160a77608927c784c96ddec" args="['FORM_SID']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['FORM_SID'] = $surveyObj-&gt;getSurveyId()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00082">82</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="bce94c769111abb221b9ccbef743addb"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="bce94c769111abb221b9ccbef743addb" args="['ADDSURVIVORS_SURVEY_NAME']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['ADDSURVIVORS_SURVEY_NAME'] = $surveyObj-&gt;getTitle()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00081">81</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f614134308603012243af6492ef17d16"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="f614134308603012243af6492ef17d16" args="['TPL_LOGO_URL_HREF']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS['TPL_LOGO_URL_HREF'] = LIVE_SITE.'/admin'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00017">17</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6ad910bfa0b359ce128f44a98e5a7bc1"></a><!-- doxytag: member="survey_doadmin.php::$TPL_STRINGS" ref="6ad910bfa0b359ce128f44a98e5a7bc1" args="['TPL_LOGO_URL_ALT']" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$TPL_STRINGS = 'mkSurvey Admin'          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00016">16</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="32d4e07d06bb73a334918feffe29f946"></a><!-- doxytag: member="survey_doadmin.php::__pad0__" ref="32d4e07d06bb73a334918feffe29f946" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">case <a class="el" href="survey__doadmin_8php.html#32d4e07d06bb73a334918feffe29f946">__pad0__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00091">91</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0580bd55f19d2b72a1a95d51264aa4b6"></a><!-- doxytag: member="survey_doadmin.php::__pad1__" ref="0580bd55f19d2b72a1a95d51264aa4b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">case <a class="el" href="survey__doadmin_8php.html#0580bd55f19d2b72a1a95d51264aa4b6">__pad1__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00106">106</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="be92b4cb0620171d6cf7ac6adf17d384"></a><!-- doxytag: member="survey_doadmin.php::__pad2__" ref="be92b4cb0620171d6cf7ac6adf17d384" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">case <a class="el" href="survey__doadmin_8php.html#be92b4cb0620171d6cf7ac6adf17d384">__pad2__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00124">124</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6d55da87dfa6c881f210d34c596e5b1a"></a><!-- doxytag: member="survey_doadmin.php::__pad3__" ref="6d55da87dfa6c881f210d34c596e5b1a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">case <a class="el" href="survey__doadmin_8php.html#6d55da87dfa6c881f210d34c596e5b1a">__pad3__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00126">126</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8d1f130a6ce6aa70c6c7f41e9f4d5ffe"></a><!-- doxytag: member="survey_doadmin.php::__pad4__" ref="8d1f130a6ce6aa70c6c7f41e9f4d5ffe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">case <a class="el" href="survey__doadmin_8php.html#8d1f130a6ce6aa70c6c7f41e9f4d5ffe">__pad4__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00201">201</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b77db2c971f2ae60404f5dbf7abd8647"></a><!-- doxytag: member="survey_doadmin.php::__pad5__" ref="b77db2c971f2ae60404f5dbf7abd8647" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="survey__doadmin_8php.html#ffb1327b18bf08a379d19eef89cf1ed1">default</a> <a class="el" href="survey__doadmin_8php.html#b77db2c971f2ae60404f5dbf7abd8647">__pad5__</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00206">206</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="91cf6fbebedd86150a36e5ac3d5d3bfc"></a><!-- doxytag: member="survey_doadmin.php::break" ref="91cf6fbebedd86150a36e5ac3d5d3bfc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="index_8php.html#91cf6fbebedd86150a36e5ac3d5d3bfc">break</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00089">89</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ffb1327b18bf08a379d19eef89cf1ed1"></a><!-- doxytag: member="survey_doadmin.php::default" ref="ffb1327b18bf08a379d19eef89cf1ed1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="survey__doadmin_8php.html#ffb1327b18bf08a379d19eef89cf1ed1">default</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="survey__doadmin_8php-source.html#l00204">204</a> der Datei <a class="el" href="survey__doadmin_8php-source.html">survey_doadmin.php</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:19 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

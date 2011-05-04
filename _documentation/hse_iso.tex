@@ -1,0 +1,444 @@
+% phpMyAdmin LaTeX Dump
+% version 2.11.2.2
+% http://www.phpmyadmin.net
+%
+% Host: localhost
+% Generation Time: Jan 06, 2008 at 10:22 
+% Server version: 5.0.41
+% PHP Version: 5.2.2
+% 
+% Database: 'hse_iso'
+% 
+
+%
+% Structure: mks_sdata_iso_9241_10
+%
+ \begin{longtable}{|l|c|c|c|l|l|l|} 
+ \caption{Structure of table mks\_sdata\_iso\_9241\_10} \label{tab:mks_sdata_iso_9241_10-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_sdata\_iso\_9241\_10 (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & Yes & NULL &  &  &  \\ \hline 
+finished & tinyint(1) & Yes & 0 &  &  &  \\ \hline 
+config & tinyint(1) & Yes & 0 &  &  &  \\ \hline 
+survivor\_email & char(50) & Yes &  &  &  &  \\ \hline 
+tid & char(50) & Yes &  & mks\_survey\_survivors (tid) &  &  \\ \hline 
+txt\_1\_ & char(50) & Yes & NULL &  &  &  \\ \hline 
+txt\_2\_ & char(50) & Yes & NULL &  &  &  \\ \hline 
+txt\_3\_ & char(50) & Yes & NULL &  &  &  \\ \hline 
+txt\_4\_ & char(50) & Yes & NULL &  &  &  \\ \hline 
+txd\_5\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+txd\_6\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+rd7\_7\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_8\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_9\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_10\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_11\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_12\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_13\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_14\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_15\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_16\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_17\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_18\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_19\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_20\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_21\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_22\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_23\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_24\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_25\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_26\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_27\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_28\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_29\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_30\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_31\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_32\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_33\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_34\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_35\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_36\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_37\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_38\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_39\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_40\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_41\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_42\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_43\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_44\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_45\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_46\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_47\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_48\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_49\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+rd7\_50\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_51\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_52\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_53\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_54\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+rd7\_55\_ & enum('1', '2', '3', '4', '5', '6', '7') & Yes & NULL &  &  &  \\ \hline 
+txa\_56\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+txd\_57\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+txd\_58\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+txd\_59\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+txd\_60\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+txd\_61\_ & int(10) & Yes & NULL &  &  &  \\ \hline 
+ra6\_62\_ & enum('1', '2', '3', '4', '5', '6') & Yes & NULL &  &  &  \\ \hline 
+ra2\_63\_ & enum('1', '2') & Yes & NULL &  &  &  \\ \hline 
+txt\_64\_ & char(50) & Yes & NULL &  &  &  \\ \hline 
+txa\_65\_ & tinytext & Yes & NULL &  &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_sdata_iso_9241_10
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_sdata\_iso\_9241\_10} \label{tab:mks_sdata_iso_9241_10-data} \\\hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{finished}} & \multicolumn{1}{|c|}{\textbf{config}} & \multicolumn{1}{|c|}{\textbf{survivor\_email}} & \multicolumn{1}{|c|}{\textbf{tid}} & \multicolumn{1}{|c|}{\textbf{txt\_1\_}} & \multicolumn{1}{|c|}{\textbf{txt\_2\_}} & \multicolumn{1}{|c|}{\textbf{txt\_3\_}} & \multicolumn{1}{|c|}{\textbf{txt\_4\_}} & \multicolumn{1}{|c|}{\textbf{txd\_5\_}} & \multicolumn{1}{|c|}{\textbf{txd\_6\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_7\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_8\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_9\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_10\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_11\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_12\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_13\_}} & \multicolumn{1}{|c|}{\textbf{txa\_14\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_15\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_16\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_17\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_18\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_19\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_20\_}} & \multicolumn{1}{|c|}{\textbf{txa\_21\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_22\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_23\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_24\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_25\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_26\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_27\_}} & \multicolumn{1}{|c|}{\textbf{txa\_28\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_29\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_30\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_31\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_32\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_33\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_34\_}} & \multicolumn{1}{|c|}{\textbf{txa\_35\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_36\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_37\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_38\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_39\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_40\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_41\_}} & \multicolumn{1}{|c|}{\textbf{txa\_42\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_43\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_44\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_45\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_46\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_47\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_48\_}} & \multicolumn{1}{|c|}{\textbf{txa\_49\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_50\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_51\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_52\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_53\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_54\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_55\_}} & \multicolumn{1}{|c|}{\textbf{txa\_56\_}} & \multicolumn{1}{|c|}{\textbf{txd\_57\_}} & \multicolumn{1}{|c|}{\textbf{txd\_58\_}} & \multicolumn{1}{|c|}{\textbf{txd\_59\_}} & \multicolumn{1}{|c|}{\textbf{txd\_60\_}} & \multicolumn{1}{|c|}{\textbf{txd\_61\_}} & \multicolumn{1}{|c|}{\textbf{ra6\_62\_}} & \multicolumn{1}{|c|}{\textbf{ra2\_63\_}} & \multicolumn{1}{|c|}{\textbf{txt\_64\_}} & \multicolumn{1}{|c|}{\textbf{txa\_65\_}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_sdata\_iso\_9241\_10 (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{finished}} & \multicolumn{1}{|c|}{\textbf{config}} & \multicolumn{1}{|c|}{\textbf{survivor\_email}} & \multicolumn{1}{|c|}{\textbf{tid}} & \multicolumn{1}{|c|}{\textbf{txt\_1\_}} & \multicolumn{1}{|c|}{\textbf{txt\_2\_}} & \multicolumn{1}{|c|}{\textbf{txt\_3\_}} & \multicolumn{1}{|c|}{\textbf{txt\_4\_}} & \multicolumn{1}{|c|}{\textbf{txd\_5\_}} & \multicolumn{1}{|c|}{\textbf{txd\_6\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_7\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_8\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_9\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_10\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_11\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_12\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_13\_}} & \multicolumn{1}{|c|}{\textbf{txa\_14\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_15\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_16\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_17\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_18\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_19\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_20\_}} & \multicolumn{1}{|c|}{\textbf{txa\_21\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_22\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_23\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_24\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_25\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_26\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_27\_}} & \multicolumn{1}{|c|}{\textbf{txa\_28\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_29\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_30\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_31\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_32\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_33\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_34\_}} & \multicolumn{1}{|c|}{\textbf{txa\_35\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_36\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_37\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_38\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_39\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_40\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_41\_}} & \multicolumn{1}{|c|}{\textbf{txa\_42\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_43\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_44\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_45\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_46\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_47\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_48\_}} & \multicolumn{1}{|c|}{\textbf{txa\_49\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_50\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_51\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_52\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_53\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_54\_}} & \multicolumn{1}{|c|}{\textbf{rd7\_55\_}} & \multicolumn{1}{|c|}{\textbf{txa\_56\_}} & \multicolumn{1}{|c|}{\textbf{txd\_57\_}} & \multicolumn{1}{|c|}{\textbf{txd\_58\_}} & \multicolumn{1}{|c|}{\textbf{txd\_59\_}} & \multicolumn{1}{|c|}{\textbf{txd\_60\_}} & \multicolumn{1}{|c|}{\textbf{txd\_61\_}} & \multicolumn{1}{|c|}{\textbf{ra6\_62\_}} & \multicolumn{1}{|c|}{\textbf{ra2\_63\_}} & \multicolumn{1}{|c|}{\textbf{txt\_64\_}} & \multicolumn{1}{|c|}{\textbf{txa\_65\_}} \\ \hline \hline \endhead \endfoot
+23 & 0 & 1 &  & 49 & mkSurvey & 0.3 & mk & main & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} \\ \hline 
+24 & 1 & 0 & m@kupriyanov.de & 340bd719501bb8103cf404af458bb537 & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & 12 & 40 & 5 & 1 & 4 & 5 & 4 & 5 & 4 & ein dolle Beispiel & 5 & 4 & 3 & 4 & 3 & 5 & beispiel Nr2 lskdfjs lkfslkfj slkfjaÃ¶jf sÃ¶kfj alkfja Ã¶fjaÃ¶fl aÃ¶flja Ã¶kfj aÃ¶f  & 6 & 4 & 5 & 5 & 5 & 5 & kdfjg skjgdkfsg hsdjghsdfhg lsghdlfkjg hlakhg Ã¶ajh gÃ¶dafkg kjghdfs kghkjdfhg kfjgsh dflkjgh kljghdsf kgjdslgk dhfkgj  & 4 & 5 & 3 & 5 & 5 & 3 & erhtg kfdljgh slhg lsghlj halkjhg ladfkjhg kjelrwhg lkjhglskjgh alkjgha ljadfkgha dlkgjadhgl kjahg lkajghl alkjhg lkjghaldgh & 5 & 3 & 4 & 5 & 6 & 4 & ih vkjh lkjshglkjgh lskjgh slkjgh lskjhg slkgjh sdlgjhalkjhg alkjgh lkjgh lkjgh lkjdfhsg ljgh dlkjgh alkjghdlkgjhd glkjdhg & 5 & 4 & 4 & 4 & 5 & 5 & jkflhg skjghs lkjghlkjg hsdlkjgh dskljghleh flkdgs lkdfnsb lknhleirhg lbn ldkfjb lkghfdklg agh klb glkdabgvk ljfdbv lkd bldkfjb lkdfb lfkj vbl & 6 & 6 & 5 & 5 & 5 & 6 & \textit{NULL} & 37 & 2 & 2 & 12 & 12 & 3 & 2 & it & sdfsf aflkj alkfh alkfh lfjh aslkjfh alsjfhaslkfj haslkjfh aslkjfhaslkfjhaslkjhf laskjfh lsakjfh laskf hsalfj als \\ \hline 
+25 & 0 & 1 &  & 50 & ycyc & yxcyxc & yxc & yxcyyc & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} \\ \hline 
+26 & 1 & 0 & 6d005c254e9a0264efee1026215434dd@unknown.net & 55e8193147c3fc68e86feaa46b921345 & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & 1200 & 40 & 4 & 5 & 4 & 5 & 5 & 3 & 4 & \textit{NULL} & 6 & 4 & 5 & 6 & 4 & 7 & \textit{NULL} & 5 & 4 & 5 & 4 & 6 & 5 & \textit{NULL} & 6 & 5 & 6 & 4 & 6 & 4 & \textit{NULL} & 6 & 4 & 3 & 5 & 3 & 7 & \textit{NULL} & 6 & 4 & 4 & 6 & 2 & 5 & \textit{NULL} & 6 & 3 & 5 & 2 & 5 & 5 & \textit{NULL} & 40 & 3 & 12 & 12 & 8 & 3 & 2 & it & \textit{NULL} \\ \hline 
+27 & 0 & 1 &  & 51 & dasdasda & asdad & asdasd & asdad & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} & \textit{NULL} \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_session
+%
+ \begin{longtable}{|l|c|c|c|l|l|} 
+ \caption{Structure of table mks\_session} \label{tab:mks_session-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_session (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+username & varchar(50) & Yes & NULL &  &  \\ \hline 
+time & varchar(14) & Yes & NULL &  &  \\ \hline 
+\textbf{\textit{session\_id}} & varchar(200) & Yes & 0 &  &  \\ \hline 
+guest & tinyint(4) & Yes & 1 &  &  \\ \hline 
+userid & int(11) & Yes & NULL &  &  \\ \hline 
+usertype & enum('', 'superadmin', 'admin', 'user') & Yes &  &  &  \\ \hline 
+gid & tinyint(3)  & Yes & 0 &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_session
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_session} \label{tab:mks_session-data} \\\hline \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{time}} & \multicolumn{1}{|c|}{\textbf{session\_id}} & \multicolumn{1}{|c|}{\textbf{guest}} & \multicolumn{1}{|c|}{\textbf{userid}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{gid}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_session (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{time}} & \multicolumn{1}{|c|}{\textbf{session\_id}} & \multicolumn{1}{|c|}{\textbf{guest}} & \multicolumn{1}{|c|}{\textbf{userid}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{gid}} \\ \hline \hline \endhead \endfoot
+ & 1197395031 & 1297408929dcf656b61c15cd098296f0 & 1 & \textit{NULL} &  & 0 \\ \hline 
+admin & \textit{NULL} & 7e3addb5b643f4ab1c6a171fdbdb436b & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & f6c5f2c4b956bbaeac229e5baf022984 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 8019929fd1a3d48214d4d888da479ed8 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & cb27bca84495c6558f75fc8ae30abf95 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 00a904e5da00434cb0a03ddd7263c543 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 3c348d81b4ec09b126abf760cba428d9 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & d7ca84ae95b78b6381aff51f367a273f & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 30021dcfcfb4d243a59908e4efe2ce0a & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 995f52905a3ea791e74e50735ae58174 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & ef34bc8289b853cedafbb4f1c6463fc1 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & ceac0bb6c102286f33fe5a6f0f902162 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 194abcd95df0bf238133da7db95af06d & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & e0f532c8c9de176ab533389a4022c6e7 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & ff0a6821c744aa03c3116a5d07f14d9b & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 93c18a5d4aa7fdaa35761c87fe5acd32 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & a1ad7b5fe531ec70b264ddee8108d90f & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & b496a8ccf0a6171ba565ae18d4e83f3a & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 61a46844b450e21a35fbcb8f114a359a & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 1acb602223eca7e7978f4e00eb140990 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 299762aa83e0231c20bfaf05e6f96bd0 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & b807fb3ca8bfa5d9d92d5325dac5c09c & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & b467e86ec04d63f86bd965405f36fff9 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & dcc924f073ef3767bbd0ed3de6f2c522 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 0b14ba2d41c664d02a4b39a092233ac9 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & c3bcc1ea5be9c8a9851be8c9305b1e52 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 5baa566d078ddad56d28fbffc1cd13c7 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 0eb1d818f7a58d831c0cf522a98ea509 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 07d569ca4891acfb988575ac320317cb & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & cc61b15bc843505130e44f377714730a & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & e066c9880aa03c9be7b9e5d6d888c599 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 51a5ddeb477cb96b9e911d33d89095fc & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & ebf8e997c3231f4cdc5111a1584c91bd & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 110da1aac6c927c7f7ff71387a0e2767 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 857c4df5add19202087bc2cf3b43d90f & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 983e375df4f105bf9c0b0f8747f93689 & 0 & 101 &  & 2 \\ \hline 
+admin & \textit{NULL} & 01ec264052fbf67309d8d15eb0f080e7 & 0 & 101 &  & 2 \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_surveys
+%
+ \begin{longtable}{|l|c|c|c|l|l|l|} 
+ \caption{Structure of table mks\_surveys} \label{tab:mks_surveys-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_surveys (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{survey\_id}} & int(10) & Yes & NULL &  &  &  \\ \hline 
+user\_id & int(10) & Yes &  & mks\_users (id) &  &  \\ \hline 
+survey\_type\_id & char(20) & Yes &  & mks\_survey\_types (survey\_type\_id) &  &  \\ \hline 
+title & char(80) & Yes &  &  &  &  \\ \hline 
+date\_created & datetime & Yes &  &  &  &  \\ \hline 
+date\_finish & datetime & Yes & NULL &  &  &  \\ \hline 
+date\_begin & datetime & Yes & NULL &  &  &  \\ \hline 
+description & char(255) & Yes & NULL &  &  &  \\ \hline 
+finished & tinyint(1) & Yes & 0 &  &  &  \\ \hline 
+\textbf{token} & varchar(50) & Yes &  &  &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_surveys
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_surveys} \label{tab:mks_surveys-data} \\\hline \multicolumn{1}{|c|}{\textbf{survey\_id}} & \multicolumn{1}{|c|}{\textbf{user\_id}} & \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{title}} & \multicolumn{1}{|c|}{\textbf{date\_created}} & \multicolumn{1}{|c|}{\textbf{date\_finish}} & \multicolumn{1}{|c|}{\textbf{date\_begin}} & \multicolumn{1}{|c|}{\textbf{description}} & \multicolumn{1}{|c|}{\textbf{finished}} & \multicolumn{1}{|c|}{\textbf{token}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_surveys (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{survey\_id}} & \multicolumn{1}{|c|}{\textbf{user\_id}} & \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{title}} & \multicolumn{1}{|c|}{\textbf{date\_created}} & \multicolumn{1}{|c|}{\textbf{date\_finish}} & \multicolumn{1}{|c|}{\textbf{date\_begin}} & \multicolumn{1}{|c|}{\textbf{description}} & \multicolumn{1}{|c|}{\textbf{finished}} & \multicolumn{1}{|c|}{\textbf{token}} \\ \hline \hline \endhead \endfoot
+49 & 101 & iso\_9241\_10 & mkSurvey Beta test & 2007-11-21 01:02:42 & 0000-00-00 00:00:00 & 0000-00-00 00:00:00 & test umfrage nr5 & 0 & bf333cafebe0e5e9a6938ceaac2c4bfa \\ \hline 
+50 & 101 & iso\_9241\_10 & Unbenannte Umfrage & 2007-12-07 09:11:46 & 0000-00-00 00:00:00 & 0000-00-00 00:00:00 & yxcxy & 0 & bf333cafebe0e5e9a6938ceaac2c4bf3 \\ \hline 
+51 & 101 & iso\_9241\_10 & Unbenannte Umfrage & 2007-12-07 10:18:54 & 0000-00-00 00:00:00 & 0000-00-00 00:00:00 & asda & 0 & b1960aa670245d4797a5f9a97d25e097 \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_survey_structure
+%
+ \begin{longtable}{|l|c|c|c|l|l|l|} 
+ \caption{Structure of table mks\_survey\_structure} \label{tab:mks_survey_structure-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_survey\_structure (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(10) & Yes & 0 &  &  &  \\ \hline 
+survey\_type\_id & char(20) & Yes &  & mks\_survey\_types (survey\_type\_id) &  &  \\ \hline 
+field\_name & char(10) & Yes & NULL &  &  &  \\ \hline 
+uc\_type\_id & char(10) & Yes & NULL & mks\_user\_controls (uc\_type\_id) &  &  \\ \hline 
+required & tinyint(1) & Yes &  &  &  &  \\ \hline 
+page & int(2) & Yes &  &  &  &  \\ \hline 
+order & int(3) & Yes &  &  &  &  \\ \hline 
+static & tinyint(1) & Yes & NULL &  & defines if field is static &  \\ \hline 
+validate & varchar(50) & Yes & NULL &  & validate rule &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_survey_structure
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_survey\_structure} \label{tab:mks_survey_structure-data} \\\hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{field\_name}} & \multicolumn{1}{|c|}{\textbf{uc\_type\_id}} & \multicolumn{1}{|c|}{\textbf{required}} & \multicolumn{1}{|c|}{\textbf{page}} & \multicolumn{1}{|c|}{\textbf{order}} & \multicolumn{1}{|c|}{\textbf{static}} & \multicolumn{1}{|c|}{\textbf{validate}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_survey\_structure (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{field\_name}} & \multicolumn{1}{|c|}{\textbf{uc\_type\_id}} & \multicolumn{1}{|c|}{\textbf{required}} & \multicolumn{1}{|c|}{\textbf{page}} & \multicolumn{1}{|c|}{\textbf{order}} & \multicolumn{1}{|c|}{\textbf{static}} & \multicolumn{1}{|c|}{\textbf{validate}} \\ \hline \hline \endhead \endfoot
+65 & iso\_9241\_10 & txa\_65\_ & txa & 1 & 9 & 65 & 0 & \textit{NULL} \\ \hline 
+64 & iso\_9241\_10 & txt\_64\_ & txt & 1 & 9 & 64 & 0 & \textit{NULL} \\ \hline 
+63 & iso\_9241\_10 & ra2\_63\_ & ra2 & 1 & 9 & 63 & 0 & \textit{NULL} \\ \hline 
+62 & iso\_9241\_10 & ra6\_62\_ & ra6 & 1 & 9 & 62 & 0 & \textit{NULL} \\ \hline 
+61 & iso\_9241\_10 & txd\_61\_ & txd & 1 & 9 & 61 & 0 & \textit{NULL} \\ \hline 
+60 & iso\_9241\_10 & txd\_60\_ & txd & 1 & 9 & 60 & 0 & \textit{NULL} \\ \hline 
+59 & iso\_9241\_10 & txd\_59\_ & txd & 1 & 9 & 59 & 0 & \textit{NULL} \\ \hline 
+58 & iso\_9241\_10 & txd\_58\_ & txd & 1 & 9 & 58 & 0 & \textit{NULL} \\ \hline 
+57 & iso\_9241\_10 & txd\_57\_ & txd & 1 & 9 & 57 & 0 & \textit{NULL} \\ \hline 
+56 & iso\_9241\_10 & txa\_56\_ & txa & 1 & 8 & 56 & 0 & \textit{NULL} \\ \hline 
+55 & iso\_9241\_10 & rd7\_55\_ & rd7 & 1 & 8 & 55 & 0 & \textit{NULL} \\ \hline 
+54 & iso\_9241\_10 & rd7\_54\_ & rd7 & 1 & 8 & 54 & 0 & \textit{NULL} \\ \hline 
+53 & iso\_9241\_10 & rd7\_53\_ & rd7 & 1 & 8 & 53 & 0 & \textit{NULL} \\ \hline 
+52 & iso\_9241\_10 & rd7\_52\_ & rd7 & 1 & 8 & 52 & 0 & \textit{NULL} \\ \hline 
+51 & iso\_9241\_10 & rd7\_51\_ & rd7 & 1 & 8 & 51 & 0 & \textit{NULL} \\ \hline 
+50 & iso\_9241\_10 & rd7\_50\_ & rd7 & 1 & 8 & 50 & 0 & \textit{NULL} \\ \hline 
+49 & iso\_9241\_10 & txa\_49\_ & txa & 1 & 7 & 49 & 0 & \textit{NULL} \\ \hline 
+48 & iso\_9241\_10 & rd7\_48\_ & rd7 & 1 & 7 & 48 & 0 & \textit{NULL} \\ \hline 
+47 & iso\_9241\_10 & rd7\_47\_ & rd7 & 1 & 7 & 47 & 0 & \textit{NULL} \\ \hline 
+46 & iso\_9241\_10 & rd7\_46\_ & rd7 & 1 & 7 & 46 & 0 & \textit{NULL} \\ \hline 
+45 & iso\_9241\_10 & rd7\_45\_ & rd7 & 1 & 7 & 45 & 0 & \textit{NULL} \\ \hline 
+44 & iso\_9241\_10 & rd7\_44\_ & rd7 & 1 & 7 & 44 & 0 & \textit{NULL} \\ \hline 
+43 & iso\_9241\_10 & rd7\_43\_ & rd7 & 1 & 7 & 43 & 0 & \textit{NULL} \\ \hline 
+42 & iso\_9241\_10 & txa\_42\_ & txa & 1 & 6 & 42 & 0 & \textit{NULL} \\ \hline 
+41 & iso\_9241\_10 & rd7\_41\_ & rd7 & 1 & 6 & 41 & 0 & \textit{NULL} \\ \hline 
+40 & iso\_9241\_10 & rd7\_40\_ & rd7 & 1 & 6 & 40 & 0 & \textit{NULL} \\ \hline 
+39 & iso\_9241\_10 & rd7\_39\_ & rd7 & 1 & 6 & 39 & 0 & \textit{NULL} \\ \hline 
+38 & iso\_9241\_10 & rd7\_38\_ & rd7 & 1 & 6 & 38 & 0 & \textit{NULL} \\ \hline 
+37 & iso\_9241\_10 & rd7\_37\_ & rd7 & 1 & 6 & 37 & 0 & \textit{NULL} \\ \hline 
+36 & iso\_9241\_10 & rd7\_36\_ & rd7 & 1 & 6 & 36 & 0 & \textit{NULL} \\ \hline 
+35 & iso\_9241\_10 & txa\_35\_ & txa & 1 & 5 & 35 & 0 & \textit{NULL} \\ \hline 
+34 & iso\_9241\_10 & rd7\_34\_ & rd7 & 1 & 5 & 34 & 0 & \textit{NULL} \\ \hline 
+33 & iso\_9241\_10 & rd7\_33\_ & rd7 & 1 & 5 & 33 & 0 & \textit{NULL} \\ \hline 
+32 & iso\_9241\_10 & rd7\_32\_ & rd7 & 1 & 5 & 32 & 0 & \textit{NULL} \\ \hline 
+31 & iso\_9241\_10 & rd7\_31\_ & rd7 & 1 & 5 & 31 & 0 & \textit{NULL} \\ \hline 
+30 & iso\_9241\_10 & rd7\_30\_ & rd7 & 1 & 5 & 30 & 0 & \textit{NULL} \\ \hline 
+29 & iso\_9241\_10 & rd7\_29\_ & rd7 & 1 & 5 & 29 & 0 & \textit{NULL} \\ \hline 
+28 & iso\_9241\_10 & txa\_28\_ & txa & 1 & 4 & 28 & 0 & \textit{NULL} \\ \hline 
+27 & iso\_9241\_10 & rd7\_27\_ & rd7 & 1 & 4 & 27 & 0 & \textit{NULL} \\ \hline 
+26 & iso\_9241\_10 & rd7\_26\_ & rd7 & 1 & 4 & 26 & 0 & \textit{NULL} \\ \hline 
+25 & iso\_9241\_10 & rd7\_25\_ & rd7 & 1 & 4 & 25 & 0 & \textit{NULL} \\ \hline 
+24 & iso\_9241\_10 & rd7\_24\_ & rd7 & 1 & 4 & 24 & 0 & \textit{NULL} \\ \hline 
+23 & iso\_9241\_10 & rd7\_23\_ & rd7 & 1 & 4 & 23 & 0 & \textit{NULL} \\ \hline 
+22 & iso\_9241\_10 & rd7\_22\_ & rd7 & 1 & 4 & 22 & 0 & \textit{NULL} \\ \hline 
+21 & iso\_9241\_10 & txa\_21\_ & txa & 1 & 3 & 21 & 0 & \textit{NULL} \\ \hline 
+20 & iso\_9241\_10 & rd7\_20\_ & rd7 & 1 & 3 & 20 & 0 & \textit{NULL} \\ \hline 
+19 & iso\_9241\_10 & rd7\_19\_ & rd7 & 1 & 3 & 19 & 0 & \textit{NULL} \\ \hline 
+18 & iso\_9241\_10 & rd7\_18\_ & rd7 & 1 & 3 & 18 & 0 & \textit{NULL} \\ \hline 
+17 & iso\_9241\_10 & rd7\_17\_ & rd7 & 1 & 3 & 17 & 0 & \textit{NULL} \\ \hline 
+16 & iso\_9241\_10 & rd7\_16\_ & rd7 & 1 & 3 & 16 & 0 & \textit{NULL} \\ \hline 
+15 & iso\_9241\_10 & rd7\_15\_ & rd7 & 1 & 3 & 15 & 0 & \textit{NULL} \\ \hline 
+14 & iso\_9241\_10 & txa\_14\_ & txa & 1 & 2 & 14 & 0 & \textit{NULL} \\ \hline 
+13 & iso\_9241\_10 & rd7\_13\_ & rd7 & 1 & 2 & 13 & 0 & \textit{NULL} \\ \hline 
+12 & iso\_9241\_10 & rd7\_12\_ & rd7 & 1 & 2 & 12 & 0 & \textit{NULL} \\ \hline 
+11 & iso\_9241\_10 & rd7\_11\_ & rd7 & 1 & 2 & 11 & 0 & \textit{NULL} \\ \hline 
+10 & iso\_9241\_10 & rd7\_10\_ & rd7 & 1 & 2 & 10 & 0 & \textit{NULL} \\ \hline 
+9 & iso\_9241\_10 & rd7\_9\_ & rd7 & 1 & 2 & 9 & 0 & \textit{NULL} \\ \hline 
+8 & iso\_9241\_10 & rd7\_8\_ & rd7 & 1 & 2 & 8 & 0 & \textit{NULL} \\ \hline 
+7 & iso\_9241\_10 & rd7\_7\_ & rd7 & 1 & 1 & 7 & 0 & \textit{NULL} \\ \hline 
+6 & iso\_9241\_10 & txd\_6\_ & txd & 1 & 1 & 6 & 0 & 0-168 \\ \hline 
+5 & iso\_9241\_10 & txd\_5\_ & txd & 1 & 1 & 5 & 0 & 0-360 \\ \hline 
+4 & iso\_9241\_10 & txt\_4\_ & txt & 1 & 1 & 4 & 1 & \textit{NULL} \\ \hline 
+3 & iso\_9241\_10 & txt\_3\_ & txt & 1 & 1 & 3 & 1 & \textit{NULL} \\ \hline 
+2 & iso\_9241\_10 & txt\_2\_ & txt & 1 & 1 & 2 & 1 & \textit{NULL} \\ \hline 
+1 & iso\_9241\_10 & txt\_1\_ & txt & 1 & 1 & 1 & 1 & \textit{NULL} \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_survey_survivors
+%
+ \begin{longtable}{|l|c|c|c|l|l|l|} 
+ \caption{Structure of table mks\_survey\_survivors} \label{tab:mks_survey_survivors-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_survey\_survivors (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Links to}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{survivor\_id}} & int(10) & Yes & NULL &  &  &  \\ \hline 
+\textbf{survey\_id} & int(10) & Yes & 0 & mks\_surveys (survey\_id) &  &  \\ \hline 
+\textbf{survivor\_email} & char(50) & Yes &  &  &  &  \\ \hline 
+email\_sent & varchar(1) & Yes & 0 &  &  &  \\ \hline 
+\textbf{tid} & char(50) & Yes &  &  &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_survey_survivors
+%
+ \begin{longtable}{|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_survey\_survivors} \label{tab:mks_survey_survivors-data} \\\hline \multicolumn{1}{|c|}{\textbf{survivor\_id}} & \multicolumn{1}{|c|}{\textbf{survey\_id}} & \multicolumn{1}{|c|}{\textbf{survivor\_email}} & \multicolumn{1}{|c|}{\textbf{email\_sent}} & \multicolumn{1}{|c|}{\textbf{tid}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_survey\_survivors (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{survivor\_id}} & \multicolumn{1}{|c|}{\textbf{survey\_id}} & \multicolumn{1}{|c|}{\textbf{survivor\_email}} & \multicolumn{1}{|c|}{\textbf{email\_sent}} & \multicolumn{1}{|c|}{\textbf{tid}} \\ \hline \hline \endhead \endfoot
+71 & 49 & m@kupriyanov.de & 1 & 340bd719501bb8103cf404af458bb537 \\ \hline 
+72 & 49 & cr@bobram.net & 1 & d3ee6c535d00bd5579bf032610579005 \\ \hline 
+78 & 51 & 2e18c445ad353512ecd11833021db4d3@unknown.net & 0 & a1be545d5f5fb85c590f2d7df3e26381 \\ \hline 
+75 & 49 & 6d005c254e9a0264efee1026215434dd@unknown.net & 0 & 55e8193147c3fc68e86feaa46b921345 \\ \hline 
+77 & 50 & 6c8677855b9544b5d7bcd41eea937074@unknown.net & 0 & 5532eb905ba0acff2b63cf1d4fc0d091 \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_survey_types
+%
+ \begin{longtable}{|l|c|c|c|l|l|} 
+ \caption{Structure of table mks\_survey\_types} \label{tab:mks_survey_types-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_survey\_types (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{survey\_type\_id}} & char(20) & Yes &  &  &  \\ \hline 
+name & char(20) & Yes &  &  &  \\ \hline 
+description & char(255) & Yes & NULL &  &  \\ \hline 
+languages & char(100) & Yes & NULL &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_survey_types
+%
+ \begin{longtable}{|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_survey\_types} \label{tab:mks_survey_types-data} \\\hline \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{description}} & \multicolumn{1}{|c|}{\textbf{languages}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_survey\_types (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{survey\_type\_id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{description}} & \multicolumn{1}{|c|}{\textbf{languages}} \\ \hline \hline \endhead \endfoot
+iso\_9241\_10 & ISO 9241/10 & Iso & de;en \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_users
+%
+ \begin{longtable}{|l|c|c|c|l|l|} 
+ \caption{Structure of table mks\_users} \label{tab:mks_users-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_users (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & Yes & NULL &  &  \\ \hline 
+name & varchar(50) & Yes &  &  &  \\ \hline 
+username & varchar(25) & Yes &  & Login name of user &  \\ \hline 
+email & varchar(100) & Yes &  &  &  \\ \hline 
+password & varchar(100) & Yes &  &  &  \\ \hline 
+usertype & enum('administrator', 'superadministrator', 'user') & Yes &  &  &  \\ \hline 
+block & tinyint(4) & Yes & 0 &  &  \\ \hline 
+sendEmail & tinyint(4) & Yes & 0 &  &  \\ \hline 
+gid & tinyint(3)  & Yes & 1 &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_users
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_users} \label{tab:mks_users-data} \\\hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{email}} & \multicolumn{1}{|c|}{\textbf{password}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{block}} & \multicolumn{1}{|c|}{\textbf{sendEmail}} & \multicolumn{1}{|c|}{\textbf{gid}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_users (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{email}} & \multicolumn{1}{|c|}{\textbf{password}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{block}} & \multicolumn{1}{|c|}{\textbf{sendEmail}} & \multicolumn{1}{|c|}{\textbf{gid}} \\ \hline \hline \endhead \endfoot
+62 & Master & superadmin & admin@russenreaktor.de & bfe16f76b48f8043917539c4c1989be0 & superadministrator & 0 & 1 & 3 \\ \hline 
+101 & cr\_mk & admin & m-kupriyanov@web.de & 827ccb0eea8a706c4c34a16891f84e7b & administrator & 0 & 0 & 2 \\ \hline 
+109 & cr & user & m@kupriyanov.de & bfe16f76b48f8043917539c4c1989be0 & user & 0 & 0 & 1 \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_users_incoming
+%
+ \begin{longtable}{|l|c|c|c|l|l|} 
+ \caption{Structure of table mks\_users\_incoming} \label{tab:mks_users_incoming-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_users\_incoming (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{id}} & int(11) & Yes & NULL &  &  \\ \hline 
+name & varchar(50) & Yes &  &  &  \\ \hline 
+username & varchar(25) & Yes &  & Login name of user &  \\ \hline 
+email & varchar(100) & Yes &  &  &  \\ \hline 
+password & varchar(100) & Yes &  &  &  \\ \hline 
+usertype & enum('administrator', 'superadministrator', 'user') & Yes &  &  &  \\ \hline 
+block & tinyint(4) & Yes & 0 &  &  \\ \hline 
+sendEmail & tinyint(4) & Yes & 0 &  &  \\ \hline 
+gid & tinyint(3)  & Yes & 1 &  &  \\ \hline 
+register\_date & timestamp & Yes & CURRENT\_TIMESTAMP &  &  \\ \hline 
+\textbf{optin} & varchar(100) & Yes &  &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_users_incoming
+%
+ \begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_users\_incoming} \label{tab:mks_users_incoming-data} \\\hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{email}} & \multicolumn{1}{|c|}{\textbf{password}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{block}} & \multicolumn{1}{|c|}{\textbf{sendEmail}} & \multicolumn{1}{|c|}{\textbf{gid}} & \multicolumn{1}{|c|}{\textbf{register\_date}} & \multicolumn{1}{|c|}{\textbf{optin}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_users\_incoming (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{id}} & \multicolumn{1}{|c|}{\textbf{name}} & \multicolumn{1}{|c|}{\textbf{username}} & \multicolumn{1}{|c|}{\textbf{email}} & \multicolumn{1}{|c|}{\textbf{password}} & \multicolumn{1}{|c|}{\textbf{usertype}} & \multicolumn{1}{|c|}{\textbf{block}} & \multicolumn{1}{|c|}{\textbf{sendEmail}} & \multicolumn{1}{|c|}{\textbf{gid}} & \multicolumn{1}{|c|}{\textbf{register\_date}} & \multicolumn{1}{|c|}{\textbf{optin}} \\ \hline \hline \endhead \endfoot
+11 &  & cr@russenreaktor.de & cr@russenreaktor.de & 25d55ad283aa400af464c76d713c07ad & user & 0 & 0 & 1 & 2007-10-11 03:50:49 & f8794befd2f07db7ac56318f6302b807 \\ \hline 
+ \end{longtable}
+
+%
+% Structure: mks_user_controls
+%
+ \begin{longtable}{|l|c|c|c|l|l|} 
+ \caption{Structure of table mks\_user\_controls} \label{tab:mks_user_controls-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table mks\_user\_controls (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} & \multicolumn{1}{|c|}{\textbf{Comments}} & \multicolumn{1}{|c|}{\textbf{MIME}} \\ \hline \hline \endhead \endfoot 
+\textbf{\textit{uc\_type\_id}} & char(10) & Yes &  &  &  \\ \hline 
+sql\_type & char(100) & Yes &  &  &  \\ \hline 
+ \end{longtable}
+
+%
+% Data: mks_user_controls
+%
+ \begin{longtable}{|l|l|} 
+ \hline \endhead \hline \endfoot \hline 
+ \caption{Content of table mks\_user\_controls} \label{tab:mks_user_controls-data} \\\hline \multicolumn{1}{|c|}{\textbf{uc\_type\_id}} & \multicolumn{1}{|c|}{\textbf{sql\_type}} \\ \hline \hline  \endfirsthead 
+\caption{Content of table mks\_user\_controls (continued)} \\ \hline \multicolumn{1}{|c|}{\textbf{uc\_type\_id}} & \multicolumn{1}{|c|}{\textbf{sql\_type}} \\ \hline \hline \endhead \endfoot
+txt & char(50) \\ \hline 
+txd & Int(10) \\ \hline 
+txa & TINYTEXT \\ \hline 
+rd7 & enum('1','2','3','4','5','6','7') \\ \hline 
+ra6 & enum('1','2','3','4','5','6') \\ \hline 
+ra2 & enum('1','2') \\ \hline 
+ \end{longtable}

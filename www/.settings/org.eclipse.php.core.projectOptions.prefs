@@ -1,0 +1,5 @@
+#Mon Oct 01 20:54:26 CEST 2007
+eclipse.preferences.version=1
+org.eclipse.php.core.contextRoot=
+org.eclipse.php.core.defaultEncoding=
+org.eclipse.php.core.includePath=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<includepath>\r\n\t<includepathentry kind\="var" path\="ABSOLUTE_PATH" createdReference\="false" contentKind\="source">\r\n</includepathentry>\r\n<includepathentry kind\="var" path\="CLASSES_PATH" createdReference\="false" contentKind\="source">\r\n</includepathentry>\r\n</includepath>\r\n

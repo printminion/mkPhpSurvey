@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.Captcha.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.Captcha.php</h1><a href="class_8Captcha_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * @version $Id: class.Captcha.php 133 2007-11-25 01:49:43Z mimait04 $</span>
+<a name="l00004"></a>00004 <span class="comment"> * @package mkSurvey.UiComponents</span>
+<a name="l00005"></a>00005 <span class="comment"> */</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<a class="code" href="classhn__captcha.html">hn_captcha</a>/<a class="code" href="classhn__captcha.html">hn_captcha</a>.class.x1.php');
+<a name="l00008"></a>00008 
+<a name="l00009"></a><a class="code" href="classCaptcha.html">00009</a> <span class="keyword">class </span><a class="code" href="classCaptcha.html">Captcha</a> <span class="keyword">extends</span> <a class="code" href="classObjectLogger.html">ObjectLogger</a>{
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="classCaptcha.html#0067714b4ad4c10c50c19ca254c89a3e">00011</a>    var <a class="code" href="classCaptcha.html#0067714b4ad4c10c50c19ca254c89a3e">$CAPTCHA_INIT</a>;
+<a name="l00012"></a>00012    
+<a name="l00018"></a><a class="code" href="classCaptcha.html#0564ca043659be178e00a1a5de49955d">00018</a>    var <a class="code" href="classCaptcha.html#0564ca043659be178e00a1a5de49955d">$_captchaObj</a>;
+<a name="l00019"></a>00019    
+<a name="l00020"></a><a class="code" href="classCaptcha.html#2db9fbc65381d85da572c91974a44442">00020</a>    function <a class="code" href="classCaptcha.html#2db9fbc65381d85da572c91974a44442">Captcha</a>(){
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022       $this-&gt;<a class="code" href="classObjectLogger.html#32e3e4869d931bf1da2e2ce9e6a0ec4b">setRequiredDefinitions</a>(array('<a class="code" href="configuration_8php.html#52adde529d05fcc07619971e6a1f0e42">TEMP_PATH</a><span class="charliteral">','</span><a class="code" href="configuration_8php.html#004567de9b16f45ab7d912b39a32ded0">TTF_PATH</a><span class="charliteral">','</span><a class="code" href="configuration_8php.html#2aac2eb657c48fb5176a0006434aae1c">CAPTCHA_SECRETSTRING</a><span class="charliteral">','</span><a class="code" href="configuration_8php.html#9dacb7bfa19ffb8d10cb13d58d1e361b">CAPTCHA_PREFIX</a>'));
+<a name="l00023"></a>00023       $this-&gt;<a class="code" href="classCaptcha.html#67b9ec6afec78d8f2e710256cc365dd9">_initialize</a>();
+<a name="l00024"></a>00024       
+<a name="l00025"></a>00025       
+<a name="l00026"></a>00026    }
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classCaptcha.html#67b9ec6afec78d8f2e710256cc365dd9">00028</a>    function <a class="code" href="classCaptcha.html#67b9ec6afec78d8f2e710256cc365dd9">_initialize</a>(){
+<a name="l00029"></a>00029       $error = $this-&gt;<a class="code" href="classObjectLogger.html#8db680194e6024d5a7e2db03d8d840e3">_validateRequiredDefinitions</a>();
+<a name="l00030"></a>00030       <span class="keywordflow">if</span> (!$error){
+<a name="l00031"></a>00031          <span class="comment">// ConfigArray</span>
+<a name="l00032"></a>00032          $this-&gt;CAPTCHA_INIT = array(
+<a name="l00033"></a>00033             'tempfolder'     =&gt; <a class="code" href="configuration_8php.html#52adde529d05fcc07619971e6a1f0e42">TEMP_PATH</a>,   <span class="comment">// string: absolute path (with trailing slash!) to a writeable tempfolder which is also accessible via HTTP!</span>
+<a name="l00034"></a>00034                         'TTF_folder'     =&gt; <a class="code" href="configuration_8php.html#004567de9b16f45ab7d912b39a32ded0">TTF_PATH</a>,    <span class="comment">// string: absolute path (with trailing slash!) to folder which contains your TrueType-Fontfiles.</span>
+<a name="l00035"></a>00035          <span class="comment">//mixed (array or string): basename(s) of TrueType-Fontfiles</span>
+<a name="l00036"></a>00036                         'TTF_RANGE'      =&gt; array('COMIC.TTF<span class="charliteral">','</span>JACOBITE.TTF<span class="charliteral">','</span>LYDIAN.TTF<span class="charliteral">','</span>MREARL.TTF<span class="charliteral">','</span>RUBBERSTAMP.TTF<span class="charliteral">','</span>ZINJARON.TTF'),
+<a name="l00037"></a>00037          <span class="comment">//     'TTF_RANGE'      =&gt; 'COMIC.TTF',</span>
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039             'chars'          =&gt; 5,       <span class="comment">// integer: number of chars to use for ID</span>
+<a name="l00040"></a>00040             'minsize'        =&gt; 20,      <span class="comment">// integer: minimal size of chars</span>
+<a name="l00041"></a>00041             'maxsize'        =&gt; 30,      <span class="comment">// integer: maximal size of chars</span>
+<a name="l00042"></a>00042             'maxrotation'    =&gt; 25,      <span class="comment">// integer: define the maximal angle for char-rotation, good results are between 0 and 30</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044             'noise'          =&gt; TRUE,    <span class="comment">// boolean: TRUE = noisy chars | FALSE = grid</span>
+<a name="l00045"></a>00045             'websafecolors'  =&gt; TRUE,    <span class="comment">// boolean</span>
+<a name="l00046"></a>00046             'refreshlink'    =&gt; TRUE,    <span class="comment">// boolean</span>
+<a name="l00047"></a>00047             'lang'           =&gt; 'de',    <span class="comment">// string:  ['en'|'de']</span>
+<a name="l00048"></a>00048             'maxtry'         =&gt; 3,       <span class="comment">// integer: [1-9]</span>
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050             'badguys_url'    =&gt; <span class="charliteral">'/'</span>,     <span class="comment">// string: URL</span>
+<a name="l00051"></a>00051             'secretstring'   =&gt; <a class="code" href="configuration_8php.html#2aac2eb657c48fb5176a0006434aae1c">CAPTCHA_SECRETSTRING</a>,<span class="comment">//'A very, very secret string which is used to generate a md5-key!',</span>
+<a name="l00052"></a>00052             'secretposition' =&gt; 24,      <span class="comment">// integer: [1-32]</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054             'debug'          =&gt; FALSE,
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057                         'counter_filename'              =&gt; '',              <span class="comment">// string: absolute filename for textfile which stores current counter-value. Needs read- &amp; write-access!</span>
+<a name="l00058"></a>00058                         'prefix'                                =&gt; <a class="code" href="configuration_8php.html#9dacb7bfa19ffb8d10cb13d58d1e361b">CAPTCHA_PREFIX</a>,   <span class="comment">// string: prefix for the captcha-images, is needed to identify the files in shared tempfolders</span>
+<a name="l00059"></a>00059                         'collect_garbage_after' =&gt; 20,             <span class="comment">// integer: the garbage-collector run once after this number of script-calls</span>
+<a name="l00060"></a>00060                         'maxlifetime'                   =&gt; 60              <span class="comment">// integer: only imagefiles which are older than this amount of seconds will be deleted</span>
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062          );
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064       }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066       <span class="keywordflow">return</span> $error;
+<a name="l00067"></a>00067    }
+<a name="l00068"></a>00068    
+<a name="l00076"></a><a class="code" href="classCaptcha.html#29247379025c1941a94caffa0987dc10">00076</a>    function <a class="code" href="classCaptcha.html#29247379025c1941a94caffa0987dc10">validateToken</a>($publicKey,$privateKey){
+<a name="l00077"></a>00077       
+<a name="l00078"></a>00078       $this-&gt;_captchaObj =&amp; <span class="keyword">new</span> <a class="code" href="classhn__captcha__X1.html">hn_captcha_X1</a>($this-&gt;CAPTCHA_INIT);
+<a name="l00079"></a>00079       $response = $this-&gt;_captchaObj-&gt;check_captcha($publicKey,$privateKey);
+<a name="l00080"></a>00080       
+<a name="l00081"></a>00081       <span class="keywordflow">if</span> ($response == 1) {
+<a name="l00082"></a>00082          <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00083"></a>00083       }<span class="keywordflow">else</span>{
+<a name="l00084"></a>00084          <span class="comment">//trigger_error(get_class($this).':validateToken do not forget to remove next retrn true');</span>
+<a name="l00085"></a>00085          <span class="comment">//return true;</span>
+<a name="l00086"></a>00086       }
+<a name="l00087"></a>00087       
+<a name="l00088"></a>00088       <span class="keywordflow">return</span> <span class="keyword">false</span>;      
+<a name="l00089"></a>00089    }
+<a name="l00090"></a>00090    
+<a name="l00091"></a><a class="code" href="classCaptcha.html#4a134ff3b1991b93378b75aacbdee8c2">00091</a>    function <a class="code" href="classCaptcha.html#4a134ff3b1991b93378b75aacbdee8c2">getNewCaptchaPublicKey</a>(){
+<a name="l00092"></a>00092       $this-&gt;_captchaObj =&amp; <span class="keyword">new</span> <a class="code" href="classhn__captcha__X1.html">hn_captcha_X1</a>($this-&gt;CAPTCHA_INIT);
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094       <span class="keywordflow">if</span>($this-&gt;_captchaObj-&gt;garbage_collector_error){
+<a name="l00095"></a>00095          <span class="comment">// Error! (Counter-file or deleting lost images)</span>
+<a name="l00096"></a>00096          echo <span class="stringliteral">"&lt;p&gt;&lt;br&gt;&lt;b&gt;An ERROR has occured!&lt;/b&gt;&lt;br&gt;Here you might send email-notification to webmaster or something like that.&lt;/p&gt;"</span>;
+<a name="l00097"></a>00097       }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099       $this-&gt;_captchaObj-&gt;make_captcha();
+<a name="l00100"></a>00100       <span class="comment">//$this-&gt;setFormValue('ctoken',$this-&gt;_captchaObj-&gt;public_key);</span>
+<a name="l00101"></a>00101       <span class="comment">//debug_obj($this-&gt;_captchaObj,'$captcha');</span>
+<a name="l00102"></a>00102       <span class="keywordflow">return</span> $this-&gt;_captchaObj-&gt;public_key;
+<a name="l00103"></a>00103             
+<a name="l00104"></a>00104 <span class="comment">//      $captchaResult = $this-&gt;_captchaObj-&gt;validate_submit();</span>
+<a name="l00105"></a>00105 <span class="comment">//      debug_sql($captchaResult,'$captchaResult');</span>
+<a name="l00106"></a>00106 <span class="comment">//      switch($captchaResult){</span>
+<a name="l00107"></a>00107 <span class="comment">//         case 1: // was submitted and has valid keys</span>
+<a name="l00108"></a>00108 <span class="comment">//            // PUT IN ALL YOUR STUFF HERE //</span>
+<a name="l00109"></a>00109 <span class="comment">//            //echo "&lt;p&gt;&lt;br&gt;Congratulation. You will get the resource now.";</span>
+<a name="l00110"></a>00110 <span class="comment">//            //echo "&lt;br&gt;&lt;br&gt;&lt;a href=\"".$_SERVER['PHP_SELF']."?download=yes&amp;id=1234\"&gt;New DEMO&lt;/a&gt;&lt;/p&gt;";</span>
+<a name="l00111"></a>00111 <span class="comment">//            return true;</span>
+<a name="l00112"></a>00112 <span class="comment">//            break;</span>
+<a name="l00113"></a>00113 <span class="comment">//         case 2: // was submitted with no matching keys, but has not reached the maximum try's</span>
+<a name="l00114"></a>00114 <span class="comment">//            //echo $this-&gt;_captchaObj-&gt;display_form();</span>
+<a name="l00115"></a>00115 <span class="comment">//            //$this-&gt;_captchaObj-&gt;flush_captcha_image();</span>
+<a name="l00116"></a>00116 <span class="comment">//            $this-&gt;_captchaObj-&gt;make_captcha();</span>
+<a name="l00117"></a>00117 <span class="comment">//            //$this-&gt;setFormValue('ctoken',$this-&gt;_captchaObj-&gt;public_key);</span>
+<a name="l00118"></a>00118 <span class="comment">//            debug_obj($this-&gt;_captchaObj,'$captcha');</span>
+<a name="l00119"></a>00119 <span class="comment">//            return $this-&gt;_captchaObj-&gt;public_key;</span>
+<a name="l00120"></a>00120 <span class="comment">//            break;</span>
+<a name="l00121"></a>00121 <span class="comment">//         case 3: // was submitted, has bad keys and also reached the maximum try's</span>
+<a name="l00122"></a>00122 <span class="comment">//            //if(!headers_sent() &amp;&amp; isset($this-&gt;_captchaObj-&gt;badguys_url)) header('location: '.$this-&gt;_captchaObj-&gt;badguys_url);</span>
+<a name="l00123"></a>00123 <span class="comment">//            echo "&lt;p&gt;&lt;br&gt;Reached the maximum try's of ".$this-&gt;_captchaObj-&gt;maxtry." without success!";</span>
+<a name="l00124"></a>00124 <span class="comment">//            echo "&lt;br&gt;&lt;br&gt;&lt;a href=\"".$_SERVER['PHP_SELF']."?download=yes&amp;id=1234\"&gt;New DEMO&lt;/a&gt;&lt;/p&gt;";</span>
+<a name="l00125"></a>00125 <span class="comment">//            break;</span>
+<a name="l00126"></a>00126 <span class="comment">//         default: // was not submitted, first entry</span>
+<a name="l00127"></a>00127 <span class="comment">//            //echo $this-&gt;_captchaObj-&gt;display_form();</span>
+<a name="l00128"></a>00128 <span class="comment">//            $this-&gt;_captchaObj-&gt;flush_captcha_image();</span>
+<a name="l00129"></a>00129 <span class="comment">//            $this-&gt;_captchaObj-&gt;make_captcha();</span>
+<a name="l00130"></a>00130 <span class="comment">//            //$this-&gt;setFormValue('ctoken',$this-&gt;_captchaObj-&gt;public_key);</span>
+<a name="l00131"></a>00131 <span class="comment">//            debug_obj($this-&gt;_captchaObj,'$captcha');</span>
+<a name="l00132"></a>00132 <span class="comment">//            return $this-&gt;_captchaObj-&gt;public_key;</span>
+<a name="l00133"></a>00133 <span class="comment">//</span>
+<a name="l00134"></a>00134 <span class="comment">//            break;</span>
+<a name="l00135"></a>00135 <span class="comment">//</span>
+<a name="l00136"></a>00136 <span class="comment">//      }</span>
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138    }
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140 }
+<a name="l00141"></a>00141 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

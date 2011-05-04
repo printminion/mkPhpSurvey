@@ -1,0 +1,280 @@
+\section{SurveyOfficer Klassenreferenz}
+\label{classSurveyOfficer}\index{SurveyOfficer@{SurveyOfficer}}
+Klassendiagramm für SurveyOfficer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSurveyOfficer}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche Methoden}
+\begin{CompactItemize}
+\item 
+{\bf SurveyOfficer} ()
+\item 
+{\bf getSurveyTypes} ()
+\item 
+{\bf createSurvey} (\$oLogger, \&\$surveyObj, \$\_\-POST)
+\item 
+{\bf updateSurvey} (\$oLogger, \&\$surveyObj, \$\_\-POST)
+\item 
+{\bf addSurvivors} (\$oLogger, \$surveyId, \$survivorsArr)
+\item 
+{\bf getSurveySession} (\$tokenID, \&\$surveySessionObj)
+\item 
+{\bf getSurveyConstants} (\$surveyID, \&\$surveyConstansArr)
+\item 
+{\bf getSurveyReport} (\$surveyID, \&\$surveyReportObj)
+\item 
+{\bf getSurveysByUserId} (\$userId, \$type= 'all', \$sortBy= 'dateUp')
+\item 
+{\bf getSurvivorsBySurveyId} (\$surveyId)
+\item 
+{\bf getSurvivorsDoneBySurveyId} (\$surveyId, \$surveyTypeId)
+\item 
+{\bf deleteSurveyById} (\$surveyId)
+\item 
+{\bf getSurveyIdByToken} (\$token)
+\end{CompactItemize}
+
+
+\subsection{Ausführliche Beschreibung}
+Enter description here... \begin{Desc}
+\item[Version:]\$Id:\$ \end{Desc}
+
+
+Definiert in Zeile 11 der Datei class.SurveyOfficer.php.
+
+\subsection{Dokumentation der Elementfunktionen}
+\index{SurveyOfficer@{SurveyOfficer}!SurveyOfficer@{SurveyOfficer}}
+\index{SurveyOfficer@{SurveyOfficer}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.SurveyOfficer ()}\label{classSurveyOfficer_d23dffccab18ab316a3a4c261f52896e}
+
+
+
+
+Definiert in Zeile 19 der Datei class.SurveyOfficer.php.\index{SurveyOfficer@{SurveyOfficer}!getSurveyTypes@{getSurveyTypes}}
+\index{getSurveyTypes@{getSurveyTypes}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveyTypes ()}\label{classSurveyOfficer_dcd66063c51c4d38dce7afcc9ab07b92}
+
+
+Get Available survey types
+
+\begin{Desc}
+\item[Rückgabe:]array \end{Desc}
+
+
+Definiert in Zeile 28 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result.\index{SurveyOfficer@{SurveyOfficer}!createSurvey@{createSurvey}}
+\index{createSurvey@{createSurvey}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.createSurvey (\$ {\em oLogger}, \&\$ {\em surveyObj}, \$ {\em \_\-POST})}\label{classSurveyOfficer_1a88e6152392e1a26b225f9b30da3833}
+
+
+Create new \doxyref{Survey}{S.}{classSurvey}
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em \doxyref{Logger}{S.}{classLogger}}]\$oLogger \item[{\em \doxyref{Survey}{S.}{classSurvey}}]\$surveyObj \item[{\em array}]\$\_\-POST \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+die('DIE: \_\-FAILED\_\-TO\_\-ADD\_\-SURVEY\_\-REQUIRED\_\-VALUE\_\-IS\_\-NULL'); 
+
+Definiert in Zeile 60 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveyObj und ObjectLogger.\_\-addError().\index{SurveyOfficer@{SurveyOfficer}!updateSurvey@{updateSurvey}}
+\index{updateSurvey@{updateSurvey}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.updateSurvey (\$ {\em oLogger}, \&\$ {\em surveyObj}, \$ {\em \_\-POST})}\label{classSurveyOfficer_d1f854f708d34802ce4f7c1692f40ae9}
+
+
+Create new \doxyref{Survey}{S.}{classSurvey}
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em \doxyref{Logger}{S.}{classLogger}}]\$oLogger \item[{\em \doxyref{Survey}{S.}{classSurvey}}]\$surveyObj \item[{\em array}]\$\_\-POST \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+die('DIE: \_\-FAILED\_\-TO\_\-ADD\_\-SURVEY\_\-REQUIRED\_\-VALUE\_\-IS\_\-NULL'); 
+
+Definiert in Zeile 224 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveyObj und ObjectLogger.\_\-addError().\index{SurveyOfficer@{SurveyOfficer}!addSurvivors@{addSurvivors}}
+\index{addSurvivors@{addSurvivors}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.addSurvivors (\$ {\em oLogger}, \$ {\em surveyId}, \$ {\em survivorsArr})}\label{classSurveyOfficer_1ff3c8399e7924a73c3d1d5098474fa1}
+
+
+Add survivor to \doxyref{Survey}{S.}{classSurvey}
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em \doxyref{Logger}{S.}{classLogger}}]\$oLogger \item[{\em long}]\$surveyId \item[{\em array}]\$survivorsArr \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 388 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveyId, \$surveyObj, \$survivorObj und getSurveyConstants().\index{SurveyOfficer@{SurveyOfficer}!getSurveySession@{getSurveySession}}
+\index{getSurveySession@{getSurveySession}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveySession (\$ {\em tokenID}, \&\$ {\em surveySessionObj})}\label{classSurveyOfficer_0e5b6d094cff47e62ec1390fca7e33b3}
+
+
+get \doxyref{Survey}{S.}{classSurvey} Session object by token
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$tokenID \item[{\em \doxyref{SurveySession}{S.}{classSurveySession}}]\$surveySessionObj \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 535 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveySessionObj.\index{SurveyOfficer@{SurveyOfficer}!getSurveyConstants@{getSurveyConstants}}
+\index{getSurveyConstants@{getSurveyConstants}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveyConstants (\$ {\em surveyID}, \&\$ {\em surveyConstansArr})}\label{classSurveyOfficer_c950aecbfc24a77adf83e02bf36cb336}
+
+
+get \doxyref{Survey}{S.}{classSurvey} Constants
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$surveyID \item[{\em array}]\$surveyConstansArr \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 566 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result und ObjectLogger.\_\-addError().
+
+Wird benutzt von addSurvivors().\index{SurveyOfficer@{SurveyOfficer}!getSurveyReport@{getSurveyReport}}
+\index{getSurveyReport@{getSurveyReport}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveyReport (\$ {\em surveyID}, \&\$ {\em surveyReportObj})}\label{classSurveyOfficer_da526128fe9bc596c078d3f9e9eec223}
+
+
+get \doxyref{Survey}{S.}{classSurvey} Report
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em long}]\$surveyID \item[{\em \doxyref{SurveyReport}{S.}{classSurveyReport}}]\$surveyReportObj \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 636 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveyReportObj.\index{SurveyOfficer@{SurveyOfficer}!getSurveysByUserId@{getSurveysByUserId}}
+\index{getSurveysByUserId@{getSurveysByUserId}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveysByUserId (\$ {\em userId}, \$ {\em type} = {\tt 'all'}, \$ {\em sortBy} = {\tt 'dateUp'})}\label{classSurveyOfficer_0fcaede47c0f91d9349610ac7894c9f7}
+
+
+Get \doxyref{Survey}{S.}{classSurvey} by UserId
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em long}]\$userId \item[{\em string}]\$type \item[{\em string}]\$sortBy \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 666 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result, getSurvivorsBySurveyId() und getSurvivorsDoneBySurveyId().\index{SurveyOfficer@{SurveyOfficer}!getSurvivorsBySurveyId@{getSurvivorsBySurveyId}}
+\index{getSurvivorsBySurveyId@{getSurvivorsBySurveyId}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurvivorsBySurveyId (\$ {\em surveyId})}\label{classSurveyOfficer_c441f30cce7a1bd7abe05f67d3ebcc3a}
+
+
+Gets Survivors count for \doxyref{Survey}{S.}{classSurvey} by survey ID
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em int}]\$surveyId \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]int \end{Desc}
+
+
+Definiert in Zeile 741 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result und \$surveyId.
+
+Wird benutzt von getSurveysByUserId().\index{SurveyOfficer@{SurveyOfficer}!getSurvivorsDoneBySurveyId@{getSurvivorsDoneBySurveyId}}
+\index{getSurvivorsDoneBySurveyId@{getSurvivorsDoneBySurveyId}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurvivorsDoneBySurveyId (\$ {\em surveyId}, \$ {\em surveyTypeId})}\label{classSurveyOfficer_b3a8792a85877ba5be057efffec0184b}
+
+
+Gets Survivors count wich has been done with \doxyref{Survey}{S.}{classSurvey} by survey ID
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em int}]\$surveyId \item[{\em string}]\$surveyId \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]int \end{Desc}
+
+
+Definiert in Zeile 771 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result und \$surveyId.
+
+Wird benutzt von getSurveysByUserId().\index{SurveyOfficer@{SurveyOfficer}!deleteSurveyById@{deleteSurveyById}}
+\index{deleteSurveyById@{deleteSurveyById}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.deleteSurveyById (\$ {\em surveyId})}\label{classSurveyOfficer_77210f9d4ed13630d42d9ca2a211e5e9}
+
+
+remove survey
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em long}]\$surveyId \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]bool \end{Desc}
+
+
+Definiert in Zeile 807 der Datei class.SurveyOfficer.php.
+
+Benutzt \$surveyId und \$surveyObj.\index{SurveyOfficer@{SurveyOfficer}!getSurveyIdByToken@{getSurveyIdByToken}}
+\index{getSurveyIdByToken@{getSurveyIdByToken}!SurveyOfficer@{SurveyOfficer}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SurveyOfficer.getSurveyIdByToken (\$ {\em token})}\label{classSurveyOfficer_4e5c3f5a9c1ac4f5ecbd82ba94ef8d9b}
+
+
+get \doxyref{Survey}{S.}{classSurvey} Id by token
+
+\begin{Desc}
+\item[Parameter:]
+\begin{description}
+\item[{\em string}]\$token \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Rückgabe:]long \end{Desc}
+
+
+Definiert in Zeile 868 der Datei class.SurveyOfficer.php.
+
+Benutzt \$result.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:\begin{CompactItemize}
+\item 
+{\bf class.SurveyOfficer.php}\end{CompactItemize}

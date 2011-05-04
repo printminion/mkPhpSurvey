@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: hn_captcha.class.x1.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>hn_captcha.class.x1.php</h1><a href="hn__captcha_8class_8x1_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00041"></a>00041 require_once(dirname(__file__).'/<a class="code" href="classhn__captcha.html">hn_captcha</a>.class.php');
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 
+<a name="l00075"></a><a class="code" href="classhn__captcha__X1.html">00075</a> <span class="keyword">class </span><a class="code" href="classhn__captcha__X1.html">hn_captcha_X1</a> <span class="keyword">extends</span> <a class="code" href="classhn__captcha.html">hn_captcha</a>
+<a name="l00076"></a>00076 {
+<a name="l00077"></a>00077 
+<a name="l00079"></a>00079    <span class="comment">//</span>
+<a name="l00080"></a>00080    <span class="comment">//   PUBLIC PARAMS</span>
+<a name="l00081"></a>00081    <span class="comment">//</span>
+<a name="l00082"></a>00082 
+<a name="l00089"></a><a class="code" href="classhn__captcha__X1.html#fd4111d73955f886b634a587cb8962eb">00089</a>    var <a class="code" href="classhn__captcha__X1.html#fd4111d73955f886b634a587cb8962eb">$counter_filename</a>                = '';
+<a name="l00090"></a>00090 
+<a name="l00097"></a><a class="code" href="classhn__captcha__X1.html#ae0022989e94141baacd0508b4b580bf">00097</a>    var <a class="code" href="classhn__captcha__X1.html#ae0022989e94141baacd0508b4b580bf">$prefix</a>                                  = 'hn_captcha_';
+<a name="l00098"></a>00098 
+<a name="l00105"></a><a class="code" href="classhn__captcha__X1.html#9881790d05ecc047d53a9b0fd65fa46d">00105</a>    var <a class="code" href="classhn__captcha__X1.html#9881790d05ecc047d53a9b0fd65fa46d">$collect_garbage_after</a>   = 100;
+<a name="l00106"></a>00106 
+<a name="l00113"></a><a class="code" href="classhn__captcha__X1.html#7ca7240f2708e7957dd77e722e7ad8bb">00113</a>    var <a class="code" href="classhn__captcha__X1.html#7ca7240f2708e7957dd77e722e7ad8bb">$maxlifetime</a>                     = 600;
+<a name="l00114"></a>00114 
+<a name="l00121"></a><a class="code" href="classhn__captcha__X1.html#beb30fc6d6c0bd718df2805f84284f7f">00121</a>    var <a class="code" href="classhn__captcha__X1.html#beb30fc6d6c0bd718df2805f84284f7f">$garbage_collector_error</a> = FALSE;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 
+<a name="l00126"></a>00126    <span class="comment">//</span>
+<a name="l00127"></a>00127    <span class="comment">//   PRIVATE PARAMS</span>
+<a name="l00128"></a>00128    <span class="comment">//</span>
+<a name="l00129"></a>00129 
+<a name="l00131"></a><a class="code" href="classhn__captcha__X1.html#6e0d1de1e81cbba0edd85236f869eae2">00131</a>    var <a class="code" href="classhn__captcha__X1.html#6e0d1de1e81cbba0edd85236f869eae2">$counter_fn_default_basename</a> = 'hn_captcha_counter.txt';
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135 
+<a name="l00137"></a>00137    <span class="comment">//</span>
+<a name="l00138"></a>00138    <span class="comment">//   CONSTRUCTOR</span>
+<a name="l00139"></a>00139    <span class="comment">//</span>
+<a name="l00140"></a>00140 
+<a name="l00148"></a><a class="code" href="classhn__captcha__X1.html#1606074057fbbadcd924b1d057247820">00148</a>    function <a class="code" href="classhn__captcha__X1.html#1606074057fbbadcd924b1d057247820">hn_captcha_X1</a>($config,$secure=TRUE)
+<a name="l00149"></a>00149    {
+<a name="l00150"></a>00150       <span class="comment">// Call Constructor of main-class</span>
+<a name="l00151"></a>00151       $this-&gt;<a class="code" href="classhn__captcha.html#47496a3e7f2d9b2f245191af0aaf6da4">hn_captcha</a>($config,$secure);
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154       <span class="comment">// specify counter-filename</span>
+<a name="l00155"></a>00155       <span class="keywordflow">if</span>($this-&gt;counter_filename == '') $this-&gt;counter_filename = $this-&gt;tempfolder.$this-&gt;counter_fn_default_basename;
+<a name="l00156"></a>00156       <span class="keywordflow">if</span>($this-&gt;debug) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: The counterfilename is ("</span>.$this-&gt;counter_filename.<span class="stringliteral">")"</span>;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159       <span class="comment">// retrieve last counter-value</span>
+<a name="l00160"></a>00160       $test = $this-&gt;<a class="code" href="classhn__captcha__X1.html#7bac34f7a942f6625cc9196ccaa968f0">txt_counter</a>($this-&gt;counter_filename);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162       <span class="comment">// set and retrieve current counter-value</span>
+<a name="l00163"></a>00163       $counter = $this-&gt;<a class="code" href="classhn__captcha__X1.html#7bac34f7a942f6625cc9196ccaa968f0">txt_counter</a>($this-&gt;counter_filename,TRUE);
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166       <span class="comment">// check if counter works correct</span>
+<a name="l00167"></a>00167       <span class="keywordflow">if</span>(($counter !== FALSE) &amp;&amp; ($counter - $test == 1))
+<a name="l00168"></a>00168       {
+<a name="l00169"></a>00169          <span class="comment">// Counter works perfect, =:)</span>
+<a name="l00170"></a>00170          <span class="keywordflow">if</span>($this-&gt;debug) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: Current counter-value is ($counter). Garbage-collector should start at ("</span>.$this-&gt;collect_garbage_after.<span class="stringliteral">")"</span>;
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172          <span class="comment">// check if garbage-collector should run</span>
+<a name="l00173"></a>00173          <span class="keywordflow">if</span>($counter &gt;= $this-&gt;collect_garbage_after)
+<a name="l00174"></a>00174          {
+<a name="l00175"></a>00175             <span class="comment">// Reset counter</span>
+<a name="l00176"></a>00176             <span class="keywordflow">if</span>($this-&gt;debug) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: Reset the counter-value. (0)"</span>;
+<a name="l00177"></a>00177             $this-&gt;<a class="code" href="classhn__captcha__X1.html#7bac34f7a942f6625cc9196ccaa968f0">txt_counter</a>($this-&gt;counter_filename,TRUE,0);
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179             <span class="comment">// start garbage-collector</span>
+<a name="l00180"></a>00180             $this-&gt;garbage_collector_error = $this-&gt;<a class="code" href="classhn__captcha__X1.html#5502e0381955029c455d466df85a5360">collect_garbage</a>() ? FALSE : TRUE;
+<a name="l00181"></a>00181             <span class="keywordflow">if</span>($this-&gt;debug &amp;&amp; $this-&gt;garbage_collector_error) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: ERROR! SOME TRASHFILES COULD NOT BE DELETED! (Set the garbage_collector_error to TRUE)"</span>;
+<a name="l00182"></a>00182          }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184       }
+<a name="l00185"></a>00185       <span class="keywordflow">else</span>
+<a name="l00186"></a>00186       {
+<a name="l00187"></a>00187          <span class="comment">// Counter-ERROR!</span>
+<a name="l00188"></a>00188          <span class="keywordflow">if</span>($this-&gt;debug) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: ERROR! NO COUNTER-VALUE AVAILABLE! (Set the garbage_collector_error to TRUE)"</span>;
+<a name="l00189"></a>00189          $this-&gt;garbage_collector_error = TRUE;
+<a name="l00190"></a>00190       }
+<a name="l00191"></a>00191    }
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193 
+<a name="l00195"></a>00195    <span class="comment">//</span>
+<a name="l00196"></a>00196    <span class="comment">//   PRIVATE METHODS</span>
+<a name="l00197"></a>00197    <span class="comment">//</span>
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 
+<a name="l00207"></a><a class="code" href="classhn__captcha__X1.html#7bac34f7a942f6625cc9196ccaa968f0">00207</a>    function <a class="code" href="classhn__captcha__X1.html#7bac34f7a942f6625cc9196ccaa968f0">txt_counter</a>(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>,$add=FALSE,$fixvalue=FALSE)
+<a name="l00208"></a>00208    {
+<a name="l00209"></a>00209       <span class="keywordflow">if</span>(is_file(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>) ? TRUE : touch(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>))
+<a name="l00210"></a>00210       {
+<a name="l00211"></a>00211          <span class="keywordflow">if</span>(is_readable(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>) &amp;&amp; is_writable(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>))
+<a name="l00212"></a>00212          {
+<a name="l00213"></a>00213             $fp = @fopen(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>, <span class="stringliteral">"r"</span>);
+<a name="l00214"></a>00214             <span class="keywordflow">if</span>($fp)
+<a name="l00215"></a>00215             {
+<a name="l00216"></a>00216                $counter = (int)trim(fgets($fp));
+<a name="l00217"></a>00217                fclose($fp);
+<a name="l00218"></a>00218 
+<a name="l00219"></a>00219                <span class="keywordflow">if</span>($add)
+<a name="l00220"></a>00220                {
+<a name="l00221"></a>00221                   <span class="keywordflow">if</span>($fixvalue !== FALSE)
+<a name="l00222"></a>00222                   {
+<a name="l00223"></a>00223                      $counter = (int)$fixvalue;
+<a name="l00224"></a>00224                   }
+<a name="l00225"></a>00225                   <span class="keywordflow">else</span>
+<a name="l00226"></a>00226                   {
+<a name="l00227"></a>00227                      $counter++;
+<a name="l00228"></a>00228                   }
+<a name="l00229"></a>00229                   $fp = @fopen(<a class="code" href="classhn__captcha.html#1ef754cd5a960c4c719becd1104a7b30">$filename</a>, <span class="stringliteral">"w"</span>);
+<a name="l00230"></a>00230                   <span class="keywordflow">if</span>($fp)
+<a name="l00231"></a>00231                   {
+<a name="l00232"></a>00232                      fputs($fp,$counter);
+<a name="l00233"></a>00233                      fclose($fp);
+<a name="l00234"></a>00234                      <span class="keywordflow">return</span> $counter;
+<a name="l00235"></a>00235                   }
+<a name="l00236"></a>00236                   <span class="keywordflow">else</span> <span class="keywordflow">return</span> FALSE;
+<a name="l00237"></a>00237                }
+<a name="l00238"></a>00238                <span class="keywordflow">else</span>
+<a name="l00239"></a>00239                {
+<a name="l00240"></a>00240                   <span class="keywordflow">return</span> $counter;
+<a name="l00241"></a>00241                }
+<a name="l00242"></a>00242             }
+<a name="l00243"></a>00243             <span class="keywordflow">else</span> <span class="keywordflow">return</span> FALSE;
+<a name="l00244"></a>00244          }
+<a name="l00245"></a>00245          <span class="keywordflow">else</span> <span class="keywordflow">return</span> FALSE;
+<a name="l00246"></a>00246       }
+<a name="l00247"></a>00247       <span class="keywordflow">else</span> <span class="keywordflow">return</span> FALSE;
+<a name="l00248"></a>00248    }
+<a name="l00249"></a>00249 
+<a name="l00250"></a>00250 
+<a name="l00256"></a><a class="code" href="classhn__captcha__X1.html#5502e0381955029c455d466df85a5360">00256</a>    function <a class="code" href="classhn__captcha__X1.html#5502e0381955029c455d466df85a5360">collect_garbage</a>()
+<a name="l00257"></a>00257    {
+<a name="l00258"></a>00258       $OK = FALSE;
+<a name="l00259"></a>00259       $captchas = 0;
+<a name="l00260"></a>00260       $trashed = 0;
+<a name="l00261"></a>00261       <span class="keywordflow">if</span>($handle = @opendir($this-&gt;tempfolder))
+<a name="l00262"></a>00262       {
+<a name="l00263"></a>00263          $OK = TRUE;
+<a name="l00264"></a>00264          <span class="keywordflow">while</span>(<span class="keyword">false</span> !== ($file = readdir($handle)))
+<a name="l00265"></a>00265          {
+<a name="l00266"></a>00266             <span class="keywordflow">if</span>(!is_file($this-&gt;tempfolder.$file)) <span class="keywordflow">continue</span>;
+<a name="l00267"></a>00267             <span class="comment">// check for name-prefix, extension and filetime</span>
+<a name="l00268"></a>00268             <span class="keywordflow">if</span>(substr($file,0,strlen($this-&gt;prefix)) == $this-&gt;prefix)
+<a name="l00269"></a>00269             {
+<a name="l00270"></a>00270                <span class="keywordflow">if</span>(strrchr($file, <span class="stringliteral">"."</span>) == <span class="stringliteral">".jpg"</span>)
+<a name="l00271"></a>00271                {
+<a name="l00272"></a>00272                   $captchas++;
+<a name="l00273"></a>00273                   <span class="keywordflow">if</span>((time() - filemtime($this-&gt;tempfolder.$file)) &gt;= $this-&gt;maxlifetime)
+<a name="l00274"></a>00274                   {
+<a name="l00275"></a>00275                      $trashed++;
+<a name="l00276"></a>00276                      $res = @unlink($this-&gt;tempfolder.$file);
+<a name="l00277"></a>00277                      <span class="keywordflow">if</span>(!$res) $OK = FALSE;
+<a name="l00278"></a>00278                   }
+<a name="l00279"></a>00279                }
+<a name="l00280"></a>00280             }
+<a name="l00281"></a>00281          }
+<a name="l00282"></a>00282          closedir($handle);
+<a name="l00283"></a>00283       }
+<a name="l00284"></a>00284       <span class="keywordflow">if</span>($this-&gt;debug) echo <span class="stringliteral">"\n&lt;br&gt;-Captcha-Debug: There are ($captchas) captcha-images in tempfolder, where ($trashed) are seems to be lost."</span>;
+<a name="l00285"></a>00285       <span class="keywordflow">return</span> $OK;
+<a name="l00286"></a>00286    }
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288 
+<a name="l00290"></a><a class="code" href="classhn__captcha__X1.html#1dfdabc804a4c1c6b8ff0016a009bf87">00290</a>    function <a class="code" href="classhn__captcha__X1.html#1dfdabc804a4c1c6b8ff0016a009bf87">get_filename</a>($public=<span class="stringliteral">""</span>)
+<a name="l00291"></a>00291    {
+<a name="l00292"></a>00292       <span class="keywordflow">if</span>($public==<span class="stringliteral">""</span>) $public = $this-&gt;public_key;
+<a name="l00293"></a>00293       <span class="keywordflow">return</span> $this-&gt;tempfolder.$this-&gt;prefix.$public.<span class="stringliteral">".jpg"</span>;
+<a name="l00294"></a>00294    }
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296 
+<a name="l00298"></a><a class="code" href="classhn__captcha__X1.html#411439a006cb0cb1329a2a856dd06f23">00298</a>    function <a class="code" href="classhn__captcha__X1.html#411439a006cb0cb1329a2a856dd06f23">get_filename_url</a>($public=<span class="stringliteral">""</span>)
+<a name="l00299"></a>00299    {
+<a name="l00300"></a>00300       <span class="keywordflow">if</span>($public==<span class="stringliteral">""</span>) $public = $this-&gt;public_key;
+<a name="l00301"></a>00301       <span class="keywordflow">return</span> str_replace($_SERVER['DOCUMENT_ROOT'],'',$this-&gt;tempfolder).$this-&gt;prefix.$public.<span class="stringliteral">".jpg"</span>;
+<a name="l00302"></a>00302    }
+<a name="l00303"></a>00303 
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305 } <span class="comment">// END CLASS hn_CAPTCHA_X1</span>
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

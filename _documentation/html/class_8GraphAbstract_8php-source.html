@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: class.GraphAbstract.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>class.GraphAbstract.php</h1><a href="class_8GraphAbstract_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00009"></a>00009 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph.php');
+<a name="l00010"></a>00010 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph_log.php');
+<a name="l00011"></a>00011 include_once(<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>.'/jpgraph_utils.inc.php');
+<a name="l00012"></a>00012 
+<a name="l00013"></a><a class="code" href="classGraphAbstract.html">00013</a> <span class="keyword">class </span><a class="code" href="classGraphAbstract.html">GraphAbstract</a>{
+<a name="l00014"></a>00014 
+<a name="l00020"></a><a class="code" href="classGraphAbstract.html#7c965fbefc06beb2ebc4b94d24bcef6a">00020</a>    var <a class="code" href="classGraphAbstract.html#7c965fbefc06beb2ebc4b94d24bcef6a">$graphID</a>;
+<a name="l00021"></a>00021 
+<a name="l00028"></a><a class="code" href="classGraphAbstract.html#3c434240c60327c51275a8731f1863e3">00028</a>    function <a class="code" href="classGraphAbstract.html#3c434240c60327c51275a8731f1863e3">GraphAbstract</a>($graphId){
+<a name="l00029"></a>00029       <span class="keywordflow">if</span> ($graphId == ''){
+<a name="l00030"></a>00030          trigger_error(get_class($this).': required parameter graphID is not <span class="keyword">set</span>');
+<a name="l00031"></a>00031       }
+<a name="l00032"></a>00032       $this-&gt;graphID = $graphId;
+<a name="l00033"></a>00033    }
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035     
+<a name="l00041"></a>00041    function redenderData(&amp;$dataObj){
+<a name="l00042"></a>00042       <span class="comment">//debug_sql("redenderData(&amp;\$dataObj)");</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044       <span class="comment">//throw warning graph</span>
+<a name="l00045"></a>00045       $this-&gt;_imageControlNotReadyYet($this-&gt;graphID);
+<a name="l00046"></a>00046    }
+<a name="l00047"></a>00047 
+<a name="l00053"></a>00053    function _imageControlNotReadyYet(<a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a>){
+<a name="l00054"></a>00054       header(<span class="stringliteral">"Content-type: image/png"</span>);
+<a name="l00055"></a>00055       $im = @imagecreate(350, 200) or die("Cannot Initialize new GD image stream");
+<a name="l00056"></a>00056       $background_color = imagecolorallocate($im, 255, 255, 255);
+<a name="l00057"></a>00057       $text_color = imagecolorallocate($im, 233, 14, 91);
+<a name="l00058"></a>00058       imagestring($im, 16, 5, 5,  "Graph <a class="code" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a> - Not ready yet", $text_color);
+<a name="l00059"></a>00059       imagepng($im);
+<a name="l00060"></a>00060       imagedestroy($im);
+<a name="l00061"></a>00061    }
+<a name="l00062"></a>00062 }
+<a name="l00063"></a>00063 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

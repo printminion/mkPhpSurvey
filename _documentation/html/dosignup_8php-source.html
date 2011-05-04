@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: dosignup.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>dosignup.php</h1><a href="dosignup_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00004"></a>00004    include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00005"></a>00005 }
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 
+<a name="l00008"></a><a class="code" href="dosignup_8php.html#823c4b552b4a5b8af4c5197799581922">00008</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['FORMS_ACTION_URL']           = <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/admin/';
+<a name="l00009"></a><a class="code" href="dosignup_8php.html#0afbd0b277e574e9939eea9a136ef999">00009</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS']          = <a class="code" href="lang__admin_8php.html#f28d7de4256e6e157d802821b8cb3d7c">TPL_ADMIN_CAPTION_MYSURVEYS</a>;
+<a name="l00010"></a><a class="code" href="dosignup_8php.html#f64e94061e69c2ed3b03ec93f7e517c9">00010</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_RUNNING']  = <a class="code" href="lang__admin_8php.html#d05ece1833addcd9d4f17005fbcbbf1a">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING</a>;
+<a name="l00011"></a><a class="code" href="dosignup_8php.html#10cc234b1c962b8a41c8e127da00cb15">00011</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_FINISHED'] = <a class="code" href="lang__admin_8php.html#412b67d7356a75ad2e0ed5a92a3c9129">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED</a>;
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a><a class="code" href="dosignup_8php.html#db8f21fccc808fd76b8500c931aa805d">00014</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVEY'] = <a class="code" href="lang__admin_8php.html#f2fb1d5ed1e8b4ddbcc6137a067c9a66">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVEY</a>;
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="dosignup_8php.html#b9a26ddab29e852efac383d6eae07bd0">00016</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS']             = <a class="code" href="lang__admin_8php.html#9476a0f15d0b23aa3107c221c8066145">TPL_ADMIN_CAPTION_SORT_SURVEYS</a>;
+<a name="l00017"></a><a class="code" href="dosignup_8php.html#94a5cf2d5e00990da2d11013ebd90ac7">00017</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY']          = <a class="code" href="lang__admin_8php.html#61a183c3696b82082b9f870a68b65284">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY</a>;
+<a name="l00018"></a><a class="code" href="dosignup_8php.html#f7bf88f493ee13a399ae2c43b2214eb6">00018</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_DATE']     = <a class="code" href="lang__admin_8php.html#efd9e23258342def4000ce9c184c57bb">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_DATE</a>;
+<a name="l00019"></a><a class="code" href="dosignup_8php.html#67aeca80b1e96280795838ebd61aa624">00019</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_CREATION'] = <a class="code" href="lang__admin_8php.html#de3548e5cf790cdc771e5ae09b1e08bd">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_CREATION</a>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="dosignup_8php.html#3f2c702d2b477122377566d7af8bab35">00022</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_DATE_HREF']     = '';
+<a name="l00023"></a><a class="code" href="dosignup_8php.html#bd2d01a122f74aecc4c96df2874be9cf">00023</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_CREATION_HREF'] = <span class="stringliteral">"javascript:_d('sortSurvey', 'creation');"</span>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="dosignup_8php.html#41b657c6e3910d90783d12e2fc1568eb">00027</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_RUNNING_URL']  = <a class="code" href="lang__admin_8php.html#f6e235ccceb91621899d9b8fc6a3a9d8">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING_URL</a>;
+<a name="l00028"></a><a class="code" href="dosignup_8php.html#8a584c62935c7d9770244598b07c2147">00028</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_FINISHED_URL'] = <a class="code" href="lang__admin_8php.html#750e55787e0eb1824d6eff18ca660e81">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED_URL</a>;
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="dosignup_8php.html#d6119d6d7a684161a04ad236c3f2c9b4">00031</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVIVORS']       = <a class="code" href="lang__admin_8php.html#38f50b161fbf0325019f72c4fbb79f4f">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS</a>;
+<a name="l00032"></a><a class="code" href="dosignup_8php.html#665f7e1830592fd2a51af6f61d386db2">00032</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVIVORS_TITLE'] = <a class="code" href="lang__admin_8php.html#b67fbae4c52ccc75cd0ca578f1e1e1c9">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS_TITLE</a>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="dosignup_8php.html#47a202961f8da5800fabe9734b097d1e">00034</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['BOXES']['INFOBOX'] = array('TITLE' =&gt; <a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">TPL_ADMIN_SIDEBOX_TITLE</a>,
+<a name="l00035"></a>00035 'BODY' =&gt; <a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">TPL_ADMIN_SIDEBOX_BODY</a>);
+<a name="l00036"></a><a class="code" href="dosignup_8php.html#ab431c722d5f87f8e9a1119ce1634d16">00036</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['BOXES']['INFOBOX2'] = array('TITLE' =&gt; <a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">TPL_ADMIN_SIDEBOX_TITLE</a>,
+<a name="l00037"></a>00037 'BODY' =&gt; <a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">TPL_ADMIN_SIDEBOX_BODY</a>);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

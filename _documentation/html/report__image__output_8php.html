@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: report_image_output.php-Dateireferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>report_image_output.php-Dateireferenz</h1>
+<p>
+<a href="report__image__output_8php-source.html">gehe zum Quellcode dieser Datei</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Variablen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="report__image__output_8php.html#d3bc7242088fe3938d5b99cecf6685b8">$controlId</a> = $_GET['controlID']</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="report__image__output_8php.html#db10ad307898932b74780ecd311b2c77">$controlArr</a> = explode('_',$controlId)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="report__image__output_8php.html#0e35e12258bfc8445213ad172a725d69">$graphObj</a> = $graphOfficerObj-&gt;getGraphById($controlTypeId)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="report__image__output_8php.html#cbe15726ad3dd68a92d4694ef3829b01">$reportDataOfficerObj</a> = new <a class="el" href="classReportDataOfficer.html">ReportDataOfficer</a>()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="report__image__output_8php.html#cb074c9f3af5467b0e09f80ef65853c2">$reportDataObj</a> = $reportDataOfficerObj-&gt;loadGraphData($controlId,$_GET['sid'])</td></tr>
+
+</table>
+<hr><h2>Variablen-Dokumentation</h2>
+<a class="anchor" name="db10ad307898932b74780ecd311b2c77"></a><!-- doxytag: member="report_image_output.php::$controlArr" ref="db10ad307898932b74780ecd311b2c77" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$controlArr = explode('_',$controlId)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="report__image__output_8php-source.html#l00027">27</a> der Datei <a class="el" href="report__image__output_8php-source.html">report_image_output.php</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="class_8SurveyReportAbstract_8php-source.html#l00215">SurveyReportAbstract._getOutputControlAsHtml()</a>, <a class="el" href="class_8GraphDataTXT_8php-source.html#l00022">GraphDataTXT._loadGraphData()</a>, <a class="el" href="class_8GraphDataTXD_8php-source.html#l00022">GraphDataTXD._loadGraphData()</a>, <a class="el" href="class_8GraphDataTXA_8php-source.html#l00022">GraphDataTXA._loadGraphData()</a>, <a class="el" href="class_8GraphDataRD7_8php-source.html#l00035">GraphDataRD7._loadGraphData()</a>, <a class="el" href="class_8GraphDataRA6_8php-source.html#l00022">GraphDataRA6._loadGraphData()</a>, <a class="el" href="class_8GraphDataRA2_8php-source.html#l00037">GraphDataRA2._loadGraphData()</a> und <a class="el" href="class_8ReportDataOfficer_8php-source.html#l00022">ReportDataOfficer.loadGraphData()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d3bc7242088fe3938d5b99cecf6685b8"></a><!-- doxytag: member="report_image_output.php::$controlId" ref="d3bc7242088fe3938d5b99cecf6685b8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$controlId = $_GET['controlID']          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="report__image__output_8php-source.html#l00024">24</a> der Datei <a class="el" href="report__image__output_8php-source.html">report_image_output.php</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="class_8SurveyReportAbstract_8php-source.html#l00215">SurveyReportAbstract._getOutputControlAsHtml()</a>, <a class="el" href="sura_8server_8php-source.html#l00667">doGetReportValues()</a> und <a class="el" href="class_8ReportDataOfficer_8php-source.html#l00022">ReportDataOfficer.loadGraphData()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0e35e12258bfc8445213ad172a725d69"></a><!-- doxytag: member="report_image_output.php::$graphObj" ref="0e35e12258bfc8445213ad172a725d69" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$graphObj = $graphOfficerObj-&gt;getGraphById($controlTypeId)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="report__image__output_8php-source.html#l00035">35</a> der Datei <a class="el" href="report__image__output_8php-source.html">report_image_output.php</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cb074c9f3af5467b0e09f80ef65853c2"></a><!-- doxytag: member="report_image_output.php::$reportDataObj" ref="cb074c9f3af5467b0e09f80ef65853c2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$reportDataObj = $reportDataOfficerObj-&gt;loadGraphData($controlId,$_GET['sid'])          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="report__image__output_8php-source.html#l00039">39</a> der Datei <a class="el" href="report__image__output_8php-source.html">report_image_output.php</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="sura_8server_8php-source.html#l00594">doGetReportValue()</a> und <a class="el" href="sura_8server_8php-source.html#l00667">doGetReportValues()</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cbe15726ad3dd68a92d4694ef3829b01"></a><!-- doxytag: member="report_image_output.php::$reportDataOfficerObj" ref="cbe15726ad3dd68a92d4694ef3829b01" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$reportDataOfficerObj = new <a class="el" href="classReportDataOfficer.html">ReportDataOfficer</a>()          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definiert in Zeile <a class="el" href="report__image__output_8php-source.html#l00038">38</a> der Datei <a class="el" href="report__image__output_8php-source.html">report_image_output.php</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="sura_8server_8php-source.html#l00594">doGetReportValue()</a> und <a class="el" href="sura_8server_8php-source.html#l00667">doGetReportValues()</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:18 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

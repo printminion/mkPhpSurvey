@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: lang_register.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>lang_register.php</h1><a href="lang__register_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00006"></a><a class="code" href="lang__register_8php.html#129b890663371f15e7fe17a2b6ca28d4">00006</a> define('<a class="code" href="lang__register_8php.html#129b890663371f15e7fe17a2b6ca28d4">_ERROR_PASS</a><span class="charliteral">','</span>Es tut uns leid, kein entsprechender Benutzer wurde gefunden');
+<a name="l00007"></a><a class="code" href="lang__register_8php.html#8298d2de64e5e8dcb2733bebdec3b29b">00007</a> define('<a class="code" href="lang__register_8php.html#8298d2de64e5e8dcb2733bebdec3b29b">_NEWPASS_MSG</a><span class="charliteral">','</span>Dem Benutzerkonto $checkusername ist diese E-mail zugewiesen.\n'
+<a name="l00008"></a>00008 .'Ein Web-Benutzer von $live_site verlangte die Zusendung eines neuen Passwortes.\n\n'
+<a name="l00009"></a>00009 .' Dein neues Passwort ist: $newpass\n\nFalls du das nicht verlangt hattest, mach dir keine Sorgen.'
+<a name="l00010"></a>00010 .' Nur du kannst diese Nachricht sehen. Falls dies ein Fehler war, melde dich einfach mit deinem'
+<a name="l00011"></a>00011 .' neuen Passwort an und дndere das Passwort dann beliebig.');
+<a name="l00012"></a><a class="code" href="lang__register_8php.html#5ca4cb602596620cc831d75e00a7de9a">00012</a> define('<a class="code" href="lang__register_8php.html#5ca4cb602596620cc831d75e00a7de9a">_NEWPASS_SUB</a><span class="charliteral">','</span>Benutzer Passwort für $checkusername');
+<a name="l00013"></a><a class="code" href="lang__register_8php.html#dce0d3f90001c7adeca6797730aeb94e">00013</a> define('<a class="code" href="lang__register_8php.html#dce0d3f90001c7adeca6797730aeb94e">_NEWPASS_SENT</a><span class="charliteral">','</span>Neues Benutzer Passwort generiert und gesendet!');
+<a name="l00014"></a><a class="code" href="lang__register_8php.html#a9a214dc23bfeb9ce2297a14c94af498">00014</a> define('<a class="code" href="lang__register_8php.html#a9a214dc23bfeb9ce2297a14c94af498">_REGWARN_NAME</a><span class="charliteral">','</span>Bitte deinen Namen eingeben.');
+<a name="l00015"></a><a class="code" href="lang__register_8php.html#27050c24c326f404e239948ea727256c">00015</a> define('<a class="code" href="lang__register_8php.html#27050c24c326f404e239948ea727256c">_REGWARN_UNAME</a><span class="charliteral">','</span>Bitte einen Benutzernamen eingeben.');
+<a name="l00016"></a><a class="code" href="lang__register_8php.html#490a92de832028146a1336a25045f4f6">00016</a> define('<a class="code" href="lang__register_8php.html#490a92de832028146a1336a25045f4f6">_REGWARN_MAIL</a><span class="charliteral">','</span>Bitte deine E-mail eingeben.');
+<a name="l00017"></a><a class="code" href="lang__register_8php.html#01d8b0010782d74401d4e569cfcba56d">00017</a> define('<a class="code" href="lang__register_8php.html#01d8b0010782d74401d4e569cfcba56d">_REGWARN_PASS</a><span class="charliteral">','</span>Bitte ein gültiges Passwort eingeben.  Keine Leerzeichen, mehr als 6 Zeichen, die 0-9,a-z,A-Z enthalten.');
+<a name="l00018"></a><a class="code" href="lang__register_8php.html#b43c4fb6ddf825f5610c8935cf77004e">00018</a> define('<a class="code" href="lang__register_8php.html#b43c4fb6ddf825f5610c8935cf77004e">_REGWARN_VPASS1</a><span class="charliteral">','</span>Bitte Passwort wiederholen.');
+<a name="l00019"></a><a class="code" href="lang__register_8php.html#eba6af053a1c6824c359e592088ff78d">00019</a> define('<a class="code" href="lang__register_8php.html#eba6af053a1c6824c359e592088ff78d">_REGWARN_VPASS2</a><span class="charliteral">','</span>Passwort und Wiederholung stimmen nicht überein, bitte versuche es nocheinmal.');
+<a name="l00020"></a><a class="code" href="lang__register_8php.html#41c94c00c12276313b9fefd236a03fe6">00020</a> define('<a class="code" href="lang__register_8php.html#41c94c00c12276313b9fefd236a03fe6">_REGWARN_INUSE</a><span class="charliteral">','</span>Dieser Benutzername/Passwort ist schon in Verwendung. Bitte versuche etwas anderes.');
+<a name="l00021"></a>00021 <span class="comment">//define('_SEND_SUB','Neue Benutzer Details');</span>
+<a name="l00022"></a>00022 <span class="comment">//define('_USEND_MSG','Hallo $yourname,\n\n Du wurdest als Benutzer von $live_site hinzugefügt.\n'</span>
+<a name="l00023"></a>00023 <span class="comment">//.'Diese E-mail enthдlt deinen Benutzernamen und dein Passwort, um dich auf $live_site anzumelden:\n\n'</span>
+<a name="l00024"></a>00024 <span class="comment">//.'Benutzername - $username1\n'</span>
+<a name="l00025"></a>00025 <span class="comment">//.'Passwort  - $newpass\n\n\n'</span>
+<a name="l00026"></a>00026 <span class="comment">//.'Bitte nicht auf diese Nachricht antworten, da sie automatisch generiert wurde und nur deiner Information dient\n');</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="comment">//define('_USEND_OPTIN_SUBJECT',PRODUCT_NAME.' bestätigungslink');</span>
+<a name="l00029"></a>00029 <span class="comment">//define('_USEND_OPTIN_BODY',"Hallo %USERNAME%,\n\n Du oder eine andere Person wollte dich als Benutzer von %LIVE_SITE% registrieren.\n"</span>
+<a name="l00030"></a>00030 <span class="comment">//."Bitte gehe auf folgende Url um die Registrierung abzuschliessen:\n\n"</span>
+<a name="l00031"></a>00031 <span class="comment">//." %OPTIN_URL%\n\n\n"</span>
+<a name="l00032"></a>00032 <span class="comment">//."Bitte nicht auf diese Nachricht antworten, da sie automatisch generiert wurde und nur deiner Information dient\n");</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="lang__register_8php.html#827320fcf8d146245432ab9f3d34485d">00035</a> define('<a class="code" href="lang__register_8php.html#827320fcf8d146245432ab9f3d34485d">_USEND_OPTIN_SUBJECT</a>',<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>.' bestätigungslink');
+<a name="l00036"></a><a class="code" href="lang__register_8php.html#3e41d7f4186e6eefd61f055e3b525958">00036</a> define('<a class="code" href="lang__register_8php.html#3e41d7f4186e6eefd61f055e3b525958">_USEND_OPTIN_BODY</a>',<span class="stringliteral">"bestätigungslink für %USERNAME%\n"</span>
+<a name="l00037"></a>00037 .<span class="stringliteral">"-----\n"</span>
+<a name="l00038"></a>00038 .<span class="stringliteral">"\n"</span>
+<a name="l00039"></a>00039 .<span class="stringliteral">"bitte klicke auf untenstehenden link, um\n"</span> 
+<a name="l00040"></a>00040 .<span class="stringliteral">"fortzufahren und deine eingaben zu bestätigen.\n"</span>
+<a name="l00041"></a>00041 .<span class="stringliteral">"\n"</span>
+<a name="l00042"></a>00042 .<span class="stringliteral">"%OPTIN_URL%\n"</span>
+<a name="l00043"></a>00043 .<span class="stringliteral">"\n"</span>
+<a name="l00044"></a>00044 .<span class="stringliteral">"info:\n"</span> 
+<a name="l00045"></a>00045 .<span class="stringliteral">"sollte es nicht funktionieren, dann kopiere den\n"</span> 
+<a name="l00046"></a>00046 .<span class="stringliteral">"link, gib ihn in deinem browser adressfenster ein\n"</span> 
+<a name="l00047"></a>00047 .<span class="stringliteral">"und drücke 'enter'.\n"</span>
+<a name="l00048"></a>00048 .<span class="stringliteral">"\n"</span>
+<a name="l00049"></a>00049 .<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>);
+<a name="l00050"></a>00050 
+<a name="l00051"></a><a class="code" href="lang__register_8php.html#435c969bd24e199dbeb1670ba828038d">00051</a> define('<a class="code" href="lang__register_8php.html#435c969bd24e199dbeb1670ba828038d">_USEND_OPTIN_SUBJECT_HTML</a>',<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>.' bestätigungslink');
+<a name="l00052"></a><a class="code" href="lang__register_8php.html#cefb20ac119d1672e88a9745c3d4a254">00052</a> define('<a class="code" href="lang__register_8php.html#cefb20ac119d1672e88a9745c3d4a254">_USEND_OPTIN_BODY_HTML</a>',<span class="stringliteral">"bestätigungslink für %USERNAME%\n"</span>
+<a name="l00053"></a>00053 .<span class="stringliteral">"-----\n"</span>
+<a name="l00054"></a>00054 .<span class="stringliteral">"\n"</span>
+<a name="l00055"></a>00055 .<span class="stringliteral">"bitte klicke auf untenstehenden link, um\n"</span> 
+<a name="l00056"></a>00056 .<span class="stringliteral">"fortzufahren und deine eingaben zu bestätigen.\n"</span>
+<a name="l00057"></a>00057 .<span class="stringliteral">"\n"</span>
+<a name="l00058"></a>00058 .<span class="stringliteral">"&lt;a href='%OPTIN_URL%' target='_blank'&gt;%OPTIN_URL%&lt;/a&gt;\n"</span>
+<a name="l00059"></a>00059 .<span class="stringliteral">"\n"</span>
+<a name="l00060"></a>00060 .<span class="stringliteral">"info:\n"</span> 
+<a name="l00061"></a>00061 .<span class="stringliteral">"sollte es nicht funktionieren, dann kopiere den\n"</span> 
+<a name="l00062"></a>00062 .<span class="stringliteral">"link, gib ihn in deinem browser adressfenster ein\n"</span> 
+<a name="l00063"></a>00063 .<span class="stringliteral">"und drücke 'enter'.\n"</span>
+<a name="l00064"></a>00064 .<span class="stringliteral">"\n"</span>
+<a name="l00065"></a>00065 .<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>);
+<a name="l00066"></a>00066  
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 
+<a name="l00069"></a><a class="code" href="lang__register_8php.html#9cddbc989787e681846dc348c874bad2">00069</a> define('<a class="code" href="lang__register_8php.html#9cddbc989787e681846dc348c874bad2">_SEND_SUB</a>',<span class="stringliteral">"Neue Benutzer Details"</span>);
+<a name="l00070"></a><a class="code" href="lang__register_8php.html#3bd2853615ea491eacab77487b30f2bf">00070</a> define('<a class="code" href="lang__register_8php.html#3bd2853615ea491eacab77487b30f2bf">_USEND_MSG</a>',<span class="stringliteral">"Hallo %USERNAME%,\n\n Du wurdest als Benutzer von %LIVE_SITE% hinzugefügt.\n"</span>
+<a name="l00071"></a>00071 .<span class="stringliteral">"Diese E-mail enthдlt deinen Benutzernamen und dein Passwort, um dich auf %LIVE_SITE% anzumelden:\n\n"</span>
+<a name="l00072"></a>00072 .<span class="stringliteral">"Benutzername:%USERNAME%\n"</span>
+<a name="l00073"></a>00073 .<span class="stringliteral">"    Passwort:%PASSWORD%\n\n\n"</span>
+<a name="l00074"></a>00074 .<span class="stringliteral">"Bitte nicht auf diese Nachricht antworten, da sie automatisch generiert wurde und nur deiner Information dient\n"</span>);
+<a name="l00075"></a>00075 
+<a name="l00076"></a><a class="code" href="lang__register_8php.html#1d0616a5e93dfc13e5c3d1eb4399d015">00076</a> define('<a class="code" href="lang__register_8php.html#1d0616a5e93dfc13e5c3d1eb4399d015">_ASEND_SUB</a><span class="charliteral">','</span>Ein neuer Benutzer');
+<a name="l00077"></a><a class="code" href="lang__register_8php.html#c2a5f0306316121bddc3f759fdbdeda1">00077</a> define('<a class="code" href="lang__register_8php.html#c2a5f0306316121bddc3f759fdbdeda1">_ASEND_MSG</a><span class="charliteral">','</span>Hallo $adminName,\n\nEin neuer Benutzer wurde auf $live_site registriert.\n'
+<a name="l00078"></a>00078 .'Diese E-mail enthдlt seine Details:\n\n'
+<a name="l00079"></a>00079 .'        Name: $yourname\n'
+<a name="l00080"></a>00080 .'      E-Mail: $email\n'
+<a name="l00081"></a>00081 .'Benutzername: $username1\n\n\n'
+<a name="l00082"></a>00082 .'Bitte nicht auf diese Nachricht antworten, da sie automatisch generiert wurde und nur deiner Information dient\n');
+<a name="l00083"></a><a class="code" href="lang__register_8php.html#2aaca91b473f6e0895667635af7978ae">00083</a> define('<a class="code" href="lang__register_8php.html#2aaca91b473f6e0895667635af7978ae">_REG_COMPLETE</a><span class="charliteral">','</span>&lt;B&gt;Registration abgeschlossen!&lt;/B&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;Du kannst dich jetzt mit deinem Benutzernamen und Passwort anmelden.');
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="comment">// classes/html/registration.php</span>
+<a name="l00086"></a><a class="code" href="lang__register_8php.html#3ac9bd72113ae9bf786106c155d33985">00086</a> define('<a class="code" href="lang__register_8php.html#3ac9bd72113ae9bf786106c155d33985">_PROMPT_PASSWORD</a><span class="charliteral">','</span>Passwort vergessen?');
+<a name="l00087"></a><a class="code" href="lang__register_8php.html#94c48ecae96e4f572d85a804c2c4b5e2">00087</a> define('<a class="code" href="lang__register_8php.html#94c48ecae96e4f572d85a804c2c4b5e2">_NEW_PASS_DESC</a><span class="charliteral">','</span>Kein problem. Gib nur deinen Benutzernamen ein und drücke auf den \'Senden\' - Button.&lt;br /&gt;'
+<a name="l00088"></a>00088 .'Du erhдltst einen Bestдtigungs-Code per E-mail, komm bitte hierher zurück und gib erneut Benutzernamen und Code ein,'
+<a name="l00089"></a>00089 .' danach erhдltst du ein neues Passwort per E-mail.');
+<a name="l00090"></a><a class="code" href="lang__register_8php.html#f7318db3db103ddb0353990ba7b3795a">00090</a> define('<a class="code" href="lang__register_8php.html#f7318db3db103ddb0353990ba7b3795a">_PROMPT_UNAME</a><span class="charliteral">','</span>Benutzername:');
+<a name="l00091"></a><a class="code" href="lang__register_8php.html#4e8f058c2821720c1068f752c3649c74">00091</a> define('<a class="code" href="lang__register_8php.html#4e8f058c2821720c1068f752c3649c74">_PROMPT_EMAIL</a><span class="charliteral">','</span>E-Mail Adresse:');
+<a name="l00092"></a><a class="code" href="lang__register_8php.html#598e3e373bbbdf651a156c0f2fdc6e01">00092</a> define('<a class="code" href="lang__register_8php.html#598e3e373bbbdf651a156c0f2fdc6e01">_BUTTON_SEND_PASS</a><span class="charliteral">','</span>Passwort senden');
+<a name="l00093"></a><a class="code" href="lang__register_8php.html#01419c816e7e2dc0d1b00619d47278b8">00093</a> define('<a class="code" href="lang__register_8php.html#01419c816e7e2dc0d1b00619d47278b8">_REGISTER_TITLE</a><span class="charliteral">','</span>Anmeldung als Gast-Autor');
+<a name="l00094"></a><a class="code" href="lang__register_8php.html#776ac20ef061befca7ed5f398ae87f04">00094</a> define('<a class="code" href="lang__register_8php.html#776ac20ef061befca7ed5f398ae87f04">_REGISTER_NAME</a><span class="charliteral">','</span>Name:');
+<a name="l00095"></a><a class="code" href="lang__register_8php.html#e068cd56ac9543083c7422c6c947b94e">00095</a> define('<a class="code" href="lang__register_8php.html#e068cd56ac9543083c7422c6c947b94e">_REGISTER_UNAME</a><span class="charliteral">','</span>Benutzername:');
+<a name="l00096"></a><a class="code" href="lang__register_8php.html#8145a25181a350899d1faaf87afa3bec">00096</a> define('<a class="code" href="lang__register_8php.html#8145a25181a350899d1faaf87afa3bec">_REGISTER_EMAIL</a><span class="charliteral">','</span>E-Mail:');
+<a name="l00097"></a><a class="code" href="lang__register_8php.html#8135160219f5065362e8fe78b07a192c">00097</a> define('<a class="code" href="lang__register_8php.html#8135160219f5065362e8fe78b07a192c">_REGISTER_PASS</a><span class="charliteral">','</span>Passwort:');
+<a name="l00098"></a><a class="code" href="lang__register_8php.html#061f2c5dc99d0b3e60e9c5cd6ae6dbf6">00098</a> define('<a class="code" href="lang__register_8php.html#061f2c5dc99d0b3e60e9c5cd6ae6dbf6">_REGISTER_VPASS</a><span class="charliteral">','</span>Passwort wiederholen:');
+<a name="l00099"></a><a class="code" href="lang__register_8php.html#cfb700a7554430a7785cc69a72e481f0">00099</a> define('<a class="code" href="lang__register_8php.html#cfb700a7554430a7785cc69a72e481f0">_BUTTON_SEND_REG</a><span class="charliteral">','</span>Registration senden');
+<a name="l00100"></a><a class="code" href="lang__register_8php.html#7ca533ebb7595bb5a724f6fa24574357">00100</a> define('<a class="code" href="lang__register_8php.html#7ca533ebb7595bb5a724f6fa24574357">_SENDING_PASSWORD</a><span class="charliteral">','</span>Dein Passwort wird an die angegebene E-mail Adresse gesendet.&lt;br /&gt;Sobald du dein neues Passwort erhalten hast,'
+<a name="l00101"></a>00101 .' kannst du dich anmelden und danach das Passwort beliebig дndern.');
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="preprocessor">#TODO:Add PRODUCT_DISCLAIMER_TEXT</span>
+<a name="l00104"></a><a class="code" href="lang__register_8php.html#7aee96b8481bb58dbc3781ae2e949f02">00104</a> <span class="preprocessor"></span>define('<a class="code" href="lang__register_8php.html#7aee96b8481bb58dbc3781ae2e949f02">PRODUCT_DISCLAIMER_TEXT</a><span class="charliteral">','</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse tellus. Sed malesuada porta velit. Nulla hendrerit. Mauris posuere, pede eget aliquet aliquet, massa enim fringilla lorem, eu feugiat nisl leo in turpis. Duis adipiscing magna nec elit. In eros pede, euismod sit amet, porta <span class="keywordtype">id</span>, rhoncus vitae, justo. Donec fermentum blandit nunc. Ut urna ligula, egestas et, elementum et, tristique eget, purus. Proin vestibulum nisl. Nam scelerisque, magna in viverra malesuada, orci massa placerat eros, sit amet laoreet lectus velit non nisi. Nunc quis lectus sit amet magna congue nonummy. Quisque urna lectus, vehicula in, auctor a, pulvinar in, purus. Quisque congue lectus vel libero. Suspendisse convallis nisl eu eros.
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 Vestibulum ipsum magna, condimentum eget, lacinia sit amet, luctus eget, neque. Proin adipiscing. Proin pede eros, dictum nec, pretium eget, ornare non, orci. Cras pellentesque tellus. Praesent arcu leo, imperdiet vel, luctus nec, posuere quis, neque. Phasellus ac enim vitae dolor aliquet tempus. Praesent pulvinar augue sit amet elit. Aenean felis magna, viverra vel, imperdiet convallis, suscipit quis, elit. Nam vestibulum est et magna. Ut ligula eros, pellentesque tempor, tempor nec, accumsan vitae, ante. Morbi commodo. Praesent nibh erat, ultrices sed, laoreet non, iaculis et, quam. Cras pulvinar, diam eu consectetuer adipiscing, odio dui vestibulum nisi, nec blandit sapien lorem ut sapien. Maecenas mollis ligula at nunc. Duis hendrerit purus sit amet sem. Mauris eu nisl. Sed turpis dolor, fermentum in, molestie a, eleifend sed, turpis. Nam vitae neque. Duis mollis laoreet lectus.
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 Suspendisse potenti. Praesent eu odio. Maecenas quis justo sit amet ipsum tempus commodo. Vestibulum fringilla nonummy nibh. Mauris mollis massa in orci. Cras tempus ultricies purus. Etiam a massa. Nunc blandit neque ut arcu. Mauris placerat. Nunc ac lectus at quam egestas condimentum.
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110 Curabitur volutpat, lorem nec luctus tincidunt, metus dolor dapibus dui, sed pulvinar turpis velit ac urna. Aenean lacus arcu, condimentum eu, lacinia et, porttitor nec, sem. Quisque tortor eros, sollicitudin nec, euismod eu, eleifend sed, risus. Phasellus mi ipsum, venenatis eu, auctor a, aliquet non, neque. Aliquam sed mauris sed orci interdum pharetra. Phasellus dignissim odio sed dui. Proin consectetuer placerat arcu. Nulla magna velit, tempor quis, imperdiet et, tempor ornare, orci. Sed venenatis justo vel pede. In vel sem. Nullam congue enim sed odio. Nulla cursus, pede vel tincidunt eleifend, augue sapien molestie erat, in viverra sapien eros vel neque. Cras ligula nibh, luctus quis, tincidunt ac, tristique at, sem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sed quam. Phasellus imperdiet condimentum ligula. Morbi at odio.
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 Sed egestas, purus et mattis varius, tellus sem placerat eros, quis luctus justo nunc <span class="keywordtype">id</span> pede. In est neque, ullamcorper ac, cursus vitae, luctus eu, velit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed sodales metus vel enim. Morbi ac libero. Pellentesque imperdiet tellus nec lectus imperdiet consectetuer. Phasellus at metus sed turpis facilisis sagittis. Sed mollis lorem at purus. Proin sed nunc vitae diam vehicula cursus. Quisque augue turpis, vestibulum sed, vestibulum sed, aliquet a, felis. Cras velit eros, eleifend sit amet, vehicula eu, feugiat a, eros. Etiam a risus.
+<a name="l00113"></a>00113 
+<a name="l00114"></a>00114 Vestibulum turpis tortor, cursus sed, vehicula ut, elementum non, enim. Pellentesque vehicula libero euismod nulla blandit porta. Ut vel risus a justo lacinia porta. Sed condimentum lorem et ligula. Maecenas feugiat. Vestibulum in ante. Etiam mattis lobortis turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur elementum, dui vitae eleifend fringilla, metus sem consequat felis, eget fermentum augue orci in dolor. Aliquam erat volutpat. Mauris sed est. Morbi erat sapien, mollis <span class="keywordtype">id</span>, mollis sed, feugiat sed, libero. Suspendisse a est.
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116 Suspendisse elementum. Integer libero metus, imperdiet sit amet, tempus nec, malesuada ut, risus. Nulla facilisi. Integer ornare dictum magna. Praesent fermentum massa quis ipsum. Nullam eleifend elementum lorem. Cras enim tortor, nonummy in, facilisis pretium, ultrices et, ante. Proin tincidunt auctor diam. Nulla nulla massa, iaculis blandit, dictum et, vehicula bibendum, elit. Etiam neque leo, commodo eu, porttitor vel, sodales tempor, magna. Phasellus sed tellus. Mauris sit amet sapien. Phasellus sit amet felis ac nisl fermentum tempor.
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 Sed faucibus dictum tellus. Donec fringilla. Aliquam in ligula. Nulla ipsum velit, venenatis at, dignissim in, tincidunt in, nisi. Donec imperdiet hendrerit neque. Donec mollis risus vel pede. Vivamus mauris turpis, dictum blandit, adipiscing vel, aliquam <span class="keywordtype">id</span>, mi. Aenean nulla lorem, sollicitudin vitae, tempus eu, euismod non, erat. Sed feugiat condimentum leo. Donec risus augue, adipiscing nec, cursus et, feugiat ut, justo. Cras luctus lacus at purus. Duis egestas leo a dui. Integer interdum scelerisque mi. Quisque purus velit, mattis sed, semper a, lobortis ultrices, risus. Cras mi. Donec eget purus. Maecenas nibh libero, nonummy at, tincidunt in, pretium at, elit. Aliquam sapien dui, lobortis malesuada, ornare sit amet, congue in, magna.
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 Vivamus ac ligula vitae purus posuere imperdiet. Pellentesque pulvinar pharetra massa. Nulla facilisi. Curabitur <span class="keywordtype">id</span> odio ut elit varius luctus. Praesent dapibus placerat nisl. Cras non orci vel nisl tempus cursus. Proin tincidunt. Vivamus turpis. Pellentesque sollicitudin feugiat pede. Aliquam erat volutpat. Vivamus varius. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Sed pulvinar fringilla est. Ut urna libero, fringilla sagittis, tincidunt non, imperdiet ut, libero. Nulla felis. Mauris fringilla mattis erat. Nunc venenatis enim sit amet justo rutrum consequat. Phasellus eget urna vitae libero gravida faucibus. Suspendisse sed metus vitae nunc sodales vulputate.
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 Proin feugiat. Duis tristique nisi vitae pede. Vestibulum vulputate porta dui. Etiam ipsum. In gravida, ligula vitae lacinia mattis, sem est commodo est, ac dapibus nisi ipsum at nulla. In porta vulputate nunc. Duis iaculis. Etiam risus sapien, tempor in, suscipit at, viverra a, nibh. Quisque vestibulum, est sit amet auctor iaculis, est arcu malesuada tellus, sit amet consequat ipsum urna ac felis. Pellentesque massa massa, dictum ac, ultricies nec, rhoncus vitae, augue. Etiam ultricies felis vel eros.
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 Sed dapibus, nulla nec malesuada condimentum, mi felis tristique mi, a commodo mi ligula in neque. Quisque lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nunc hendrerit. Donec eget felis. Duis urna nisl, varius nec, semper nec, tempor sed, eros. Aenean odio libero, dapibus varius, consequat quis, suscipit vel, tellus. Aenean sed tellus. Curabitur <span class="keywordtype">id</span> turpis. Morbi et odio sed neque consequat cursus. Duis laoreet, tortor vitae lacinia posuere, metus metus facilisis nisi, eu lacinia justo pede ut quam.
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126 Phasellus pulvinar aliquet metus. Cras iaculis, ante vel facilisis volutpat, mi ante iaculis orci, et tristique massa mi vel velit. In blandit sollicitudin sem. Suspendisse sodales. Donec et sem. Donec egestas pede vel tortor. Integer aliquet dolor in ipsum. Pellentesque non velit. Etiam vehicula varius massa. Proin a mauris non felis fringilla dictum. Phasellus interdum lorem nec risus. Aenean <span class="keywordtype">id</span> risus. Cras eget mauris quis tellus lacinia dapibus. Phasellus et sem. Etiam elit. Nullam vulputate viverra orci. Fusce semper magna.
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128 Proin sodales. Mauris mi urna, bibendum ac, placerat dignissim, sollicitudin gravida, nibh. Aliquam vel purus nec sapien elementum ornare. Aenean lacinia risus. Mauris bibendum nunc ac sem. Nulla congue ornare diam. Aliquam tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla facilisi. Nulla eleifend sem in magna. Ut luctus, ipsum sit amet ultrices ultricies, lectus nibh nonummy nulla, ut volutpat quam turpis quis augue.
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 Praesent iaculis massa vestibulum lacus. Integer vel tortor a erat congue auctor. Pellentesque lorem felis, hendrerit in, dapibus eget, laoreet vel, nunc. Nam et nulla et massa tristique hendrerit. Integer hendrerit cursus mauris. Aliquam rhoncus turpis at dolor. Praesent sed magna ut ipsum scelerisque pellentesque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras erat est, euismod at, hendrerit nec, venenatis quis, nulla. In condimentum mauris vitae ipsum. Phasellus nulla quam, egestas vitae, sollicitudin sed, euismod eget, dui. Integer erat justo, rutrum quis, luctus ac, tincidunt a, nibh. Nullam accumsan, turpis ac viverra consequat, eros orci eleifend nisl, a pretium arcu dui eu sapien. Vivamus ante leo, vestibulum at, aliquet at, tempus at, pede. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla massa. Maecenas eget turpis. Quisque eget quam. Praesent non urna pellentesque pede dignissim viverra. Donec commodo pede.
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 Mauris mi. Vivamus scelerisque magna ut enim. Aenean justo metus, semper <span class="keywordtype">id</span>, porttitor quis, sodales eu, arcu. Etiam orci. Cras justo ante, imperdiet et, laoreet nec, congue sit amet, lectus. Sed in purus. Cras hendrerit eleifend arcu. Nam ullamcorper aliquam neque. Suspendisse sed pede. Integer at lacus ullamcorper leo lobortis mollis. Donec tincidunt mollis purus. Proin vitae diam eget lorem rutrum vestibulum. Ut luctus turpis quis neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer laoreet arcu laoreet turpis mattis egestas. Nulla facilisi. Morbi tempus bibendum dui.
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134 Vestibulum nec urna ut nunc lobortis dictum. Duis tortor nisi, tincidunt vel, mollis ut, bibendum in, ipsum. Phasellus vel metus. Phasellus vel quam. Donec tempus hendrerit lorem. Sed tellus. Vestibulum arcu. Integer tempus facilisis sapien. Duis faucibus. Sed erat dui, nonummy sed, pretium eu, porta ullamcorper, nibh. Aliquam hendrerit. Quisque ipsum augue, vulputate <span class="keywordtype">id</span>, iaculis quis, pellentesque sed, neque. Quisque semper. Maecenas ac lacus vitae nunc congue auctor. Sed <span class="keywordtype">id</span> sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136 Etiam tristique magna <span class="keywordtype">id</span> elit. Cras facilisis est in lectus. Nullam sagittis vulputate justo. Suspendisse cursus. Nam gravida. In congue odio eget purus semper vulputate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus rutrum interdum mauris. Ut et sem. Vestibulum cursus nisl ut leo.
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 Nulla facilisi. Etiam pharetra, neque a viverra condimentum, ante mi volutpat elit, vel sodales turpis est non erat. Praesent posuere. Vivamus eget arcu. Ut tincidunt pharetra odio. Maecenas vitae sem. Nullam sed urna a erat condimentum suscipit. Proin viverra sapien ut risus. Praesent ut nulla. Ut rutrum. Aliquam venenatis, lectus vel blandit lacinia, nisl massa porttitor magna, a laoreet nibh magna in massa.
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140 Vivamus cursus nibh et dolor. Etiam orci. Donec hendrerit arcu at eros. Integer facilisis, est nec eleifend imperdiet, nunc sem vulputate lacus, in dapibus turpis diam <span class="keywordtype">id</span> justo. In eget justo. Duis risus diam, iaculis eget, dapibus semper, ultrices vel, urna. Integer urna mauris, convallis vitae, tempus eu, scelerisque nec, leo. Duis pulvinar iaculis ipsum. Suspendisse porttitor risus non dui. Pellentesque venenatis ornare odio. Nulla sapien mi, dignissim in, bibendum vitae, posuere at, risus. Nam nibh. Nunc a justo. In <span class="keywordtype">id</span> metus. Vivamus pellentesque nibh sed tortor. Etiam arcu tellus, mattis at, gravida dictum, lobortis quis, felis. Suspendisse luctus, dui nec ornare aliquam, justo tortor convallis sem, tristique lacinia arcu nulla eu pede. Etiam arcu.
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142 Aliquam congue lorem eu nisi. Suspendisse sed sem. Maecenas at urna. Maecenas dictum est at elit. Nunc mi. Mauris convallis facilisis lacus. Vivamus ultricies tristique mi. Praesent vel velit ut urna venenatis rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam at ipsum posuere turpis ultricies fringilla.
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 Donec eu velit sit amet arcu ultricies pretium. Nam gravida tempus augue. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur tincidunt condimentum lectus. Ut rhoncus lobortis pede. Aliquam faucibus. Fusce at ligula eget elit scelerisque rhoncus. Nulla pretium molestie libero. Vestibulum bibendum, nisi et viverra pharetra, tortor mi hendrerit nisl, eu consectetuer tortor ligula et urna. Cras interdum ultricies metus. Etiam eget augue ut velit elementum porttitor. Integer molestie augue nec sem. Pellentesque consectetuer lacinia ligula. Quisque consectetuer, nisi sit amet faucibus condimentum, quam libero egestas mauris, a condimentum libero purus sit amet dui. Integer et diam. Phasellus iaculis ullamcorper magna. Maecenas placerat libero. Sed odio ipsum, interdum quis, faucibus ut, venenatis <span class="keywordtype">id</span>, tellus.
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146 Phasellus sed massa at libero sodales varius. Etiam elementum urna accumsan purus. Suspendisse at est. Sed feugiat. Nam placerat, arcu <span class="keywordtype">id</span> tempus fermentum, lectus mi congue dui, et suscipit nunc eros luctus justo. Vestibulum <span class="keywordtype">id</span> lacus a erat cursus ultrices. Donec sit amet nisi in nunc nonummy faucibus. Sed fringilla, eros non hendrerit sodales, nisl metus pellentesque dui, eu blandit mauris nulla eget justo. Nam ultrices, diam quis euismod vulputate, turpis orci ultricies dui, scelerisque consectetuer orci risus rhoncus turpis. Donec augue.
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 Aenean lorem justo, consectetuer ut, aliquam ut, pretium vulputate, mi. Integer lacus. In arcu turpis, interdum ac, laoreet ut, tincidunt ac, enim. Nunc <span class="keywordtype">id</span> arcu <span class="keywordtype">id</span> elit pellentesque accumsan. Aenean eu lorem. Praesent mollis faucibus mauris. Sed lectus. Quisque ullamcorper fermentum ligula. Nam aliquet viverra dolor. Duis eu purus in libero ultricies rhoncus. Donec at ipsum. Sed a augue. Ut porttitor orci in diam. Fusce pharetra lacus at justo. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 Cras vulputate pharetra diam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc sit amet risus at sem hendrerit vehicula. Ut molestie neque sit amet nunc. Sed congue, erat eu mollis auctor, lorem lorem vulputate neque, quis laoreet erat ipsum vitae odio. Suspendisse rutrum metus sit amet turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam sit amet ipsum quis sapien tincidunt viverra. Nulla euismod egestas lorem. Nam leo pede, tincidunt in, pharetra et, ullamcorper vel, diam.
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152 Maecenas sagittis eleifend ante. Aenean leo ligula, gravida vitae, hendrerit eu, consequat commodo, diam. Pellentesque ut lorem vitae elit euismod euismod. Ut felis orci, sagittis <span class="keywordtype">id</span>, pharetra non, euismod eu, leo. Donec porttitor odio <span class="keywordtype">id</span> purus. Proin vehicula felis ac felis. Quisque dolor. Proin felis. Nunc vulputate. Donec porttitor risus non mauris. Etiam adipiscing adipiscing neque. Vivamus in erat. Phasellus nec magna vel metus gravida ultrices. Integer vestibulum vulputate arcu. Donec vel ante. Pellentesque leo quam, hendrerit vulputate, condimentum a, fringilla ut, ligula. Aenean congue dictum eros.
+<a name="l00153"></a>00153 ');
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155 
+<a name="l00156"></a><a class="code" href="lang__register_8php.html#8ba2720c7f656aea57c6029769e771b9">00156</a> define('<a class="code" href="lang__register_8php.html#8ba2720c7f656aea57c6029769e771b9">ERROR_CAPTCHA_VALUE_IS_WRONG</a><span class="charliteral">','</span>Wortbestätigung ist fehlgeschlagen.');
+<a name="l00157"></a><a class="code" href="lang__register_8php.html#d46e963bd30776bc65f7f03ba7e380da">00157</a> define('<a class="code" href="lang__register_8php.html#d46e963bd30776bc65f7f03ba7e380da">ERROR_PASSWORD_IS_TOO_SHORT</a><span class="charliteral">','</span>Passwort ist zu kurz.');
+<a name="l00158"></a><a class="code" href="lang__register_8php.html#930890cfd87fb754ea2fa56d66d0d7b0">00158</a> define('<a class="code" href="lang__register_8php.html#930890cfd87fb754ea2fa56d66d0d7b0">ERROR_PASSWORD_PAIRS_ARE_NOT_EQUAL</a><span class="charliteral">','</span>Passworter sind nicht identisch.');
+<a name="l00159"></a><a class="code" href="lang__register_8php.html#fe20566b16d468d2bb4cdede9c3f4255">00159</a> define('<a class="code" href="lang__register_8php.html#fe20566b16d468d2bb4cdede9c3f4255">ERROR_USERID_IS_ALREADY_TAKEN</a><span class="charliteral">','</span>Dieses E-Mail wurde bereits registriert.');
+<a name="l00160"></a>00160 
+<a name="l00161"></a><a class="code" href="lang__register_8php.html#ba4b544bc9b48a8a1d9f83e54d492fce">00161</a> define('<a class="code" href="lang__register_8php.html#ba4b544bc9b48a8a1d9f83e54d492fce">ERROR_UNKNOWN_OPTIN_VALUE</a><span class="charliteral">','</span>Unbekannte Opt-In Token');
+<a name="l00162"></a><a class="code" href="lang__register_8php.html#6bac24cab02b039e6112b368e90f7226">00162</a> define('<a class="code" href="lang__register_8php.html#6bac24cab02b039e6112b368e90f7226">ERROR_REQUIRED_SETPARAMETER_EMAIL_IS_NULL</a><span class="charliteral">','</span>Geben Sie bitte eine E-Mail ein');
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

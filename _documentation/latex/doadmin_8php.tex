@@ -1,0 +1,205 @@
+\section{doadmin.php-Dateireferenz}
+\label{doadmin_8php}\index{doadmin.php@{doadmin.php}}
+\subsection*{Variablen}
+\begin{CompactItemize}
+\item 
+{\bf \$TPL\_\-STRINGS} ['FORMS\_\-ACTION\_\-URL'] = LIVE\_\-SITE\_\-URL.'/admin/'
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-MYSURVEYS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-MYSURVEYS\_\-RUNNING'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-RUNNING}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-MYSURVEYS\_\-FINISHED'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-FINISHED}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-BUTTON\_\-ADD\_\-SURVEY'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVEY}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS\_\-BY'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE\_\-HREF'] = ''
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION\_\-HREF'] = \char`\"{}javascript:\_\-d('sortSurvey', 'creation');\char`\"{}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-MYSURVEYS\_\-RUNNING\_\-URL'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-RUNNING\_\-URL}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-MYSURVEYS\_\-FINISHED\_\-URL'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-FINISHED\_\-URL}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS}
+\item 
+{\bf \$TPL\_\-STRINGS} ['CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS\_\-TITLE'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS\_\-TITLE}
+\item 
+{\bf \$TPL\_\-STRINGS} ['BOXES']['INFOBOX']
+\item 
+{\bf \$TPL\_\-STRINGS} ['BOXES']['INFOBOX2']
+\item 
+{\bf \$surveyObj} = new {\bf Survey}()
+\item 
+{\bf \$surveyOfficerObj} = new {\bf SurveyOfficer}()
+\item 
+{\bf \$emailsArr} = explode(\char`\"{}$\backslash$n\char`\"{},\$\_\-POST['emails'])
+\end{CompactItemize}
+
+
+\subsection{Variablen-Dokumentation}
+\index{doadmin.php@{doadmin.php}!\$emailsArr@{\$emailsArr}}
+\index{\$emailsArr@{\$emailsArr}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$emailsArr = explode(\char`\"{}$\backslash$n\char`\"{},\$\_\-POST['emails'])}\label{doadmin_8php_727c8cf0c0650ffad84166f72479a4e2}
+
+
+
+
+Definiert in Zeile 106 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$surveyObj@{\$surveyObj}}
+\index{\$surveyObj@{\$surveyObj}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$surveyObj = new {\bf Survey}()}\label{doadmin_8php_40c85ba447202b303514c8d27f90e101}
+
+
+
+
+Definiert in Zeile 74 der Datei doadmin.php.
+
+Wird benutzt von SurveyReportAbstract.\_\-loadDataById(), SurveyOfficer.addSurvivors(), createSurvey(), SurveyOfficer.createSurvey(), SurveyOfficer.deleteSurveyById(), loadSurveyData(), SurveyReport.SurveyReport(), SurveySession.SurveySession(), updateSurvey() und SurveyOfficer.updateSurvey().\index{doadmin.php@{doadmin.php}!\$surveyOfficerObj@{\$surveyOfficerObj}}
+\index{\$surveyOfficerObj@{\$surveyOfficerObj}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$surveyOfficerObj = new {\bf SurveyOfficer}()}\label{doadmin_8php_f02bcca2b2722955b3638c8e9d6f1914}
+
+
+
+
+Definiert in Zeile 75 der Datei doadmin.php.
+
+Wird benutzt von createSurvey(), deleteSurvey(), doSetValue(), loadSurveyConfigData(), loadSurveyData() und updateSurvey().\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['BOXES']['INFOBOX2']}\label{doadmin_8php_ab431c722d5f87f8e9a1119ce1634d16}
+
+
+\textbf{Initialisierung:}
+
+\begin{Code}\begin{verbatim} array('TITLE' => TPL_ADMIN_SIDEBOX_TITLE,
+'BODY' => TPL_ADMIN_SIDEBOX_BODY)
+\end{verbatim}
+\end{Code}
+
+
+Definiert in Zeile 38 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['BOXES']['INFOBOX']}\label{doadmin_8php_47a202961f8da5800fabe9734b097d1e}
+
+
+\textbf{Initialisierung:}
+
+\begin{Code}\begin{verbatim} array('TITLE' => TPL_ADMIN_SIDEBOX_TITLE,
+'BODY' => TPL_ADMIN_SIDEBOX_BODY)
+\end{verbatim}
+\end{Code}
+
+
+Definiert in Zeile 36 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS\_\-TITLE'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS\_\-TITLE}}\label{doadmin_8php_665f7e1830592fd2a51af6f61d386db2}
+
+
+
+
+Definiert in Zeile 34 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVIVORS}}\label{doadmin_8php_d6119d6d7a684161a04ad236c3f2c9b4}
+
+
+
+
+Definiert in Zeile 33 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-MYSURVEYS\_\-FINISHED\_\-URL'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-FINISHED\_\-URL}}\label{doadmin_8php_8a584c62935c7d9770244598b07c2147}
+
+
+
+
+Definiert in Zeile 30 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-MYSURVEYS\_\-RUNNING\_\-URL'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-RUNNING\_\-URL}}\label{doadmin_8php_41b657c6e3910d90783d12e2fc1568eb}
+
+
+
+
+Definiert in Zeile 29 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION\_\-HREF'] = \char`\"{}javascript:\_\-d('sortSurvey', 'creation');\char`\"{}}\label{doadmin_8php_bd2d01a122f74aecc4c96df2874be9cf}
+
+
+
+
+Definiert in Zeile 25 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE\_\-HREF'] = ''}\label{doadmin_8php_3f2c702d2b477122377566d7af8bab35}
+
+
+
+
+Definiert in Zeile 24 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-CREATION}}\label{doadmin_8php_67aeca80b1e96280795838ebd61aa624}
+
+
+
+
+Definiert in Zeile 21 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY\_\-DATE}}\label{doadmin_8php_f7bf88f493ee13a399ae2c43b2214eb6}
+
+
+
+
+Definiert in Zeile 20 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS\_\-BY'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS\_\-BY}}\label{doadmin_8php_94a5cf2d5e00990da2d11013ebd90ac7}
+
+
+
+
+Definiert in Zeile 19 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-SORT\_\-SURVEYS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-SORT\_\-SURVEYS}}\label{doadmin_8php_b9a26ddab29e852efac383d6eae07bd0}
+
+
+
+
+Definiert in Zeile 18 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-BUTTON\_\-ADD\_\-SURVEY'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-BUTTON\_\-ADD\_\-SURVEY}}\label{doadmin_8php_db8f21fccc808fd76b8500c931aa805d}
+
+
+
+
+Definiert in Zeile 16 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-MYSURVEYS\_\-FINISHED'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-FINISHED}}\label{doadmin_8php_10cc234b1c962b8a41c8e127da00cb15}
+
+
+
+
+Definiert in Zeile 13 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-MYSURVEYS\_\-RUNNING'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS\_\-RUNNING}}\label{doadmin_8php_f64e94061e69c2ed3b03ec93f7e517c9}
+
+
+
+
+Definiert in Zeile 12 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['CAPTION\_\-MYSURVEYS'] = {\bf TPL\_\-ADMIN\_\-CAPTION\_\-MYSURVEYS}}\label{doadmin_8php_0afbd0b277e574e9939eea9a136ef999}
+
+
+
+
+Definiert in Zeile 11 der Datei doadmin.php.\index{doadmin.php@{doadmin.php}!\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}}
+\index{\$TPL\_\-STRINGS@{\$TPL\_\-STRINGS}!doadmin.php@{doadmin.php}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\$TPL\_\-STRINGS['FORMS\_\-ACTION\_\-URL'] = LIVE\_\-SITE\_\-URL.'/admin/'}\label{doadmin_8php_823c4b552b4a5b8af4c5197799581922}
+
+
+
+
+Definiert in Zeile 10 der Datei doadmin.php.

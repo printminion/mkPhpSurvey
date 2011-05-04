@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: configuration.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>configuration.php</h1><a href="configuration_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00007"></a>00007 <span class="comment">/*</span>
+<a name="l00008"></a>00008 <span class="comment">chmod 777 templates_c/</span>
+<a name="l00009"></a>00009 <span class="comment">chmod 777 _tmp/</span>
+<a name="l00010"></a>00010 <span class="comment">chmod 777 cache_s/</span>
+<a name="l00011"></a>00011 <span class="comment">*/</span>
+<a name="l00012"></a>00012 <span class="keywordflow">if</span> (file_exists(getcwd().<span class="stringliteral">"/configuration.local.php"</span>)){
+<a name="l00013"></a>00013    include_once(getcwd().<span class="stringliteral">"/configuration.local.php"</span>);
+<a name="l00014"></a>00014 }
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="configuration_8php.html#413df8c87e7cdc18782b5af277b8e6d7">00018</a> define('<a class="code" href="configuration_8local_8php.html#413df8c87e7cdc18782b5af277b8e6d7">IS_ONLINE</a>',<span class="keyword">true</span>); <span class="comment">//switch between local and online mode</span>
+<a name="l00019"></a><a class="code" href="configuration_8php.html#9433a5c8536dd480aebc89ed121309b1">00019</a> define('<a class="code" href="configuration_8php.html#9433a5c8536dd480aebc89ed121309b1">SITE_LANG</a><span class="charliteral">','</span>dei');
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 include_once(<span class="stringliteral">"configuration.db.php"</span>);
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 setlocale (LC_TIME, <span class="stringliteral">"de_DE"</span>); <span class="comment">// Country locale</span>
+<a name="l00024"></a><a class="code" href="configuration_8php.html#04cd7d0c96284e40f226651cf74a2aa8">00024</a> define('<a class="code" href="configuration_8php.html#04cd7d0c96284e40f226651cf74a2aa8">LANG</a><span class="charliteral">','</span>dei');<span class="comment">// Site language</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">00026</a> define('<a class="code" href="configuration_8php.html#64cad9b708561d4349ad08fd87076522">SITE_CSS</a><span class="charliteral">','</span>admin.css');
+<a name="l00027"></a><a class="code" href="configuration_8php.html#8b766ef2aaf42a843e82bb83c791657e">00027</a> define('<a class="code" href="configuration_8php.html#8b766ef2aaf42a843e82bb83c791657e">LIVE_SITE_ADMIN_EMAIL</a><span class="charliteral">','</span>cr@russenreaktor.de');
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="preprocessor">##############################</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor"># set values for class UserOfficer</span>
+<a name="l00031"></a><a class="code" href="configuration_8php.html#62fb3b6898d0ee82d246a4c747cbf5d3">00031</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#62fb3b6898d0ee82d246a4c747cbf5d3">MAILER_RETURN_PATH</a><span class="charliteral">','</span>noreply@russenreaktor.de');
+<a name="l00032"></a>00032 <span class="preprocessor">#</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">##############################</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a><a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">00035</a> define('<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a><span class="charliteral">','</span>mkSurvey');
+<a name="l00036"></a><a class="code" href="configuration_8php.html#46ee3f16c08a86640bc6dabb00b60682">00036</a> define('<a class="code" href="configuration_8php.html#46ee3f16c08a86640bc6dabb00b60682">APP_VERSION</a>', '0.4');
+<a name="l00037"></a><a class="code" href="configuration_8php.html#270c48dec4d79f07aa7310fae0e58fa6">00037</a> define('<a class="code" href="configuration_8php.html#270c48dec4d79f07aa7310fae0e58fa6">APP_DESIGN_VERSION</a>', '0.1');
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="keywordflow">if</span> (<a class="code" href="configuration_8local_8php.html#413df8c87e7cdc18782b5af277b8e6d7">IS_ONLINE</a>){
+<a name="l00040"></a>00040    session_save_path('/tmp');
+<a name="l00041"></a>00041    <span class="comment">//cookie stuff</span>
+<a name="l00042"></a><a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">00042</a>    define('<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a><span class="charliteral">','</span>http:<span class="comment">//www.hs-esslingen.de/~mimait04/semar'); // No trailing slash</span>
+<a name="l00043"></a><a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">00043</a>    define('<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>',<span class="stringliteral">"http://www.hs-esslingen.de/~mimait04/semar"</span>); <span class="comment">// No trailing slash</span>
+<a name="l00044"></a><a class="code" href="configuration_8php.html#587b9e8997be4abfcce134c5dd2f5f38">00044</a>    define('<a class="code" href="configuration_8php.html#587b9e8997be4abfcce134c5dd2f5f38">DIR_WS_ICONS</a>', <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.<span class="stringliteral">"/images/icons/"</span>);
+<a name="l00045"></a><a class="code" href="configuration_8php.html#c896e1ead5ce5105c11c03e042b1f7b7">00045</a>    define('<a class="code" href="configuration_8php.html#c896e1ead5ce5105c11c03e042b1f7b7">LIVE_SITE_COOKIE_PATH</a><span class="charliteral">','</span>/');
+<a name="l00046"></a><a class="code" href="configuration_8php.html#6e951281bd2be3c999ccec30feffa6cb">00046</a>    define('<a class="code" href="configuration_8php.html#6e951281bd2be3c999ccec30feffa6cb">LIVE_SITE_COOKIE</a><span class="charliteral">','</span>.hs-esslingen.de');
+<a name="l00047"></a><a class="code" href="configuration_8php.html#b0b01f11fae69a03073e1f63b4929815">00047</a>    define('<a class="code" href="configuration_8php.html#b0b01f11fae69a03073e1f63b4929815">SITE_SESSION_NAME</a><span class="charliteral">','</span>mkurvey');
+<a name="l00048"></a><a class="code" href="configuration_8php.html#a7afbd5f1a5bc71adc727190c98eb3e2">00048</a>    define('<a class="code" href="configuration_8php.html#a7afbd5f1a5bc71adc727190c98eb3e2">UPLOADDIR</a>',<span class="stringliteral">"/tmp/"</span>); <span class="comment">// No trailing slash</span>
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 }<span class="keywordflow">else</span>{
+<a name="l00051"></a>00051    define('<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a><span class="charliteral">','</span>http:<span class="comment">//dev2.RussenReaktor.de/semar/www'); // No trailing slash</span>
+<a name="l00052"></a>00052    define('<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a><span class="charliteral">','</span>http:<span class="comment">//dev2.RussenReaktor.de/semar/www'); // No trailing slash</span>
+<a name="l00053"></a>00053    define('<a class="code" href="configuration_8php.html#587b9e8997be4abfcce134c5dd2f5f38">DIR_WS_ICONS</a>', <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.<span class="stringliteral">"/images/icons/"</span>);
+<a name="l00054"></a>00054    <span class="comment">//cookie stuff</span>
+<a name="l00055"></a>00055    define('<a class="code" href="configuration_8php.html#c896e1ead5ce5105c11c03e042b1f7b7">LIVE_SITE_COOKIE_PATH</a><span class="charliteral">','</span>/');
+<a name="l00056"></a>00056    define('<a class="code" href="configuration_8php.html#6e951281bd2be3c999ccec30feffa6cb">LIVE_SITE_COOKIE</a><span class="charliteral">','</span>dev2.russenreaktor.de');
+<a name="l00057"></a>00057    define('<a class="code" href="configuration_8php.html#b0b01f11fae69a03073e1f63b4929815">SITE_SESSION_NAME</a><span class="charliteral">','</span>mkurvey');
+<a name="l00058"></a>00058    define('<a class="code" href="configuration_8php.html#a7afbd5f1a5bc71adc727190c98eb3e2">UPLOADDIR</a>',ABSOLUTE_PATH.'/_uploads'); <span class="comment">// No trailing slash      </span>
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="comment">//   ini_set("browscap","/srv/www/vhosts/russenreaktor.de/conf/php_browscap.ini");</span>
+<a name="l00063"></a>00063 <span class="comment">//define('ABSOLUTE_PATH',getcwd()); // No trailing slash</span>
+<a name="l00064"></a>00064 define('ABSOLUTE_PATH',dirname(__FILE__)); <span class="comment">// No trailing slash</span>
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#captcha ttf folder</span>
+<a name="l00067"></a><a class="code" href="configuration_8php.html#004567de9b16f45ab7d912b39a32ded0">00067</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#004567de9b16f45ab7d912b39a32ded0">TTF_PATH</a>',ABSOLUTE_PATH.'/includes/ttfs/');<span class="comment">//with trailing slash</span>
+<a name="l00068"></a>00068 <span class="preprocessor">#captcha temp folder</span>
+<a name="l00069"></a><a class="code" href="configuration_8php.html#52adde529d05fcc07619971e6a1f0e42">00069</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#52adde529d05fcc07619971e6a1f0e42">TEMP_PATH</a>',ABSOLUTE_PATH.<span class="stringliteral">"/_tmp/"</span>);<span class="comment">//with trailing slash</span>
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">00071</a> define('<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>',ABSOLUTE_PATH.<span class="stringliteral">"/includes/classes"</span>);<span class="comment">// No trailing slash</span>
+<a name="l00072"></a><a class="code" href="configuration_8php.html#a7b731b7dd6b7d04dcfd3e86b73774a8">00072</a> define('<a class="code" href="configuration_8php.html#a7b731b7dd6b7d04dcfd3e86b73774a8">COM_PATH</a>',ABSOLUTE_PATH.<span class="stringliteral">"/com/"</span>);
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">00074</a> define('<a class="code" href="configuration_8php.html#43e42b719f6df6d138e0516fbc4a8779">PATH_TEMPLATES</a>',ABSOLUTE_PATH.<span class="stringliteral">"/templates"</span>);<span class="comment">// No trailing slash</span>
+<a name="l00075"></a><a class="code" href="configuration_8php.html#6f87310e15d2f8ef03a33ae9f29f5cde">00075</a> define('<a class="code" href="configuration_8php.html#6f87310e15d2f8ef03a33ae9f29f5cde">PATH_SURVEYS</a>',ABSOLUTE_PATH.<span class="stringliteral">"/surveys/"</span>);
+<a name="l00076"></a><a class="code" href="configuration_8php.html#a354c4c2689d1d4fa7fd1f4e940a6b2a">00076</a> define('<a class="code" href="configuration_8php.html#a354c4c2689d1d4fa7fd1f4e940a6b2a">COMPONENTS_PATH</a>',ABSOLUTE_PATH.'/includes/components');<span class="comment">// No trailing slash</span>
+<a name="l00077"></a>00077 
+<a name="l00078"></a><a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">00078</a> define('<a class="code" href="configuration_8php.html#285bf1ce0b8d02fcd7a9f6e2baa8eb77">LANGUAGE_PATH</a>',ABSOLUTE_PATH.'/includes/language/'.SITE_LANG);<span class="comment">// No trailing slash</span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="preprocessor">##################################</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span><span class="preprocessor"># Jpgraph</span>
+<a name="l00082"></a><a class="code" href="configuration_8php.html#4904dd87af8bd1069cf49e71863de2c3">00082</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#4904dd87af8bd1069cf49e71863de2c3">TTF_DIR</a>',ABSOLUTE_PATH.'/includes/ttfs/');#jpgraph ttf folder with trailing slash
+<a name="l00083"></a><a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">00083</a> define('<a class="code" href="configuration_8php.html#de97132687b3e969680882815d4ecbd2">JPGRAPH_CLASS_PATH</a>',<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/jpgraph/');
+<a name="l00084"></a>00084 <span class="preprocessor">#</span>
+<a name="l00085"></a>00085 <span class="preprocessor"></span><span class="preprocessor">##################################</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="preprocessor">#########################################</span>
+<a name="l00089"></a>00089 <span class="preprocessor"></span><span class="preprocessor"># Captcha</span>
+<a name="l00090"></a><a class="code" href="configuration_8php.html#9dacb7bfa19ffb8d10cb13d58d1e361b">00090</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#9dacb7bfa19ffb8d10cb13d58d1e361b">CAPTCHA_PREFIX</a><span class="charliteral">','</span>captcha_');
+<a name="l00091"></a><a class="code" href="configuration_8php.html#2aac2eb657c48fb5176a0006434aae1c">00091</a> define('<a class="code" href="configuration_8php.html#2aac2eb657c48fb5176a0006434aae1c">CAPTCHA_SECRETSTRING</a>',<a class="code" href="configuration_8php.html#502ef00d48b9bc3d081e08d013b48449">PRODUCT_NAME</a>);
+<a name="l00092"></a>00092 <span class="preprocessor">#</span>
+<a name="l00093"></a>00093 <span class="preprocessor"></span><span class="preprocessor">#########################################</span>
+<a name="l00094"></a>00094 <span class="preprocessor"></span>
+<a name="l00095"></a><a class="code" href="configuration_8php.html#5cb766ec820e7415400f0989712cfbbd">00095</a> define('<a class="code" href="configuration_8php.html#5cb766ec820e7415400f0989712cfbbd">BASE_URL_DESIGN</a>', <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/s/v/'.APP_DESIGN_VERSION.'');
+<a name="l00096"></a><a class="code" href="configuration_8php.html#e577ce1ae24f37ea3bbd837851824f04">00096</a> define('<a class="code" href="configuration_8php.html#e577ce1ae24f37ea3bbd837851824f04">PATH_DESIGN_IMG</a>', <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/s/v/'.APP_DESIGN_VERSION.'');
+<a name="l00097"></a><a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">00097</a> define('<a class="code" href="configuration_8php.html#9f2536eca177256e1ef831672e98c1ed">PATH_DESIGN_STYLES</a>', <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/s/v/'.APP_DESIGN_VERSION.'/styles'); <span class="comment">// No trailing slash</span>
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="preprocessor">##########################################</span>
+<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor"># Smarty Configuration</span>
+<a name="l00101"></a><a class="code" href="configuration_8php.html#21808f61475959c094da07530c9705ae">00101</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#21808f61475959c094da07530c9705ae">SMARTY_CACHING</a>',<span class="keyword">false</span>);
+<a name="l00102"></a><a class="code" href="configuration_8php.html#35418e61460bc8a118e99e60a9a07527">00102</a> define('<a class="code" href="configuration_8php.html#35418e61460bc8a118e99e60a9a07527">SMARTY_CACHE_DIR</a>',ABSOLUTE_PATH.'/cache_c');
+<a name="l00103"></a><a class="code" href="configuration_8php.html#9ad6fcd96b03a7fc2ee1dbb66c49782c">00103</a> define('<a class="code" href="configuration_8php.html#9ad6fcd96b03a7fc2ee1dbb66c49782c">SMARTY_PLUGINS_DIR</a>',ABSOLUTE_PATH.'/includes/smarty_plugins');
+<a name="l00104"></a>00104 <span class="preprocessor">#</span>
+<a name="l00105"></a>00105 <span class="preprocessor"></span><span class="preprocessor">##########################################</span>
+<a name="l00106"></a>00106 <span class="preprocessor"></span>
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 <span class="preprocessor">##########################################</span>
+<a name="l00109"></a>00109 <span class="preprocessor"></span><span class="preprocessor"># debug stuff</span>
+<a name="l00110"></a><a class="code" href="configuration_8php.html#886b95b1f12aacfdbc45a98920cde809">00110</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8local_8php.html#886b95b1f12aacfdbc45a98920cde809">SMARTY_DEBUG</a>',<span class="keyword">false</span>);
+<a name="l00111"></a><a class="code" href="configuration_8php.html#68a9460d3629210f2a71df53e7e03242">00111</a> define('<a class="code" href="configuration_8php.html#68a9460d3629210f2a71df53e7e03242">DIR_DEBUG_PATH</a>',<a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.<span class="stringliteral">"/"</span>);
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="keywordflow">if</span>(<a class="code" href="configuration_8local_8php.html#886b95b1f12aacfdbc45a98920cde809">SMARTY_DEBUG</a>){
+<a name="l00114"></a>00114 <span class="preprocessor">   #if already set dont override</span>
+<a name="l00115"></a>00115 <span class="preprocessor"></span>   <span class="comment">//   echo "mk_debug_on:".$mk_debug_on;</span>
+<a name="l00116"></a>00116    <span class="keywordflow">if</span> (!<a class="code" href="mk__debug_8php.html#33427d7a74ca022f8e6613d22936fb2d">$mk_debug_on</a>){
+<a name="l00117"></a>00117       <a class="code" href="mk__debug_8php.html#33427d7a74ca022f8e6613d22936fb2d">$mk_debug_on</a> = <span class="keyword">true</span>; <span class="comment">//enable to see debug output</span>
+<a name="l00118"></a>00118    }
+<a name="l00119"></a>00119    include_once(ABSOLUTE_PATH.<span class="stringliteral">"/mk_tools/includes/mk_debug.php"</span>);
+<a name="l00120"></a>00120 }<span class="keywordflow">else</span>{
+<a name="l00121"></a>00121    <a class="code" href="mk__debug_8php.html#33427d7a74ca022f8e6613d22936fb2d">$mk_debug_on</a> = <span class="keyword">false</span>; <span class="comment">//enable to see debug output</span>
+<a name="l00122"></a>00122    include_once(ABSOLUTE_PATH.<span class="stringliteral">"/mk_tools/includes/mk_debug.php"</span>);
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 <span class="keywordflow">if</span> ($_SERVER['REMOTE_ADDR'] == <span class="stringliteral">"127.0.0.1"</span> ||
+<a name="l00128"></a>00128 $_SERVER['REMOTE_ADDR'] == <span class="stringliteral">"62.96.72.66"</span> ||
+<a name="l00129"></a>00129 $_SERVER['REMOTE_ADDR'] == <span class="stringliteral">"134.108.34.9"</span>){
+<a name="l00130"></a>00130    <a class="code" href="mk__debug_8php.html#33427d7a74ca022f8e6613d22936fb2d">$mk_debug_on</a> = <span class="keyword">true</span>; <span class="comment">//enable to see debug output</span>
+<a name="l00131"></a>00131 }
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="preprocessor">#</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span><span class="preprocessor">##########################################</span>
+<a name="l00135"></a>00135 <span class="preprocessor"></span>
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 <span class="preprocessor">##########################################</span>
+<a name="l00138"></a>00138 <span class="preprocessor"></span><span class="preprocessor">#xajaxs configuration</span>
+<a name="l00139"></a>00139 <span class="preprocessor"></span>define('_SURA_DEFAULT_ENCODING',<span class="stringliteral">"UTF-8"</span>);
+<a name="l00140"></a>00140 <span class="preprocessor">#</span>
+<a name="l00141"></a>00141 <span class="preprocessor"></span><span class="preprocessor">##########################################</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span><span class="preprocessor">##########################################</span>
+<a name="l00143"></a>00143 <span class="preprocessor"></span><span class="preprocessor">#xajaxs configuration</span>
+<a name="l00144"></a><a class="code" href="configuration_8php.html#408a155a037ef97ed25c46bb2c69530c">00144</a> <span class="preprocessor"></span>define('<a class="code" href="configuration_8php.html#408a155a037ef97ed25c46bb2c69530c">FILE_JQUERY</a><span class="charliteral">','</span>jquery-1.2.1.pack.js');
+<a name="l00145"></a>00145 <span class="preprocessor">#</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span><span class="preprocessor">##########################################</span>
+<a name="l00147"></a>00147 <span class="preprocessor"></span>
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152 <span class="comment">//*************************************************************************</span>
+<a name="l00153"></a>00153 <span class="comment">//*              Do not change ANYTHING below this line !!!               *</span>
+<a name="l00154"></a>00154 <span class="comment">//*************************************************************************</span>
+<a name="l00155"></a><a class="code" href="configuration_8php.html#d9901a74f7172e024a04c4f7a311c30e">00155</a> define('<a class="code" href="configuration_8php.html#d9901a74f7172e024a04c4f7a311c30e">DOCTYPE_TRANSITIONAL</a><span class="charliteral">','</span>EN');
+<a name="l00156"></a><a class="code" href="configuration_8php.html#246e659b5325a18c43d664ccd927d5a0">00156</a> define('<a class="code" href="configuration_8php.html#246e659b5325a18c43d664ccd927d5a0">CFG_META_CONTENT_TYPE</a>', <span class="stringliteral">"text/html; charset=UTF-8"</span>);
+<a name="l00157"></a><a class="code" href="configuration_8php.html#77a7cadf6afed536172686080a152606">00157</a> define('<a class="code" href="configuration_8php.html#77a7cadf6afed536172686080a152606">CFG_META_AUTHOR</a>', <span class="stringliteral">"m@kupriyanov.com - mkSuvey"</span>);
+<a name="l00158"></a><a class="code" href="configuration_8php.html#729444491f27cbf2ae95b18f560c3640">00158</a> define('<a class="code" href="configuration_8php.html#729444491f27cbf2ae95b18f560c3640">CFG_META_KEYWORDS</a>', <span class="stringliteral">"iso, survey, test, usability"</span>);
+<a name="l00159"></a><a class="code" href="configuration_8php.html#09e48e18665571df654d2e612937f9db">00159</a> define('<a class="code" href="configuration_8php.html#09e48e18665571df654d2e612937f9db">CFG_META_DESCRIPTION</a>', <span class="stringliteral">"ISO Tests"</span>);
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161 <span class="comment">//*************************************************************************</span>
+<a name="l00162"></a>00162 <span class="comment">//*              Do not change ANYTHING below this line !!!               *</span>
+<a name="l00163"></a>00163 <span class="comment">//*************************************************************************</span>
+<a name="l00164"></a><a class="code" href="configuration_8php.html#f14c7527fa384cf9ee6c0040661a7b5b">00164</a> <a class="code" href="configuration_8php.html#f14c7527fa384cf9ee6c0040661a7b5b">$local_backup_path</a>   = ABSOLUTE_PATH.'/administrator/backups';
+<a name="l00165"></a><a class="code" href="configuration_8php.html#c812f3395df1d9da3aecc5646ece11c7">00165</a> <a class="code" href="configuration_8php.html#c812f3395df1d9da3aecc5646ece11c7">$pdf_path</a>            = ABSOLUTE_PATH.'/pdf/';
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167 include_once(ABSOLUTE_PATH.<span class="stringliteral">"/version.php"</span>);
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

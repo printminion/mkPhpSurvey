@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>mkSurvey: doadmin.php Quellcode</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="main.html"><span>Hauptseite</span></a></li>
+    <li><a href="namespaces.html"><span>Pakete</span></a></li>
+    <li><a href="annotated.html"><span>Klassen</span></a></li>
+    <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    <li>
+      <form action="search.php" method="get">
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><label>&nbsp;<u>S</u>uchen&nbsp;nach&nbsp;</label></td>
+            <td><input type="text" name="query" value="" size="20" accesskey="s"/></td>
+          </tr>
+        </table>
+      </form>
+    </li>
+  </ul>
+</div>
+<h1>doadmin.php</h1><a href="doadmin_8php.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00004"></a>00004    include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00005"></a>00005 }
+<a name="l00006"></a>00006 <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurvey.html">Survey</a>')){
+<a name="l00007"></a>00007    include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.Survey.php');
+<a name="l00008"></a>00008 }
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">00010</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['FORMS_ACTION_URL']           = <a class="code" href="configuration_8php.html#9015c7fb51ce2cbe0d66bd32647aac9d">LIVE_SITE_URL</a>.'/admin/';
+<a name="l00011"></a><a class="code" href="doadmin_8php.html#0afbd0b277e574e9939eea9a136ef999">00011</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS']          = <a class="code" href="lang__admin_8php.html#f28d7de4256e6e157d802821b8cb3d7c">TPL_ADMIN_CAPTION_MYSURVEYS</a>;
+<a name="l00012"></a><a class="code" href="doadmin_8php.html#f64e94061e69c2ed3b03ec93f7e517c9">00012</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_RUNNING']  = <a class="code" href="lang__admin_8php.html#d05ece1833addcd9d4f17005fbcbbf1a">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING</a>;
+<a name="l00013"></a><a class="code" href="doadmin_8php.html#10cc234b1c962b8a41c8e127da00cb15">00013</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_FINISHED'] = <a class="code" href="lang__admin_8php.html#412b67d7356a75ad2e0ed5a92a3c9129">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED</a>;
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="doadmin_8php.html#db8f21fccc808fd76b8500c931aa805d">00016</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVEY'] = <a class="code" href="lang__admin_8php.html#f2fb1d5ed1e8b4ddbcc6137a067c9a66">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVEY</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="doadmin_8php.html#b9a26ddab29e852efac383d6eae07bd0">00018</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS']             = <a class="code" href="lang__admin_8php.html#9476a0f15d0b23aa3107c221c8066145">TPL_ADMIN_CAPTION_SORT_SURVEYS</a>;
+<a name="l00019"></a><a class="code" href="doadmin_8php.html#94a5cf2d5e00990da2d11013ebd90ac7">00019</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY']          = <a class="code" href="lang__admin_8php.html#61a183c3696b82082b9f870a68b65284">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY</a>;
+<a name="l00020"></a><a class="code" href="doadmin_8php.html#f7bf88f493ee13a399ae2c43b2214eb6">00020</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_DATE']     = <a class="code" href="lang__admin_8php.html#efd9e23258342def4000ce9c184c57bb">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_DATE</a>;
+<a name="l00021"></a><a class="code" href="doadmin_8php.html#67aeca80b1e96280795838ebd61aa624">00021</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_CREATION'] = <a class="code" href="lang__admin_8php.html#de3548e5cf790cdc771e5ae09b1e08bd">TPL_ADMIN_CAPTION_SORT_SURVEYS_BY_CREATION</a>;
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="doadmin_8php.html#3f2c702d2b477122377566d7af8bab35">00024</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_DATE_HREF']     = '';
+<a name="l00025"></a><a class="code" href="doadmin_8php.html#bd2d01a122f74aecc4c96df2874be9cf">00025</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_SORT_SURVEYS_BY_CREATION_HREF'] = <span class="stringliteral">"javascript:_d('sortSurvey', 'creation');"</span>;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="doadmin_8php.html#41b657c6e3910d90783d12e2fc1568eb">00029</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_RUNNING_URL']  = <a class="code" href="lang__admin_8php.html#f6e235ccceb91621899d9b8fc6a3a9d8">TPL_ADMIN_CAPTION_MYSURVEYS_RUNNING_URL</a>;
+<a name="l00030"></a><a class="code" href="doadmin_8php.html#8a584c62935c7d9770244598b07c2147">00030</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_MYSURVEYS_FINISHED_URL'] = <a class="code" href="lang__admin_8php.html#750e55787e0eb1824d6eff18ca660e81">TPL_ADMIN_CAPTION_MYSURVEYS_FINISHED_URL</a>;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="doadmin_8php.html#d6119d6d7a684161a04ad236c3f2c9b4">00033</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVIVORS']       = <a class="code" href="lang__admin_8php.html#38f50b161fbf0325019f72c4fbb79f4f">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS</a>;
+<a name="l00034"></a><a class="code" href="doadmin_8php.html#665f7e1830592fd2a51af6f61d386db2">00034</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['CAPTION_BUTTON_ADD_SURVIVORS_TITLE'] = <a class="code" href="lang__admin_8php.html#b67fbae4c52ccc75cd0ca578f1e1e1c9">TPL_ADMIN_CAPTION_BUTTON_ADD_SURVIVORS_TITLE</a>;
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="doadmin_8php.html#47a202961f8da5800fabe9734b097d1e">00036</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['BOXES']['INFOBOX'] = array('TITLE' =&gt; <a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">TPL_ADMIN_SIDEBOX_TITLE</a>,
+<a name="l00037"></a>00037 'BODY' =&gt; <a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">TPL_ADMIN_SIDEBOX_BODY</a>);
+<a name="l00038"></a><a class="code" href="doadmin_8php.html#ab431c722d5f87f8e9a1119ce1634d16">00038</a> <a class="code" href="doadmin_8php.html#823c4b552b4a5b8af4c5197799581922">$TPL_STRINGS</a>['BOXES']['INFOBOX2'] = array('TITLE' =&gt; <a class="code" href="lang__admin_8php.html#a5e42d31caae8134a8d928538ee12080">TPL_ADMIN_SIDEBOX_TITLE</a>,
+<a name="l00039"></a>00039 'BODY' =&gt; <a class="code" href="lang__admin_8php.html#2ca51013c12b9f9c741b1978fccd3adb">TPL_ADMIN_SIDEBOX_BODY</a>);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['finished'])){
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['running'])){
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 }
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="keywordflow">if</span>(!isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['running'])&amp;&amp;!isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['finished'])){
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">##################################################################################################</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span><span class="preprocessor">#</span>
+<a name="l00055"></a>00055 <span class="preprocessor"></span>
+<a name="l00058"></a>00058 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['<a class="code" href="sura_8server_8php.html#aba9888ec58e7a3c49601df5eda36160">createSurvey</a>'])){
+<a name="l00059"></a>00059    <span class="comment">//TODO Check values ad query</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061    <span class="comment">//   debug_obj($oLogger,'$oLogger');</span>
+<a name="l00062"></a>00062    <span class="keywordflow">if</span>(!$oLogger-&gt;IsAdmin()){
+<a name="l00063"></a>00063       die('ERROR:You are not admin');
+<a name="l00064"></a>00064    }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066    <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00067"></a>00067       include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00068"></a>00068    }
+<a name="l00069"></a>00069    
+<a name="l00070"></a>00070    <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurvey.html">Survey</a>')){
+<a name="l00071"></a>00071       include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.Survey.php');
+<a name="l00072"></a>00072    }
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">00074</a>    <a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a> = <span class="keyword">new</span> <a class="code" href="classSurvey.html">Survey</a>();
+<a name="l00075"></a><a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">00075</a>    <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>();
+<a name="l00076"></a>00076    
+<a name="l00077"></a>00077    <span class="keywordflow">if</span>(!<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;<a class="code" href="sura_8server_8php.html#aba9888ec58e7a3c49601df5eda36160">createSurvey</a>($oLogger, &amp;<a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a>, $_POST)){
+<a name="l00078"></a>00078       $oLogger-&gt;relocate(<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.<span class="stringliteral">"/admin/?msg="</span>.<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getLastError());
+<a name="l00079"></a>00079       die('DIE: Error <span class="keywordflow">while</span> making query');
+<a name="l00080"></a>00080    }<span class="keywordflow">else</span>{
+<a name="l00081"></a>00081       $oLogger-&gt;relocate(<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.<span class="stringliteral">"/admin/?addsurvivors&amp;sid="</span>.<a class="code" href="doadmin_8php.html#40c85ba447202b303514c8d27f90e101">$surveyObj</a>-&gt;getSurveyId());
+<a name="l00082"></a>00082    }
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084    die('createSurvey - finished');
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 <span class="preprocessor">#</span>
+<a name="l00087"></a>00087 <span class="preprocessor"></span><span class="preprocessor">##################################################################################################</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00089"></a>00089 <span class="preprocessor">##################################################################################################</span>
+<a name="l00090"></a>00090 <span class="preprocessor"></span><span class="preprocessor">#</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00094"></a>00094 <span class="keywordflow">if</span>(isset(<a class="code" href="admin_2index_8php.html#adfe36d0024c98a104c6592111fa6669">$_GET</a>['addSurvivors']) &amp;&amp; $_POST['sid'] != ''){
+<a name="l00095"></a>00095    <span class="comment">//   debug_obj($oLogger,'$oLogger');</span>
+<a name="l00096"></a>00096    <span class="keywordflow">if</span>(!$oLogger-&gt;IsAdmin()){
+<a name="l00097"></a>00097       die('ERROR:You are not admin');
+<a name="l00098"></a>00098    }
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100    <span class="keywordflow">if</span>(!class_exists('<a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>')){
+<a name="l00101"></a>00101       include_once(<a class="code" href="configuration_8php.html#4617283702a69a0d5ee6d9797672e391">CLASSES_PATH</a>.'/<span class="keyword">class</span>.SurveyOfficer.php');
+<a name="l00102"></a>00102    }
+<a name="l00103"></a>00103     
+<a name="l00104"></a>00104    <a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a> = <span class="keyword">new</span> <a class="code" href="classSurveyOfficer.html">SurveyOfficer</a>();
+<a name="l00105"></a>00105     
+<a name="l00106"></a><a class="code" href="doadmin_8php.html#727c8cf0c0650ffad84166f72479a4e2">00106</a>    <a class="code" href="doadmin_8php.html#727c8cf0c0650ffad84166f72479a4e2">$emailsArr</a> = explode(<span class="stringliteral">"\n"</span>,$_POST['emails']);
+<a name="l00107"></a>00107    
+<a name="l00108"></a>00108    
+<a name="l00109"></a>00109 <span class="comment">//   debug_obj($oLogger);</span>
+<a name="l00110"></a>00110 <span class="comment">//   debug_obj($emailsArr);</span>
+<a name="l00111"></a>00111 <span class="comment">//   debug_sql($_POST['sid'],'sid');</span>
+<a name="l00112"></a>00112 <span class="comment">//   debug_obj($surveyOfficerObj);</span>
+<a name="l00113"></a>00113    
+<a name="l00114"></a>00114    <span class="keywordflow">if</span>(!<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;addSurvivors($oLogger,$_POST['sid'],<a class="code" href="doadmin_8php.html#727c8cf0c0650ffad84166f72479a4e2">$emailsArr</a>)){
+<a name="l00115"></a>00115       <span class="comment">//die('addSurvivors1');</span>
+<a name="l00116"></a>00116       $oLogger-&gt;relocate(<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.<span class="stringliteral">"/admin/?msg="</span>.<a class="code" href="doadmin_8php.html#f02bcca2b2722955b3638c8e9d6f1914">$surveyOfficerObj</a>-&gt;getLastError());
+<a name="l00117"></a>00117       die('DIE: Error <span class="keywordflow">while</span> making query');
+<a name="l00118"></a>00118    }<span class="keywordflow">else</span>{
+<a name="l00119"></a>00119       <span class="comment">//die('addSurvivors2');</span>
+<a name="l00120"></a>00120       $oLogger-&gt;relocate(<a class="code" href="configuration_8php.html#94639e4f3374b53f2d6effba57dd014b">LIVE_SITE</a>.'/admin/');
+<a name="l00121"></a>00121    }
+<a name="l00122"></a>00122    die('<span class="keywordflow">try</span>');
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 <span class="preprocessor">#</span>
+<a name="l00125"></a>00125 <span class="preprocessor"></span><span class="preprocessor">##################################################################################################</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>
+<a name="l00127"></a>00127 ?&gt;
+</pre></div><hr size="1"><address style="text-align: right;"><small>Erzeugt am Fri Dec 7 10:25:12 2007 für mkSurvey von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>
